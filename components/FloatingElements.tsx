@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const FloatingElements: React.FC = () => {
   const elements = Array.from({ length: 20 }, (_, i) => i);

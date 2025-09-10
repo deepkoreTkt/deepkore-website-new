@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SignupForm: React.FC = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Call API
-    const response = await fetch('/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
     if (response.ok) {
@@ -25,7 +25,8 @@ const SignupForm: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')"
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
         }}
       ></div>
       <div className="relative container mx-auto px-4 text-center">
@@ -45,7 +46,7 @@ const SignupForm: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Sign up now and experience the power of Nexus AI.
+          Sign up now and experience the power of Deepkore.
         </motion.p>
         <motion.form
           onSubmit={handleSubmit}

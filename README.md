@@ -1,6 +1,6 @@
-# Nexus AI Landing Page
+# Deepkore Landing Page
 
-A modern, professional landing page for Nexus AI featuring copyright-free images, advanced animations, and interactive components.
+A modern, professional landing page for Deepkore featuring copyright-free images, advanced animations, and interactive components.
 
 ## 🎨 Image Assets & Copyright Information
 
@@ -9,12 +9,14 @@ This project uses high-quality **copyright-free images** from Unsplash and other
 ### Image Sources & Licenses
 
 #### ✅ Unsplash (Primary Source)
+
 - **License**: Free to use for personal and commercial projects
 - **Attribution**: Not required (though recommended)
 - **Quality**: High-resolution professional images
 - **Usage**: All hero backgrounds, testimonials, team photos, and gallery images
 
 #### ✅ Additional Free Sources
+
 - **Pexels**: `https://www.pexels.com/`
 - **Pixabay**: `https://pixabay.com/`
 - **FreeImages**: `https://www.freeimages.com/`
@@ -22,6 +24,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
 ### Images Used in Components
 
 #### Hero Section
+
 - **Rotating Background Images**:
   - Technology/AI visualization
   - Modern workspace environments
@@ -29,6 +32,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
   - Creative professional settings
 
 #### Product Showcase
+
 - **Demo Interface Images**:
   - AI Image Generation interfaces
   - Prompt Enhancement tools
@@ -36,6 +40,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
   - Neural Vision Pro mockups
 
 #### Testimonials
+
 - **Professional Avatars** (6 diverse profiles):
   - Tech executives and developers
   - Creative professionals
@@ -43,6 +48,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
   - UX designers
 
 #### Team Section
+
 - **Team Member Photos** (6 profiles):
   - AI researchers and engineers
   - Product managers
@@ -50,6 +56,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
   - Data scientists
 
 #### EfficiencyMetrics Section
+
 - **Animated Counters**: Auto-counting numbers from 0 to target values
 - **Interactive Charts**: Mini bar charts showing growth trends
 - **Particle Effects**: Floating data points and hover animations
@@ -60,6 +67,7 @@ This project uses high-quality **copyright-free images** from Unsplash and other
 - **Performance Optimized**: Smooth 60fps animations
 
 #### Key Metrics Displayed:
+
 - **700% Performance Increase**: Task automation efficiency boost
 - **95% User Engagement**: Growth in interactive sessions
 - **0.7s Processing Speed**: Lightning-fast response times
@@ -114,6 +122,7 @@ nextjs-copilot-landing/
 ## 🚀 Features
 
 ### ✨ Visual Enhancements
+
 - **Rotating Hero Backgrounds**: 4 different copyright-free images
 - **Interactive Galleries**: Filterable image collections
 - **Professional Avatars**: Diverse representation in testimonials
@@ -121,6 +130,7 @@ nextjs-copilot-landing/
 - **Demo Interfaces**: Realistic software mockups
 
 ### 🎯 User Experience
+
 - **Responsive Design**: Mobile-first approach
 - **Smooth Animations**: Framer Motion powered interactions
 - **Glassmorphism Effects**: Modern UI with backdrop blur
@@ -128,6 +138,7 @@ nextjs-copilot-landing/
 - **Accessibility**: ARIA labels and keyboard navigation
 
 ### 🖼️ Image Optimization
+
 - **Lazy Loading**: Automatic image optimization
 - **WebP Format**: Modern image formats for better performance
 - **Responsive Images**: Different sizes for various devices
@@ -136,6 +147,7 @@ nextjs-copilot-landing/
 ## 📝 Configuration
 
 ### Next.js Image Domains
+
 ```typescript
 // next.config.ts
 images: {
@@ -150,22 +162,26 @@ images: {
 ```
 
 ### Environment Variables
+
 - `NEXT_PUBLIC_ANALYTICS_ID` - For analytics integration (optional)
 
 ## 🏃‍♂️ Getting Started
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd nextjs-copilot-landing
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run development server**
+
    ```bash
    npm run dev
    ```
@@ -187,30 +203,35 @@ images: {
 ## 🎨 Component Details
 
 ### Hero Section
+
 - Auto-rotating background images (8-second intervals)
 - Gradient overlays for text readability
 - Call-to-action buttons with hover effects
 - Responsive typography scaling
 
 ### Product Showcase
+
 - Interactive carousel with manual/auto navigation
 - Feature grid with animated icons
 - Glassmorphism cards with backdrop blur
 - Professional interface mockups
 
 ### Testimonials
+
 - Grid layout (1-2-3 columns responsive)
 - Professional avatars with role information
 - Company details and social links
 - Hover animations and transitions
 
 ### Team Section
+
 - Professional team member cards
 - Social media integration
 - Expertise highlights
 - Responsive grid layout
 
 ### About Section
+
 - **Interactive Tabs**: Mission, Story, Team, and Values sections
 - **Animated Statistics**: Auto-rotating key metrics with smooth transitions
 - **Timeline Component**: Visual journey through company milestones
@@ -231,12 +252,14 @@ images: {
 ## 🔧 Customization
 
 ### Adding New Images
+
 1. Choose copyright-free images from approved sources
 2. Add to appropriate `public/images/` subdirectory
 3. Update component with new image paths
 4. Test responsive behavior
 
 ### Color Scheme
+
 - **Primary**: Blue to Green gradients
 - **Secondary**: Slate grays and whites
 - **Accent**: Cyan and purple highlights
@@ -244,6 +267,7 @@ images: {
 ## 📞 Support
 
 For questions about:
+
 - **Image licensing**: Refer to source websites
 - **Technical implementation**: Check component files
 - **Performance optimization**: Review Next.js documentation

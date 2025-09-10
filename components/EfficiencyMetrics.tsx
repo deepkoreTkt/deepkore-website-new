@@ -1,13 +1,18 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, AnimatePresence, useMotionValue } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import {
+  motion,
+  useAnimation,
+  AnimatePresence,
+  useMotionValue,
+} from "framer-motion";
 
 const EfficiencyMetrics: React.FC = () => {
   const [counters, setCounters] = useState({
     performance: 0,
     engagement: 0,
-    speed: 0
+    speed: 0,
   });
 
   const [isVisible, setIsVisible] = useState(false);
@@ -21,48 +26,55 @@ const EfficiencyMetrics: React.FC = () => {
 
   const metrics = [
     {
-      id: 'performance',
-      icon: '📈',
-      title: 'Performance Increase',
+      id: "performance",
+      icon: "📈",
+      title: "Performance Increase",
       value: 700,
-      suffix: '%',
-      description: 'Boost in task automation efficiency, optimizing workflows for all users.',
-      color: 'from-blue-500 to-cyan-500',
-      bgPattern: 'radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)',
+      suffix: "%",
+      description:
+        "Boost in task automation efficiency, optimizing workflows for all users.",
+      color: "from-blue-500 to-cyan-500",
+      bgPattern:
+        "radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
       waveData: [0.2, 0.4, 0.6, 0.8, 0.9, 0.95, 1.0],
       particles: 12,
-      shape: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+      shape: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
     },
     {
-      id: 'engagement',
-      icon: '👥',
-      title: 'User Engagement',
+      id: "engagement",
+      icon: "👥",
+      title: "User Engagement",
       value: 95,
-      suffix: '%',
-      description: 'Growth in interactive sessions, enhancing user experience and satisfaction.',
-      color: 'from-green-500 to-emerald-500',
-      bgPattern: 'radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)',
+      suffix: "%",
+      description:
+        "Growth in interactive sessions, enhancing user experience and satisfaction.",
+      color: "from-green-500 to-emerald-500",
+      bgPattern:
+        "radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
       waveData: [0.15, 0.35, 0.55, 0.75, 0.85, 0.92, 0.95],
       particles: 15,
-      shape: 'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)'
+      shape:
+        "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)",
     },
     {
-      id: 'speed',
-      icon: '⚡',
-      title: 'Processing Speed',
+      id: "speed",
+      icon: "⚡",
+      title: "Processing Speed",
       value: 0.7,
-      suffix: 's',
-      description: 'Lightning-fast response times, ensuring seamless interactions with our AI systems.',
-      color: 'from-purple-500 to-pink-500',
-      bgPattern: 'radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)',
+      suffix: "s",
+      description:
+        "Lightning-fast response times, ensuring seamless interactions with our AI systems.",
+      color: "from-purple-500 to-pink-500",
+      bgPattern:
+        "radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)",
       waveData: [0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 1.0],
       particles: 18,
-      shape: 'polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%)'
-    }
+      shape: "polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%)",
+    },
   ];
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const handleMouseMove = (e: MouseEvent) => {
       if (containerRef.current) {
@@ -75,8 +87,8 @@ const EfficiencyMetrics: React.FC = () => {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
   useEffect(() => {
@@ -84,13 +96,13 @@ const EfficiencyMetrics: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          controls.start('visible');
+          controls.start("visible");
         }
       },
       { threshold: 0.3 }
     );
 
-    const element = document.getElementById('efficiency-metrics');
+    const element = document.getElementById("efficiency-metrics");
     if (element) observer.observe(element);
 
     return () => {
@@ -101,7 +113,11 @@ const EfficiencyMetrics: React.FC = () => {
   useEffect(() => {
     if (!isVisible) return;
 
-    const animateCounter = (key: keyof typeof counters, target: number, duration: number = 2500) => {
+    const animateCounter = (
+      key: keyof typeof counters,
+      target: number,
+      duration: number = 2500
+    ) => {
       const start = 0;
       const increment = target / (duration / 16);
       let current = start;
@@ -112,18 +128,25 @@ const EfficiencyMetrics: React.FC = () => {
           current = target;
           clearInterval(timer);
         }
-        setCounters(prev => ({ ...prev, [key]: Math.round(current * 10) / 10 }));
+        setCounters((prev) => ({
+          ...prev,
+          [key]: Math.round(current * 10) / 10,
+        }));
       }, 16);
     };
 
     // Start animations with creative delays
-    setTimeout(() => animateCounter('performance', 700), 300);
-    setTimeout(() => animateCounter('engagement', 95), 800);
-    setTimeout(() => animateCounter('speed', 0.7), 1300);
+    setTimeout(() => animateCounter("performance", 700), 300);
+    setTimeout(() => animateCounter("engagement", 95), 800);
+    setTimeout(() => animateCounter("speed", 0.7), 1300);
   }, [isVisible]);
 
   return (
-    <section id="efficiency-metrics" ref={containerRef} className="relative py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 overflow-hidden">
+    <section
+      id="efficiency-metrics"
+      ref={containerRef}
+      className="relative py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 overflow-hidden"
+    >
       {/* Advanced Animated Background */}
       <div className="absolute inset-0">
         {/* Dynamic Morphing Background */}
@@ -131,13 +154,13 @@ const EfficiencyMetrics: React.FC = () => {
           className="absolute inset-0 opacity-20"
           animate={{
             background: [
-              'radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)',
-              'radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.3) 0%, transparent 50%)',
-              'radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)',
-              'radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)'
-            ]
+              "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 40% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)",
+            ],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Floating Geometric Shapes */}
@@ -158,17 +181,21 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{
               duration: Math.random() * 10 + 15,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
               delay: Math.random() * 5,
             }}
           >
             <div
               className="w-16 h-16 border-2 border-blue-400/20"
               style={{
-                clipPath: i % 4 === 0 ? 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' :
-                         i % 4 === 1 ? 'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)' :
-                         i % 4 === 2 ? 'polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%)' :
-                         'circle(50% at 50% 50%)'
+                clipPath:
+                  i % 4 === 0
+                    ? "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"
+                    : i % 4 === 1
+                    ? "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)"
+                    : i % 4 === 2
+                    ? "polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%)"
+                    : "circle(50% at 50% 50%)",
               }}
             />
           </motion.div>
@@ -181,7 +208,7 @@ const EfficiencyMetrics: React.FC = () => {
             className="absolute w-1 h-1"
             style={{
               background: `linear-gradient(45deg, ${
-                i % 3 === 0 ? '#3b82f6' : i % 3 === 1 ? '#10b981' : '#8b5cf6'
+                i % 3 === 0 ? "#3b82f6" : i % 3 === 1 ? "#10b981" : "#8b5cf6"
               }, transparent)`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -196,7 +223,7 @@ const EfficiencyMetrics: React.FC = () => {
               duration: Math.random() * 8 + 12,
               repeat: Infinity,
               delay: Math.random() * 10,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
           />
         ))}
@@ -205,12 +232,12 @@ const EfficiencyMetrics: React.FC = () => {
         <motion.div
           className="absolute inset-0 opacity-10"
           animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
+            backgroundPosition: ["0% 0%", "100% 100%"],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: 'linear',
+            ease: "linear",
           }}
           style={{
             backgroundImage: `
@@ -218,7 +245,7 @@ const EfficiencyMetrics: React.FC = () => {
               radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.3) 0%, transparent 50%),
               radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)
             `,
-            backgroundSize: '200% 200%',
+            backgroundSize: "200% 200%",
           }}
         />
       </div>
@@ -255,7 +282,8 @@ const EfficiencyMetrics: React.FC = () => {
           >
             Transforming Efficiency in
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
-              {' '}Creative Entrepreneurship
+              {" "}
+              Creative Entrepreneurship
             </span>
           </motion.h2>
 
@@ -266,8 +294,8 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Nexus AI&apos;s measurable impact on productivity, engagement, and performance
-            across thousands of creative entrepreneurs worldwide.
+            Deepkore&apos;s measurable impact on productivity, engagement, and
+            performance across thousands of creative entrepreneurs worldwide.
           </motion.p>
         </motion.div>
 
@@ -284,8 +312,8 @@ const EfficiencyMetrics: React.FC = () => {
               onHoverStart={() => setHoveredCard(metric.id)}
               onHoverEnd={() => setHoveredCard(null)}
               style={{
-                perspective: '1000px',
-                transformStyle: 'preserve-3d',
+                perspective: "1000px",
+                transformStyle: "preserve-3d",
               }}
             >
               <motion.div
@@ -294,16 +322,17 @@ const EfficiencyMetrics: React.FC = () => {
                   scale: 1.05,
                   y: -20,
                   rotateX: hoveredCard === metric.id ? -5 : 0,
-                  rotateY: hoveredCard === metric.id ? mousePosition.x * 0.01 : 0,
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                  rotateY:
+                    hoveredCard === metric.id ? mousePosition.x * 0.01 : 0,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
                 }}
                 transition={{
                   type: "spring",
                   stiffness: 300,
-                  damping: 20
+                  damping: 20,
                 }}
                 style={{
-                  transformStyle: 'preserve-3d',
+                  transformStyle: "preserve-3d",
                 }}
               >
                 {/* Background Pattern */}
@@ -332,13 +361,15 @@ const EfficiencyMetrics: React.FC = () => {
                     transition={{
                       duration: 4,
                       repeat: Infinity,
-                      ease: 'easeInOut',
+                      ease: "easeInOut",
                       delay: index * 0.5,
-                      rotateY: { duration: 2, repeat: Infinity }
+                      rotateY: { duration: 2, repeat: Infinity },
                     }}
-                    style={{ transformStyle: 'preserve-3d' }}
+                    style={{ transformStyle: "preserve-3d" }}
                   >
-                    <span style={{ transform: 'translateZ(20px)' }}>{metric.icon}</span>
+                    <span style={{ transform: "translateZ(20px)" }}>
+                      {metric.icon}
+                    </span>
                   </motion.div>
 
                   {/* Creative Counter Animation */}
@@ -350,15 +381,22 @@ const EfficiencyMetrics: React.FC = () => {
                   >
                     <motion.span
                       animate={{
-                        textShadow: hoveredCard === metric.id
-                          ? ['0 0 10px rgba(59, 130, 246, 0.5)', '0 0 20px rgba(59, 130, 246, 0.8)', '0 0 10px rgba(59, 130, 246, 0.5)']
-                          : '0 0 0px rgba(59, 130, 246, 0)',
+                        textShadow:
+                          hoveredCard === metric.id
+                            ? [
+                                "0 0 10px rgba(59, 130, 246, 0.5)",
+                                "0 0 20px rgba(59, 130, 246, 0.8)",
+                                "0 0 10px rgba(59, 130, 246, 0.5)",
+                              ]
+                            : "0 0 0px rgba(59, 130, 246, 0)",
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
                       {counters[metric.id as keyof typeof counters]}
                     </motion.span>
-                    <span className="text-3xl md:text-4xl">{metric.suffix}</span>
+                    <span className="text-3xl md:text-4xl">
+                      {metric.suffix}
+                    </span>
 
                     {/* Floating Numbers Effect */}
                     <AnimatePresence>
@@ -369,8 +407,8 @@ const EfficiencyMetrics: React.FC = () => {
                               key={i}
                               className={`absolute text-2xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent`}
                               initial={{
-                                x: '50%',
-                                y: '50%',
+                                x: "50%",
+                                y: "50%",
                                 scale: 0,
                                 opacity: 0,
                               }}
@@ -422,19 +460,36 @@ const EfficiencyMetrics: React.FC = () => {
                   >
                     <svg className="w-full h-full" viewBox="0 0 200 50">
                       <motion.path
-                        d={`M 0 25 ${metric.waveData.map((point, i) =>
-                          `L ${i * 28.57} ${25 - point * 20}`
-                        ).join(' ')} L 200 25 Z`}
+                        d={`M 0 25 ${metric.waveData
+                          .map(
+                            (point, i) => `L ${i * 28.57} ${25 - point * 20}`
+                          )
+                          .join(" ")} L 200 25 Z`}
                         fill={`url(#gradient-${metric.id})`}
                         initial={{ pathLength: 0, opacity: 0 }}
                         animate={{ pathLength: 1, opacity: 1 }}
                         transition={{ duration: 2, delay: 1.6 + index * 0.2 }}
                       />
                       <defs>
-                        <linearGradient id={`gradient-${metric.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="rgba(59, 130, 246, 0.3)" />
-                          <stop offset="50%" stopColor="rgba(16, 185, 129, 0.5)" />
-                          <stop offset="100%" stopColor="rgba(147, 51, 234, 0.3)" />
+                        <linearGradient
+                          id={`gradient-${metric.id}`}
+                          x1="0%"
+                          y1="0%"
+                          x2="100%"
+                          y2="0%"
+                        >
+                          <stop
+                            offset="0%"
+                            stopColor="rgba(59, 130, 246, 0.3)"
+                          />
+                          <stop
+                            offset="50%"
+                            stopColor="rgba(16, 185, 129, 0.5)"
+                          />
+                          <stop
+                            offset="100%"
+                            stopColor="rgba(147, 51, 234, 0.3)"
+                          />
                         </linearGradient>
                       </defs>
 
@@ -448,7 +503,10 @@ const EfficiencyMetrics: React.FC = () => {
                           fill={`hsl(${(i * 60) % 360}, 70%, 60%)`}
                           initial={{ scale: 0, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
-                          transition={{ duration: 0.5, delay: 2 + index * 0.2 + i * 0.1 }}
+                          transition={{
+                            duration: 0.5,
+                            delay: 2 + index * 0.2 + i * 0.1,
+                          }}
                         />
                       ))}
                     </svg>
@@ -460,8 +518,8 @@ const EfficiencyMetrics: React.FC = () => {
                       transition={{
                         duration: 3,
                         repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: index * 0.5
+                        ease: "easeInOut",
+                        delay: index * 0.5,
                       }}
                     />
                   </motion.div>
@@ -481,8 +539,8 @@ const EfficiencyMetrics: React.FC = () => {
                           key={i}
                           className={`absolute w-2 h-2 bg-gradient-to-r ${metric.color} rounded-full`}
                           initial={{
-                            x: '50%',
-                            y: '50%',
+                            x: "50%",
+                            y: "50%",
                             scale: 0,
                             opacity: 0,
                           }}
@@ -508,7 +566,10 @@ const EfficiencyMetrics: React.FC = () => {
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-r ${metric.color} opacity-0 pointer-events-none`}
                   style={{
-                    clipPath: hoveredCard === metric.id ? metric.shape : 'polygon(0 0, 0 0, 0 0, 0 0)',
+                    clipPath:
+                      hoveredCard === metric.id
+                        ? metric.shape
+                        : "polygon(0 0, 0 0, 0 0, 0 0)",
                   }}
                   animate={{
                     opacity: hoveredCard === metric.id ? 0.1 : 0,
@@ -519,8 +580,8 @@ const EfficiencyMetrics: React.FC = () => {
                 {/* Shine Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-                  initial={{ x: '-150%' }}
-                  whileHover={{ x: '150%' }}
+                  initial={{ x: "-150%" }}
+                  whileHover={{ x: "150%" }}
                   transition={{ duration: 0.8 }}
                 />
               </motion.div>
@@ -541,15 +602,15 @@ const EfficiencyMetrics: React.FC = () => {
             whileHover={{
               scale: 1.05,
               y: -2,
-              boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)'
+              boxShadow: "0 0 30px rgba(59, 130, 246, 0.6)",
             }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10">Experience the Impact</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600 rounded-full"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '100%' }}
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "100%" }}
               transition={{ duration: 0.6 }}
             />
 
@@ -564,8 +625,8 @@ const EfficiencyMetrics: React.FC = () => {
                   key={i}
                   className="absolute w-1 h-1 bg-white rounded-full"
                   initial={{
-                    x: '50%',
-                    y: '50%',
+                    x: "50%",
+                    y: "50%",
                     scale: 0,
                     opacity: 0,
                   }}
@@ -593,7 +654,8 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             viewport={{ once: true }}
           >
-            Join thousands of creative entrepreneurs already transforming their workflow
+            Join thousands of creative entrepreneurs already transforming their
+            workflow
           </motion.p>
         </motion.div>
       </div>

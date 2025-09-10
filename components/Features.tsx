@@ -1,40 +1,54 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Features: React.FC = () => {
   const [activeFeature, setActiveFeature] = useState(0);
 
   const features = [
     {
-      title: 'Generate',
-      subtitle: 'Images never used.',
-      description: 'Create unique, original content with our advanced AI generation tools that produce stunning visuals from your imagination.',
-      gradient: 'from-blue-600 via-cyan-500 to-green-600',
-      icon: '🎨',
-      bgPattern: 'radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)',
-      stats: { users: '10K+', projects: '50K+', satisfaction: '98%' },
-      features: ['AI-Powered Generation', 'High-Resolution Output', 'Style Customization', 'Batch Processing']
+      title: "Generate",
+      subtitle: "Images never used.",
+      description:
+        "Create unique, original content with our advanced AI generation tools that produce stunning visuals from your imagination.",
+      gradient: "from-blue-600 via-cyan-500 to-green-600",
+      icon: "🎨",
+      bgPattern:
+        "radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
+      stats: { users: "10K+", projects: "50K+", satisfaction: "98%" },
+      features: [
+        "AI-Powered Generation",
+        "High-Resolution Output",
+        "Style Customization",
+        "Batch Processing",
+      ],
     },
     {
-      title: 'Enhance',
-      subtitle: 'Your prompts',
-      description: 'Transform basic ideas into powerful, detailed prompts that unlock the full potential of AI creativity.',
-      gradient: 'from-green-600 via-emerald-500 to-blue-600',
-      icon: '✨',
-      bgPattern: 'radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)',
-      stats: { users: '25K+', projects: '100K+', satisfaction: '96%' },
-      features: ['Smart Prompt Analysis', 'Context Enhancement', 'Style Optimization', 'Multi-language Support']
-    }
+      title: "Enhance",
+      subtitle: "Your prompts",
+      description:
+        "Transform basic ideas into powerful, detailed prompts that unlock the full potential of AI creativity.",
+      gradient: "from-green-600 via-emerald-500 to-blue-600",
+      icon: "✨",
+      bgPattern:
+        "radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
+      stats: { users: "25K+", projects: "100K+", satisfaction: "96%" },
+      features: [
+        "Smart Prompt Analysis",
+        "Context Enhancement",
+        "Style Optimization",
+        "Multi-language Support",
+      ],
+    },
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+    <section className="relative py-24 bg-white overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-green-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
@@ -54,14 +68,14 @@ const Features: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-              <span className="text-green-400 font-medium text-sm tracking-wider uppercase">
+              <span className="text-green-600 font-medium text-sm tracking-wider uppercase">
                 Powerful Features
               </span>
             </div>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -69,14 +83,15 @@ const Features: React.FC = () => {
           >
             AI That
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
-              {' '}Works For You
+              {" "}
+              Works For You
             </span>
           </motion.h2>
         </motion.div>
 
         {/* Feature Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl p-2 border border-slate-700/50">
+          <div className="bg-gray-100/50 backdrop-blur-xl rounded-2xl p-2 border border-gray-300/50">
             <div className="flex space-x-2">
               {features.map((feature, index) => (
                 <motion.button
@@ -84,8 +99,8 @@ const Features: React.FC = () => {
                   onClick={() => setActiveFeature(index)}
                   className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     activeFeature === index
-                      ? 'bg-gradient-to-r from-blue-600 to-green-600 text-white shadow-lg'
-                      : 'text-gray-400 hover:text-white hover:bg-slate-700/50'
+                      ? "bg-gradient-to-r from-blue-600 to-green-600 text-white shadow-lg"
+                      : "text-gray-600 hover:text-black hover:bg-gray-200/50"
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -128,7 +143,7 @@ const Features: React.FC = () => {
                     transition={{
                       duration: 4,
                       repeat: Infinity,
-                      ease: 'easeInOut',
+                      ease: "easeInOut",
                     }}
                   >
                     {features[activeFeature].icon}
@@ -144,7 +159,7 @@ const Features: React.FC = () => {
                   </motion.h3>
 
                   <motion.h4
-                    className="text-2xl md:text-3xl text-blue-300 mb-6 font-medium"
+                    className="text-2xl md:text-3xl text-blue-700 mb-6 font-medium"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -153,7 +168,7 @@ const Features: React.FC = () => {
                   </motion.h4>
 
                   <motion.p
-                    className="text-xl text-gray-300 leading-relaxed mb-8"
+                    className="text-xl text-gray-700 leading-relaxed mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
@@ -171,7 +186,7 @@ const Features: React.FC = () => {
                     {features[activeFeature].features.map((item, index) => (
                       <motion.div
                         key={index}
-                        className="flex items-center space-x-3 text-gray-300"
+                        className="flex items-center space-x-3 text-gray-700"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
@@ -213,7 +228,7 @@ const Features: React.FC = () => {
                       transition={{
                         duration: 8,
                         repeat: Infinity,
-                        ease: 'easeInOut',
+                        ease: "easeInOut",
                       }}
                     >
                       {features[activeFeature].icon}
@@ -223,31 +238,40 @@ const Features: React.FC = () => {
                   {/* Stats Overlay */}
                   <div className="absolute bottom-8 left-8 right-8">
                     <div className="grid grid-cols-3 gap-4">
-                      {Object.entries(features[activeFeature].stats).map(([key, value], index) => (
-                        <motion.div
-                          key={key}
-                          className="bg-black/20 backdrop-blur-sm rounded-xl p-4 text-center"
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                        >
-                          <div className="text-2xl font-bold text-white mb-1">{value}</div>
-                          <div className="text-sm text-gray-300 capitalize">{key}</div>
-                        </motion.div>
-                      ))}
+                      {Object.entries(features[activeFeature].stats).map(
+                        ([key, value], index) => (
+                          <motion.div
+                            key={key}
+                            className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                              duration: 0.4,
+                              delay: 0.8 + index * 0.1,
+                            }}
+                          >
+                            <div className="text-2xl font-bold text-black mb-1">
+                              {value}
+                            </div>
+                            <div className="text-sm text-gray-700 capitalize">
+                              {key}
+                            </div>
+                          </motion.div>
+                        )
+                      )}
                     </div>
                   </div>
 
                   {/* Shine Effect */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-                    initial={{ x: '-150%' }}
-                    animate={{ x: '150%' }}
+                    initial={{ x: "-150%" }}
+                    animate={{ x: "150%" }}
                     transition={{
                       duration: 3,
                       repeat: Infinity,
                       repeatDelay: 2,
-                      ease: 'easeInOut',
+                      ease: "easeInOut",
                     }}
                   />
                 </motion.div>

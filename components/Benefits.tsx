@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Benefits: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,26 +9,29 @@ const Benefits: React.FC = () => {
 
   const benefits = [
     {
-      title: 'Easy for Anyone',
-      subtitle: 'Simplify collaboration for everyone.',
-      description: 'Nexus AI&apos;s intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.',
-      icon: '👥',
-      gradient: 'from-blue-500 to-green-600'
+      title: "Easy for Anyone",
+      subtitle: "Simplify collaboration for everyone.",
+      description:
+        "Deepkore&apos;s intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.",
+      icon: "👥",
+      gradient: "from-blue-500 to-green-600",
     },
     {
-      title: 'So. Fast.',
-      subtitle: 'Accelerate your team\'s productivity',
-      description: 'Nexus AI delivers lightning-fast results, streamlining workflows and saving valuable time on every task.',
-      icon: '⚡',
-      gradient: 'from-green-500 to-blue-600'
+      title: "So. Fast.",
+      subtitle: "Accelerate your team's productivity",
+      description:
+        "Deepkore delivers lightning-fast results, streamlining workflows and saving valuable time on every task.",
+      icon: "⚡",
+      gradient: "from-green-500 to-blue-600",
     },
     {
-      title: 'Smart Solutions',
-      subtitle: 'AI built for smarter business decisions.',
-      description: 'Unlock innovative possibilities with Nexus AI&apos;s intelligent tools, designed to optimize efficiency and insight.',
-      icon: '🧠',
-      gradient: 'from-blue-600 to-green-500'
-    }
+      title: "Smart Solutions",
+      subtitle: "AI built for smarter business decisions.",
+      description:
+        "Unlock innovative possibilities with Deepkore&apos;s intelligent tools, designed to optimize efficiency and insight.",
+      icon: "🧠",
+      gradient: "from-blue-600 to-green-500",
+    },
   ];
 
   // Auto-play functionality
@@ -90,7 +93,7 @@ const Benefits: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Nexus AI does powerful work in a really simple way
+            Deepkore does powerful work in a really simple way
           </h2>
           <p className="text-gray-400 text-lg">
             All within an enterprise-grade secure environment.
@@ -115,14 +118,18 @@ const Benefits: React.FC = () => {
                 transition={{
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.3 },
-                  scale: { duration: 0.3 }
+                  scale: { duration: 0.3 },
                 }}
                 className="absolute inset-0"
               >
-                <div className={`bg-gradient-to-br ${benefits[currentSlide].gradient} p-8 md:p-12 h-full rounded-3xl shadow-2xl`}>
+                <div
+                  className={`bg-gradient-to-br ${benefits[currentSlide].gradient} p-8 md:p-12 h-full rounded-3xl shadow-2xl`}
+                >
                   <div className="flex flex-col md:flex-row items-center justify-between h-full">
                     <div className="flex-1 text-center md:text-left">
-                      <div className="text-6xl md:text-7xl mb-6">{benefits[currentSlide].icon}</div>
+                      <div className="text-6xl md:text-7xl mb-6">
+                        {benefits[currentSlide].icon}
+                      </div>
                       <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
                         {benefits[currentSlide].title}
                       </h3>
@@ -137,10 +144,10 @@ const Benefits: React.FC = () => {
                     {/* Slide Counter */}
                     <div className="mt-8 md:mt-0 md:ml-8">
                       <div className="text-white/60 text-sm font-medium">
-                        {String(currentSlide + 1).padStart(2, '0')}
+                        {String(currentSlide + 1).padStart(2, "0")}
                       </div>
                       <div className="text-white/30 text-xs">
-                        / {String(benefits.length).padStart(2, '0')}
+                        / {String(benefits.length).padStart(2, "0")}
                       </div>
                     </div>
                   </div>
@@ -155,8 +162,18 @@ const Benefits: React.FC = () => {
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
             aria-label="Previous slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
 
@@ -165,8 +182,18 @@ const Benefits: React.FC = () => {
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
             aria-label="Next slide"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
 
@@ -177,16 +204,18 @@ const Benefits: React.FC = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`relative h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/30 hover:bg-white/50'
+                  index === currentSlide
+                    ? "w-8 bg-white"
+                    : "w-2 bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               >
                 {index === currentSlide && (
                   <motion.div
                     className="absolute inset-0 bg-white rounded-full"
-                    initial={{ width: '100%' }}
-                    animate={{ width: '100%' }}
-                    transition={{ duration: 4, ease: 'linear' }}
+                    initial={{ width: "100%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 4, ease: "linear" }}
                   />
                 )}
               </button>
@@ -196,8 +225,12 @@ const Benefits: React.FC = () => {
           {/* Auto-play Indicator */}
           <div className="flex justify-center mt-4">
             <div className="flex items-center space-x-2 text-white/60 text-sm">
-              <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-green-500' : 'bg-gray-400'}`}></div>
-              <span>{isAutoPlaying ? 'Auto-playing' : 'Paused'}</span>
+              <div
+                className={`w-2 h-2 rounded-full ${
+                  isAutoPlaying ? "bg-green-500" : "bg-gray-400"
+                }`}
+              ></div>
+              <span>{isAutoPlaying ? "Auto-playing" : "Paused"}</span>
             </div>
           </div>
         </div>
@@ -210,8 +243,12 @@ const Benefits: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-            <h3 className="text-2xl font-bold mb-2">We use advanced AI tools to enhance our systems</h3>
-            <p className="text-gray-400">for delivering smarter solutions to transform the industry</p>
+            <h3 className="text-2xl font-bold mb-2">
+              We use advanced AI tools to enhance our systems
+            </h3>
+            <p className="text-gray-400">
+              for delivering smarter solutions to transform the industry
+            </p>
           </div>
         </motion.div>
       </div>

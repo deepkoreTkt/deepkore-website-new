@@ -1,28 +1,31 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Stats: React.FC = () => {
   const stats = [
     {
-      value: '700%',
-      label: 'Performance Increase',
-      description: 'Boost in task automation efficiency, optimizing workflows for all users.',
-      icon: '📈'
+      value: "700%",
+      label: "Performance Increase",
+      description:
+        "Boost in task automation efficiency, optimizing workflows for all users.",
+      icon: "📈",
     },
     {
-      value: '95%',
-      label: 'User Engagement',
-      description: 'Growth in interactive sessions, enhancing user experience and satisfaction.',
-      icon: '👥'
+      value: "95%",
+      label: "User Engagement",
+      description:
+        "Growth in interactive sessions, enhancing user experience and satisfaction.",
+      icon: "👥",
     },
     {
-      value: '0.7s',
-      label: 'Processing Speed',
-      description: 'Lightning-fast response times, ensuring seamless interactions with our AI systems.',
-      icon: '⚡'
-    }
+      value: "0.7s",
+      label: "Processing Speed",
+      description:
+        "Lightning-fast response times, ensuring seamless interactions with our AI systems.",
+      icon: "⚡",
+    },
   ];
 
   const containerVariants = {
@@ -54,7 +57,7 @@ const Stats: React.FC = () => {
             Transforming Efficiency in Creative Entrepreneurship
           </h2>
           <p className="text-xl text-gray-300">
-            Nexus AI&apos;s Impact at a Glance
+            Deepkore&apos;s Impact at a Glance
           </p>
         </motion.div>
 
@@ -76,8 +79,12 @@ const Stats: React.FC = () => {
               <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-2">
                 {stat.value}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{stat.label}</h3>
-              <p className="text-gray-300 leading-relaxed">{stat.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {stat.label}
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                {stat.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>

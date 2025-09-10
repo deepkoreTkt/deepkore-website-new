@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const ProductShowcase: React.FC = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
@@ -10,36 +10,60 @@ const ProductShowcase: React.FC = () => {
 
   const demos = [
     {
-      title: 'AI Image Generation',
-      description: 'Create stunning visuals from text descriptions with advanced neural networks',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      features: ['High Resolution', 'Style Control', 'Batch Processing']
+      title: "AI Image Generation",
+      description:
+        "Create stunning visuals from text descriptions with advanced neural networks",
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: ["High Resolution", "Style Control", "Batch Processing"],
     },
     {
-      title: 'Prompt Enhancement',
-      description: 'Transform simple ideas into detailed AI prompts with intelligent analysis',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      features: ['Smart Analysis', 'Context Addition', 'Optimization']
+      title: "Prompt Enhancement",
+      description:
+        "Transform simple ideas into detailed AI prompts with intelligent analysis",
+      image:
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      features: ["Smart Analysis", "Context Addition", "Optimization"],
     },
     {
-      title: 'Creative Workflows',
-      description: 'Streamline your creative process with AI assistance and team collaboration',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      features: ['Workflow Automation', 'Team Collaboration', 'Version Control']
+      title: "Creative Workflows",
+      description:
+        "Streamline your creative process with AI assistance and team collaboration",
+      image:
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      features: [
+        "Workflow Automation",
+        "Team Collaboration",
+        "Version Control",
+      ],
     },
     {
-      title: 'Neural Vision Pro',
-      description: 'Advanced image processing with cutting-edge computer vision technology',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      features: ['Computer Vision', 'Object Detection', 'Image Analysis']
-    }
+      title: "Neural Vision Pro",
+      description:
+        "Advanced image processing with cutting-edge computer vision technology",
+      image:
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      features: ["Computer Vision", "Object Detection", "Image Analysis"],
+    },
   ];
 
   const features = [
-    { icon: '🚀', title: 'Lightning Fast', description: 'Generate images in seconds' },
-    { icon: '🎨', title: 'Creative Control', description: 'Full customization options' },
-    { icon: '🧠', title: 'AI-Powered', description: 'Advanced neural networks' },
-    { icon: '⚡', title: 'High Quality', description: '4K resolution output' }
+    {
+      icon: "🚀",
+      title: "Lightning Fast",
+      description: "Generate images in seconds",
+    },
+    {
+      icon: "🎨",
+      title: "Creative Control",
+      description: "Full customization options",
+    },
+    {
+      icon: "🧠",
+      title: "AI-Powered",
+      description: "Advanced neural networks",
+    },
+    { icon: "⚡", title: "High Quality", description: "4K resolution output" },
   ];
 
   useEffect(() => {
@@ -65,9 +89,13 @@ const ProductShowcase: React.FC = () => {
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
-              opacity: 0
+              x:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerWidth : 1920),
+              y:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerHeight : 1080),
+              opacity: 0,
             }}
             animate={{
               y: [null, -100, null],
@@ -100,7 +128,7 @@ const ProductShowcase: React.FC = () => {
           >
             <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">
-                Nexus AI Technology
+                Deepkore Technology
               </span>
             </div>
           </motion.div>
@@ -112,9 +140,10 @@ const ProductShowcase: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Nexus AI Vision
+            Deepkore Vision
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
-              {' '}Pro
+              {" "}
+              Pro
             </span>
           </motion.h2>
 
@@ -125,8 +154,9 @@ const ProductShowcase: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Unlock the future of creativity with Nexus AI Vision Pro. Featuring cutting-edge
-            enhancements and versatile options like the powerful Pro variant
+            Unlock the future of creativity with Deepkore Vision Pro. Featuring
+            cutting-edge enhancements and versatile options like the powerful
+            Pro variant
           </motion.p>
         </motion.div>
 
@@ -158,8 +188,8 @@ const ProductShowcase: React.FC = () => {
                           onClick={() => setCurrentDemo(index)}
                           className={`w-3 h-3 rounded-full transition-all duration-300 ${
                             currentDemo === index
-                              ? 'bg-gradient-to-r from-blue-500 to-green-500 scale-125'
-                              : 'bg-gray-600 hover:bg-gray-500'
+                              ? "bg-gradient-to-r from-blue-500 to-green-500 scale-125"
+                              : "bg-gray-600 hover:bg-gray-500"
                           }`}
                           whileHover={{ scale: 1.2 }}
                           whileTap={{ scale: 0.9 }}
@@ -251,7 +281,7 @@ const ProductShowcase: React.FC = () => {
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center justify-between text-white text-sm">
                           <span className="bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">
-                            Nexus AI Vision Pro
+                            Deepkore Vision Pro
                           </span>
                           <span className="bg-green-500/20 px-3 py-1 rounded-full backdrop-blur-sm border border-green-500/30">
                             Active
@@ -291,13 +321,17 @@ const ProductShowcase: React.FC = () => {
                       duration: 4,
                       repeat: Infinity,
                       delay: index * 0.5,
-                      ease: 'easeInOut',
+                      ease: "easeInOut",
                     }}
                   >
                     {feature.icon}
                   </motion.div>
-                  <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                  <h4 className="text-lg font-bold text-white mb-2">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -316,7 +350,7 @@ const ProductShowcase: React.FC = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Experience Nexus AI Vision Pro
+              Experience Deepkore Vision Pro
             </motion.button>
 
             <motion.p
@@ -326,7 +360,8 @@ const ProductShowcase: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              Join thousands of creators already using Nexus AI&apos;s powerful tools
+              Join thousands of creators already using Deepkore&apos;s powerful
+              tools
             </motion.p>
           </motion.div>
         </div>

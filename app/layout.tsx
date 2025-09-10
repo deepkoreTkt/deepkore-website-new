@@ -13,21 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexus AI - Creative Entrepreneurship Platform",
-  description: "Discover the power of Nexus AI for your creative entrepreneurship journey. Fast, responsive, and accessible platform for innovators.",
-  keywords: "Nexus AI, creative entrepreneurship, AI assistant, innovation platform",
+  title: "Deepkore - Creative Entrepreneurship Platform",
+  description:
+    "Discover the power of Deepkore for your creative entrepreneurship journey. Fast, responsive, and accessible platform for innovators.",
+  keywords:
+    "Deepkore, creative entrepreneurship, AI assistant, innovation platform",
   authors: [{ name: "Your Name" }],
   openGraph: {
-    title: "Nexus AI - Creative Entrepreneurship Platform",
-    description: "Discover the power of Nexus AI for your creative entrepreneurship journey.",
+    title: "Deepkore - Creative Entrepreneurship Platform",
+    description:
+      "Discover the power of Deepkore for your creative entrepreneurship journey.",
     url: "https://your-domain.com",
-    siteName: "Nexus AI",
+    siteName: "Deepkore",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Nexus AI Innovation Platform",
+        alt: "Deepkore Innovation Platform",
       },
     ],
     locale: "en_US",
@@ -35,8 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexus AI - Creative Entrepreneurship Platform",
-    description: "Discover the power of Nexus AI for your creative entrepreneurship journey.",
+    title: "Deepkore - Creative Entrepreneurship Platform",
+    description:
+      "Discover the power of Deepkore for your creative entrepreneurship journey.",
     images: ["/images/twitter-image.jpg"],
   },
   robots: {
@@ -63,11 +67,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Nexus AI',
-              description: 'AI-powered creative entrepreneurship platform',
-              url: 'https://your-domain.com',
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Deepkore",
+              description: "AI-powered creative entrepreneurship platform",
+              url: "https://your-domain.com",
             }),
           }}
         />

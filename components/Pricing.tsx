@@ -1,52 +1,52 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Pricing: React.FC = () => {
   const plans = [
     {
-      name: 'Free',
-      price: '$0.00',
-      period: 'per month',
-      credits: 'Up to 250 credits',
+      name: "Free",
+      price: "$0.00",
+      period: "per month",
+      credits: "Up to 250 credits",
       features: [
-        'Essential features',
-        'Basic AI assistance',
-        'Community support'
+        "Essential features",
+        "Basic AI assistance",
+        "Community support",
       ],
-      buttonText: 'Get Started',
-      popular: false
+      buttonText: "Get Started",
+      popular: false,
     },
     {
-      name: 'Basic',
-      price: '$24.99',
-      period: 'per month',
-      credits: '1000 credits',
+      name: "Basic",
+      price: "$24.99",
+      period: "per month",
+      credits: "1000 credits",
       features: [
-        'Essential features',
-        'Basic support options',
-        'Community resources',
-        'Advanced AI tools'
+        "Essential features",
+        "Basic support options",
+        "Community resources",
+        "Advanced AI tools",
       ],
-      buttonText: 'Start Basic',
-      popular: true
+      buttonText: "Start Basic",
+      popular: true,
     },
     {
-      name: 'Pro',
-      price: '$49.00',
-      period: 'per month',
-      credits: 'Unlimited credits',
+      name: "Pro",
+      price: "$49.00",
+      period: "per month",
+      credits: "Unlimited credits",
       features: [
-        'Full access to all features',
-        'Dedicated support',
-        'Custom resources',
-        'Priority processing',
-        'Advanced analytics'
+        "Full access to all features",
+        "Dedicated support",
+        "Custom resources",
+        "Priority processing",
+        "Advanced analytics",
       ],
-      buttonText: 'Go Pro',
-      popular: false
-    }
+      buttonText: "Go Pro",
+      popular: false,
+    },
   ];
 
   const containerVariants = {
@@ -78,8 +78,8 @@ const Pricing: React.FC = () => {
             Choose the Plan That Fits Your Needs
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Whether you&apos;re just starting out or looking to expand your capabilities,
-            our plans provide the perfect solution for your needs.
+            Whether you&apos;re just starting out or looking to expand your
+            capabilities, our plans provide the perfect solution for your needs.
           </p>
         </motion.div>
 
@@ -94,7 +94,7 @@ const Pricing: React.FC = () => {
             <motion.div
               key={index}
               className={`relative bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ${
-                plan.popular ? 'ring-2 ring-blue-500 scale-105' : ''
+                plan.popular ? "ring-2 ring-blue-500 scale-105" : ""
               }`}
               variants={itemVariants}
               whileHover={{ y: -10, scale: plan.popular ? 1.07 : 1.05 }}
@@ -108,17 +108,24 @@ const Pricing: React.FC = () => {
               )}
 
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {plan.name}
+                </h3>
                 <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 mb-1">
                   {plan.price}
                 </div>
                 <div className="text-gray-400">{plan.period}</div>
-                <div className="text-blue-300 font-semibold mt-2">{plan.credits}</div>
+                <div className="text-blue-300 font-semibold mt-2">
+                  {plan.credits}
+                </div>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-gray-300">
+                  <li
+                    key={featureIndex}
+                    className="flex items-center text-gray-300"
+                  >
                     <span className="text-green-400 mr-3">✓</span>
                     {feature}
                   </li>
@@ -128,8 +135,8 @@ const Pricing: React.FC = () => {
               <motion.button
                 className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg'
-                    : 'bg-slate-700 text-white hover:bg-slate-600'
+                    ? "bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg"
+                    : "bg-slate-700 text-white hover:bg-slate-600"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
