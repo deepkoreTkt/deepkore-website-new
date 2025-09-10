@@ -1,0 +1,23 @@
+/* Custom focus styles for accessibility */
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
