@@ -11,7 +11,7 @@ const Benefits: React.FC = () => {
     {
       title: 'Easy for Anyone',
       subtitle: 'Simplify collaboration for everyone.',
-      description: 'Nexus AI\'s intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.',
+      description: 'Nexus AI&apos;s intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.',
       icon: '👥',
       gradient: 'from-blue-500 to-green-600'
     },
@@ -25,7 +25,7 @@ const Benefits: React.FC = () => {
     {
       title: 'Smart Solutions',
       subtitle: 'AI built for smarter business decisions.',
-      description: 'Unlock innovative possibilities with Nexus AI\'s intelligent tools, designed to optimize efficiency and insight.',
+      description: 'Unlock innovative possibilities with Nexus AI&apos;s intelligent tools, designed to optimize efficiency and insight.',
       icon: '🧠',
       gradient: 'from-blue-600 to-green-500'
     }

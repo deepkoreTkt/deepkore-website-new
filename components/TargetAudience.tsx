@@ -82,7 +82,7 @@ const TargetAudience: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Empowering creative entrepreneurs, independent creators, and tech innovators with Nexus AI's cutting-edge solutions.
+            Empowering creative entrepreneurs, independent creators, and tech innovators with Nexus AI&apos;s cutting-edge solutions.
           </motion.p>
         </motion.div>
 

@@ -107,7 +107,7 @@ const About: React.FC = () => {
       setCurrentStat((prev) => (prev + 1) % stats.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [stats.length]);
 
   return (
     <section id="about" className="relative py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 overflow-hidden">
@@ -123,8 +123,8 @@ const About: React.FC = () => {
             key={i}
             className="absolute w-2 h-2 bg-blue-400/20 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
               opacity: 0
             }}
             animate={{
@@ -183,7 +183,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            We're on a mission to democratize artificial intelligence, making cutting-edge
+            We&apos;re on a mission to democratize artificial intelligence, making cutting-edge
             technology accessible to creators, businesses, and innovators worldwide.
           </motion.p>
 
@@ -376,10 +376,14 @@ const About: React.FC = () => {
                         key={index}
                         className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-xl rounded-3xl p-6 border border-slate-700/50 text-center group"
                         whileHover={{ scale: 1.05, y: -10 }}
-                        transition={{ type: "spring", stiffness: 300 }}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          opacity: { duration: 0.6, delay: index * 0.2 },
+                          y: { duration: 0.6, delay: index * 0.2 }
+                        }}
                         viewport={{ once: true }}
                       >
                         <motion.div
@@ -392,7 +396,7 @@ const About: React.FC = () => {
                             alt={member.name}
                             width={120}
                             height={120}
-                            className="rounded-full mx-auto border-4 border-gradient-to-r from-blue-500 to-green-500 shadow-lg"
+                            className="rounded-full mx-auto shadow-lg"
                           />
                           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </motion.div>
@@ -416,10 +420,14 @@ const About: React.FC = () => {
                         key={index}
                         className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50 group"
                         whileHover={{ scale: 1.05, y: -10 }}
-                        transition={{ type: "spring", stiffness: 300 }}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          opacity: { duration: 0.6, delay: index * 0.2 },
+                          y: { duration: 0.6, delay: index * 0.2 }
+                        }}
                         viewport={{ once: true }}
                       >
                         <div className="flex items-start space-x-6">
@@ -481,7 +489,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             viewport={{ once: true }}
           >
-            Be part of the AI revolution that's shaping the future
+            Be part of the AI revolution that&apos;s shaping the future
           </motion.p>
         </motion.div>
       </div>

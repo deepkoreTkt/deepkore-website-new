@@ -108,7 +108,7 @@ const Testimonials: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <blockquote className="text-gray-300 mb-6 leading-relaxed text-sm">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center">

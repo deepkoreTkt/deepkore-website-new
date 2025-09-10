@@ -65,8 +65,8 @@ const ProductShowcase: React.FC = () => {
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1080),
               opacity: 0
             }}
             animate={{
@@ -326,7 +326,7 @@ const ProductShowcase: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              Join thousands of creators already using Nexus AI's powerful tools
+              Join thousands of creators already using Nexus AI&apos;s powerful tools
             </motion.p>
           </motion.div>
         </div>

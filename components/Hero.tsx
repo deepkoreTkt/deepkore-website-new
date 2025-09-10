@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
     }, 8000);
     return () => clearInterval(interval);
-  }, []);
+  }, [backgrounds.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 overflow-hidden">

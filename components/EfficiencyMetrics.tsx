@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence, useMotionValue } from 'framer-motion';
 
 const EfficiencyMetrics: React.FC = () => {
   const [counters, setCounters] = useState({
@@ -18,9 +18,6 @@ const EfficiencyMetrics: React.FC = () => {
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
-  const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
-  const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
 
   const metrics = [
     {
@@ -65,6 +62,8 @@ const EfficiencyMetrics: React.FC = () => {
   ];
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
@@ -267,7 +266,7 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Nexus AI's measurable impact on productivity, engagement, and performance
+            Nexus AI&apos;s measurable impact on productivity, engagement, and performance
             across thousands of creative entrepreneurs worldwide.
           </motion.p>
         </motion.div>
@@ -301,9 +300,7 @@ const EfficiencyMetrics: React.FC = () => {
                 transition={{
                   type: "spring",
                   stiffness: 300,
-                  damping: 20,
-                  rotateX: { duration: 0.3 },
-                  rotateY: { duration: 0.3 }
+                  damping: 20
                 }}
                 style={{
                   transformStyle: 'preserve-3d',

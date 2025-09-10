@@ -191,7 +191,7 @@ const Team: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
             <h3 className="text-2xl font-bold mb-2">Join Our Mission</h3>
-            <p className="text-gray-400">We're always looking for talented individuals to join our team</p>
+            <p className="text-gray-400">We&apos;re always looking for talented individuals to join our team</p>
           </div>
           <motion.button
             className="mt-6 px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
