@@ -116,7 +116,7 @@ const Header: React.FC = () => {
 
             {/* Other Navigation Items */}
             <motion.a
-              href="#features"
+              href="/feature"
               className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium text-sm transition-colors duration-200 rounded-full hover:bg-gray-50"
               whileHover={{ scale: 1.02 }}
             >
