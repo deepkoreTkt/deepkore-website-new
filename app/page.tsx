@@ -18,7 +18,6 @@ export default function Home() {
     <div className="relative min-h-screen bg-white">
       <FloatingElements />
       <Header />
-      <br />
       <main>
         <section id="home">
           <Hero />
