@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import Image from "next/image";
 // Feature card data
 const features = [
   {
@@ -210,9 +210,11 @@ export default function Feature() {
                 whileHover={{ y: -5 }}
               >
                 <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-6">
-                  <img
+                  <Image
                     src={feature.image}
                     alt={feature.title}
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-contain"
                   />
                 </div>
@@ -357,9 +359,11 @@ export default function Feature() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center mb-6">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.author}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 rounded-full mr-4 object-cover"
                   />
                   <div>
@@ -370,7 +374,7 @@ export default function Feature() {
                   </div>
                 </div>
                 <blockquote className="text-gray-700 leading-relaxed italic">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
               </motion.div>
             ))}
@@ -516,11 +520,12 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Unleash Prismo's Unique Potential for You
+              Unleash Prismo&apos;s Unique Potential for You
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover Prismo's powerful and unique tools that set it apart,
-              offering unmatched efficiency, customization, and collaboration.
+              Discover Prismo&apos;s powerful and unique tools that set it
+              apart, offering unmatched efficiency, customization, and
+              collaboration.
             </p>
           </motion.div>
 
