@@ -280,10 +280,10 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Transforming Efficiency in
+            Leading Enterprise Application Platform for
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
               {" "}
-              Creative Entrepreneurship
+              Digital Transformation.
             </span>
           </motion.h2>
 
@@ -294,8 +294,10 @@ const EfficiencyMetrics: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Deepkore&apos;s measurable impact on productivity, engagement, and
-            performance across thousands of creative entrepreneurs worldwide.
+            Transform your business and boost productivity with Deepkore.
+            Effortlessly build Enterprise apps that keep pace with your
+            business&apos;s rapid growth—all without writing a single line of
+            code.
           </motion.p>
         </motion.div>
 

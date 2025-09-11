@@ -9,28 +9,44 @@ const Benefits: React.FC = () => {
 
   const benefits = [
     {
-      title: "Easy for Anyone",
-      subtitle: "Simplify collaboration for everyone.",
+      title: "Unstructured Process",
+      subtitle: "Automate Your workflows, from manual to Seamless",
       description:
-        "Deepkore&apos;s intuitive design ensures anyone, regardless of technical expertise, can harness AI tools effortlessly.",
-      icon: "👥",
+        "Transform manual processes into seamless automated workflows with Deepkore's intelligent automation tools.",
+      icon: "�",
       gradient: "from-blue-500 to-green-600",
     },
     {
-      title: "So. Fast.",
-      subtitle: "Accelerate your team's productivity",
+      title: "Lack of Functional Collaboration",
+      subtitle: "Design and Automate Workflows to Connect Department",
       description:
-        "Deepkore delivers lightning-fast results, streamlining workflows and saving valuable time on every task.",
-      icon: "⚡",
+        "Bridge departmental silos with automated workflows that enhance collaboration and efficiency across your organization.",
+      icon: "🤝",
       gradient: "from-green-500 to-blue-600",
     },
     {
-      title: "Smart Solutions",
-      subtitle: "AI built for smarter business decisions.",
+      title: "Poor Integration Between System",
+      subtitle: "Integration tools and pre-built connectors.",
       description:
-        "Unlock innovative possibilities with Deepkore&apos;s intelligent tools, designed to optimize efficiency and insight.",
-      icon: "🧠",
+        "Seamlessly connect disparate systems using our comprehensive integration tools and pre-built connectors.",
+      icon: "🔗",
       gradient: "from-blue-600 to-green-500",
+    },
+    {
+      title: "Restricted View of Critical Data",
+      subtitle: "Grant Controlled Data Access to Authorized Users",
+      description:
+        "Ensure secure and controlled access to critical data for authorized users across your organization.",
+      icon: "🔒",
+      gradient: "from-green-600 to-blue-500",
+    },
+    {
+      title: "Gaps in Process Insights & Analysis",
+      subtitle: "Centralized Analytics and Data Management Solutions.",
+      description:
+        "Fill the gaps with centralized analytics and robust data management solutions for comprehensive insights.",
+      icon: "📊",
+      gradient: "from-blue-500 to-purple-600",
     },
   ];
 
@@ -93,7 +109,7 @@ const Benefits: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Deepkore does powerful work in a really simple way
+            Smart Solutions from deepkore
           </h2>
           <p className="text-gray-400 text-lg">
             All within an enterprise-grade secure environment.

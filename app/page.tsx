@@ -8,6 +8,11 @@ import Benefits from "../components/Benefits";
 import Testimonials from "../components/Testimonials";
 import Team from "../components/Team";
 import Gallery from "../components/Gallery";
+import Stats from "../components/Stats";
+import PowerfulFeatures from "../components/PowerfulFeatures";
+import Comparison from "../components/Comparison";
+import ProductOverview from "../components/ProductOverview";
+import MarketingInsights from "../components/MarketingInsights";
 // import Pricing from '../components/Pricing';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -19,9 +24,10 @@ export default function Home() {
       <FloatingElements />
       <Header />
       <main>
-        <section id="home">
+        <section id="home ">
           <Hero />
         </section>
+        <PowerfulFeatures />
         <TargetAudience />
         <About />
         <EfficiencyMetrics />
@@ -29,10 +35,13 @@ export default function Home() {
           <Features />
         </section>
         <ProductShowcase />
+        <Stats />
         <Benefits />
-        <Testimonials />
-        <Team />
-        <Gallery />
+        <ProductOverview />
+        <MarketingInsights />
+        {/* <Testimonials /> */}
+        {/* <Team /> */}
+        {/* <Gallery /> */}
         {/* <section id="pricing">
           <Pricing />
         </section> */}

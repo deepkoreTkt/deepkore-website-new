@@ -6,25 +6,38 @@ import { motion } from "framer-motion";
 const Stats: React.FC = () => {
   const stats = [
     {
-      value: "700%",
-      label: "Performance Increase",
+      value: "01",
+      label: "Unstructured Process",
       description:
-        "Boost in task automation efficiency, optimizing workflows for all users.",
-      icon: "📈",
+        "Manual and inefficient workflows that hinder productivity and scalability.",
+      icon: "⚠️",
     },
     {
-      value: "95%",
-      label: "User Engagement",
+      value: "02",
+      label: "Restricted View of Critical Data",
       description:
-        "Growth in interactive sessions, enhancing user experience and satisfaction.",
-      icon: "👥",
+        "Limited access to important information across departments and teams.",
+      icon: "🔒",
     },
     {
-      value: "0.7s",
-      label: "Processing Speed",
+      value: "03",
+      label: "Lack of Cross Functional Collaboration",
+      description: "Siloed teams and poor communication between departments.",
+      icon: "🤝",
+    },
+    {
+      value: "04",
+      label: "Gaps in Process Insight and Analysis",
       description:
-        "Lightning-fast response times, ensuring seamless interactions with our AI systems.",
-      icon: "⚡",
+        "Lack of data-driven decision making and comprehensive analytics.",
+      icon: "📊",
+    },
+    {
+      value: "05",
+      label: "Poor Integration Between Systems",
+      description:
+        "Disconnected tools and platforms causing inefficiencies and data silos.",
+      icon: "🔗",
     },
   ];
 
@@ -44,7 +57,7 @@ const Stats: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-purple-900 to-slate-900">
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -53,16 +66,16 @@ const Stats: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Transforming Efficiency in Creative Entrepreneurship
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Key Challenges in Leading Industries
           </h2>
-          <p className="text-xl text-gray-300">
-            Deepkore&apos;s Impact at a Glance
+          <p className="text-xl text-gray-600">
+            Addressing the most common obstacles in modern enterprises
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -71,18 +84,18 @@ const Stats: React.FC = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 hover:border-purple-500 transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
               <div className="text-6xl mb-4">{stat.icon}</div>
-              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-2">
+              <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600 mb-2">
                 {stat.value}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {stat.label}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {stat.description}
               </p>
             </motion.div>

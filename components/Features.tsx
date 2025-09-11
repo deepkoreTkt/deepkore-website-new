@@ -8,37 +8,115 @@ const Features: React.FC = () => {
 
   const features = [
     {
-      title: "Generate",
-      subtitle: "Images never used.",
+      title: "Sales Processing",
+      subtitle: "Complete Sales Lifecycle",
       description:
-        "Create unique, original content with our advanced AI generation tools that produce stunning visuals from your imagination.",
+        "Streamline your entire sales process with AI-powered automation for order processing, reporting, and customer management.",
       gradient: "from-blue-600 via-cyan-500 to-green-600",
-      icon: "🎨",
+      icon: "💰",
       bgPattern:
         "radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
-      stats: { users: "10K+", projects: "50K+", satisfaction: "98%" },
+      stats: { orders: "10K+", processing: "95%", reports: "Real-time" },
       features: [
-        "AI-Powered Generation",
-        "High-Resolution Output",
-        "Style Customization",
-        "Batch Processing",
+        "Finished Product Master",
+        "Sales Order Processing",
+        "Sales Reporting",
+        "Customer Management",
+        "Order Tracking",
+        "Revenue Analytics",
       ],
     },
     {
-      title: "Enhance",
-      subtitle: "Your prompts",
+      title: "IT Service Management",
+      subtitle: "AI-Powered Workflows",
       description:
-        "Transform basic ideas into powerful, detailed prompts that unlock the full potential of AI creativity.",
+        "Boost service desk performance with AI-powered workflows, intuitive automation, and actionable analytics.",
       gradient: "from-green-600 via-emerald-500 to-blue-600",
-      icon: "✨",
+      icon: "�",
       bgPattern:
         "radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
-      stats: { users: "25K+", projects: "100K+", satisfaction: "96%" },
+      stats: { tickets: "1M+", resolution: "90%", efficiency: "75%" },
       features: [
-        "Smart Prompt Analysis",
-        "Context Enhancement",
-        "Style Optimization",
-        "Multi-language Support",
+        "AI-Powered Workflows",
+        "Intuitive Automation",
+        "Actionable Analytics",
+        "Performance Boost",
+      ],
+    },
+    {
+      title: "Asset Management",
+      subtitle: "Smart Asset Tracking",
+      description:
+        "Intelligent asset management with automated tracking, maintenance scheduling, and comprehensive reporting capabilities.",
+      gradient: "from-purple-600 via-pink-500 to-red-600",
+      icon: "🏗️",
+      bgPattern:
+        "radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)",
+      stats: { assets: "25K+", uptime: "99%", maintenance: "Auto" },
+      features: [
+        "Asset Master",
+        "Manpower Master",
+        "Maintenance Request",
+        "Maintenance Order",
+        "Maintenance Reports",
+        "Asset Tracking",
+      ],
+    },
+    {
+      title: "Analytics & Reporting",
+      subtitle: "AI-Powered Insights",
+      description:
+        "Advanced analytics with intelligent reporting, interactive dashboards, and predictive insights for data-driven decisions.",
+      gradient: "from-orange-600 via-yellow-500 to-red-600",
+      icon: "📊",
+      bgPattern:
+        "radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)",
+      stats: { reports: "500+", insights: "AI", dashboards: "50+" },
+      features: [
+        "Charts and Graphs",
+        "List Reporting",
+        "Pivot Table",
+        "Interactive Dashboards",
+        "Predictive Analytics",
+        "Custom Reports",
+      ],
+    },
+    {
+      title: "Procurement",
+      subtitle: "Smart Procurement Solutions",
+      description:
+        "AI-enhanced procurement management with intelligent vendor selection, automated ordering, and comprehensive tracking.",
+      gradient: "from-indigo-600 via-purple-500 to-pink-600",
+      icon: "🛒",
+      bgPattern:
+        "radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.1) 0%, transparent 50%)",
+      stats: { vendors: "2K+", orders: "15K+", savings: "25%" },
+      features: [
+        "Material Master",
+        "Vendor Master",
+        "Purchase Indent",
+        "Purchase Order",
+        "Procurement Reports",
+        "Supplier Analytics",
+      ],
+    },
+    {
+      title: "Manufacturing",
+      subtitle: "Production Excellence",
+      description:
+        "End-to-end manufacturing management with AI-driven production planning, quality control, and performance optimization.",
+      gradient: "from-teal-600 via-cyan-500 to-blue-600",
+      icon: "🏭",
+      bgPattern:
+        "radial-gradient(circle at 40% 60%, rgba(20, 184, 166, 0.1) 0%, transparent 50%)",
+      stats: { production: "100K+", quality: "99.5%", efficiency: "85%" },
+      features: [
+        "Finished Product Master",
+        "Production Order",
+        "Production Reports",
+        "Quality Control",
+        "Process Optimization",
+        "Inventory Management",
       ],
     },
   ];
@@ -69,7 +147,7 @@ const Features: React.FC = () => {
           >
             <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <span className="text-green-600 font-medium text-sm tracking-wider uppercase">
-                Powerful Features
+                Business Applications
               </span>
             </div>
           </motion.div>
@@ -81,12 +159,22 @@ const Features: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            AI That
+            Deepkore is evolving with
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
               {" "}
-              Works For You
+              AI at its core
             </span>
           </motion.h2>
+
+          <motion.p
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            Enabling smarter, faster, and more adaptive business applications
+          </motion.p>
         </motion.div>
 
         {/* Feature Navigation */}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const TargetAudience: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -9,25 +10,58 @@ const TargetAudience: React.FC = () => {
 
   const metrics = [
     {
-      percentage: "97%",
-      title: "CSAT",
+      percentage: "🚀",
+      title: "Accelerate Application Development",
       gradient: "from-blue-500 to-purple-500",
-      image: "/classic04.png", // Correct public path for Next.js
+      image: "/classic04.png",
       points: [
-        "Hello, happiness.",
-        "Looking for higher satisfaction scores? Solve more customer and employee issues, more quickly and easily. People love that.",
-        "See the Freshservice Benchmark Report",
+        "Launch apps in days, not months",
+        "Rapid deployment with no-code/low-code platforms",
+        "Scalable solutions that grow with your business",
       ],
     },
     {
-      percentage: "77%",
-      title: "First Contact Resolution (FCR)",
+      percentage: "👥",
+      title: "Empowered Teams",
       gradient: "from-purple-500 to-cyan-500",
       image: "/classic05.png",
       points: [
-        "Get answers. Get going.",
-        "Agentic AI gives users the freedom to find, fix, and finish their issues with a click.",
-        "See the Customer Service Benchmark Report",
+        "Let business users build without coding",
+        "Citizen development empowers non-technical users",
+        "User-friendly interfaces for everyone",
+      ],
+    },
+    {
+      percentage: "🔗",
+      title: "Seamless Integration",
+      gradient: "from-cyan-500 to-green-500",
+      image: "/classic04.png",
+      points: [
+        "Connect effortlessly across systems",
+        "API-first approach with pre-built connectors",
+        "Unified data flow and real-time synchronization",
+      ],
+    },
+    {
+      percentage: "🏭",
+      title: "Preconfigured Solutions",
+      gradient: "from-green-500 to-blue-500",
+      image: "/classic05.png",
+      points: [
+        "Across multiple industries",
+        "Industry-specific templates and best practices",
+        "Quick implementation with proven frameworks",
+      ],
+    },
+    {
+      percentage: "🤖",
+      title: "AI Intelligence Built into Every Workflows",
+      gradient: "from-blue-500 to-indigo-500",
+      image: "/classic04.png",
+      points: [
+        "Smart automation and intelligent workflows",
+        "Predictive analytics for better decision making",
+        "AI-powered insights and recommendations",
       ],
     },
   ];
@@ -39,9 +73,11 @@ const TargetAudience: React.FC = () => {
     >
       {/* Custom vibrant background image overlay */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/bg1.png"
           alt="Vibrant background"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
           style={{ pointerEvents: "none", userSelect: "none" }}
         />
@@ -71,7 +107,7 @@ const TargetAudience: React.FC = () => {
           >
             <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">
-                Built For Everyone
+                Digital Transformation
               </span>
             </div>
           </motion.div>
@@ -83,13 +119,9 @@ const TargetAudience: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Designed for{" "}
+            Drive your digital transformation forward with{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-purple-400">
-              Ease
-            </span>
-            , Built for{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400">
-              Value
+              deepkore
             </span>
           </motion.h2>
 
@@ -100,9 +132,8 @@ const TargetAudience: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Deepkore delivers enterprise-grade AI performance without the
-            complexity. Experience seamless integration, unmatched reliability,
-            and transformative results.
+            Deepkore lets you transform ideas into powerful Enterprise
+            applications that adapt to your business needs.
           </motion.p>
         </motion.div>
 
@@ -170,8 +201,10 @@ const TargetAudience: React.FC = () => {
             </div>
             {/* Right Section: Image */}
             <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-              <img
+              <Image
                 src={metrics[currentIndex].image}
+                width={400}
+                height={400}
                 alt={metrics[currentIndex].title + " illustration"}
                 className="max-h-64 rounded-xl shadow-md object-contain"
               />

@@ -39,10 +39,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-100 via-white to-green-200 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-300 via-white to-green-500 overflow-hidden">
       {/* Enhanced Background */}
       <motion.div className="absolute inset-0" style={{ y }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-transparent to-green-100/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-green-500/40"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-100/20 to-blue-100/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-100/20 to-orange-100/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </motion.div>
@@ -54,7 +54,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center space-y-12"
+            className="text-center space-y-8"
           >
             {/* Main Heading - WorkFast.ai Style */}
             <motion.div
@@ -69,9 +69,17 @@ const Hero = () => {
                 Building the Future of
               </h1>
               <h1
-                className={`${inter.className} text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
+                className={`${inter.className} text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
               >
-                AI Driven Business
+                <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
+                  AI Driven Business
+                </span>
+                {/* <span className="bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent ml-2">
+                  of
+                </span>
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent ml-2">
+                  AI
+                </span> */}
               </h1>
             </motion.div>
 
@@ -95,33 +103,13 @@ const Hero = () => {
             >
               <div className="flex flex-col items-center gap-4">
                 <motion.button
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-[#8112db] hover:bg-[#8112db]/90 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Get Started
                 </motion.button>
-
-                <p className="text-slate-500 font-medium text-center">
-                  Free 14 days free trial
-                </p>
               </div>
-
-              {/* Trust Indicator */}
-              <motion.div
-                className="flex justify-center items-center gap-2 py-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
-                <div className="flex items-center space-x-1">
-                  <span className="text-yellow-400 text-lg">⭐</span>
-                  <span className="text-slate-600 text-sm font-medium">
-                    Trusted by 1,000+ Teams. Loved by 4,000+ Users.
-                  </span>
-                  <span className="text-yellow-400 text-lg">⭐</span>
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Enhanced Feature Icons - WorkFast.ai Style */}
@@ -132,67 +120,52 @@ const Hero = () => {
               transition={{ duration: 1, delay: 1.0 }}
             >
               {/* Section Header */}
-              <motion.div
-                className="text-center mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.1 }}
-              >
-                <h3
-                  className={`${inter.className} text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-4`}
-                >
-                  Set up your Workspace
-                </h3>
-                <p className="text-slate-600 text-lg md:text-xl">
-                  Start with what you need, customize as you go.
-                </p>
-              </motion.div>
 
               {/* Icons Grid */}
-              <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-6 md:gap-8">
+              {/* <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-6 md:gap-8">
                 {[
                   {
-                    icon: "📊", // Dashboards
+                    icon: "/admin.svg", // Dashboards
                     label: "Dashboards",
                     color: "from-blue-500 to-blue-600",
                   },
                   {
-                    icon: "�️", // Dataform
+                    icon: "/dataForm.svg", // Dataform
                     label: "Dataform",
                     color: "from-green-500 to-green-600",
                   },
                   {
-                    icon: "🔄", // Process
+                    icon: "/process.svg", // Process
                     label: "Process",
                     color: "from-purple-500 to-purple-600",
                   },
                   {
-                    icon: "�", // Analytics
+                    icon: "/analytics.svg", // Analytics
                     label: "Analytics",
                     color: "from-orange-500 to-orange-600",
                   },
                   {
-                    icon: "📈", // Report
+                    icon: "/appwithhand.svg", // Report
                     label: "Report",
                     color: "from-indigo-500 to-indigo-600",
                   },
                   {
-                    icon: "🔗", // Workflow
+                    icon: "/workflow.svg", // Workflow
                     label: "Workflow",
                     color: "from-pink-500 to-pink-600",
                   },
                   {
-                    icon: "🔌", // Integration
+                    icon: "/integration.svg", // Integration
                     label: "Integration",
                     color: "from-teal-500 to-teal-600",
                   },
                   {
-                    icon: "💬", // Chat
+                    icon: "/mail.svg", // Chat
                     label: "Chat",
                     color: "from-cyan-500 to-cyan-600",
                   },
                   {
-                    icon: "⚙️", // Settings
+                    icon: "/Setting.svg", // Settings
                     label: "Settings",
                     color: "from-gray-500 to-gray-600",
                   },
@@ -208,18 +181,22 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.2 + index * 0.05 }}
                   >
-                    {/* Icon Container - WorkFast Style */}
+                  
                     <motion.div
                       className={`w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-2xl ${feature.color} flex items-center justify-center transition-all duration-300 border border-slate-200/50`}
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <span className="text-2xl md:text-3xl text-slate-600">
-                        {feature.icon}
-                      </span>
+                      <Image
+                        src={feature.icon}
+                        alt={feature.label}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12"
+                      />
                     </motion.div>
 
-                    {/* Label */}
+                    {/* Label *
                     <div className="text-center">
                       <h4 className="text-xs md:text-sm font-semibold text-slate-700 leading-tight">
                         {feature.label}
@@ -227,26 +204,11 @@ const Hero = () => {
                     </div>
                   </motion.div>
                 ))}
-              </div>
-
-              {/* Bottom Description */}
-              <motion.div
-                className="text-center mt-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.8 }}
-              >
-                <p className="text-slate-600 text-sm md:text-base">
-                  Choose your preferred tools and workflows. Everything syncs
-                  seamlessly.
-                </p>
-              </motion.div>
+              </div> */}
             </motion.div>
-
-            {/* Enhanced Bottom Section */}
           </motion.div>
 
-          {/* Dashboard Section - WorkFast.ai Style */}
+          {/* New Dashboard Section - Unique UI */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -302,25 +264,65 @@ const Hero = () => {
                   <div className="grid grid-cols-3 gap-3">
                     {[
                       {
-                        icon: "📊",
+                        icon: "/admin.svg", // Dashboards
                         label: "Dashboards",
                         color: "bg-orange-100",
                       },
-                      { icon: "📋", label: "Kanban", color: "bg-red-100" },
-                      { icon: "✅", label: "Tasks", color: "bg-blue-100" },
-                      { icon: "💬", label: "Channel", color: "bg-green-100" },
-                      { icon: "📈", label: "Report", color: "bg-purple-100" },
-                      { icon: "📄", label: "Docs", color: "bg-blue-100" },
-                      { icon: "⏰", label: "Check In", color: "bg-teal-100" },
-                      { icon: "💬", label: "Chat", color: "bg-indigo-100" },
-                      { icon: "⚙️", label: "Settings", color: "bg-gray-100" },
+                      {
+                        icon: "/dataForm.svg", // Dataform
+                        label: "Dataform",
+                        color: "bg-green-100",
+                      },
+                      {
+                        icon: "/process.svg", // Process
+                        label: "Process",
+                        color: "bg-purple-100",
+                      },
+                      {
+                        icon: "/analytics.svg", // Analytics
+                        label: "Analytics",
+                        color: "bg-orange-100",
+                      },
+                      {
+                        icon: "/appwithhand.svg", // Report
+                        label: "Report",
+                        color: "bg-indigo-100",
+                      },
+                      {
+                        icon: "/workflow.svg", // Workflow
+                        label: "Workflow",
+                        color: "bg-pink-100",
+                      },
+                      {
+                        icon: "/integration.svg", // Integration
+                        label: "Integration",
+                        color: "bg-teal-100",
+                      },
+                      {
+                        icon: "/mail.svg", // Chat
+                        label: "Chat",
+                        color: "bg-cyan-100",
+                      },
+                      {
+                        icon: "/Setting.svg", // Settings
+                        label: "Settings",
+                        color: "bg-gray-100",
+                      },
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
                         className={`${item.color} rounded-lg p-3 flex flex-col items-center space-y-1 hover:scale-105 transition-transform cursor-pointer`}
                         whileHover={{ y: -2 }}
+                        onHoverStart={() => setHoveredFeature(item.label)}
+                        onHoverEnd={() => setHoveredFeature(null)}
                       >
-                        <span className="text-lg">{item.icon}</span>
+                        <Image
+                          src={item.icon}
+                          alt={item.label}
+                          width={20}
+                          height={20}
+                          className="w-5 h-5"
+                        />
                         <span className="text-xs font-medium text-slate-700">
                           {item.label}
                         </span>

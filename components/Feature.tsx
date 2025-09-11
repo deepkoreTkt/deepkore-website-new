@@ -5,27 +5,28 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
+import Comparison from "./Comparison";
 // Feature card data
 const features = [
   {
     title: "Data Form",
     description: "Visualize tasks and deadlines at a glance.",
-    image: "/bg.png",
+    image: "/dataForm.svg",
   },
   {
     title: "Process",
     description: "Manage projects with priorities and due dates.",
-    image: "/classic02.png",
+    image: "/process.svg",
   },
   {
     title: "Integration",
     description: "Connect through task comments and updates.",
-    image: "/globe.svg",
+    image: "/integration.svg",
   },
   {
     title: "Analytics",
     description: "Stay updated with alerts for key changes.",
-    image: "/window.svg",
+    image: "/analytics.svg",
   },
 ];
 
@@ -66,28 +67,44 @@ const stats = [
 
 const testimonials = [
   {
+    metric: "10X",
+    metricLabel: "Revenue Boost",
     quote:
       "Prismo has completely transformed how our team manages tasks. The platform has made our workflow seamless and boosted overall productivity.",
     author: "John Matthews",
     role: "Project Manager",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      "https://framerusercontent.com/images/OvvbpyjbKuCFO8zv5VOKScAJcA.png?width=184&height=185",
   },
   {
+    metric: "2X",
+    metricLabel: "Increase Efficiency",
     quote:
       "With Prismo, we've streamlined our project management, reducing time spent on administrative tasks. It's user-friendly, and our team is now more efficient than ever.",
     author: "Sarah Collins",
     role: "Operations Lead",
     avatar:
-      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      "https://framerusercontent.com/images/lGettqdhcKnvyoTl1qUpnGjew.png?width=184&height=185",
   },
   {
+    metric: "5X",
+    metricLabel: "Team Growth",
     quote:
       "We saw a massive improvement in our team's collaboration and communication. Prismo helped us organize tasks efficiently, leading to better outcomes across all projects.",
     author: "David Chen",
     role: "Team Lead",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "https://framerusercontent.com/images/1vLbGc8R4d4ZPbIcZw13RbjWkMw.png?width=184&height=185",
+  },
+  {
+    metric: "3X",
+    metricLabel: "Increased Productivity",
+    quote:
+      "We've increased our efficiency by at least 40% since implementing Prismo. It's helped our team stay aligned and deliver exceptional results.",
+    author: "Olivia Turner",
+    role: "Operations Director",
+    avatar:
+      "https://framerusercontent.com/images/1vLbGc8R4d4ZPbIcZw13RbjWkMw.png?width=184&height=185",
   },
 ];
 
@@ -181,6 +198,26 @@ const faqs = [
     answer:
       "Yes, Prismo is designed to scale with your business, making it perfect for small teams, startups, and large enterprises alike.",
   },
+  {
+    question: "How can I track team progress?",
+    answer: "",
+  },
+  {
+    question: "Can I manage multiple projects at once?",
+    answer: "",
+  },
+  {
+    question: "Does Prismo offer task automation?",
+    answer: "",
+  },
+  {
+    question: "Is there a mobile version of Prismo?",
+    answer: "",
+  },
+  {
+    question: "How secure is Prismo?",
+    answer: "",
+  },
 ];
 
 export default function Feature() {
@@ -188,10 +225,10 @@ export default function Feature() {
     <div className="min-h-screen bg-white">
       <Header />
       {/* Hero Features Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="py-40 bg-gradient-to-br from-[#00A551]/10 to-[#2791D0]/10">
         <div className="max-w-7xl mx-auto px-4">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+            className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -209,7 +246,7 @@ export default function Feature() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-6">
+                <div className="w-24 h-24 bg-gradient-to-br from-[#00A551]/20 to-[#2791D0]/20 rounded-full flex items-center justify-center mb-6">
                   <Image
                     src={feature.image}
                     alt={feature.title}
@@ -247,10 +284,9 @@ export default function Feature() {
               Automate complex workflows without code
             </h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Prismo lets you design and automate processes with a simple
-              drag-and-drop interface. Integrates seamlessly with your data and
-              scales with your business. Streamline operations and reduce manual
-              work.
+              lets you design and automate processes with a simple drag-and-drop
+              interface. Integrates seamlessly with your data and scales with
+              your business. Streamline operations and reduce manual work.
             </p>
           </motion.div>
 
@@ -258,12 +294,12 @@ export default function Feature() {
             {powerfulFeatures.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-[#00A551]/5 to-[#C5FF28]/5 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-[#00A551]/20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, borderColor: "#00A551" }}
               >
                 <div className="text-6xl mb-6">{feature.icon}</div>
                 <h4 className="text-2xl font-bold mb-4 text-gray-800">
@@ -312,7 +348,7 @@ export default function Feature() {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#00A551] to-[#2791D0] text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
@@ -327,7 +363,7 @@ export default function Feature() {
                 <div className="text-5xl md:text-6xl font-bold mb-4">
                   {stat.number}
                 </div>
-                <div className="text-xl text-blue-100">{stat.label}</div>
+                <div className="text-xl text-[#C5FF28]">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -335,116 +371,7 @@ export default function Feature() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            What Our Users Are Saying About Us
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="flex items-center mb-6">
-                  <Image
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="font-bold text-gray-800">
-                      {testimonial.author}
-                    </h4>
-                    <p className="text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-                <blockquote className="text-gray-700 leading-relaxed italic">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            What Sets Prismo Apart
-          </motion.h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-red-600 mb-8">
-                OTHER PLATFORMS
-              </h3>
-              {comparisonFeatures.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-red-50 rounded-lg p-4 border-l-4 border-red-500"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-gray-700">{feature.other}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="flex justify-center items-center">
-              <motion.div
-                className="text-4xl font-bold text-gray-400"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                VS
-              </motion.div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-green-600 mb-8">PRISMO</h3>
-              {comparisonFeatures.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  className="bg-green-50 rounded-lg p-4 border-l-4 border-green-500"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-gray-700">{feature.prismo}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Comparison />
       {/* Product Overview Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -456,7 +383,7 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Leading Enterprise Application Platform for Digital Transformation
+              Leading Enterprise Application Platform forDigital Transformation
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Discover features designed to simplify workflows, boost
@@ -499,11 +426,13 @@ export default function Feature() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 shadow-2xl">
-                <div className="aspect-video bg-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-6xl">📊</span>
-                </div>
-              </div>
+              <Image
+                src="https://framerusercontent.com/images/ueZGlTIxd2iQuiPVws1AiA.png?width=900&height=664"
+                alt="Dashboard"
+                width={900}
+                height={664}
+                className="rounded-2xl shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>
@@ -520,7 +449,7 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Unleash Prismo&apos;s Unique Potential for You
+              Unleash Prismo&apos;sUnique Potential for you
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover Prismo&apos;s powerful and unique tools that set it
@@ -533,12 +462,12 @@ export default function Feature() {
             {uniqueFeatures.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-[#00A551]/20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, borderColor: "#00A551" }}
               >
                 <div className="text-5xl mb-6">{feature.icon}</div>
                 <h4 className="text-2xl font-bold mb-4 text-gray-800">
@@ -550,11 +479,40 @@ export default function Feature() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            className="bg-white rounded-2xl p-8 shadow-xl mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center mb-6">
+              <Image
+                src="https://framerusercontent.com/images/6LqMtTrytJZ09tRazNHOI13tQQ.svg?width=184&height=185"
+                alt="Rachel Lewis"
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full mr-4 object-cover"
+              />
+              <div>
+                <h4 className="font-bold text-gray-800">Rachel Lewis</h4>
+                <p className="text-gray-600">
+                  Operations Manager, Velocity Tech
+                </p>
+              </div>
+            </div>
+            <blockquote className="text-gray-700 leading-relaxed italic">
+              &ldquo;Prismo has transformed how our team collaborates, tracks
+              progress, and shares documents. It made our works more
+              efficient&rdquo;
+            </blockquote>
+          </motion.div>
         </div>
       </section>
 
       {/* Industry Insights Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-20 bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -584,8 +542,14 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-3xl mb-4">📊</div>
-                  <h4 className="font-bold text-gray-800">Data Form</h4>
+                  <Image
+                    src="/dataForm.svg"
+                    alt="Data Form"
+                    width={48}
+                    height={48}
+                    className="mx-auto mb-4"
+                  />
+                  <h4 className="font-bold text-gray-800">Datafrom</h4>
                 </motion.div>
 
                 <motion.div
@@ -595,7 +559,13 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-3xl mb-4">⚙️</div>
+                  <Image
+                    src="/process.svg"
+                    alt="Process"
+                    width={48}
+                    height={48}
+                    className="mx-auto mb-4"
+                  />
                   <h4 className="font-bold text-gray-800">Process</h4>
                 </motion.div>
 
@@ -606,8 +576,14 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-3xl mb-4">🔗</div>
-                  <h4 className="font-bold text-gray-800">Integration</h4>
+                  <Image
+                    src="/integration.svg"
+                    alt="Integration"
+                    width={48}
+                    height={48}
+                    className="mx-auto mb-4"
+                  />
+                  <h4 className="font-bold text-gray-800">Intergration</h4>
                 </motion.div>
 
                 <motion.div
@@ -617,13 +593,19 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-3xl mb-4">📈</div>
+                  <Image
+                    src="/analytics.svg"
+                    alt="Analytics"
+                    width={48}
+                    height={48}
+                    className="mx-auto mb-4"
+                  />
                   <h4 className="font-bold text-gray-800">Analytics</h4>
                 </motion.div>
               </div>
 
               <motion.div
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8"
+                className="bg-gradient-to-r from-[#2791D0] to-[#00A551] text-white rounded-2xl p-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -635,7 +617,12 @@ export default function Feature() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-lg">70% Increase in Engagement</span>
-                    <span className="text-2xl">📈</span>
+                    <Image
+                      src="/analytics.svg"
+                      alt="Analytics"
+                      width={32}
+                      height={32}
+                    />
                   </div>
                   <p className="text-blue-100">
                     Marketing strategies utilizing data-driven insights lead to
@@ -680,7 +667,13 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl mb-2">🚀</div>
+                  <Image
+                    src="/workflow.svg"
+                    alt="Agile Workflow"
+                    width={32}
+                    height={32}
+                    className="mx-auto mb-2"
+                  />
                   <h5 className="font-semibold text-gray-800">
                     Agile Workflow
                   </h5>
@@ -694,7 +687,13 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl mb-2">💬</div>
+                  <Image
+                    src="/mail.svg"
+                    alt="Communication"
+                    width={32}
+                    height={32}
+                    className="mx-auto mb-2"
+                  />
                   <h5 className="font-semibold text-gray-800">Communication</h5>
                 </motion.div>
 
@@ -706,7 +705,13 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl mb-2">📄</div>
+                  <Image
+                    src="/file.svg"
+                    alt="Document Sharing"
+                    width={32}
+                    height={32}
+                    className="mx-auto mb-2"
+                  />
                   <h5 className="font-semibold text-gray-800">
                     Document Sharing
                   </h5>
@@ -720,7 +725,13 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-2xl mb-2">🔒</div>
+                  <Image
+                    src="/Setting.svg"
+                    alt="Security Measures"
+                    width={32}
+                    height={32}
+                    className="mx-auto mb-2"
+                  />
                   <h5 className="font-semibold text-gray-800">
                     Security Measures
                   </h5>
@@ -757,15 +768,32 @@ export default function Feature() {
                 <h3 className="text-xl font-bold mb-4 text-gray-800">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                {faq.answer && (
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                )}
               </motion.div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              Have Questions? We&apos;re Here to Help!
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Reach out to our support team for any queries or assistance.
+            </p>
+            <a
+              href="https://same11.framer.website/"
+              className="bg-[#00A551] text-white px-6 py-3 rounded-full font-bold hover:bg-[#00A551]/90 transition-all duration-300"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6"
@@ -777,7 +805,7 @@ export default function Feature() {
             Start your 7-day free trial
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-blue-100"
+            className="text-xl mb-8 text-[#C5FF28]/80"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -787,7 +815,7 @@ export default function Feature() {
             without any commitment!
           </motion.p>
           <motion.button
-            className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#C5FF28] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -797,6 +825,15 @@ export default function Feature() {
           >
             Get Started
           </motion.button>
+
+          <div className="mt-8 text-center">
+            <div className="flex items-center justify-center space-x-2">
+              <span className="text-2xl">⭐</span>
+              <span className="text-lg text-[#C5FF28]/80">
+                4.9 rating Based on 300k Users
+              </span>
+            </div>
+          </div>
         </div>
       </section>
       <Footer />

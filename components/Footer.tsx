@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       ),
-      href: "#",
+      href: "https://www.linkedin.com/company/deepkore-technologies",
       color: "hover:text-blue-500",
     },
     {
@@ -76,12 +77,19 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="mb-6">
-                <h3 className="text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-500">
-                  Deepkore
-                </h3>
+                <div className="flex items-center mb-3">
+                  <Image
+                    src="/darklogo.png"
+                    alt="Deepkore Logo"
+                    width={210}
+                    height={140}
+                    className="relative"
+                  />
+                </div>
                 <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                  Empowering creative entrepreneurs with cutting-edge AI tools
-                  to transform ideas into reality.
+                  Deepkore lets you transform ideas into powerful Enterprise
+                  applications that adapt to your business needs. One platform.
+                  No coding. Completely hassle-free.
                 </p>
               </div>
 
@@ -119,8 +127,8 @@ const Footer: React.FC = () => {
               <h4 className="text-black font-semibold mb-6 text-lg">Product</h4>
               <ul className="space-y-4">
                 {[
-                  { name: "Features", href: "#features" },
-                  { name: "Pricing", href: "#pricing" },
+                  { name: "Features", href: "/feature" },
+                  { name: "Pricing", href: "/pricing" },
                   { name: "API", href: "#" },
                   { name: "Documentation", href: "#" },
                 ].map((link) => (
@@ -147,7 +155,7 @@ const Footer: React.FC = () => {
               <h4 className="text-black font-semibold mb-6 text-lg">Company</h4>
               <ul className="space-y-4">
                 {[
-                  { name: "About", href: "#" },
+                  { name: "About", href: "/aboutus" },
                   { name: "Blog", href: "#" },
                   { name: "Careers", href: "#" },
                   { name: "Press", href: "#" },
@@ -176,7 +184,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-4">
                 {[
                   { name: "Help Center", href: "#" },
-                  { name: "Contact Us", href: "#contact" },
+                  { name: "Contact Us", href: "/contact" },
                   { name: "Status", href: "#" },
                   { name: "Privacy", href: "#" },
                 ].map((link) => (
@@ -249,7 +257,7 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                © 2025 Deepkore. All rights reserved.
+                © 2025 Deepkore Technologies. All rights reserved.
               </motion.div>
 
               <motion.div

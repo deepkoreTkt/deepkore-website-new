@@ -10,60 +10,64 @@ const ProductShowcase: React.FC = () => {
 
   const demos = [
     {
-      title: "AI Image Generation",
+      title: "Dataform",
       description:
-        "Create stunning visuals from text descriptions with advanced neural networks",
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: ["High Resolution", "Style Control", "Batch Processing"],
+        "Our platform's Data Form feature allows you to create custom forms effortlessly without coding. With a drag-and-drop interface, it streamlines data collection, validation, and integration into your applications.",
+      image: "/classic02.png",
+      features: ["Drag & Drop", "No Coding", "Data Validation"],
     },
     {
-      title: "Prompt Enhancement",
+      title: "Process Automation",
       description:
-        "Transform simple ideas into detailed AI prompts with intelligent analysis",
-      image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      features: ["Smart Analysis", "Context Addition", "Optimization"],
+        "Automate complex workflows without code. Our platform's Process feature lets you design and automate processes with a simple drag-and-drop interface. Integrates seamlessly with your data and scales with your business.",
+      image: "/classic04.png",
+      features: ["Workflow Automation", "Drag & Drop", "Seamless Integration"],
     },
     {
-      title: "Creative Workflows",
+      title: "Custom Applications",
       description:
-        "Streamline your creative process with AI assistance and team collaboration",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "Our platform's App feature allows you to create custom applications tailored to your business needs without any coding. With an intuitive interface and pre-built components, you can design, deploy, and manage apps quickly.",
+      image: "/classic05.png",
+      features: ["No Coding", "Pre-built Components", "Quick Deployment"],
+    },
+    {
+      title: "Analytics & Insights",
+      description:
+        "Our platform's Analytics feature empowers you to turn data into actionable insights effortlessly. With intuitive dashboards and customizable reports, you can visualize key metrics and track performance in real time.",
+      image: "/Main.png",
       features: [
-        "Workflow Automation",
-        "Team Collaboration",
-        "Version Control",
+        "Real-time Dashboards",
+        "Custom Reports",
+        "Data Visualization",
       ],
-    },
-    {
-      title: "Neural Vision Pro",
-      description:
-        "Advanced image processing with cutting-edge computer vision technology",
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      features: ["Computer Vision", "Object Detection", "Image Analysis"],
     },
   ];
 
   const features = [
     {
-      icon: "🚀",
-      title: "Lightning Fast",
-      description: "Generate images in seconds",
+      icon: "/dataForm.svg",
+      title: "Dataform",
+      description:
+        "Create custom forms effortlessly without coding. Drag-and-drop interface for streamlined data collection.",
     },
     {
-      icon: "🎨",
-      title: "Creative Control",
-      description: "Full customization options",
+      icon: "/process.svg",
+      title: "Process",
+      description:
+        "Automate complex workflows without code. Design and automate processes with drag-and-drop interface.",
     },
     {
-      icon: "🧠",
-      title: "AI-Powered",
-      description: "Advanced neural networks",
+      icon: "/appwithhand.svg",
+      title: "App",
+      description:
+        "Create custom applications without coding. Intuitive interface with pre-built components.",
     },
-    { icon: "⚡", title: "High Quality", description: "4K resolution output" },
+    {
+      icon: "/analytics.svg",
+      title: "Analytics",
+      description:
+        "Turn data into actionable insights effortlessly. Visualize key metrics and track performance.",
+    },
   ];
 
   useEffect(() => {
@@ -128,7 +132,7 @@ const ProductShowcase: React.FC = () => {
           >
             <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">
-                Deepkore Technology
+                Enterprise Application Platform
               </span>
             </div>
           </motion.div>
@@ -140,10 +144,10 @@ const ProductShowcase: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            Deepkore Vision
+            Leading Enterprise Application
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
               {" "}
-              Pro
+              Platform
             </span>
           </motion.h2>
 
@@ -154,9 +158,10 @@ const ProductShowcase: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Unlock the future of creativity with Deepkore Vision Pro. Featuring
-            cutting-edge enhancements and versatile options like the powerful
-            Pro variant
+            Transform your business and boost productivity with Deepkore.
+            Effortlessly build Enterprise apps that keep pace with your
+            business&apos;s rapid growth—all without writing a single line of
+            code.
           </motion.p>
         </motion.div>
 
@@ -313,7 +318,7 @@ const ProductShowcase: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <motion.div
-                    className="text-4xl mb-4"
+                    className="w-12 h-12 mb-4 flex items-center justify-center bg-white rounded-xl"
                     animate={{
                       rotate: [0, 10, -10, 0],
                     }}
@@ -324,7 +329,13 @@ const ProductShowcase: React.FC = () => {
                       ease: "easeInOut",
                     }}
                   >
-                    {feature.icon}
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8"
+                    />
                   </motion.div>
                   <h4 className="text-lg font-bold text-white mb-2">
                     {feature.title}
@@ -345,13 +356,15 @@ const ProductShowcase: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Experience Deepkore Vision Pro
-            </motion.button>
+            <a href="/getstarted">
+              <motion.button
+                className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Schedule a Demo
+              </motion.button>
+            </a>
 
             <motion.p
               className="text-gray-400 mt-4 text-sm"
@@ -360,8 +373,9 @@ const ProductShowcase: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              Join thousands of creators already using Deepkore&apos;s powerful
-              tools
+              Deepkore lets you transform ideas into powerful Enterprise
+              applications that adapt to your business needs. One platform. No
+              coding. Completely hassle-free.
             </motion.p>
           </motion.div>
         </div>

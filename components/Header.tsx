@@ -21,14 +21,13 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { href: "#pricing", label: "Pricing" },
-    { href: "#contactus", label: "Contact Us" },
-    { href: "#aboutus", label: "About Us" },
-    { href: "#login", label: "Login" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/contact", label: "Contact Us" },
+    { href: "/aboutus", label: "About Us" },
   ];
 
   const userGuideItems = [
-    { href: "#getting-started", label: "Getting Started" },
+    { href: "/getstarted", label: "Getting Started" },
     { href: "#tutorials", label: "Tutorials" },
     { href: "#api-docs", label: "API Documentation" },
     { href: "#faq", label: "FAQ" },
@@ -45,8 +44,9 @@ const Header: React.FC = () => {
       <div className="bg-white/90 backdrop-blur-xl border border-gray-200/50 rounded-full shadow-lg px-6 py-3 relative">
         <div className="flex items-center justify-between min-w-[320px] lg:min-w-[800px]">
           {/* Logo Section */}
-          <motion.div
-            className="flex items-center"
+          <motion.a
+            href="/"
+            className="flex items-center cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
               height={35}
               className="relative"
             />
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -141,8 +141,8 @@ const Header: React.FC = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center">
             <motion.a
-              href="#contact"
-              className="inline-flex items-center px-5 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 rounded-full transition-colors duration-200 shadow-sm hover:shadow-md"
+              href="/getstarted"
+              className="inline-flex items-center px-5 py-2 text-sm font-medium text-white bg-[#8112db] hover:bg-[#8112db]/90 rounded-full transition-colors duration-200 shadow-sm hover:shadow-md"
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
@@ -251,7 +251,7 @@ const Header: React.FC = () => {
 
                 <motion.a
                   href="#contact"
-                  className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-black hover:bg-gray-800 rounded-full transition-colors duration-200"
+                  className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-[#8112db] hover:bg-[#8112db]/90 rounded-full transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
