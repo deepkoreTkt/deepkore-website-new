@@ -1,3 +1,4 @@
+"use client";
 import Hero from "../components/Hero";
 import TargetAudience from "../components/TargetAudience";
 import About from "../components/About";
@@ -17,16 +18,16 @@ import MarketingInsights from "../components/MarketingInsights";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FloatingElements from "../components/FloatingElements";
+import IconMenuMarquee from "../components/IconMenuMarquee";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen bg-[#f5f7f7]">
       <FloatingElements />
       <Header />
       <main>
-        <section id="home ">
-          <Hero />
-        </section>
+        <Hero />
+        {/* <IconMenuMarquee /> */}
         <PowerfulFeatures />
         <TargetAudience />
         <About />

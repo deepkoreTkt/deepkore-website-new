@@ -49,13 +49,15 @@ const powerfulFeatures = [
 ];
 
 const problems = [
-  "missed deadlines",
-  "disorganized workflows",
-  "unnecessary complexity",
-  "slow progress",
-  "wasted time",
-  "lack of collaboration",
-  "task overload",
+  { title: "missed deadlines", icon: "⏰" },
+  { title: "disorganized workflows", icon: "🔄" },
+  { title: "unnecessary complexity", icon: "🌀" },
+  { title: "slow progress", icon: "🐌" },
+  { title: "wasted time", icon: "⏳" },
+  { title: "lack of collaboration", icon: "👥" },
+  { title: "task overload", icon: "📚" },
+  { title: "poor data visibility", icon: "🔍" },
+  { title: "inefficient communication", icon: "💬" },
 ];
 
 const stats = [
@@ -338,9 +340,12 @@ export default function Feature() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
               >
-                <h3 className="text-xl font-semibold text-red-600">
-                  {problem}
-                </h3>
+                <div className="flex items-center space-x-3">
+                  <div className="text-2xl">{problem.icon}</div>
+                  <h3 className="text-xl font-semibold text-red-600">
+                    {problem.title}
+                  </h3>
+                </div>
               </motion.div>
             ))}
           </div>

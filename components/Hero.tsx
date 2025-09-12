@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-300 via-white to-green-500 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-300/0% via-red-200/20% via-white/60% to-green-500/100% overflow-hidden">
       {/* Enhanced Background */}
       <motion.div className="absolute inset-0" style={{ y }}>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-green-500/40"></div>
@@ -48,28 +48,28 @@ const Hero = () => {
       </motion.div>
 
       <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24 relative z-10">
-        <div className="flex flex-col items-center gap-20 lg:gap-24 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Enhanced Text Content */}
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center space-y-8"
+            className="text-center space-y-4"
           >
             {/* Main Heading - WorkFast.ai Style */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="space-y-6"
+              className="space-y-2"
             >
               <h1
-                className={`${inter.className} text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
+                className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
               >
                 Building the Future of
               </h1>
               <h1
-                className={`${inter.className} text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
+                className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
               >
                 <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                   AI Driven Business
@@ -85,126 +85,31 @@ const Hero = () => {
 
             {/* Subheading - Exact Match */}
             <motion.p
-              className={`${inter.className} text-lg md:text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium`}
+              className={`${inter.className} text-base md:text-lg lg:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
               One powerful AI workspace to manage Projects, Tasks, Chat, Docs,
-              Report Dashboards, and more — all in one place.
+              <span> Report Dashboards, and more — all in one place.</span>
             </motion.p>
 
             {/* CTA Section - WorkFast.ai Style */}
             <motion.div
-              className="space-y-4"
+              className="space-y-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-2">
                 <motion.button
-                  className="bg-[#8112db] hover:bg-[#8112db]/90 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Get Started
                 </motion.button>
               </div>
-            </motion.div>
-
-            {/* Enhanced Feature Icons - WorkFast.ai Style */}
-            <motion.div
-              className="w-full max-w-5xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.0 }}
-            >
-              {/* Section Header */}
-
-              {/* Icons Grid */}
-              {/* <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-6 md:gap-8">
-                {[
-                  {
-                    icon: "/admin.svg", // Dashboards
-                    label: "Dashboards",
-                    color: "from-blue-500 to-blue-600",
-                  },
-                  {
-                    icon: "/dataForm.svg", // Dataform
-                    label: "Dataform",
-                    color: "from-green-500 to-green-600",
-                  },
-                  {
-                    icon: "/process.svg", // Process
-                    label: "Process",
-                    color: "from-purple-500 to-purple-600",
-                  },
-                  {
-                    icon: "/analytics.svg", // Analytics
-                    label: "Analytics",
-                    color: "from-orange-500 to-orange-600",
-                  },
-                  {
-                    icon: "/appwithhand.svg", // Report
-                    label: "Report",
-                    color: "from-indigo-500 to-indigo-600",
-                  },
-                  {
-                    icon: "/workflow.svg", // Workflow
-                    label: "Workflow",
-                    color: "from-pink-500 to-pink-600",
-                  },
-                  {
-                    icon: "/integration.svg", // Integration
-                    label: "Integration",
-                    color: "from-teal-500 to-teal-600",
-                  },
-                  {
-                    icon: "/mail.svg", // Chat
-                    label: "Chat",
-                    color: "from-cyan-500 to-cyan-600",
-                  },
-                  {
-                    icon: "/Setting.svg", // Settings
-                    label: "Settings",
-                    color: "from-gray-500 to-gray-600",
-                  },
-                ].map((feature, index) => (
-                  <motion.div
-                    key={feature.label}
-                    className="group flex flex-col items-center space-y-3 p-4 rounded-2xl hover:bg-white/80 hover:shadow-md transition-all duration-300 cursor-pointer"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    onHoverStart={() => setHoveredFeature(feature.label)}
-                    onHoverEnd={() => setHoveredFeature(null)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1.2 + index * 0.05 }}
-                  >
-                  
-                    <motion.div
-                      className={`w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-2xl ${feature.color} flex items-center justify-center transition-all duration-300 border border-slate-200/50`}
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Image
-                        src={feature.icon}
-                        alt={feature.label}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12"
-                      />
-                    </motion.div>
-
-                    {/* Label *
-                    <div className="text-center">
-                      <h4 className="text-xs md:text-sm font-semibold text-slate-700 leading-tight">
-                        {feature.label}
-                      </h4>
-                    </div>
-                  </motion.div>
-                ))}
-              </div> */}
             </motion.div>
           </motion.div>
 
@@ -235,9 +140,9 @@ const Hero = () => {
                   <Image
                     src={getCurrentDashboardImage()}
                     alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
-                    width={1200}
+                    width={500}
                     height={700}
-                    className="w-full h-auto object-cover"
+                    className="w-300 h-200 object-cover"
                     priority
                   />
                 </motion.div>
@@ -245,7 +150,7 @@ const Hero = () => {
 
               {/* Floating Setup Panel - Matches WorkFast.ai */}
               <motion.div
-                className="absolute -right-4 top-8 bg-white rounded-2xl shadow-xl border border-slate-200/50 p-6 w-80"
+                className="absolute -right-4 top-4 bg-white rounded-2xl shadow-xl border border-slate-200/50 p-6 w-80"
                 initial={{ opacity: 0, x: 30, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
@@ -337,7 +242,7 @@ const Hero = () => {
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -354,7 +259,7 @@ const Hero = () => {
             />
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

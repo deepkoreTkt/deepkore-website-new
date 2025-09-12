@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deepkore - Creative Entrepreneurship Platform",
+  title: "Deepkore -  Building the Future of AI Driven Businessm",
   description:
-    "Discover the power of Deepkore for your creative entrepreneurship journey. Fast, responsive, and accessible platform for innovators.",
+    "Transform your business and boost productivity with Deepkore. Effortlessly build Enterprise apps that keep pace with your business's rapid growth—all without writing a single line of code.",
   keywords:
-    "Deepkore, creative entrepreneurship, AI assistant, innovation platform",
+    "Deepkore lets you transform ideas into powerful Enterprise applications that adapt to your business needs.",
   authors: [{ name: "Your Name" }],
   openGraph: {
     title: "Deepkore - Creative Entrepreneurship Platform",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deepkore - Creative Entrepreneurship Platform",
+    title: "Deepkore - Building the Future of AI Driven Business",
     description:
-      "Discover the power of Deepkore for your creative entrepreneurship journey.",
+      "Transform your business and boost productivity with Deepkore. Effortlessly build Enterprise apps that keep pace with your business's rapid growth—all without writing a single line of code.",
     images: ["/images/twitter-image.jpg"],
   },
   robots: {

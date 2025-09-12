@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
                 {[
                   { name: "Features", href: "/feature" },
                   { name: "Pricing", href: "/pricing" },
-                  { name: "API", href: "#" },
+                  { name: "FAQ", href: "/faq" },
                   { name: "Documentation", href: "#" },
                 ].map((link) => (
                   <li key={link.name}>
@@ -268,14 +268,14 @@ const Footer: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <a
-                  href="#"
+                  href="/termsandservices"
                   className="hover:text-blue-400 transition-colors duration-300"
                 >
                   Terms of Service
                 </a>
                 <span className="text-gray-400">•</span>
                 <a
-                  href="#"
+                  href="/privacypolicy"
                   className="hover:text-green-400 transition-colors duration-300"
                 >
                   Privacy Policy

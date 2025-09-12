@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import IconMenuMarquee from "../components/IconMenuMarquee";
 
 const ProductShowcase: React.FC = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
@@ -380,6 +381,7 @@ const ProductShowcase: React.FC = () => {
           </motion.div>
         </div>
       </div>
+      <IconMenuMarquee />
     </section>
   );
 };

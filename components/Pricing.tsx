@@ -109,7 +109,7 @@ const Pricing: React.FC = () => {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </span>
                   </div>
@@ -141,13 +141,13 @@ const Pricing: React.FC = () => {
                 </ul>
 
                 <motion.button
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl ${
                     plan.popular
-                      ? "bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg"
+                      ? "bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-2xl"
                       : "bg-slate-700 text-white hover:bg-slate-600"
                   }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {plan.buttonText}
                 </motion.button>

@@ -1,301 +1,233 @@
 "use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+const stats = [
+  {
+    percent: "🚀",
+    label: "Accelerate Application Development",
+    description: "Launch apps in days, not months",
+    details:
+      "Rapid deployment with no-code/low-code platforms. Scalable solutions that grow with your business.",
+    link: "Learn more about rapid development",
+    gradient: "from-blue-500 via-purple-500 to-blue-500",
+    bg: "bg-white",
+  },
+  {
+    percent: "👥",
+    label: "Empowered Teams",
+    description: "Let business users build without coding",
+    details:
+      "Citizen development empowers non-technical users. User-friendly interfaces for everyone.",
+    link: "See how teams are empowered",
+    gradient: "from-purple-500 via-blue-500 to-green-500",
+    bg: "bg-white",
+  },
+  {
+    percent: "🔗",
+    label: "Seamless Integration",
+    description: "Connect effortlessly across systems",
+    details:
+      "API-first approach with pre-built connectors. Unified data flow and real-time synchronization.",
+    link: "Explore integrations",
+    gradient: "from-cyan-500 via-green-500 to-blue-500",
+    bg: "bg-white",
+  },
+  {
+    percent: "🤖",
+    label: "AI Intelligence Built into Every Workflow",
+    description: "Smart automation and intelligent workflows",
+    details:
+      "Predictive analytics for better decision making. AI-powered insights and recommendations.",
+    link: "Discover AI-powered workflows",
+    gradient: "from-blue-500 via-indigo-500 to-purple-500",
+    bg: "bg-white",
+  },
+];
 
 const TargetAudience: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const metrics = [
-    {
-      percentage: "🚀",
-      title: "Accelerate Application Development",
-      gradient: "from-blue-500 to-purple-500",
-      image: "/classic04.png",
-      points: [
-        "Launch apps in days, not months",
-        "Rapid deployment with no-code/low-code platforms",
-        "Scalable solutions that grow with your business",
-      ],
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % stats.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % stats.length);
+  };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + stats.length) % stats.length);
+  };
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.8,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
     },
-    {
-      percentage: "👥",
-      title: "Empowered Teams",
-      gradient: "from-purple-500 to-cyan-500",
-      image: "/classic05.png",
-      points: [
-        "Let business users build without coding",
-        "Citizen development empowers non-technical users",
-        "User-friendly interfaces for everyone",
-      ],
-    },
-    {
-      percentage: "🔗",
-      title: "Seamless Integration",
-      gradient: "from-cyan-500 to-green-500",
-      image: "/classic04.png",
-      points: [
-        "Connect effortlessly across systems",
-        "API-first approach with pre-built connectors",
-        "Unified data flow and real-time synchronization",
-      ],
-    },
-    {
-      percentage: "🏭",
-      title: "Preconfigured Solutions",
-      gradient: "from-green-500 to-blue-500",
-      image: "/classic05.png",
-      points: [
-        "Across multiple industries",
-        "Industry-specific templates and best practices",
-        "Quick implementation with proven frameworks",
-      ],
-    },
-    {
-      percentage: "🤖",
-      title: "AI Intelligence Built into Every Workflows",
-      gradient: "from-blue-500 to-indigo-500",
-      image: "/classic04.png",
-      points: [
-        "Smart automation and intelligent workflows",
-        "Predictive analytics for better decision making",
-        "AI-powered insights and recommendations",
-      ],
-    },
-  ];
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.8,
+    }),
+  };
 
   return (
-    <section
-      className="relative py-24 overflow-hidden"
-      style={{ background: "none" }}
-    >
-      {/* Custom vibrant background image overlay */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/bg1.png"
-          alt="Vibrant background"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
-          style={{ pointerEvents: "none", userSelect: "none" }}
-        />
-      </div>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-200/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4">
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            className="inline-block mb-6"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-              <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">
-                Digital Transformation
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.h2
-            className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            Drive your digital transformation forward with{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-purple-400">
-              deepkore
-            </span>
-          </motion.h2>
-
-          <motion.p
-            className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+    <div>
+      {/* Header Section */}
+      <section
+        className="py-20 bg-gradient-to-br from-blue-100 via-white to-green-100"
+        style={{
+          backgroundImage:
+            "url(https://dz1x1c630cl14.cloudfront.net/webassets/images/website-background.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container mx-auto px-2 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Drive your digital transformation forward with Deepkore
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
             Deepkore lets you transform ideas into powerful Enterprise
             applications that adapt to your business needs.
-          </motion.p>
-        </motion.div>
-
-        {/* Single Metric Card Slider */}
-        <div className="relative max-w-4xl mx-auto flex items-center justify-center">
-          {/* Left Arrow */}
-          <button
-            className="absolute left-0 z-20 p-2 bg-white rounded-full shadow hover:bg-blue-100 transition disabled:opacity-30"
-            onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
-            disabled={currentIndex === 0}
-            aria-label="Previous"
-          >
-            <svg
-              width="32"
-              height="32"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          {/* Card */}
-          <motion.div
-            key={currentIndex}
-            className="group relative w-full max-w-3xl mx-auto flex bg-white rounded-3xl shadow-lg overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            onHoverStart={() => setHoveredIndex(currentIndex)}
-            onHoverEnd={() => setHoveredIndex(null)}
-          >
-            {/* Left Section: Metric */}
-            <div className="flex-1 p-8 flex flex-col justify-center">
-              <div
-                className={`text-5xl font-bold mb-2 bg-gradient-to-r ${metrics[currentIndex].gradient} bg-clip-text text-transparent`}
-              >
-                {metrics[currentIndex].percentage}
-                <span className="text-gray-400">%</span>
-              </div>
-              <div className="text-2xl font-bold mb-4 text-gray-800">
-                {metrics[currentIndex].title}
-              </div>
-              <ul className="mt-4 mb-2 space-y-2">
-                {metrics[currentIndex].points.map((point, idx) => (
-                  <li
-                    key={idx}
-                    className={
-                      idx === 0
-                        ? "font-semibold text-lg"
-                        : "text-gray-600 text-base"
-                    }
-                  >
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Right Section: Image */}
-            <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-              <Image
-                src={metrics[currentIndex].image}
-                width={400}
-                height={400}
-                alt={metrics[currentIndex].title + " illustration"}
-                className="max-h-64 rounded-xl shadow-md object-contain"
-              />
-            </div>
-          </motion.div>
-
-          {/* Right Arrow */}
-          <button
-            className="absolute right-0 z-20 p-2 bg-white rounded-full shadow hover:bg-blue-100 transition disabled:opacity-30"
-            onClick={() =>
-              setCurrentIndex((prev) => Math.min(prev + 1, metrics.length - 1))
-            }
-            disabled={currentIndex === metrics.length - 1}
-            aria-label="Next"
-          >
-            <svg
-              width="32"
-              height="32"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+          </p>
         </div>
+        <div className="max-w-5xl w-full mx-auto rounded-3xl shadow-xl bg-[#f5f7f7]/80 p-12 flex flex-col md:flex-row gap-8 items-stretch border border-blue-100">
+          {/* Left: Heading and description */}
 
-        {/* Right Arrow */}
-        <button
-          className="absolute right-0 z-20 p-2 bg-white rounded-full shadow hover:bg-blue-100 transition disabled:opacity-30"
-          onClick={() =>
-            setCurrentIndex((prev) => Math.min(prev + 1, metrics.length - 1))
-          }
-          disabled={currentIndex === metrics.length - 1}
-          aria-label="Next"
-        >
-          <svg
-            width="32"
-            height="32"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
-        {metrics.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-colors duration-300 ${
-              currentIndex === index
-                ? "bg-gradient-to-r from-blue-500 to-green-500"
-                : "bg-gray-300 hover:bg-gray-400"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-            aria-label={`Go to card ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Call to Action */}
-      <motion.div
-        className="text-center mt-16"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <motion.button
-          className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Start Your Journey
-        </motion.button>
-      </motion.div>
-    </section>
+          <div className="flex-1 flex flex-col justify-center pr-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Designed for ease, built for value
+            </h2>
+            <p className="text-gray-700 text-lg mb-6">
+              Faster implementation. Better ROI. Totally transparent costs.
+              Freshworks delivers enterprise-grade performance without the
+              enterprise-level complexity.
+            </p>
+          </div>
+          {/* Right: Stat cards as carousel */}
+          <div className="flex-1 relative">
+            <div
+              className="relative h-96 overflow-hidden rounded-2xl"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
+            >
+              <motion.div
+                key={currentSlide}
+                custom={currentSlide}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.3 },
+                  scale: { duration: 0.3 },
+                }}
+                className="absolute inset-0"
+              >
+                <div
+                  className={`min-w-[320px] max-w-xs mx-auto rounded-2xl p-8 shadow-lg border border-gray-100 flex flex-col justify-between h-full`}
+                  style={{ background: "#f5f7f7" }}
+                >
+                  <div>
+                    <div
+                      className={`text-5xl font-bold mb-2 bg-gradient-to-r ${stats[currentSlide].gradient} bg-clip-text text-transparent`}
+                    >
+                      {stats[currentSlide].percent}%
+                    </div>
+                    <div className="text-lg font-bold text-gray-900 mb-2">
+                      {stats[currentSlide].label}
+                    </div>
+                    <div className="font-semibold text-gray-800 mb-1">
+                      {stats[currentSlide].description}
+                    </div>
+                    <div className="text-gray-600 text-sm mb-2">
+                      {stats[currentSlide].details}
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <a href="#" className="text-blue-600 text-xs underline">
+                      {stats[currentSlide].link}
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            {/* Navigation Arrows */}
+            {/* <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-gray-700 p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              aria-label="Previous slide"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-gray-700 p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110"
+              aria-label="Next slide"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button> */}
+            {/* Progress Indicators */}
+            <div className="flex justify-center mt-8 space-x-3">
+              {stats.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`relative h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? "w-8 bg-blue-600"
+                      : "w-2 bg-blue-300 hover:bg-blue-400"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 export default TargetAudience;

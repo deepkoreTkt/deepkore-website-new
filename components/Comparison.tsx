@@ -124,19 +124,21 @@ const Comparison: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-r from-white/5 to-white/[0.02] p-8 text-center border-t border-white/5">
-              <motion.button
-                className="px-8 py-4 bg-[#8112db] hover:bg-[#8112db]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Start 7-day free trial
-              </motion.button>
-            </div>
+            <a href="/getstarted" className="block">
+              <div className="bg-gradient-to-r from-white/5 to-white/[0.02] p-8 text-center border-t border-white/5">
+                <motion.button
+                  className="px-8 py-4 bg-[#8112db] hover:bg-[#8112db]/90 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  Get Started with Deepkore
+                </motion.button>
+              </div>
+            </a>
           </div>
         </div>
       </div>

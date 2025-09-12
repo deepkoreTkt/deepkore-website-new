@@ -181,7 +181,7 @@ const Demo: React.FC = () => {
                 </div>
                 <div className="p-6 space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#00A551]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#00A551]/20 rounded-2xl flex items-center justify-center">
                       <span className="text-[#00A551] font-bold">📊</span>
                     </div>
                     <div>
@@ -194,7 +194,7 @@ const Demo: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#2791D0]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#2791D0]/20 rounded-2xl flex items-center justify-center">
                       <span className="text-[#2791D0] font-bold">👥</span>
                     </div>
                     <div>
@@ -207,7 +207,7 @@ const Demo: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#C5FF28]/20 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#C5FF28]/20 rounded-2xl flex items-center justify-center">
                       <span className="text-[#00A551] font-bold">⚡</span>
                     </div>
                     <div>
@@ -219,7 +219,7 @@ const Demo: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-6 bg-gray-50 rounded-lg p-4">
+                  <div className="mt-6 bg-gray-50 rounded-2xl p-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium text-gray-700">
                         Project Completion
@@ -338,7 +338,7 @@ const Demo: React.FC = () => {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
                         placeholder="Enter your first name"
                       />
                     </div>
@@ -356,7 +356,7 @@ const Demo: React.FC = () => {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
                         placeholder="Enter your last name"
                       />
                     </div>
@@ -376,7 +376,7 @@ const Demo: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
                       placeholder="Enter your business email"
                     />
                   </div>
@@ -395,7 +395,7 @@ const Demo: React.FC = () => {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -414,7 +414,7 @@ const Demo: React.FC = () => {
                         onClick={() =>
                           setShowCountryDropdown(!showCountryDropdown)
                         }
-                        className="flex items-center px-3 py-3 border border-r-0 border-gray-300 rounded-l-lg bg-gray-50 hover:bg-gray-100 focus:ring-2 focus:ring-[#00A551] focus:border-transparent transition-colors"
+                        className="flex items-center px-3 py-3 border border-r-0 border-gray-300 rounded-l-2xl bg-gray-50 hover:bg-gray-100 focus:ring-2 focus:ring-[#00A551] focus:border-transparent transition-colors"
                       >
                         <Image
                           src={selectedCountry.flag}

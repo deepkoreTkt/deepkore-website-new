@@ -61,15 +61,15 @@ const SignupForm: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="w-full px-4 py-3 rounded-lg text-gray-900 mb-4 focus:ring-2 focus:ring-blue-300"
+            className="w-full px-6 py-4 rounded-2xl text-gray-900 mb-4 focus:ring-2 focus:ring-blue-300 border border-gray-200 shadow-sm"
             required
             whileFocus={{ scale: 1.02 }}
           />
           <motion.button
             type="submit"
-            className="w-full bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="w-full bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
           >
             Sign Up
           </motion.button>
@@ -84,7 +84,7 @@ const SignupForm: React.FC = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white text-black p-8 rounded-lg max-w-md mx-4"
+              className="bg-white text-black p-8 rounded-2xl max-w-md mx-4 shadow-2xl border border-gray-100"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -108,9 +108,9 @@ const SignupForm: React.FC = () => {
               </motion.p>
               <motion.button
                 onClick={() => setIsModalOpen(false)}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="bg-blue-600 text-white px-6 py-3 rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.98 }}
               >
                 Close
               </motion.button>
