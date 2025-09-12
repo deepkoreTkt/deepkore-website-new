@@ -21,9 +21,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
+    { href: "/solution", label: "Solutions" },
+    { href: "/usecase", label: "Use Cases" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/contact", label: "Contact Us" },
-    { href: "/aboutus", label: "About Us" },
+    // { href: "/contact", label: "Contact Us" },
+    // { href: "/aboutus", label: "About Us" },
   ];
 
   const userGuideItems = [

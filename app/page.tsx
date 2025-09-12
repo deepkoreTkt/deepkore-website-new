@@ -6,9 +6,6 @@ import EfficiencyMetrics from "../components/EfficiencyMetrics";
 import Features from "../components/Features";
 import ProductShowcase from "../components/ProductShowcase";
 import Benefits from "../components/Benefits";
-import Testimonials from "../components/Testimonials";
-import Team from "../components/Team";
-import Gallery from "../components/Gallery";
 import Stats from "../components/Stats";
 import PowerfulFeatures from "../components/PowerfulFeatures";
 import Comparison from "../components/Comparison";
@@ -18,7 +15,6 @@ import MarketingInsights from "../components/MarketingInsights";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FloatingElements from "../components/FloatingElements";
-import IconMenuMarquee from "../components/IconMenuMarquee";
 
 export default function Home() {
   return (

@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
+import Link from "next/link";
+import getEnvConfig from "./getenv";
+import axios from "axios";
 
 // Company logos data
 const companyLogos = [
@@ -51,6 +54,35 @@ const Demo: React.FC = () => {
   });
 
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+
+  const [emailError, setEmailError] = useState("");
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const [successMessage, setSuccessMessage] = useState(false);
+
+  const [emailCheck, setEmailCheck] = useState(false);
+
+  // Email validation function
+  function validateEmail(email: string) {
+    const restrictedDomains = [
+      "gmail.com",
+      "ymail.com",
+      "outlook.com",
+      "live.com",
+      "hotmail.com",
+      "yahoo.com",
+      "yahoo.co.in",
+    ];
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return false;
+    }
+
+    const domain = email.split("@")[1];
+    return !restrictedDomains.includes(domain);
+  }
 
   // Handle keyboard events for dropdown
   React.useEffect(() => {
@@ -125,6 +157,17 @@ const Demo: React.FC = () => {
     });
   };
 
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      email: e.target.value,
+    });
+    // Clear email error when user starts typing
+    if (emailError) {
+      setEmailError("");
+    }
+  };
+
   const handleCountrySelect = (country: (typeof countries)[0]) => {
     setSelectedCountry(country);
     setShowCountryDropdown(false);
@@ -139,18 +182,80 @@ const Demo: React.FC = () => {
     });
   };
 
+  const checkHandler = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const signup = () => {
+    if (
+      isChecked &&
+      formData.firstName !== "" &&
+      formData.lastName !== "" &&
+      formData.email !== "" &&
+      formData.phone !== "" &&
+      formData.company !== ""
+    ) {
+      axios
+        .post(`${getEnvConfig()}/site/leadsignup`, {
+          name: `${formData.firstName} ${formData.lastName}`,
+          business_email: formData.email,
+          mobile: `${selectedCountry.code} ${formData.phone}`,
+          company_name: formData.company,
+        })
+        .then(function (response) {
+          setEmailCheck(false);
+          setSuccessMessage(true);
+
+          // Reset form after successful submission
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            company: "",
+            phone: "",
+            message: "",
+          });
+          setIsChecked(false);
+          setSelectedCountry({
+            code: "+91",
+            flag: "https://flagcdn.com/w40/in.png",
+            name: "India",
+          });
+
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            setSuccessMessage(false);
+          }, 5000);
+        })
+        .catch(function (error) {
+          if (error.response?.data?.message === "Email is required") {
+            setEmailCheck(true);
+          }
+        });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Combine country code with phone number
-    const fullPhoneNumber = `${selectedCountry.code} ${formData.phone}`;
-    const submissionData = {
-      ...formData,
-      phone: fullPhoneNumber,
-      country: selectedCountry.name,
-    };
-    // Handle form submission
-    console.log("Demo request submitted:", submissionData);
-    // You can add API call here
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setEmailError(
+        "Please enter a valid business email address. Personal email domains are not allowed."
+      );
+      return;
+    }
+
+    // Clear any previous error
+    setEmailError("");
+
+    // Validate terms and conditions checkbox
+    if (!isChecked) {
+      return;
+    }
+
+    // Call signup function
+    signup();
   };
 
   return (
@@ -374,11 +479,14 @@ const Demo: React.FC = () => {
                       id="email"
                       name="email"
                       value={formData.email}
-                      onChange={handleChange}
+                      onChange={handleEmailChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
                       placeholder="Enter your business email"
                     />
+                    {emailError && (
+                      <p className="mt-2 text-sm text-red-600">{emailError}</p>
+                    )}
                   </div>
 
                   <div>
@@ -510,6 +618,35 @@ const Demo: React.FC = () => {
                     />
                   </div>
 
+                  <div className="mb-4">
+                    <div className="flex items-center w-full mb-0">
+                      <input
+                        className="form-checkbox rounded border-gray-200 dark:border-gray-800 text-indigo-600 focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50 me-2"
+                        type="checkbox"
+                        value=""
+                        id="AcceptT&C"
+                        checked={isChecked}
+                        onChange={checkHandler}
+                        required
+                      />
+                      <label
+                        className="form-check-label text-slate-400"
+                        htmlFor="AcceptT&C"
+                      >
+                        I Accept{" "}
+                        <Link
+                          href="/termsandservices"
+                          className="text-indigo-600"
+                        >
+                          Terms And Condition
+                        </Link>
+                      </label>
+                    </div>
+                    <p className="text-red-600 text-xs">
+                      {!isChecked && "Please accept our terms and Conditions"}
+                    </p>
+                  </div>
+
                   <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all duration-300"
@@ -529,6 +666,61 @@ const Demo: React.FC = () => {
                     .
                   </p>
                 </form>
+
+                {/* Success Message */}
+                {successMessage && (
+                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0">
+                        <svg
+                          className="h-5 w-5 text-green-400"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-green-800">
+                          Demo request submitted successfully!
+                        </p>
+                        <p className="text-sm text-green-700">
+                          Our team will contact you soon.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Email Check Error */}
+                {emailCheck && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0">
+                        <svg
+                          className="h-5 w-5 text-red-400"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm font-medium text-red-800">
+                          Email is required
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>

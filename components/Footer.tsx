@@ -3,15 +3,37 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import axios from "axios";
+import getEnvConfig from "./getenv";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [emailCheck, setEmailCheck] = useState(false);
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const SubscribeEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
-    console.log("Newsletter signup:", email);
-    setEmail("");
+    axios
+      .post(`${getEnvConfig()}/site/newsletter/subscribe`, {
+        email: email,
+      })
+      .then(function (response) {
+        // handle success
+        setSuccessMessage(true);
+        setEmailCheck(false);
+        setEmail(""); // Clear the email field after successful submission
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setSuccessMessage(false);
+        }, 5000);
+      })
+      .catch(function (error) {
+        // handle error
+        if (error.response?.data?.message === "Email is required") {
+          setEmailCheck(true);
+        }
+      });
   };
 
   const socialLinks = [
@@ -127,10 +149,11 @@ const Footer: React.FC = () => {
               <h4 className="text-black font-semibold mb-6 text-lg">Product</h4>
               <ul className="space-y-4">
                 {[
+                  { name: "Solutions", href: "/solution" },
+                  { name: "Use Cases", href: "/usecase" },
                   { name: "Features", href: "/feature" },
                   { name: "Pricing", href: "/pricing" },
                   { name: "FAQ", href: "/faq" },
-                  { name: "Documentation", href: "#" },
                 ].map((link) => (
                   <li key={link.name}>
                     <motion.a
@@ -155,10 +178,9 @@ const Footer: React.FC = () => {
               <h4 className="text-black font-semibold mb-6 text-lg">Company</h4>
               <ul className="space-y-4">
                 {[
-                  { name: "About", href: "/aboutus" },
-                  { name: "Blog", href: "#" },
-                  { name: "Careers", href: "#" },
-                  { name: "Press", href: "#" },
+                  { name: "About Us", href: "/aboutus" },
+                  { name: "Blog", href: "/blog" },
+                  { name: "Contact Us", href: "/contact" },
                 ].map((link) => (
                   <li key={link.name}>
                     <motion.a
@@ -180,13 +202,14 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">Support</h4>
+              <h4 className="text-black font-semibold mb-6 text-lg">
+                Quick links
+              </h4>
               <ul className="space-y-4">
                 {[
-                  { name: "Help Center", href: "#" },
-                  { name: "Contact Us", href: "/contact" },
-                  { name: "Status", href: "#" },
-                  { name: "Privacy", href: "#" },
+                  { name: "Why Deepkore", href: "/whydeepkore" },
+                  { name: "What is Low-Code?", href: "/lowcode" },
+                  { name: "Privacy", href: "/privacypolicy" },
                 ].map((link) => (
                   <li key={link.name}>
                     <motion.a
@@ -216,7 +239,7 @@ const Footer: React.FC = () => {
                 Get the latest AI insights and product updates delivered to your
                 inbox.
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+              <form onSubmit={SubscribeEmail} className="space-y-3">
                 <div className="relative">
                   <input
                     type="email"
@@ -236,6 +259,71 @@ const Footer: React.FC = () => {
                   Subscribe
                 </motion.button>
               </form>
+
+              {/* Success Message */}
+              {successMessage && (
+                <motion.div
+                  className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-green-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-green-800">
+                        Successfully subscribed!
+                      </p>
+                      <p className="text-sm text-green-700">
+                        Thank you for subscribing to our newsletter.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Email Check Error */}
+              {emailCheck && (
+                <motion.div
+                  className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="h-5 w-5 text-red-400"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-red-800">
+                        Email is required
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
             </motion.div>
           </div>
         </div>

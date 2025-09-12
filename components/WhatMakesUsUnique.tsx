@@ -196,6 +196,8 @@ const WhatMakesUsUnique: React.FC = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <Image
+                      width={600}
+                      height={400}
                       src={feature.image}
                       alt={feature.title}
                       className="w-full h-96 object-cover"

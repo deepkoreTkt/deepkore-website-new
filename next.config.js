@@ -7,6 +7,7 @@ const nextConfig = {
       "dz1x1c630cl14.cloudfront.net",
       "dam.freshworks.com",
       "flagcdn.com",
+      "picsum.photos",
     ],
   },
 };

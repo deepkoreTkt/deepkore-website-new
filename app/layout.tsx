@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://deepkore.com"),
   title: "Deepkore -  Building the Future of AI Driven Businessm",
   description:
     "Transform your business and boost productivity with Deepkore. Effortlessly build Enterprise apps that keep pace with your business's rapid growth—all without writing a single line of code.",
@@ -20,10 +21,10 @@ export const metadata: Metadata = {
     "Deepkore lets you transform ideas into powerful Enterprise applications that adapt to your business needs.",
   authors: [{ name: "Your Name" }],
   openGraph: {
-    title: "Deepkore - Creative Entrepreneurship Platform",
+    title: "Deepkore - Building the Future of AI Driven Business",
     description:
-      "Discover the power of Deepkore for your creative entrepreneurship journey.",
-    url: "https://your-domain.com",
+      "Transform your business and boost productivity with Deepkore. Effortlessly build Enterprise apps that keep pace with your business's rapid growth—all without writing a single line of code.",
+    url: "https://deepkore.com",
     siteName: "Deepkore",
     images: [
       {
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://your-domain.com",
+    canonical: "https://deepkore.com",
   },
 };
 
@@ -73,8 +74,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Deepkore",
-              description: "AI-powered creative entrepreneurship platform",
-              url: "https://your-domain.com",
+              description: "Building the Future of AI Driven Business",
+              url: "https://deepkore.com",
             }),
           }}
         />

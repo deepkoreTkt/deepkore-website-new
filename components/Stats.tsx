@@ -126,6 +126,8 @@ const Stats: React.FC = () => {
                   <div className="relative w-40 h-28 rounded-xl overflow-hidden bg-gray-200 flex items-center justify-center">
                     {/* Replace src with actual image path or use a placeholder */}
                     <Image
+                      width={160}
+                      height={112}
                       src={stat.image}
                       alt={stat.label}
                       className="object-cover w-full h-full rounded-xl"
