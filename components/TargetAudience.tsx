@@ -100,9 +100,9 @@ const TargetAudience: React.FC = () => {
         }}
       >
         <div className="container mx-auto px-2 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Drive your digital transformation forward with Deepkore
-          </h1>
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
             Deepkore lets you transform ideas into powerful Enterprise
             applications that adapt to your business needs.

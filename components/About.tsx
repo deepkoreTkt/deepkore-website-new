@@ -172,7 +172,7 @@ const About: React.FC = () => {
             </div>
           </motion.div>
 
-          <motion.h1
+          <motion.h2
             className="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ const About: React.FC = () => {
               {" "}
               Future of AI
             </span>
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-12"
