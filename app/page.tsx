@@ -19,7 +19,7 @@ import FloatingElements from "../components/FloatingElements";
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#f5f7f7]">
-      <FloatingElements />
+      {/* <FloatingElements /> */}
       <Header />
       <main>
         <Hero />

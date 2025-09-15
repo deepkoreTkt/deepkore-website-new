@@ -144,7 +144,7 @@ const TargetAudience: React.FC = () => {
               >
                 <div
                   className={`min-w-[320px] max-w-xs mx-auto rounded-2xl p-8 shadow-lg border border-gray-100 flex flex-col justify-between h-full`}
-                  style={{ background: "#f5f7f7" }}
+                  style={{ background: "#ffffffff" }}
                 >
                   <div>
                     <div

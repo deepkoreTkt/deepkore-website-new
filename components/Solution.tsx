@@ -187,7 +187,6 @@ const Solution: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-[#f5f7f7]">
-      <FloatingElements />
       <Header />
       <main>
         <section className="py-40 bg-gradient-to-br from-slate-50 to-white">

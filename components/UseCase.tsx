@@ -193,7 +193,6 @@ const UseCase: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#00A551]/10 to-[#2791D0]/10">
-      <FloatingElements />
       <Header />
       <main>
         {/* Hero Section */}
@@ -357,7 +356,7 @@ const UseCase: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.a
                   href="/contact"
-                  className="px-10 py-4 bg-[#C5FF28] text-[#00A551] hover:bg-[#C5FF28]/90 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg"
+                  className="px-10 py-4 bg-[#C5FF28] text-[#ffffff] hover:bg-[#C5FF28]/90 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >
