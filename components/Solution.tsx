@@ -186,28 +186,38 @@ const Solution: React.FC = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#f5f7f7]">
+    <div className="relative min-h-screen bg-white">
       <Header />
       <main>
-        <section className="py-40 bg-gradient-to-br from-slate-50 to-white">
-          <div className="container mx-auto px-6">
+        {/* Hero Section */}
+        <section className="py-32 bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551] relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-white/5"></div>
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <motion.div
-              className="text-center mb-16"
+              className="text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
                 Business Solutions & Modules
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              </h1>
+              <p className="text-xl md:text-2xl text-indigo-100 max-w-4xl mx-auto leading-relaxed">
                 Comprehensive business management solutions covering Sales, HR,
                 Procurement, Manufacturing, Analytics, and more. Transform your
                 operations with our integrated platform.
               </p>
             </motion.div>
+          </div>
+        </section>
 
+        {/* Solutions Grid */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {industries.map((industry, index) => (
                 <motion.div
@@ -313,16 +323,20 @@ const Solution: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* Bottom CTA */}
+        {/* Bottom CTA */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-6">
             <motion.div
-              className="text-center mt-16"
+              className="text-center max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-r from-[#8112db]/5 to-[#8112db]/10 rounded-2xl p-8 max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-[#8112db]/5 to-[#8112db]/10 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Don&#39;t see your industry?
                 </h3>

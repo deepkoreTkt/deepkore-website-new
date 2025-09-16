@@ -21,7 +21,8 @@ const Stats: React.FC = () => {
       icon: AlertTriangle,
       color: "border-red-300 bg-red-50",
       iconColor: "text-red-500",
-      image: "https://picsum.photos/400/280?random=1",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=280&fit=crop",
     },
     {
       value: "02",
@@ -31,7 +32,8 @@ const Stats: React.FC = () => {
       icon: Lock,
       color: "border-orange-300 bg-orange-50",
       iconColor: "text-orange-500",
-      image: "https://picsum.photos/400/280?random=2",
+      image:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=280&fit=crop",
     },
     {
       value: "03",
@@ -41,7 +43,8 @@ const Stats: React.FC = () => {
       icon: Users,
       color: "border-blue-300 bg-blue-50",
       iconColor: "text-blue-500",
-      image: "https://picsum.photos/400/280?random=3",
+      image:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=280&fit=crop",
     },
     {
       value: "04",
@@ -51,7 +54,8 @@ const Stats: React.FC = () => {
       icon: BarChart3,
       color: "border-green-300 bg-green-50",
       iconColor: "text-green-600",
-      image: "https://picsum.photos/400/280?random=4",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=280&fit=crop",
     },
     {
       value: "05",
@@ -61,7 +65,8 @@ const Stats: React.FC = () => {
       icon: Link,
       color: "border-teal-300 bg-teal-50",
       iconColor: "text-teal-500",
-      image: "https://picsum.photos/400/280?random=5",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=280&fit=crop",
     },
     {
       value: "06",
@@ -71,7 +76,8 @@ const Stats: React.FC = () => {
       icon: TrendingUp,
       color: "border-purple-300 bg-purple-50",
       iconColor: "text-purple-500",
-      image: "https://picsum.photos/400/280?random=6",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=280&fit=crop",
     },
   ];
 
@@ -105,7 +111,7 @@ const Stats: React.FC = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-30">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Key Challenges in Leading Industries

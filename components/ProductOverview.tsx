@@ -10,33 +10,37 @@ const ProductOverview: React.FC = () => {
       title: "Custom Application Development",
       description: "Building tailored applications for specific needs",
       icon: "/appwithhand.svg",
+      bgColor: "bg-[#e3f2fd]",
     },
     {
       title: "Task Automation",
       description: "Automating repetitive tasks to save time",
       icon: "/process.svg",
+      bgColor: "bg-[#e8f5e9]",
     },
     {
       title: "System Integration",
       description: "Seamlessly integrating with existing systems",
       icon: "/integration.svg",
+      bgColor: "bg-[#f3e5f5]",
     },
     {
       title: "Real-time Analytics",
       description: "Gaining insights through real-time data analysis",
       icon: "/analytics.svg",
+      bgColor: "bg-[#e0f7fa]",
     },
   ];
 
   const additionalFeatures = [
-    "Resource Allocation",
-    "Advanced Analytics",
-    "Real-time Collaboration",
-    "Task Management",
-    "Security Measures",
-    "Document Sharing",
-    "Client Communication",
-    "Agile Workflow",
+    { name: "Resource Allocation", color: "bg-[#fef3c7]" },
+    { name: "Advanced Analytics", color: "bg-[#fed7d7]" },
+    { name: "Real-time Collaboration", color: "bg-[#c7f0db]" },
+    { name: "Task Management", color: "bg-[#bfdbfe]" },
+    { name: "Security Measures", color: "bg-[#e9d5ff]" },
+    { name: "Document Sharing", color: "bg-[#fed7aa]" },
+    { name: "Client Communication", color: "bg-[#d1fae5]" },
+    { name: "Agile Workflow", color: "bg-[#dbeafe]" },
   ];
 
   return (
@@ -65,7 +69,7 @@ const ProductOverview: React.FC = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+                className={`${feature.bgColor} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -73,7 +77,7 @@ const ProductOverview: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#ffffff] rounded-xl flex items-center justify-center flex-shrink-0">
                     <Image
                       src={feature.icon}
                       alt={feature.title}
@@ -105,7 +109,7 @@ const ProductOverview: React.FC = () => {
           >
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-green-100 p-8">
               <Image
-                src="/Main.png"
+                src="/classic04.gif"
                 alt="Deepkore Dashboard"
                 width={600}
                 height={400}
@@ -130,7 +134,7 @@ const ProductOverview: React.FC = () => {
             {additionalFeatures.map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 rounded-lg p-4 text-center hover:bg-blue-50 transition-colors"
+                className={`${feature.color} rounded-lg p-4 text-center hover:shadow-md transition-all duration-300`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -138,7 +142,7 @@ const ProductOverview: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="text-sm font-medium text-gray-700">
-                  {feature}
+                  {feature.name}
                 </span>
               </motion.div>
             ))}
@@ -147,20 +151,12 @@ const ProductOverview: React.FC = () => {
 
         {/* CTA */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-0"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-        >
-          <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started
-          </motion.button>
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );

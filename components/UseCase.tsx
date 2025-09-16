@@ -331,11 +331,11 @@ const UseCase: React.FC = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 relative overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0">
             <div className="absolute top-10 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#C5FF28]/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#F59E0B]/10 rounded-full blur-3xl"></div>
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <motion.div
@@ -348,7 +348,7 @@ const UseCase: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Build Your Solution?
               </h2>
-              <p className="text-xl text-[#C5FF28]/80 mb-10 leading-relaxed">
+              <p className="text-xl text-white/90 mb-10 leading-relaxed">
                 See how our platform can transform your business processes. Get
                 started with a free trial or contact our experts for a
                 personalized demo.
@@ -356,7 +356,7 @@ const UseCase: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.a
                   href="/contact"
-                  className="px-10 py-4 bg-[#C5FF28] text-[#ffffff] hover:bg-[#C5FF28]/90 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg"
+                  className="px-10 py-4 bg-white text-[#8B5CF6] hover:bg-gray-100 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -364,7 +364,7 @@ const UseCase: React.FC = () => {
                 </motion.a>
                 <motion.a
                   href="/getstarted"
-                  className="px-10 py-4 border-2 border-white text-white hover:bg-white hover:text-[#00A551] font-bold rounded-2xl transition-all duration-300 text-lg"
+                  className="px-10 py-4 border-2 border-white text-white hover:bg-white hover:text-[#8B5CF6] font-bold rounded-2xl transition-all duration-300 text-lg"
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >

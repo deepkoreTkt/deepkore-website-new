@@ -85,7 +85,7 @@ const Hero = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-100/20 to-blue-50/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-100/20 to-orange-100/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </motion.div>
-      <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 py-26 lg:py-35 relative z-10">
         <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Enhanced Text Content */}
           <motion.div

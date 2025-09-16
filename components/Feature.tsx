@@ -49,15 +49,15 @@ const powerfulFeatures = [
 ];
 
 const problems = [
-  { title: "missed deadlines", icon: "⏰" },
-  { title: "disorganized workflows", icon: "🔄" },
-  { title: "unnecessary complexity", icon: "🌀" },
-  { title: "slow progress", icon: "🐌" },
-  { title: "wasted time", icon: "⏳" },
-  { title: "lack of collaboration", icon: "👥" },
-  { title: "task overload", icon: "📚" },
-  { title: "poor data visibility", icon: "🔍" },
-  { title: "inefficient communication", icon: "💬" },
+  { title: "Missed Deadlines", icon: "⏰" },
+  { title: "Disorganized Workflows", icon: "🔄" },
+  { title: "Unnecessary Complexity", icon: "🌀" },
+  { title: "Slow Progress", icon: "🐌" },
+  { title: "Wasted Time", icon: "⏳" },
+  { title: "Lack of Collaboration", icon: "👥" },
+  { title: "Task Overload", icon: "📚" },
+  { title: "Poor Data Visibility", icon: "🔍" },
+  { title: "Inefficient Communication", icon: "💬" },
 ];
 
 const stats = [
@@ -176,49 +176,61 @@ const uniqueFeatures = [
 
 const faqs = [
   {
-    question: "What is Prismo?",
-    answer:
-      "Prismo is a comprehensive project management platform designed to streamline workflows, enhance collaboration, and boost productivity for teams of all sizes.",
+    id: 1,
+    title: "What is a Deepkore platform?",
+    content:
+      "An LCNC platform enables users to build applications without extensive coding knowledge. It provides visual interfaces, drag-and-drop features, and pre-built components, allowing both technical and non-technical users to create and customize apps quickly and efficiently.",
+    category: "platform",
+    tags: ["platform", "introduction", "overview"],
   },
   {
-    question: "How does Prismo improve productivity?",
-    answer:
-      "By automating tasks, streamlining workflows, and enhancing collaboration, Prismo increases team productivity and efficiency.",
+    id: 2,
+    title: "Who can use this platform?",
+    content:
+      "Our platform is designed for everyone—from business professionals and project managers to software developers. No prior programming knowledge is required, so anyone looking to automate workflows, design custom apps, or streamline processes can benefit from it.",
+    category: "platform",
+    tags: ["users", "accessibility", "target audience"],
   },
   {
-    question: "Is Prismo easy to use?",
-    answer:
-      "Yes, Prismo features an intuitive user interface that's designed to be user-friendly for both beginners and experienced users.",
+    id: 3,
+    title: "How does Deepkore improve business productivity?",
+    content:
+      "Deepkore platforms speed up application development by reducing the time and complexity involved in coding. This allows businesses to launch solutions faster, automate routine tasks, and respond quickly to changes, thereby improving overall productivity.",
+    category: "platform",
+    tags: ["productivity", "efficiency", "business benefits"],
   },
   {
-    question: "Can I integrate Prismo with other tools?",
-    answer:
-      "Absolutely! Prismo offers seamless integrations with popular tools and platforms to enhance your workflow.",
+    id: 4,
+    title: "Is coding knowledge required to use this platform?",
+    content:
+      "No, coding knowledge is not necessary. Our platform is intuitive and provides a drag-and-drop interface, along with pre-built templates, so you can create apps without writing a single line of code.",
+    category: "platform",
+    tags: ["coding", "no-code", "ease of use"],
   },
   {
-    question: "Is Prismo suitable for small teams?",
-    answer:
-      "Yes, Prismo is designed to scale with your business, making it perfect for small teams, startups, and large enterprises alike.",
+    id: 5,
+    title:
+      "Can I scale applications built on this platform as my business grows?",
+    content:
+      "Absolutely! Applications built with our platform are flexible and scalable, ensuring that they can grow and adapt alongside your business needs.",
+    category: "technical",
+    tags: ["scalability", "growth", "flexibility"],
   },
   {
-    question: "How can I track team progress?",
-    answer: "",
+    id: 6,
+    title: "What types of applications can I build using your platform?",
+    content:
+      "You can build a wide range of applications, including business process automation tools, customer relationship management (CRM) systems, project management apps, data collection forms, dashboards, and more. The possibilities are vast and customizable.",
+    category: "features",
+    tags: ["applications", "use cases", "capabilities"],
   },
   {
-    question: "Can I manage multiple projects at once?",
-    answer: "",
-  },
-  {
-    question: "Does Prismo offer task automation?",
-    answer: "",
-  },
-  {
-    question: "Is there a mobile version of Prismo?",
-    answer: "",
-  },
-  {
-    question: "How secure is Prismo?",
-    answer: "",
+    id: 7,
+    title: "How secure are the applications built on your platform?",
+    content:
+      "We prioritize security at every level. Our platform ensures data encryption, secure APIs, and compliance with industry-standard protocols, so the applications you build are safe and secure.",
+    category: "technical",
+    tags: ["security", "encryption", "compliance"],
   },
 ];
 
@@ -279,7 +291,7 @@ export default function Feature() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Powerful Features
             </h2>
             <h3 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-8">
@@ -771,10 +783,10 @@ export default function Feature() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-xl font-bold mb-4 text-gray-800">
-                  {faq.question}
+                  {faq.title}
                 </h3>
-                {faq.answer && (
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                {faq.content && (
+                  <p className="text-gray-600 leading-relaxed">{faq.content}</p>
                 )}
               </motion.div>
             ))}
@@ -810,7 +822,7 @@ export default function Feature() {
             Start your 7-day free trial
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-[#C5FF28]/80"
+            className="text-xl mb-8 text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -820,7 +832,7 @@ export default function Feature() {
             without any commitment!
           </motion.p>
           <motion.button
-            className="bg-[#C5FF28] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#ffffff] text-[#000000] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -834,7 +846,7 @@ export default function Feature() {
           <div className="mt-8 text-center">
             <div className="flex items-center justify-center space-x-2">
               <span className="text-2xl">⭐</span>
-              <span className="text-lg text-[#C5FF28]/80">
+              <span className="text-lg text-[#ffffff]">
                 4.9 rating Based on 300k Users
               </span>
             </div>

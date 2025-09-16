@@ -47,7 +47,7 @@ const PowerfulFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#f5f7f7]">
+    <section className="py-0 bg-[#f5f7f7]">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -124,7 +124,7 @@ const PowerfulFeatures: React.FC = () => {
         >
           <a href="/feature">
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-8 py-4 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               type="button"

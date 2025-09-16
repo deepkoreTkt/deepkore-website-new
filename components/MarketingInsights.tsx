@@ -6,33 +6,34 @@ import { motion } from "framer-motion";
 const MarketingInsights: React.FC = () => {
   const insights = [
     {
-      title: "Marketing Insights for Better Results",
-      stats: "70% Increase in Engagement",
+      label: "Trial",
+      stats: "Free to try. Fast to scale.",
       description:
-        "Marketing strategies utilizing data-driven insights lead to 70% boost in audience engagement.",
-      icon: "📈",
-      color: "from-blue-500 to-cyan-500",
+        "Take better customer and employee experience for a spin with a free trial of Freshdesk or Freshservice. No credit card required.",
+      buttonText: "Try it free",
+      href: "/getstarted",
     },
     {
-      title: "Higher ROI Performance",
-      stats: "50% Higher ROI",
+      label: "Contact Sales",
+      stats: "See rapid impact in action",
       description:
-        "Businesses leveraging advanced marketing tools report a 50% higher return on investment.",
-      icon: "💰",
-      color: "from-green-500 to-emerald-500",
+        "Let our product experts show you how Freshworks can solve your specific challenges. Get a personalized walkthrough tailored to your needs.",
+      buttonText: "Book a demo",
+      href: "/getstarted",
     },
-  ];
-
-  const features = [
-    "Agile Workflow",
-    "Communication",
-    "Document Sharing",
-    "Security Measures",
+    {
+      label: "Resources",
+      stats: "Learn, explore, get inspired",
+      description:
+        "Explore our library of case studies, product tours, webinars and insights.",
+      buttonText: "Browse more",
+      href: "/getstarted",
+    },
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 bg-[#0d1a2f] min-h-[60vh]">
+      <div className="container mx-auto px-4 md:px-12 lg:px-20">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -40,81 +41,47 @@ const MarketingInsights: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How Deepkore will help you in different sectors
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get started with Deepkore
           </h2>
-          <p className="text-xl text-gray-600">
-            Transform your business operations with AI-powered insights
+          <p className="text-xl text-gray-300">
+            Take better customer and employee experience for a spin
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {insights.map((insight, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="rounded-2xl border border-blue-900 bg-[#101e36] p-8 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[350px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="text-center space-y-6">
-                <motion.div
-                  className={`w-20 h-20 bg-gradient-to-r ${insight.color} rounded-2xl flex items-center justify-center mx-auto`}
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <span className="text-3xl">{insight.icon}</span>
-                </motion.div>
-
-                <h3 className="text-2xl font-bold text-gray-900">
-                  {insight.title}
-                </h3>
-
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
+              <div className="mb-6">
+                <span className="inline-block px-4 py-1 text-sm font-semibold bg-blue-100 text-blue-700 rounded-full mb-6">
+                  {insight.label}
+                </span>
+                <div className="text-2xl md:text-2xl font-bold text-white mb-2">
                   {insight.stats}
                 </div>
-
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-300 text-base leading-relaxed">
                   {insight.description}
                 </p>
-
-                <motion.button
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Start 7-day free trial
-                </motion.button>
               </div>
+              <motion.button
+                className="mt-auto w-full py-3 text-lg font-bold rounded-full bg-gradient-to-r from-green-600 to-blue-600 text-[#ffffff] hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {insight.buttonText}
+                <a href={insight.href} className="absolute inset-0"></a>
+              </motion.button>
             </motion.div>
           ))}
         </div>
-
-        {/* Features Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -3 }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-2xl mb-3">🔧</div>
-              <h4 className="font-semibold text-gray-900">{feature}</h4>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

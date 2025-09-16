@@ -2,12 +2,39 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      'images.unsplash.com',
-      'images.pexels.com',
-      'cdn.pixabay.com',
-      'images.freeimages.com',
-      'www.publicdomainpictures.net'
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.pixabay.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.freeimages.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.publicdomainpictures.net",
+      },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+      {
+        protocol: "https",
+        hostname: "dam.freshworks.com",
+      },
     ],
   },
 };
