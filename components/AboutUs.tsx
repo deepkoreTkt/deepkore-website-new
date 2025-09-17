@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
+import About from "./About";
 
 // Company logos data
 const companyLogos = [
@@ -37,7 +38,7 @@ const companyLogos = [
 const stats = [
   { number: "300K+", label: "Team Collaborations" },
   { number: "500K+", label: "Tasks Completed" },
-  { number: "15M+", label: "Projects Managed" },
+  { number: "1,000,000+", label: "Projects Managed" },
   { number: "150K+", label: "Successful Integrations" },
 ];
 
@@ -103,6 +104,7 @@ const AboutUs: React.FC = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5">
         <div className="max-w-7xl mx-auto px-4">
+          <About />
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -124,46 +126,6 @@ const AboutUs: React.FC = () => {
           </motion.div>
 
           {/* Mission Statement */}
-          <motion.div
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-800">
-                  Deepkore.
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  We&apos;re on a mission to help every business struggling
-                  under the weight of bloated, overpromised software. The kind
-                  that calls complexity &quot;added value.&quot; That force-fits
-                  teams with features they&apos;ll never use. That measures
-                  implementation in months and results in years.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  We see you. Teams buried in clunky workflows. Leaders fed up
-                  with legacy systems. People who deserve better. There&apos;s
-                  another way.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="bg-gradient-to-br from-[#00A551]/10 to-[#2791D0]/10 rounded-xl p-8">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🚀</div>
-                    <h4 className="text-2xl font-bold mb-4 text-gray-800">
-                      Our Vision
-                    </h4>
-                    <p className="text-gray-600">
-                      To empower every team with simple, powerful tools that
-                      make project management effortless and enjoyable.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

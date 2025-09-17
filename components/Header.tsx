@@ -23,15 +23,19 @@ const Header: React.FC = () => {
   const navItems = [
     { href: "/solution", label: "Solutions" },
     { href: "/usecase", label: "Use Cases" },
+
     { href: "/pricing", label: "Pricing" },
     // { href: "/contact", label: "Contact Us" },
     // { href: "/aboutus", label: "About Us" },
   ];
 
   const userGuideItems = [
-    { href: "/getstarted", label: "Getting Started" },
-    { href: "/faq", label: "FAQ" },
     { href: "/whydeepkore", label: "Why Deepkore?" },
+    { href: "/lowcode", label: "What is Low-Code?" },
+    { href: "/dataform", label: "Data Form" },
+    { href: "/process", label: "Process" },
+    { href: "/analytics", label: "Analytics" },
+    { href: "/integration", label: "Integration" },
   ];
 
   return (
@@ -69,7 +73,7 @@ const Header: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>More</span>
+                <span>Platform</span>
                 <motion.svg
                   className="w-4 h-4 ml-1"
                   fill="none"

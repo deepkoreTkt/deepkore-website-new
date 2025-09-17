@@ -146,14 +146,15 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">Product</h4>
+              <h4 className="text-black font-semibold mb-6 text-lg">
+                Platform
+              </h4>
               <ul className="space-y-4">
                 {[
-                  { name: "Solutions", href: "/solution" },
-                  { name: "Use Cases", href: "/usecase" },
-                  { name: "Features", href: "/feature" },
-                  { name: "Pricing", href: "/pricing" },
-                  { name: "FAQ", href: "/faq" },
+                  { name: "DataForm", href: "/dataform" },
+                  { name: "Process", href: "/process" },
+                  { name: "Analytics", href: "/analytics" },
+                  { name: "Integration", href: "/integration" },
                 ].map((link) => (
                   <li key={link.name}>
                     <motion.a
@@ -178,7 +179,12 @@ const Footer: React.FC = () => {
               <h4 className="text-black font-semibold mb-6 text-lg">Company</h4>
               <ul className="space-y-4">
                 {[
+                  { name: "Why Deepkore", href: "/whydeepkore" },
                   { name: "About Us", href: "/aboutus" },
+                  { name: "What is Low-Code?", href: "/lowcode" },
+                  { name: "Privacy", href: "/privacypolicy" },
+                  { name: "FAQ", href: "/faq" },
+
                   { name: "Blog", href: "/blog" },
                   { name: "Contact Us", href: "/contact" },
                 ].map((link) => (
@@ -207,9 +213,10 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-4">
                 {[
-                  { name: "Why Deepkore", href: "/whydeepkore" },
-                  { name: "What is Low-Code?", href: "/lowcode" },
-                  { name: "Privacy", href: "/privacypolicy" },
+                  { name: "Solutions", href: "/solution" },
+                  { name: "Use Cases", href: "/usecase" },
+                  { name: "Features", href: "/feature" },
+                  { name: "Pricing", href: "/pricing" },
                 ].map((link) => (
                   <li key={link.name}>
                     <motion.a

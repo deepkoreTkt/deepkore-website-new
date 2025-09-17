@@ -192,7 +192,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Understanding the fundamental differences between customer experience and user experience in modern business.",
     readTime: "4 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "5 Jan 2025",
     image:
       "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -205,7 +205,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "A personal story about debugging and the lessons learned from fixing a critical software bug.",
     readTime: "6 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "19 Feb 2025",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -240,11 +240,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 18,
-    title: "OutSystems and AWS: Interview with Global Lead at AWS Marketplace",
+    title: "Deepkore and AWS: Interview with Global Lead at AWS Marketplace",
     excerpt:
-      "An exclusive interview discussing the partnership between OutSystems and AWS Marketplace.",
+      "An exclusive interview discussing the partnership between Deepkore and AWS Marketplace.",
     readTime: "5 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "14 May 2025",
     image:
       "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -257,7 +257,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "How communication APIs can transform customer and employee interactions in the digital era.",
     readTime: "4 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "6 Jun 2025",
     image:
       "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -279,11 +279,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 21,
-    title: "How to Make a Mobile Stories Pattern With OutSystems",
+    title: "How to Make a Mobile Stories Pattern With Deepkore",
     excerpt:
-      "Learn how to create complex Instagram Stories-like patterns quickly using OutSystems low-code platform.",
+      "Learn how to create complex Instagram Stories-like patterns quickly using Deepkore low-code platform.",
     readTime: "6 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "12 Jul 2025",
     image:
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -296,7 +296,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Explore real-world examples of applications you can build with low-code platforms and their business impact.",
     readTime: "5 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "3 Aug 2025",
     image:
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -309,7 +309,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Strategies and best practices for scaling mobile applications to handle massive user growth.",
     readTime: "4 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "17 Aug 2025",
     image:
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -322,7 +322,7 @@ const blogPosts: BlogPost[] = [
     excerpt:
       "Practical strategies to identify, manage, and eliminate technical debt in software development.",
     readTime: "6 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "9 Sep 2025",
     image:
       "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -331,11 +331,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 25,
-    title: "Quarterly Highlights: OutSystems IDE Union Q4 2018",
+    title: "Quarterly Highlights: Deepkore IDE Union Q4 2018",
     excerpt:
-      "Latest features and improvements in the OutSystems Service Studio IDE for Q4 2018.",
+      "Latest features and improvements in the Deepkore Service Studio IDE for Q4 2018.",
     readTime: "3 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "23 Sep 2025",
     image:
       "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
@@ -344,11 +344,11 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 26,
-    title: "Home Automation with SmartThings and OutSystems",
+    title: "Home Automation with SmartThings and Deepkore",
     excerpt:
-      "Building smart home automation solutions by integrating SmartThings with OutSystems platform.",
+      "Building smart home automation solutions by integrating SmartThings with Deepkore platform.",
     readTime: "5 MIN READ",
-    author: "OutSystems Team",
+    author: "Deepkore Team",
     date: "7 Oct 2025",
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=548&h=285&fit=crop",

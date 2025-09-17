@@ -27,12 +27,13 @@ const Hero = () => {
 
     const featureImages: { [key: string]: string } = {
       Dashboards: "/bg22.png",
-      Dataform: "/dataform.png",
+      Dataform: "/dataform1.png",
       Process: "/process.png",
-      Analytics: "/classic05.png",
-      Report: "/light-dash.png",
+      Analytics: "/analytics1.png",
+      Report: "/report1.png",
       Workflow: "/classic02.png",
       Dashboard: "/Main.png",
+      Chat: "/Chat.png",
     };
 
     return featureImages[hoveredFeature] || "/bg22.png";
@@ -153,7 +154,7 @@ const Hero = () => {
               {/* Section Header */}
 
               {/* Icons Grid */}
-              <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4 md:gap-6">
+              <div className="grid grid-cols-3 md:grid-cols-7 lg:grid-cols-7 gap-4 md:gap-6 justify-items-center justify-center mt-6">
                 {[
                   {
                     icon: "/admin.svg", // Dashboards
@@ -180,11 +181,11 @@ const Hero = () => {
                     label: "Report",
                     color: "#edd7f7",
                   },
-                  {
-                    icon: "/workflow.svg", // Workflow
-                    label: "Workflow",
-                    color: "#c7f2ef",
-                  },
+                  // {
+                  //   icon: "/workflow.svg", // Workflow
+                  //   label: "Workflow",
+                  //   color: "#c7f2ef",
+                  // },
                   {
                     icon: "/integration.svg", // Integration
                     label: "Integration",
@@ -195,17 +196,17 @@ const Hero = () => {
                     label: "Chat",
                     color: "#c4e1ff",
                   },
-                  {
-                    icon: "/Setting.svg", // Settings
-                    label: "Settings",
-                    color: "#d5f2dd",
-                  },
+                  // {
+                  //   icon: "/Setting.svg", // Settings
+                  //   label: "Settings",
+                  //   color: "#d5f2dd",
+                  // },
                 ].map((feature, index) => {
                   const isHovered = hoveredFeature === feature.label;
                   return (
                     <motion.div
                       key={feature.label}
-                      className={`group flex flex-col items-center space-y-2 p-2 rounded-xl transition-all duration-300 cursor-pointer ${
+                      className={`group flex flex-col items-center justify-center space-y-2 p-2 rounded-xl transition-all duration-300 cursor-pointer ${
                         isHovered
                           ? `bg-[${feature.color}] text-slate-800`
                           : "hover:bg-white/80 hover:shadow-md"

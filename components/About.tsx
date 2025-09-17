@@ -115,7 +115,7 @@ const About: React.FC = () => {
   }, [stats.length]);
 
   return (
-    <section id="about" className="relative py-10 bg-white overflow-hidden">
+    <section id="about" className="relative py-10  overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>

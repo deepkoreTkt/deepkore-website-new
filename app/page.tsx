@@ -26,7 +26,7 @@ export default function Home() {
         {/* <IconMenuMarquee /> */}
         <PowerfulFeatures />
         <TargetAudience />
-        <About />
+        {/* <About /> */}
         <EfficiencyMetrics />
         <section id="features">
           <Features />
