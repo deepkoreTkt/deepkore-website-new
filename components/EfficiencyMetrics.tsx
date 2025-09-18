@@ -27,12 +27,12 @@ const EfficiencyMetrics: React.FC = () => {
   const metrics = [
     {
       id: "performance",
-      icon: "📈",
-      title: "Performance Increase",
-      value: 700,
-      suffix: "%",
+
+      title: "App Templates",
+      value: 100,
+      suffix: "+",
       description:
-        "Boost in task automation efficiency, optimizing workflows for all users.",
+        "Choose from 100s of pre-built templates or build your app from scratch",
       color: "from-blue-500 to-cyan-500",
       bgPattern:
         "radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
@@ -42,12 +42,12 @@ const EfficiencyMetrics: React.FC = () => {
     },
     {
       id: "engagement",
-      icon: "👥",
-      title: "User Engagement",
-      value: 95,
-      suffix: "%",
+
+      title: "Management Tools",
+      value: 20,
+      suffix: "+",
       description:
-        "Growth in interactive sessions, enhancing user experience and satisfaction.",
+        "Get access to powerful management tools that make handling projects easier",
       color: "from-green-500 to-emerald-500",
       bgPattern:
         "radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)",
@@ -58,12 +58,12 @@ const EfficiencyMetrics: React.FC = () => {
     },
     {
       id: "speed",
-      icon: "⚡",
-      title: "Processing Speed",
-      value: 0.7,
-      suffix: "s",
+
+      title: "Team Collaboration",
+      value: 500,
+      suffix: "+",
       description:
-        "Lightning-fast response times, ensuring seamless interactions with our AI systems.",
+        "Collaborate with your team to build your apps on a single, unified platform",
       color: "from-purple-500 to-pink-500",
       bgPattern:
         "radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)",
@@ -136,9 +136,9 @@ const EfficiencyMetrics: React.FC = () => {
     };
 
     // Start animations with creative delays
-    setTimeout(() => animateCounter("performance", 700), 300);
-    setTimeout(() => animateCounter("engagement", 95), 800);
-    setTimeout(() => animateCounter("speed", 0.7), 1300);
+    setTimeout(() => animateCounter("performance", 100), 300);
+    setTimeout(() => animateCounter("engagement", 20), 800);
+    setTimeout(() => animateCounter("speed", 500), 1300);
   }, [isVisible]);
 
   return (
@@ -250,7 +250,7 @@ const EfficiencyMetrics: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto px-40">
         {/* Enhanced Header */}
         <motion.div
           className="text-center mb-20"
@@ -368,11 +368,7 @@ const EfficiencyMetrics: React.FC = () => {
                       rotateY: { duration: 2, repeat: Infinity },
                     }}
                     style={{ transformStyle: "preserve-3d" }}
-                  >
-                    <span style={{ transform: "translateZ(20px)" }}>
-                      {metric.icon}
-                    </span>
-                  </motion.div>
+                  ></motion.div>
 
                   {/* Creative Counter Animation */}
                   <motion.div

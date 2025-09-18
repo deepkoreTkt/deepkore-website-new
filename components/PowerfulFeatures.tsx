@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -10,45 +10,70 @@ const PowerfulFeatures: React.FC = () => {
       title: "Data Form",
       description: "Create custom forms effortlessly without coding.",
       icon: "/dataForm.svg",
-      avatar:
-        "https://framerusercontent.com/images/C73JaQknNYyRYvGQWukXPqclJqc.png?width=146&height=147",
-      bg: "bg-[#e3f2fd]", // light blue
-      border: "border-blue-100",
+      avatar: "/dataform1.png",
+      gradient: "from-blue-200 via-blue-100 to-white",
     },
     {
       title: "Process",
       description:
         "Design and automate processes with a simple drag-and-drop interface.",
       icon: "/process.svg",
-      avatar:
-        "https://framerusercontent.com/images/fzKQ5bQ0vj7zhOUIcwAUXMs7Od4.png?width=147&height=147",
-      bg: "bg-[#e8f5e9]", // light green
-      border: "border-green-100",
+      avatar: "/process.png",
+      gradient: "from-green-200 via-green-100 to-white",
     },
     {
       title: "Integration",
       description:
         "Connect seamlessly with your existing tools and applications.",
       icon: "/integration.svg",
-      avatar:
-        "https://framerusercontent.com/images/Ak5k2agDTtdBba2G24v5QE1Hqi8.png?width=147&height=147",
-      bg: "bg-[#f3e5f5]", // light purple
-      border: "border-purple-100",
+      avatar: "/classic02.png",
+      gradient: "from-purple-200 via-purple-100 to-white",
     },
     {
       title: "Analytics",
       description: "Turn data into actionable insights effortlessly.",
       icon: "/analytics.svg",
-      avatar:
-        "https://framerusercontent.com/images/wO1BnpgvlYgarcc8JQl3WU75XA.png?width=147&height=147",
-      bg: "bg-[#e0f7fa]", // light cyan
-      border: "border-cyan-100",
+      avatar: "/analytics1.png",
+      gradient: "from-cyan-200 via-cyan-100 to-white",
     },
   ];
 
+  const [activeTab, setActiveTab] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const handleTabClick = (index: number) => {
+    setDirection(index > activeTab ? 1 : -1);
+    setActiveTab(index);
+  };
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.8,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+      scale: 0.8,
+    }),
+  };
+
   return (
-    <section className="py-0 bg-[#f5f7f7]">
-      <div className="container mx-auto px-6">
+    <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[800px] relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
+
+      <div className="container mx-auto px-6 md:px-16 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -56,67 +81,84 @@ const PowerfulFeatures: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-block mb-6">
-            <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-              <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">
+          <div className="inline-block mb-8">
+            <div className="px-8 py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm shadow-lg">
+              <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
                 Powerful Features
               </span>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            All Your Tasks, Organized Effortlessly
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg leading-tight">
+            All Your Tasks,{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Organized Effortlessly
+            </span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className={`rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border ${feature.bg} ${feature.border} flex flex-col items-center text-center min-h-[420px]`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.04, y: -5 }}
-            >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <motion.div
-                  className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md mb-2"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={32}
-                    height={32}
-                    className="w-8 h-8"
-                  />
-                </motion.div>
-
-                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-sm">
-                  <Image
-                    src={feature.avatar}
-                    alt={`${feature.title} avatar`}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
+        <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
+          {/* Vertical Tabs */}
+          <div className="flex md:flex-col gap-4 md:gap-2 w-full md:w-1/4">
+            {features.map((feature, idx) => (
+              <motion.button
+                key={feature.title}
+                className={`flex flex-row items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 text-left w-full h-auto backdrop-blur-lg shadow-md cursor-pointer group
+                  ${
+                    activeTab === idx
+                      ? "bg-white/90 shadow-xl scale-105 hover:scale-110"
+                      : "bg-white/80 hover:bg-blue-50/80 hover:shadow-lg hover:scale-102"
+                  }
+                `}
+                onClick={() => handleTabClick(idx)}
+              >
+                <div className="flex flex-col">
+                  <span
+                    className={`font-bold text-lg ${
+                      activeTab === idx ? "text-blue-600" : "text-gray-700"
+                    }`}
+                  >
+                    {feature.title}
+                  </span>
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      activeTab === idx ? "text-blue-500" : "text-gray-600"
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
                 </div>
+              </motion.button>
+            ))}
+          </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mt-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-base">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {/* Card Content - Prominent Image UI */}
+          <motion.div
+            key={activeTab}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.3 },
+              scale: { duration: 0.3 },
+            }}
+            className="flex flex-col items-center justify-center w-full md:w-2/5"
+          >
+            <div className="relative w-full max-w-2xl h-[420px] rounded-3xl overflow-hidden shadow-2xl bg-white/80 backdrop-blur-lg flex items-center justify-center group">
+              <Image
+                src={features[activeTab].avatar}
+                alt={`${features[activeTab].title} avatar`}
+                width={800}
+                height={500}
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-14"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -124,9 +166,9 @@ const PowerfulFeatures: React.FC = () => {
         >
           <a href="/feature">
             <motion.button
-              className="px-8 py-4 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg tracking-wide"
+              whileHover={{ scale: 1.07, y: -2 }}
+              whileTap={{ scale: 0.97 }}
               type="button"
             >
               Explore All Features

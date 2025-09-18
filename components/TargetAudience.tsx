@@ -101,11 +101,16 @@ const TargetAudience: React.FC = () => {
       >
         <div className="container mx-auto px-2 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Drive your digital transformation forward with Deepkore
+            Drive your digital transformation forward with
+          </h2>
+          <h2 className=" bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-4">
+            Deepkore
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-            Deepkore lets you transform ideas into powerful Enterprise
-            applications that adapt to your business needs.
+            Deepkore simplifies application development for business users,
+            enabling them to innovate and collaborate effortlessly. Its
+            intuitive platform, affordability, and rapid deployment redefine how
+            businesses operate and adapt to changing needs.
           </p>
         </div>
         <div className="max-w-5xl w-full mx-auto rounded-3xl shadow-xl bg-[#f5f7f7]/80 p-12 flex flex-col md:flex-row gap-8 items-stretch border border-blue-100">

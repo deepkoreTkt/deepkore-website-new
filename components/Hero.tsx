@@ -79,14 +79,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50/0% via-red-200/20% via-white/60% to-green-300/100% overflow-hidden">
-      {/* Enhanced Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
       <motion.div className="absolute inset-0" style={{ y }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-green-500/40"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-100/20 to-blue-50/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-100/20 to-orange-100/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Horizontal gradient: green → white → blue */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r
+         from-blue-200 via-white to-green-100"
+        ></div>
+
+        {/* Optional soft glow */}
+        <div className="absolute inset-0 bg-white/10 blur-3xl pointer-events-none"></div>
       </motion.div>
-      <div className="container mx-auto px-6 lg:px-12 py-26 lg:py-35 relative z-10">
+
+      <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-25 relative z-10">
         <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Enhanced Text Content */}
           <motion.div
@@ -118,13 +124,15 @@ const Hero = () => {
 
             {/* Subheading - Exact Match */}
             <motion.p
-              className={`${inter.className} text-base md:text-lg lg:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-medium`}
+              className={`${inter.className} text-base md:text-lg lg:text-xl text-black max-w-4xl mx-auto leading-relaxed font-medium`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              One powerful AI workspace to manage Projects, Tasks, Chat, Docs,
-              <span> Report Dashboards, and more — all in one place.</span>
+              Deepkore lets you transform ideas into powerful Enterprise
+              Applications
+              <span> that adapt to your business needs.</span>{" "}
+              {/* <span>applications that adapt to your business needs.</span> */}
             </motion.p>
 
             {/* CTA Section - WorkFast.ai Style */}
@@ -144,16 +152,27 @@ const Hero = () => {
                 </motion.button>
               </div>
             </motion.div>
+            <Image
+              src={getCurrentDashboardImage()}
+              alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
+              width={800}
+              height={500}
+              className="w-full h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
+              priority
+              style={{
+                boxShadow: "0 0 10px 10px rgba(223, 189, 255, 0.5)",
+                background:
+                  "linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
+              }}
+            />
 
-            <motion.div
+            {/* <motion.div
               className="w-full max-w-5xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.0 }}
             >
-              {/* Section Header */}
-
-              {/* Icons Grid */}
+             
               <div className="grid grid-cols-3 md:grid-cols-7 lg:grid-cols-7 gap-4 md:gap-6 justify-items-center justify-center mt-6">
                 {[
                   {
@@ -242,18 +261,18 @@ const Hero = () => {
                   );
                 })}
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* New Dashboard Section - Unique UI */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
             className="relative w-full max-w-7xl"
           >
             <div className="relative flex w-full max-w-full items-stretch justify-center">
-              {/* Enhanced Split UI with better proportions */}
+              
               <div
                 className="w-full max-w-4xl rounded-2xl overflow-hidden border border-slate-200/30 mx-auto bg-white/90 backdrop-blur-sm transition-all duration-500"
                 style={{ boxShadow: getGlowShadow() }}
@@ -303,7 +322,7 @@ const Hero = () => {
                 ></div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

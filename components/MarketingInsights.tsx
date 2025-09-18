@@ -33,7 +33,7 @@ const MarketingInsights: React.FC = () => {
 
   return (
     <section className="relative py-24 bg-[#0d1a2f] min-h-[60vh]">
-      <div className="container mx-auto px-4 md:px-12 lg:px-20">
+      <div className="container mx-auto px-4 md:px-12 lg:px-40">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}

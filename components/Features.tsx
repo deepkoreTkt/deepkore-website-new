@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { image } from "framer-motion/client";
 import Image from "next/image";
 import {
   ShoppingCart,
@@ -11,9 +10,11 @@ import {
   BarChart3,
   Package,
   Factory,
+  Users,
 } from "lucide-react";
 const Features: React.FC = () => {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const features = [
     {
@@ -34,6 +35,26 @@ const Features: React.FC = () => {
         "Customer Management",
         "Order Tracking",
         "Revenue Analytics",
+      ],
+    },
+    {
+      title: "CRM",
+      subtitle: "Customer Relationship Management",
+      description:
+        "Comprehensive customer relationship management with AI-driven insights, automated workflows, and personalized customer experiences.",
+      gradient: "bg-red-500/50",
+      icon: <Users className="w-16 h-16" />,
+      image: "/classic02.png",
+      bgPattern:
+        "radial-gradient(circle at 60% 40%, rgba(255, 99, 71, 0.15) 0%, transparent 60%)",
+      stats: { customers: "50K+", engagement: "95%", retention: "85%" },
+      features: [
+        "Lead Management",
+        "Contact Management",
+        "Sales Pipeline",
+        "Customer Insights",
+        "Automated Campaigns",
+        "Support Integration",
       ],
     },
     {
@@ -74,26 +95,26 @@ const Features: React.FC = () => {
         "Asset Tracking",
       ],
     },
-    {
-      title: "Analytics & Reporting",
-      subtitle: "AI-Powered Insights",
-      description:
-        "Advanced analytics with intelligent reporting, interactive dashboards, and predictive insights for data-driven decisions.",
-      gradient: "bg-orange-500/50",
-      icon: <BarChart3 className="w-16 h-16" />,
-      image: "/classic05.png",
-      bgPattern:
-        "radial-gradient(circle at 20% 80%, rgba(255, 218, 185, 0.15) 0%, transparent 60%)",
-      stats: { reports: "500+", insights: "AI", dashboards: "50+" },
-      features: [
-        "Charts and Graphs",
-        "List Reporting",
-        "Pivot Table",
-        "Interactive Dashboards",
-        "Predictive Analytics",
-        "Custom Reports",
-      ],
-    },
+    // {
+    //   title: "Analytics & Reporting",
+    //   subtitle: "AI-Powered Insights",
+    //   description:
+    //     "Advanced analytics with intelligent reporting, interactive dashboards, and predictive insights for data-driven decisions.",
+    //   gradient: "bg-orange-500/50",
+    //   icon: <BarChart3 className="w-16 h-16" />,
+    //   image: "/classic05.png",
+    //   bgPattern:
+    //     "radial-gradient(circle at 20% 80%, rgba(255, 218, 185, 0.15) 0%, transparent 60%)",
+    //   stats: { reports: "500+", insights: "AI", dashboards: "50+" },
+    //   features: [
+    //     "Charts and Graphs",
+    //     "List Reporting",
+    //     "Pivot Table",
+    //     "Interactive Dashboards",
+    //     "Predictive Analytics",
+    //     "Custom Reports",
+    //   ],
+    // },
     {
       title: "Procurement",
       subtitle: "Smart Procurement Solutions",
@@ -136,31 +157,40 @@ const Features: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % features.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, features.length]);
+
   return (
-    <section className="relative py-10 bg-[#f2f5f5] overflow-hidden">
+    <section className="relative py-10 md:py-20 lg:py-24 bg-[#f2f5f5] overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto px-40 sm:px-40 lg:px-8 xl:px-12 2xl:px-30">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-block mb-6"
+            className="inline-block mb-6 lg:mb-8"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="px-6 py-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
+            <div className="px-4 py-2 lg:px-6 lg:py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
               <span className="text-green-600 font-medium text-sm tracking-wider uppercase">
                 Business Applications
               </span>
@@ -168,7 +198,7 @@ const Features: React.FC = () => {
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 lg:mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -182,7 +212,7 @@ const Features: React.FC = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -193,14 +223,14 @@ const Features: React.FC = () => {
         </motion.div>
 
         {/* Feature Navigation */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-[#ffffff] backdrop-blur-xl rounded-2xl p-2 border border-gray-300/50">
-            <div className="flex space-x-2">
+        <div className="flex justify-center mb-8 lg:mb-12">
+          <div className="bg-[#ffffff] backdrop-blur-xl rounded-2xl p-2 border border-gray-300/50 shadow-lg">
+            <div className="flex flex-wrap justify-center gap-2 lg:gap-3">
               {features.map((feature, index) => (
                 <motion.button
                   key={index}
                   onClick={() => setActiveFeature(index)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  className={`px-3 py-2 lg:px-6 lg:py-3 rounded-xl font-semibold transition-all duration-300 text-sm lg:text-base ${
                     activeFeature === index
                       ? "bg-gradient-to-r from-blue-600 to-green-600 text-white shadow-lg"
                       : "text-gray-600 hover:text-black hover:bg-gray-200/50"
@@ -209,12 +239,15 @@ const Features: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="flex items-center space-x-2">
-                    <span className="text-lg flex items-center justify-center">
+                    <span className="text-base lg:text-lg flex items-center justify-center">
                       {React.cloneElement(feature.icon, {
-                        className: "w-5 h-5",
+                        className: "w-4 h-4 lg:w-5 lg:h-5",
                       })}
                     </span>
-                    <span>{feature.title}</span>
+                    <span className="hidden sm:inline">{feature.title}</span>
+                    <span className="sm:hidden">
+                      {feature.title.split(" ")[0]}
+                    </span>
                   </span>
                 </motion.button>
               ))}
@@ -226,38 +259,25 @@ const Features: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFeature}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -50, scale: 0.95 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="max-w-7xl mx-auto"
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
               {/* Feature Content */}
               <motion.div
-                className="space-y-8"
+                className="space-y-6 lg:space-y-8 order-2 lg:order-1"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <div>
-                  {/* <motion.div
-                    className="text-6xl md:text-8xl mb-6 flex items-center justify-center"
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 5, -5, 0],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    {features[activeFeature].icon}
-                  </motion.div> */}
-
                   <motion.h3
-                    className={`text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r ${features[activeFeature].gradient} bg-clip-text text-transparent`}
+                    className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4 bg-gradient-to-r ${features[activeFeature].gradient} bg-clip-text text-transparent`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -266,7 +286,7 @@ const Features: React.FC = () => {
                   </motion.h3>
 
                   <motion.h4
-                    className="text-2xl md:text-3xl text-blue-700 mb-6 font-medium"
+                    className="text-xl sm:text-2xl lg:text-3xl text-blue-700 mb-4 lg:mb-6 font-medium"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -275,7 +295,7 @@ const Features: React.FC = () => {
                   </motion.h4>
 
                   <motion.p
-                    className="text-xl text-gray-700 leading-relaxed mb-8"
+                    className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6 lg:mb-8"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
@@ -285,7 +305,7 @@ const Features: React.FC = () => {
 
                   {/* Feature List */}
                   <motion.div
-                    className="grid grid-cols-2 gap-4"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
@@ -298,8 +318,10 @@ const Features: React.FC = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                       >
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-green-400 rounded-full"></div>
-                        <span className="text-sm font-medium">{item}</span>
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex-shrink-0"></div>
+                        <span className="text-sm lg:text-base font-medium">
+                          {item}
+                        </span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -308,13 +330,13 @@ const Features: React.FC = () => {
 
               {/* Feature Visualization */}
               <motion.div
-                className="relative"
+                className="relative order-1 lg:order-2"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <motion.div
-                  className={`relative h-96 lg:h-[450px] bg-gradient-to-br ${features[activeFeature].gradient} rounded-3xl shadow-2xl overflow-hidden border border-white/10`}
+                  className={`relative h-80 sm:h-96 lg:h-[450px] bg-gradient-to-br ${features[activeFeature].gradient} rounded-3xl shadow-2xl overflow-hidden border border-white/10`}
                   whileHover={{ scale: 1.02, rotateY: 2 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -325,7 +347,7 @@ const Features: React.FC = () => {
                   />
 
                   {/* Animated Elements */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-6">
                     <motion.div
                       className="relative"
                       animate={{
@@ -342,42 +364,13 @@ const Features: React.FC = () => {
                         <Image
                           src={features[activeFeature].image ?? "/fallback.png"}
                           alt={features[activeFeature].title}
-                          width={550}
-                          height={550}
-                          className="object-cover"
+                          width={500}
+                          height={500}
+                          className="object-cover w-full h-auto max-w-full"
                         />
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div> */}
                       </div>
                     </motion.div>
                   </div>
-
-                  {/* Stats Overlay */}
-                  {/* <div className="absolute bottom-8 left-8 right-8">
-                    <div className="grid grid-cols-3 gap-4">
-                      {Object.entries(features[activeFeature].stats).map(
-                        ([key, value], index) => (
-                          <motion.div
-                            key={key}
-                            className="bg-white/30 backdrop-blur-md rounded-xl p-4 text-center border border-white/20 shadow-lg"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                              duration: 0.4,
-                              delay: 0.8 + index * 0.1,
-                            }}
-                            whileHover={{ scale: 1.05, y: -2 }}
-                          >
-                            <div className="text-2xl font-bold text-black mb-1 drop-shadow-sm">
-                              {value}
-                            </div>
-                            <div className="text-sm text-gray-800 capitalize font-medium">
-                              {key}
-                            </div>
-                          </motion.div>
-                        )
-                      )}
-                    </div>
-                  </div> */}
 
                   {/* Shine Effect */}
                   <motion.div
@@ -399,14 +392,14 @@ const Features: React.FC = () => {
 
         {/* CTA Section */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 lg:mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
           <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
+            className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-sm lg:text-base"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

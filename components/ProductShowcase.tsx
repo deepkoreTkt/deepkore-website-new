@@ -115,7 +115,7 @@ const ProductShowcase: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto px-40">
         {/* Header Section */}
         <motion.div
           className="text-center mb-16"

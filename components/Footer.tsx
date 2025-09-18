@@ -79,6 +79,58 @@ const Footer: React.FC = () => {
     },
   ];
 
+  const platformLinks = [
+    { name: "Why Deepkore", href: "/whydeepkore" },
+    { name: "What is Low Code", href: "/lowcode" },
+    { name: "What is No Code", href: "/nocode" },
+    {
+      name: "Features",
+      href: "/feature",
+      subitems: [
+        { name: "Visual Development Interface", href: "/feature#visual" },
+        { name: "Workflow and Logic Builder", href: "/feature#workflow" },
+        { name: "Integration Capabilities", href: "/feature#integration" },
+        {
+          name: "Security and Compliance",
+          href: "/feature#security",
+          subitems: [
+            {
+              name: "Data encryption and audit logs",
+              href: "/feature#encryption",
+            },
+          ],
+        },
+        {
+          name: "Pre-Built Templates and Components",
+          href: "/feature#templates",
+        },
+      ],
+    },
+  ];
+
+  const productLinks = [
+    { name: "Human Resource", href: "/human-resource" },
+    { name: "Data Management Tools", href: "/data-management-tools" },
+    { name: "Procurement", href: "/procurement" },
+    { name: "Finance", href: "/finance" },
+    { name: "Admin & Ops", href: "/admin-ops" },
+    { name: "Customer Support", href: "/customer-support" },
+    { name: "Sales", href: "/sales" },
+    { name: "Marketing", href: "/marketing" },
+    { name: "CRM", href: "/crm" },
+    { name: "IT Service Desk", href: "/it-service-desk" },
+  ];
+
+  const solutionLinks = [
+    { name: "Sales & CRM", href: "/sales-crm" },
+    { name: "Asset Management", href: "/asset-management" },
+    { name: "Manufacturing & Production", href: "/manufacturing-production" },
+    { name: "Healthcare & Medical", href: "/healthcare-medical" },
+    { name: "Retail & E-commerce", href: "/retail-ecommerce" },
+    { name: "Education & E-learning", href: "/education-elearning" },
+    { name: "Logistics & Transportation", href: "/logistics-transportation" },
+  ];
+
   return (
     <footer className="relative bg-white overflow-hidden">
       {/* Background Elements */}
@@ -88,7 +140,7 @@ const Footer: React.FC = () => {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-40 py-16 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Company Info */}
             <motion.div
@@ -140,7 +192,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <motion.div
-              className="lg:col-span-2"
+              className="lg:col-span-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -150,12 +202,7 @@ const Footer: React.FC = () => {
                 Platform
               </h4>
               <ul className="space-y-4">
-                {[
-                  { name: "DataForm", href: "/dataform" },
-                  { name: "Process", href: "/process" },
-                  { name: "Analytics", href: "/analytics" },
-                  { name: "Integration", href: "/integration" },
-                ].map((link) => (
+                {platformLinks.map((link) => (
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
@@ -164,30 +211,51 @@ const Footer: React.FC = () => {
                     >
                       {link.name}
                     </motion.a>
+                    {link.subitems && (
+                      <ul className="ml-4 mt-2 space-y-2">
+                        {link.subitems.map((sub) => (
+                          <li key={sub.name}>
+                            <motion.a
+                              href={sub.href}
+                              className="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-sm"
+                              whileHover={{ x: 5 }}
+                            >
+                              {sub.name}
+                            </motion.a>
+                            {sub.subitems && (
+                              <ul className="ml-4 mt-1 space-y-1">
+                                {sub.subitems.map((subsub) => (
+                                  <li key={subsub.name}>
+                                    <motion.a
+                                      href={subsub.href}
+                                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-xs"
+                                      whileHover={{ x: 5 }}
+                                    >
+                                      {subsub.name}
+                                    </motion.a>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
             </motion.div>
 
             <motion.div
-              className="lg:col-span-2"
+              className="lg:col-span-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">Company</h4>
+              <h4 className="text-black font-semibold mb-6 text-lg">Product</h4>
               <ul className="space-y-4">
-                {[
-                  { name: "Why Deepkore", href: "/whydeepkore" },
-                  { name: "About Us", href: "/aboutus" },
-                  { name: "What is Low-Code?", href: "/lowcode" },
-                  { name: "Privacy", href: "/privacypolicy" },
-                  { name: "FAQ", href: "/faq" },
-
-                  { name: "Blog", href: "/blog" },
-                  { name: "Contact Us", href: "/contact" },
-                ].map((link) => (
+                {productLinks.map((link) => (
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
@@ -202,22 +270,17 @@ const Footer: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="lg:col-span-2"
+              className="lg:col-span-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
               <h4 className="text-black font-semibold mb-6 text-lg">
-                Quick links
+                Solutions
               </h4>
               <ul className="space-y-4">
-                {[
-                  { name: "Solutions", href: "/solution" },
-                  { name: "Use Cases", href: "/usecase" },
-                  { name: "Features", href: "/feature" },
-                  { name: "Pricing", href: "/pricing" },
-                ].map((link) => (
+                {solutionLinks.map((link) => (
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
@@ -233,7 +296,7 @@ const Footer: React.FC = () => {
 
             {/* Newsletter */}
             <motion.div
-              className="lg:col-span-2"
+              className="lg:col-span-3"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -343,7 +406,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-4 lg:px-8 py-8">
+          <div className="container mx-auto px-40 lg:px-40 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <motion.div
                 className="text-gray-600 text-sm"
