@@ -60,24 +60,25 @@ const Header: React.FC = () => {
     {
       title: "Features",
       items: [
-        { href: "/dataform", label: "Visual Development Interface" },
-        { href: "/process", label: "Workflow and Logic Builder" },
+        { href: "/dataform", label: "Visual Development" },
+        { href: "/process", label: "Workflow Builder" },
+        { href: "/analytics", label: "Analytics & Insights" },
         { href: "/integration", label: "Integration Capabilities" },
-        { href: "/security", label: "Security and Compliance" },
-        { href: "/encryption", label: "Data encryption and audit logs" },
+        { href: "/security", label: "Security" },
+        { href: "/encryption", label: "Data encryption" },
       ],
     },
     {
-      title: "Pre-Built Templates and Components",
+      title: "Pre-Built Templates",
       items: [
         { href: "/hr", label: "Human Resource" },
         { href: "/data-management", label: "Data Management Tools" },
         { href: "/procurement", label: "Procurement" },
         { href: "/finance", label: "Finance" },
         { href: "/admin-ops", label: "Admin & Ops" },
-        { href: "/customer-support", label: "Customer Support" },
-        { href: "/sales", label: "Sales" },
-        { href: "/marketing", label: "Marketing" },
+        // { href: "/customer-support", label: "Customer Support" },
+        // { href: "/sales", label: "Sales" },
+        // { href: "/marketing", label: "Marketing" },
       ],
     },
   ];
@@ -141,7 +142,7 @@ const Header: React.FC = () => {
               <AnimatePresence>
                 {isUserGuideOpen && (
                   <motion.div
-                    className="absolute top-full left-1/10 -translate-x-1/5 mt-2 bg-[#fafafa] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50  grid grid-cols-3 gap-4 p-6 min-w-[710px]"
+                    className="absolute top-full left-1/10 -translate-x-1/5 mt-2 bg-[#d7f5ea] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50  grid grid-cols-3 gap-4 p-6 min-w-[710px]"
                     initial={{ opacity: 0, y: -15, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -15, scale: 0.95 }}
@@ -227,7 +228,7 @@ const Header: React.FC = () => {
               <AnimatePresence>
                 {isProductOpen && (
                   <motion.div
-                    className="absolute top-full left-0 mt-1.5 bg-[#f5f5f2] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50 grid grid-cols-1 gap-4 p-6 min-w-[280px]"
+                    className="absolute top-full left-0 mt-1.5 bg-[#d7f5ea] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50 grid grid-cols-1 gap-4 p-6 min-w-[280px]"
                     initial={{ opacity: 0, y: -15, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -15, scale: 0.95 }}
@@ -300,7 +301,7 @@ const Header: React.FC = () => {
               <AnimatePresence>
                 {isSolutionsOpen && (
                   <motion.div
-                    className="absolute top-full left-0 mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50 grid grid-cols-2 gap-4 p-6 min-w-[500px] max-h-[400px] overflow-y-auto"
+                    className="absolute top-full left-0 mt-2 bg-[#d7f5ea] backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/60 overflow-hidden z-50 grid grid-cols-2 gap-4 p-6 min-w-[500px] max-h-[400px] overflow-y-auto"
                     initial={{ opacity: 0, y: -15, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -15, scale: 0.95 }}

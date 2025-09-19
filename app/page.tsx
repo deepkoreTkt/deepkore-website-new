@@ -23,16 +23,17 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <PowerfulFeatures />
-        <EfficiencyMetrics />
+        <ProductShowcase />
+        {/* <PowerfulFeatures /> */}
         <TargetAudience />
-        {/* <About /> */}
+        <EfficiencyMetrics />
 
+        {/* <About /> */}
+        <Stats />
         <section id="features">
           <Features />
         </section>
-        <ProductShowcase />
-        <Stats />
+
         <Benefits />
         <ProductOverview />
         <MarketingInsights />

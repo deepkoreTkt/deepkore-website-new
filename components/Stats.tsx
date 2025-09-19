@@ -111,7 +111,7 @@ const Stats: React.FC = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-30">
+      <div className="container mx-auto px-40">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Key Challenges in Leading Industries

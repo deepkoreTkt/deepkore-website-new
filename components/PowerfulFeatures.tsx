@@ -9,32 +9,24 @@ const PowerfulFeatures: React.FC = () => {
     {
       title: "Data Form",
       description: "Create custom forms effortlessly without coding.",
-      icon: "/dataForm.svg",
       avatar: "/dataform1.png",
-      gradient: "from-blue-200 via-blue-100 to-white",
     },
     {
       title: "Process",
       description:
         "Design and automate processes with a simple drag-and-drop interface.",
-      icon: "/process.svg",
       avatar: "/process.png",
-      gradient: "from-green-200 via-green-100 to-white",
     },
     {
       title: "Integration",
       description:
         "Connect seamlessly with your existing tools and applications.",
-      icon: "/integration.svg",
       avatar: "/classic02.png",
-      gradient: "from-purple-200 via-purple-100 to-white",
     },
     {
       title: "Analytics",
       description: "Turn data into actionable insights effortlessly.",
-      icon: "/analytics.svg",
       avatar: "/analytics1.png",
-      gradient: "from-cyan-200 via-cyan-100 to-white",
     },
   ];
 
@@ -50,30 +42,20 @@ const PowerfulFeatures: React.FC = () => {
     enter: (direction: number) => ({
       x: direction > 0 ? 300 : -300,
       opacity: 0,
-      scale: 0.8,
     }),
     center: {
-      zIndex: 1,
       x: 0,
       opacity: 1,
-      scale: 1,
     },
     exit: (direction: number) => ({
-      zIndex: 0,
       x: direction < 0 ? 300 : -300,
       opacity: 0,
-      scale: 0.8,
     }),
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-[800px] relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-
-      <div className="container mx-auto px-6 md:px-16 relative z-10">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900 min-h-[800px]">
+      <div className="container mx-auto px-40 md:px-40">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -82,52 +64,40 @@ const PowerfulFeatures: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="inline-block mb-8">
-            <div className="px-8 py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm shadow-lg">
-              <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
+            <div className="px-8 py-3 bg-gradient-to-r from-blue-500/15 to-green-500/15 dark:from-blue-600/40 dark:to-green-600/40 border border-blue-500/20 dark:border-blue-600/50 rounded-full backdrop-blur-sm shadow-lg">
+              <span className="text-blue-700 dark:text-blue-300 font-semibold text-sm tracking-wider uppercase">
                 Powerful Features
               </span>
             </div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 drop-shadow-lg leading-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg leading-tight">
             All Your Tasks,{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
               Organized Effortlessly
             </span>
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-10 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
           {/* Vertical Tabs */}
-          <div className="flex md:flex-col gap-4 md:gap-2 w-full md:w-1/4">
+          <div className="flex md:flex-col gap-2 w-full md:w-1/3">
             {features.map((feature, idx) => (
-              <motion.button
+              <button
                 key={feature.title}
-                className={`flex flex-row items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 text-left w-full h-auto backdrop-blur-lg shadow-md cursor-pointer group
-                  ${
-                    activeTab === idx
-                      ? "bg-white/90 shadow-xl scale-105 hover:scale-110"
-                      : "bg-white/80 hover:bg-blue-50/80 hover:shadow-lg hover:scale-102"
-                  }
-                `}
+                className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-colors text-left w-full border-l-4 ${
+                  activeTab === idx
+                    ? "bg-blue-50 border-blue-500 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-400"
+                    : "bg-white border-transparent hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white"
+                }`}
                 onClick={() => handleTabClick(idx)}
               >
-                <div className="flex flex-col">
-                  <span
-                    className={`font-bold text-lg ${
-                      activeTab === idx ? "text-blue-600" : "text-gray-700"
-                    }`}
-                  >
-                    {feature.title}
-                  </span>
-                  <p
-                    className={`text-sm leading-relaxed ${
-                      activeTab === idx ? "text-blue-500" : "text-gray-600"
-                    }`}
-                  >
+                <div>
+                  <div className="font-semibold text-lg">{feature.title}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
                     {feature.description}
-                  </p>
+                  </div>
                 </div>
-              </motion.button>
+              </button>
             ))}
           </div>
 
@@ -141,17 +111,16 @@ const PowerfulFeatures: React.FC = () => {
             transition={{
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.3 },
-              scale: { duration: 0.3 },
             }}
-            className="flex flex-col items-center justify-center w-full md:w-2/5"
+            className="w-full md:w-2/3 flex justify-center"
           >
-            <div className="relative w-full max-w-2xl h-[420px] rounded-3xl overflow-hidden shadow-2xl bg-white/80 backdrop-blur-lg flex items-center justify-center group">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-2xl">
               <Image
                 src={features[activeTab].avatar}
-                alt={`${features[activeTab].title} avatar`}
-                width={800}
-                height={500}
-                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                alt={features[activeTab].title}
+                width={600}
+                height={400}
+                className="w-full h-auto rounded"
               />
             </div>
           </motion.div>
@@ -166,7 +135,7 @@ const PowerfulFeatures: React.FC = () => {
         >
           <a href="/feature">
             <motion.button
-              className="px-10 py-5 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg tracking-wide"
+              className="px-10 py-5 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               whileHover={{ scale: 1.07, y: -2 }}
               whileTap={{ scale: 0.97 }}
               type="button"

@@ -83,29 +83,6 @@ const Footer: React.FC = () => {
     { name: "Why Deepkore", href: "/whydeepkore" },
     { name: "What is Low Code", href: "/lowcode" },
     { name: "What is No Code", href: "/nocode" },
-    {
-      name: "Features",
-      href: "/feature",
-      subitems: [
-        { name: "Visual Development Interface", href: "/feature#visual" },
-        { name: "Workflow and Logic Builder", href: "/feature#workflow" },
-        { name: "Integration Capabilities", href: "/feature#integration" },
-        {
-          name: "Security and Compliance",
-          href: "/feature#security",
-          subitems: [
-            {
-              name: "Data encryption and audit logs",
-              href: "/feature#encryption",
-            },
-          ],
-        },
-        {
-          name: "Pre-Built Templates and Components",
-          href: "/feature#templates",
-        },
-      ],
-    },
   ];
 
   const productLinks = [
@@ -114,11 +91,11 @@ const Footer: React.FC = () => {
     { name: "Procurement", href: "/procurement" },
     { name: "Finance", href: "/finance" },
     { name: "Admin & Ops", href: "/admin-ops" },
-    { name: "Customer Support", href: "/customer-support" },
-    { name: "Sales", href: "/sales" },
-    { name: "Marketing", href: "/marketing" },
-    { name: "CRM", href: "/crm" },
-    { name: "IT Service Desk", href: "/it-service-desk" },
+    // { name: "Customer Support", href: "/customer-support" },
+    // { name: "Sales", href: "/sales" },
+    // { name: "Marketing", href: "/marketing" },
+    // { name: "CRM", href: "/crm" },
+    // { name: "IT Service Desk", href: "/it-service-desk" },
   ];
 
   const solutionLinks = [
@@ -127,8 +104,8 @@ const Footer: React.FC = () => {
     { name: "Manufacturing & Production", href: "/manufacturing-production" },
     { name: "Healthcare & Medical", href: "/healthcare-medical" },
     { name: "Retail & E-commerce", href: "/retail-ecommerce" },
-    { name: "Education & E-learning", href: "/education-elearning" },
-    { name: "Logistics & Transportation", href: "/logistics-transportation" },
+    // { name: "Education & E-learning", href: "/education-elearning" },
+    // { name: "Logistics & Transportation", href: "/logistics-transportation" },
   ];
 
   return (
@@ -141,7 +118,7 @@ const Footer: React.FC = () => {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 lg:px-40 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-16 gap-5 lg:gap-12">
             {/* Company Info */}
             <motion.div
               className="lg:col-span-4"
@@ -161,9 +138,7 @@ const Footer: React.FC = () => {
                   />
                 </div>
                 <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                  Deepkore lets you transform ideas into powerful Enterprise
-                  applications that adapt to your business needs. One platform.
-                  No coding. Completely hassle-free.
+                  One platform. No coding. Completely hassle-free.
                 </p>
               </div>
 
@@ -211,36 +186,6 @@ const Footer: React.FC = () => {
                     >
                       {link.name}
                     </motion.a>
-                    {link.subitems && (
-                      <ul className="ml-4 mt-2 space-y-2">
-                        {link.subitems.map((sub) => (
-                          <li key={sub.name}>
-                            <motion.a
-                              href={sub.href}
-                              className="text-gray-500 hover:text-blue-400 transition-colors duration-300 text-sm"
-                              whileHover={{ x: 5 }}
-                            >
-                              {sub.name}
-                            </motion.a>
-                            {sub.subitems && (
-                              <ul className="ml-4 mt-1 space-y-1">
-                                {sub.subitems.map((subsub) => (
-                                  <li key={subsub.name}>
-                                    <motion.a
-                                      href={subsub.href}
-                                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-xs"
-                                      whileHover={{ x: 5 }}
-                                    >
-                                      {subsub.name}
-                                    </motion.a>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </li>
                 ))}
               </ul>
@@ -253,7 +198,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">Product</h4>
+              <h4 className="text-black font-semibold mb-3 text-lg">Product</h4>
               <ul className="space-y-4">
                 {productLinks.map((link) => (
                   <li key={link.name}>
@@ -276,7 +221,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">
+              <h4 className="text-black font-semibold mb-3 text-lg">
                 Solutions
               </h4>
               <ul className="space-y-4">
