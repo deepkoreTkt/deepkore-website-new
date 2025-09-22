@@ -9,7 +9,7 @@ const PowerfulFeatures: React.FC = () => {
     {
       title: "Data Form",
       description: "Create custom forms effortlessly without coding.",
-      avatar: "/dataform1.png",
+      avatar: "/dataformbg1.svg",
     },
     {
       title: "Process",
@@ -21,7 +21,7 @@ const PowerfulFeatures: React.FC = () => {
       title: "Integration",
       description:
         "Connect seamlessly with your existing tools and applications.",
-      avatar: "/classic02.png",
+      avatar: "/integration1.svg",
     },
     {
       title: "Analytics",
@@ -122,7 +122,7 @@ const PowerfulFeatures: React.FC = () => {
             }}
             className="w-full lg:w-3/5 flex justify-center lg:justify-end"
           >
-            <div className="bg-gray-900 rounded-2xl shadow-2xl p-4 max-w-4xl border border-gray-800">
+            <div className="bg-[#264a67] rounded-2xl shadow-2xl p-4 max-w-4xl border border-[#264a67]">
               {features[activeTab].avatar.includes(".mp4") ? (
                 <video
                   loop
@@ -150,4 +150,3 @@ const PowerfulFeatures: React.FC = () => {
 };
 
 export default PowerfulFeatures;
-
