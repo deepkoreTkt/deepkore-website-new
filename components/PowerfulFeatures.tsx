@@ -54,8 +54,8 @@ const PowerfulFeatures: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900 min-h-[800px]">
-      <div className="container mx-auto px-40 md:px-40">
+    <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600 min-h-[800px]">
+      <div className="container mx-auto px-8 md:px-40 lg:px-40">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -64,38 +64,46 @@ const PowerfulFeatures: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="inline-block mb-8">
-            <div className="px-8 py-3 bg-gradient-to-r from-blue-500/15 to-green-500/15 dark:from-blue-600/40 dark:to-green-600/40 border border-blue-500/20 dark:border-blue-600/50 rounded-full backdrop-blur-sm shadow-lg">
-              <span className="text-blue-700 dark:text-blue-300 font-semibold text-sm tracking-wider uppercase">
+            <div className="px-8 py-3 bg-white/20 border border-white/30 rounded-full backdrop-blur-sm shadow-lg">
+              <span className="text-white font-semibold text-sm tracking-wider uppercase">
                 Powerful Features
               </span>
             </div>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg leading-tight">
-            All Your Tasks,{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-              Organized Effortlessly
-            </span>
+            All Your Tasks, Organized Effortlessly
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-12 items-center justify-center">
+        <div className="flex flex-col lg:flex-row gap-8 items-start justify-between max-w-7xl mx-auto">
           {/* Vertical Tabs */}
-          <div className="flex md:flex-col gap-2 w-full md:w-1/3">
+          <div className="flex lg:flex-col gap-3 w-full lg:w-2/5 space-y-1">
             {features.map((feature, idx) => (
               <button
                 key={feature.title}
-                className={`flex items-center gap-4 px-4 py-3 rounded-lg transition-colors text-left w-full border-l-4 ${
+                className={`text-left w-full py-6 px-6 rounded-lg transition-all duration-300 relative overflow-hidden group ${
                   activeTab === idx
-                    ? "bg-blue-50 border-blue-500 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-400"
-                    : "bg-white border-transparent hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white"
+                    ? "bg-gradient-to-r from-white to-white/60 text-blue-600 shadow-lg border border-white/30"
+                    : "bg-transparent hover:bg-gradient-to-r hover:from-white hover:to-white/60 text-white/90 hover:text-blue-600 border border-transparent hover:border-white/15 hover:shadow-md"
                 }`}
                 onClick={() => handleTabClick(idx)}
               >
                 <div>
-                  <div className="font-semibold text-lg">{feature.title}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <h3 className="font-semibold text-xl mb-2 flex items-center">
+                    {feature.title}
+                    <span
+                      className={`ml-2 transition-opacity duration-300 ${
+                        activeTab === idx
+                          ? "opacity-100"
+                          : "opacity-0 group-hover:opacity-100"
+                      }`}
+                    >
+                      →
+                    </span>
+                  </h3>
+                  <p className="text-sm opacity-90 leading-relaxed">
                     {feature.description}
-                  </div>
+                  </p>
                 </div>
               </button>
             ))}
@@ -112,41 +120,34 @@ const PowerfulFeatures: React.FC = () => {
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.3 },
             }}
-            className="w-full md:w-2/3 flex justify-center"
+            className="w-full lg:w-3/5 flex justify-center lg:justify-end"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-2xl">
-              <Image
-                src={features[activeTab].avatar}
-                alt={features[activeTab].title}
-                width={600}
-                height={400}
-                className="w-full h-auto rounded"
-              />
+            <div className="bg-gray-900 rounded-2xl shadow-2xl p-4 max-w-4xl border border-gray-800">
+              {features[activeTab].avatar.includes(".mp4") ? (
+                <video
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto rounded-lg"
+                >
+                  <source src={features[activeTab].avatar} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={features[activeTab].avatar}
+                  alt={features[activeTab].title}
+                  width={800}
+                  height={500}
+                  className="w-full h-auto rounded-lg"
+                />
+              )}
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          className="text-center mt-14"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <a href="/feature">
-            <motion.button
-              className="px-10 py-5 mb-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 text-lg tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-              whileHover={{ scale: 1.07, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              type="button"
-            >
-              Explore All Features
-            </motion.button>
-          </a>
-        </motion.div>
       </div>
     </section>
   );
 };
 
 export default PowerfulFeatures;
+

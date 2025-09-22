@@ -94,12 +94,8 @@ const ProductShowcase: React.FC = () => {
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
             initial={{
-              x:
-                Math.random() *
-                (typeof window !== "undefined" ? window.innerWidth : 1920),
-              y:
-                Math.random() *
-                (typeof window !== "undefined" ? window.innerHeight : 1080),
+              x: (i * 100) % 1920,
+              y: (i * 50) % 1080,
               opacity: 0,
             }}
             animate={{
@@ -381,7 +377,7 @@ const ProductShowcase: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      <IconMenuMarquee />
+      {/* <IconMenuMarquee /> */}
     </section>
   );
 };

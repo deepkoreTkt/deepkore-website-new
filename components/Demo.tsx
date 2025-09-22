@@ -259,477 +259,484 @@ const Demo: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <Header />
 
-      {/* Hero Section with Left-Right Layout */}
-      <section className="py-40 bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Dashboard Mockup */}
+      {/* Modern Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00A551]/5 via-transparent to-[#2791D0]/5" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00A551]/10 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#2791D0]/10 rounded-full blur-3xl opacity-30" />
+
+        <div className="relative max-w-7xl mx-auto px-4 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+            {/* Left Side - Enhanced Content */}
             <motion.div
-              className="relative"
+              className="space-y-12"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
-                <div className="bg-gradient-to-r from-[#00A551] to-[#2791D0] h-12 rounded-t-xl flex items-center px-4">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 bg-white/30 rounded-full"></div>
-                    <div className="w-3 h-3 bg-white/30 rounded-full"></div>
-                    <div className="w-3 h-3 bg-white/30 rounded-full"></div>
-                  </div>
-                  <div className="ml-4 text-white font-semibold">
-                    Deepkore Dashboard
-                  </div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#00A551]/20 rounded-2xl flex items-center justify-center">
-                      <span className="text-[#00A551] font-bold">📊</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-800">
-                        Project Overview
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Track all your projects in one place
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#2791D0]/20 rounded-2xl flex items-center justify-center">
-                      <span className="text-[#2791D0] font-bold">👥</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-800">
-                        Team Collaboration
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Real-time updates and communication
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-[#C5FF28]/20 rounded-2xl flex items-center justify-center">
-                      <span className="text-[#00A551] font-bold">⚡</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-800">
-                        Automation
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Streamline workflows automatically
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-6 bg-gray-50 rounded-2xl p-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-gray-700">
-                        Project Completion
-                      </span>
-                      <span className="text-sm text-[#00A551] font-semibold">
-                        85%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-[#00A551] to-[#2791D0] h-2 rounded-full"
-                        style={{ width: "85%" }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature Points */}
-              <div className="mt-8 space-y-4">
+              {/* Main Heading with Modern Typography */}
+              <div className="space-y-6">
                 <motion.div
-                  className="flex items-start space-x-3"
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00A551]/10 to-[#2791D0]/10 rounded-full border border-[#00A551]/20 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <div className="w-6 h-6 bg-[#00A551] rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">
-                      Personalized Demo
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Get a customized walkthrough of Deepkore&apos;s features
-                    </p>
-                  </div>
+                  <span className="text-sm font-semibold text-[#00A551]">
+                    ✨ New Era of Development
+                  </span>
                 </motion.div>
 
-                <motion.div
-                  className="flex items-start space-x-3"
+                <motion.h1
+                  className="text-6xl lg:text-7xl font-black leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <div className="w-6 h-6 bg-[#2791D0] rounded-full flex items-center justify-center mt-1">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">
-                      Expert Guidance
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Learn from our solution experts with years of experience
-                    </p>
-                  </div>
-                </motion.div>
+                  <span className="bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551] bg-clip-text text-transparent">
+                    Unlock
+                  </span>
+                  <br />
+                  <span className="text-slate-800">the Power of</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-[#2791D0] to-[#00A551] bg-clip-text text-transparent">
+                    Deepkore
+                  </span>
+                </motion.h1>
 
-                <motion.div
-                  className="flex items-start space-x-3"
+                <motion.p
+                  className="text-xl text-slate-600 leading-relaxed max-w-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <div className="w-6 h-6 bg-[#C5FF28] rounded-full flex items-center justify-center mt-1">
-                    <span className="text-[#00A551] text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">
-                      No Commitment
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Explore Deepkore at your own pace with no pressure
-                    </p>
-                  </div>
-                </motion.div>
+                  Build apps faster, smarter, and easier with our revolutionary
+                  low-code platform that transforms how you create digital
+                  solutions.
+                </motion.p>
               </div>
+
+              {/* Enhanced Feature Cards */}
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                {[
+                  {
+                    icon: "👤",
+                    title: "Personal Demo",
+                    desc: "1:1 session tailored to your needs",
+                    color: "from-[#00A551] to-[#00A551]/80",
+                  },
+                  {
+                    icon: "⚡",
+                    title: "Live Showcase",
+                    desc: "Real-time automation demos",
+                    color: "from-[#2791D0] to-[#2791D0]/80",
+                  },
+                  {
+                    icon: "🚀",
+                    title: "Latest Features",
+                    desc: "Cutting-edge development tools",
+                    color: "from-[#b28fff] to-[#b28fff]/80",
+                  },
+                  {
+                    icon: "✨",
+                    title: "Apps Come Alive",
+                    desc: "Watch apps build in real-time",
+                    color: "from-[#00A551] to-[#2791D0]",
+                  },
+                ].map((feature, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="group relative"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white/40 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl" />
+                    <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-500">
+                      <div
+                        className={`w-14 h-14 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
+                        <span className="text-2xl">{feature.icon}</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#00A551] transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {feature.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Modern Stats */}
+              <motion.div
+                className="flex flex-wrap gap-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+              >
+                {[
+                  {
+                    value: "10x",
+                    label: "Faster Development",
+                    color: "#00A551",
+                  },
+                  { value: "90%", label: "Cost Reduction", color: "#2791D0" },
+                  { value: "24/7", label: "Expert Support", color: "#2791D0" },
+                ].map((stat, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="text-center group cursor-pointer"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <div
+                      className="text-4xl font-black mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-slate-600 font-medium group-hover:text-slate-800 transition-colors">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
 
-            {/* Right Side - Form */}
+            {/* Right Side - Modern Form */}
             <motion.div
-              className="space-y-8"
+              className="relative"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent">
-                  Request a Demo
-                </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">
-                  Experience Deepkore with a personalized demo
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  See how Deepkore can transform your workflow. Schedule a demo
-                  with our solution experts and discover the power of seamless
-                  project management.
-                </p>
-              </div>
-
-              {/* Demo Request Form */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="firstName"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        First Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lastName"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Last Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+              {/* Form Container with Glass Effect */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00A551]/20 to-[#2791D0]/20 rounded-3xl blur-2xl" />
+                <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 md:p-10">
+                  {/* Form Header */}
+                  <div className="text-center mb-8">
+                    <motion.h2
+                      className="text-4xl font-bold mb-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
                     >
-                      Business Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleEmailChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                      placeholder="Enter your business email"
-                    />
-                    {emailError && (
-                      <p className="mt-2 text-sm text-red-600">{emailError}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Company Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                      placeholder="Enter your company name"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Phone Number
-                    </label>
-                    <div className="relative flex">
-                      {/* Country Selector Button */}
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setShowCountryDropdown(!showCountryDropdown)
-                        }
-                        className="flex items-center px-3 py-3 border border-r-0 border-gray-300 rounded-l-2xl bg-gray-50 hover:bg-gray-100 focus:ring-2 focus:ring-[#00A551] focus:border-transparent transition-colors"
-                      >
-                        <Image
-                          src={selectedCountry.flag}
-                          alt={`${selectedCountry.name} flag`}
-                          width={20}
-                          height={15}
-                          className="mr-2 rounded-sm"
-                        />
-                        <span className="text-sm font-medium text-gray-700 mr-1">
-                          {selectedCountry.code}
-                        </span>
-                        <svg
-                          className={`w-4 h-4 text-gray-500 transition-transform ${
-                            showCountryDropdown ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-
-                      {/* Phone Input */}
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handlePhoneChange}
-                        className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                        placeholder="Enter your phone number"
-                      />
-
-                      {/* Country Dropdown */}
-                      {showCountryDropdown && (
-                        <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto">
-                          {countries.map((country, index) => (
-                            <button
-                              key={index}
-                              type="button"
-                              onClick={() => handleCountrySelect(country)}
-                              className="w-full flex items-center px-4 py-3 hover:bg-gray-50 transition-colors text-left"
-                            >
-                              <Image
-                                src={country.flag}
-                                alt={`${country.name} flag`}
-                                width={20}
-                                height={15}
-                                className="mr-3 rounded-sm"
-                              />
-                              <span className="text-sm font-medium text-gray-700 mr-2">
-                                {country.code}
-                              </span>
-                              <span className="text-sm text-gray-600">
-                                {country.name}
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Click outside to close dropdown */}
-                    {showCountryDropdown && (
-                      <div
-                        className="fixed inset-0 z-40"
-                        onClick={() => setShowCountryDropdown(false)}
-                      />
-                    )}
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Tell us about your needs
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00A551] focus:border-transparent text-gray-900 placeholder-gray-500"
-                      placeholder="Describe your specific requirements or questions"
-                    />
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="flex items-center w-full mb-0">
-                      <input
-                        className="form-checkbox rounded border-gray-200 dark:border-gray-800 text-indigo-600 focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50 me-2"
-                        type="checkbox"
-                        value=""
-                        id="AcceptT&C"
-                        checked={isChecked}
-                        onChange={checkHandler}
-                        required
-                      />
-                      <label
-                        className="form-check-label text-slate-400"
-                        htmlFor="AcceptT&C"
-                      >
-                        I Accept{" "}
-                        <Link
-                          href="/termsandservices"
-                          className="text-indigo-600"
-                        >
-                          Terms And Condition
-                        </Link>
-                      </label>
-                    </div>
-                    <p className="text-red-600 text-xs">
-                      {!isChecked && "Please accept our terms and Conditions"}
+                      Request Your Demo
+                    </motion.h2>
+                    <p className="text-slate-600 text-lg">
+                      Experience Deepkore with a personalized demonstration
                     </p>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all duration-300"
-                  >
-                    Request Demo
-                  </button>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    By supplying my contact information, I accept the{" "}
-                    <a href="#" className="text-[#00A551] hover:underline">
-                      Terms
-                    </a>{" "}
-                    and{" "}
-                    <a href="#" className="text-[#00A551] hover:underline">
-                      Privacy Policy
-                    </a>
-                    .
-                  </p>
-                </form>
-
-                {/* Success Message */}
-                {successMessage && (
-                  <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <svg
-                          className="h-5 w-5 text-green-400"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                  {/* Form */}
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-slate-700">
+                          First Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
+                          placeholder="Enter first name"
+                        />
                       </div>
-                      <div className="ml-3">
-                        <p className="text-sm font-medium text-green-800">
-                          Demo request submitted successfully!
-                        </p>
-                        <p className="text-sm text-green-700">
-                          Our team will contact you soon.
-                        </p>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-slate-700">
+                          Last Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
+                          placeholder="Enter last name"
+                        />
                       </div>
                     </div>
-                  </div>
-                )}
 
-                {/* Email Check Error */}
-                {emailCheck && (
-                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <svg
-                          className="h-5 w-5 text-red-400"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-sm font-medium text-red-800">
-                          Email is required
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-slate-700">
+                        Business Email *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleEmailChange}
+                        required
+                        className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
+                        placeholder="Enter business email"
+                      />
+                      {emailError && (
+                        <p className="text-sm text-red-600 mt-1">
+                          {emailError}
                         </p>
-                      </div>
+                      )}
                     </div>
-                  </div>
-                )}
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-slate-700">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
+                        placeholder="Enter company name"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-slate-700">
+                        Phone Number
+                      </label>
+                      <div className="relative flex">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setShowCountryDropdown(!showCountryDropdown)
+                          }
+                          className="flex items-center px-4 py-3 bg-white/70 backdrop-blur-sm border border-r-0 border-slate-200/50 rounded-l-xl hover:bg-white/80 transition-colors"
+                        >
+                          <Image
+                            src={selectedCountry.flag}
+                            alt={`${selectedCountry.name} flag`}
+                            width={20}
+                            height={15}
+                            className="mr-2 rounded"
+                          />
+                          <span className="text-sm font-medium text-slate-700">
+                            {selectedCountry.code}
+                          </span>
+                          <svg
+                            className={`w-4 h-4 text-slate-500 ml-2 transition-transform ${
+                              showCountryDropdown ? "rotate-180" : ""
+                            }`}
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </button>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handlePhoneChange}
+                          className="flex-1 px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-r-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
+                          placeholder="Enter phone number"
+                        />
+
+                        {/* Country Dropdown */}
+                        {showCountryDropdown && (
+                          <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-xl border border-slate-200/50 rounded-xl shadow-xl z-50 max-h-60 overflow-y-auto">
+                            {countries.map((country, index) => (
+                              <button
+                                key={index}
+                                type="button"
+                                onClick={() => handleCountrySelect(country)}
+                                className="w-full flex items-center px-4 py-3 hover:bg-slate-50/50 transition-colors text-left"
+                              >
+                                <Image
+                                  src={country.flag}
+                                  alt={`${country.name} flag`}
+                                  width={20}
+                                  height={15}
+                                  className="mr-3 rounded"
+                                />
+                                <span className="text-sm font-medium text-slate-700 mr-2">
+                                  {country.code}
+                                </span>
+                                <span className="text-sm text-slate-600">
+                                  {country.name}
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Click outside to close */}
+                      {showCountryDropdown && (
+                        <div
+                          className="fixed inset-0 z-40"
+                          onClick={() => setShowCountryDropdown(false)}
+                        />
+                      )}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-slate-700">
+                        Tell us about your needs
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400 resize-none"
+                        placeholder="Describe your requirements..."
+                      />
+                    </div>
+
+                    {/* Terms Checkbox */}
+                    <div className="flex items-start space-x-3">
+                      <input
+                        type="checkbox"
+                        id="terms"
+                        checked={isChecked}
+                        onChange={checkHandler}
+                        required
+                        className="mt-1 w-4 h-4 text-[#00A551] bg-white/70 border-slate-300 rounded focus:ring-[#00A551]/50 focus:ring-2"
+                      />
+                      <label
+                        htmlFor="terms"
+                        className="text-sm text-slate-600 leading-relaxed"
+                      >
+                        I accept the{" "}
+                        <Link
+                          href="/termsandservices"
+                          className="text-[#00A551] hover:text-[#2791D0] font-medium transition-colors"
+                        >
+                          Terms and Conditions
+                        </Link>
+                      </label>
+                    </div>
+                    {!isChecked && (
+                      <p className="text-sm text-red-600">
+                        Please accept our terms and conditions
+                      </p>
+                    )}
+
+                    {/* Submit Button */}
+                    <motion.button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white py-4 px-6 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:shadow-[#00A551]/25 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Request Demo
+                    </motion.button>
+
+                    {/* Legal Text */}
+                    <p className="text-xs text-slate-500 text-center leading-relaxed">
+                      By submitting, you agree to our{" "}
+                      <a
+                        href="#"
+                        className="text-[#00A551] hover:text-[#2791D0] transition-colors"
+                      >
+                        Terms
+                      </a>{" "}
+                      and{" "}
+                      <a
+                        href="#"
+                        className="text-[#00A551] hover:text-[#2791D0] transition-colors"
+                      >
+                        Privacy Policy
+                      </a>
+                      .
+                    </p>
+                  </form>
+
+                  {/* Success Message */}
+                  {successMessage && (
+                    <motion.div
+                      className="mt-6 p-4 bg-green-50/80 backdrop-blur-sm border border-green-200/50 rounded-xl"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                    >
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-green-800">
+                            Demo requested successfully!
+                          </p>
+                          <p className="text-sm text-green-700">
+                            Our team will contact you soon.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Email Error */}
+                  {emailCheck && (
+                    <motion.div
+                      className="mt-6 p-4 bg-red-50/80 backdrop-blur-sm border border-red-200/50 rounded-xl"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                    >
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-red-800">
+                            Email is required
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Trusted Companies Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Enhanced Companies Section */}
+      <section className="py-24 bg-gradient-to-r from-slate-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00A551]/5 to-[#2791D0]/5" />
+        <div className="relative max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -737,12 +744,17 @@ const Demo: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Trusted by 74,000+ Businesses Worldwide
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#00A551]/10 to-[#2791D0]/10 rounded-full border border-[#00A551]/20 backdrop-blur-sm mb-6">
+              <span className="text-sm font-semibold text-[#00A551]">
+                🌟 Trusted Worldwide
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+              74,000+ Businesses Choose Deepkore
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of companies that have transformed their operations
-              with Deepkore
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Join thousands of companies that have revolutionized their
+              operations with our innovative platform
             </p>
           </motion.div>
 
@@ -750,68 +762,97 @@ const Demo: React.FC = () => {
             {companyLogos.map((company, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.9 }}
+                className="group relative"
+                initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1, y: -8 }}
               >
-                <Image
-                  src={company.logo}
-                  alt={company.name}
-                  width={120}
-                  height={60}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-500 flex items-center justify-center h-20">
+                  <Image
+                    src={company.logo}
+                    alt={company.name}
+                    width={100}
+                    height={50}
+                    className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Free Trial Section */}
-      <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6"
+      {/* Enhanced Free Trial Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551]" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+
+        <div className="relative max-w-4xl mx-auto px-4 text-center">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Ready for a Free Trial?
-          </motion.h2>
-          <motion.p
-            className="text-xl mb-8 text-[#C5FF28]/80"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Try Deepkore yourself with a 14-day free trial. No credit card
-            required.
-          </motion.p>
-          <motion.button
-            className="bg-[#C5FF28] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Free Trial
-          </motion.button>
-
-          <div className="mt-8 text-center">
-            <div className="flex items-center justify-center space-x-2">
-              <span className="text-2xl">⭐</span>
-              <span className="text-lg text-[#C5FF28]/80">
-                4.9 rating Based on 300k Users
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 mb-8">
+              <span className="text-white font-semibold">
+                🚀 Start Building Today
               </span>
             </div>
-          </div>
+
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+              Ready for a{" "}
+              <span className="bg-gradient-to-r from-[#ffffff] to-white bg-clip-text text-transparent">
+                Free Trial?
+              </span>
+            </h2>
+
+            <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Experience the power of Deepkore with a 14-day free trial. No
+              credit card required, no strings attached.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+              <motion.button
+                className="bg-[#ffffff] text-[#00A551] px-10 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-[#2791D0]/50 transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center gap-3"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>🎯</span>
+                Start Free Trial
+              </motion.button>
+
+              <motion.button
+                className="border-2 border-white/30 text-white px-10 py-4 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Schedule Demo
+              </motion.button>
+            </div>
+
+            <div className="flex items-center justify-center gap-8 text-white/80">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">⭐</span>
+                <span className="font-semibold">4.9 Rating</span>
+              </div>
+              <div className="w-px h-6 bg-white/30" />
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">👥</span>
+                <span className="font-semibold">300k+ Users</span>
+              </div>
+              <div className="w-px h-6 bg-white/30" />
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">⚡</span>
+                <span className="font-semibold">24/7 Support</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -18,13 +18,17 @@ import FloatingElements from "../components/FloatingElements";
 
 export default function Home() {
   return (
-    <div className="relative bg-[#f5f7f7]">
+    <div
+      className="relative bg-gradient-to-r
+         from-blue-200 via-white to-green-100"
+    >
       {/* <FloatingElements /> */}
       <Header />
       <main>
         <Hero />
+
+        <PowerfulFeatures />
         <ProductShowcase />
-        {/* <PowerfulFeatures /> */}
         <TargetAudience />
         <EfficiencyMetrics />
 
@@ -50,3 +54,4 @@ export default function Home() {
     </div>
   );
 }
+

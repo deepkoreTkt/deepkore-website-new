@@ -114,6 +114,7 @@ const ProductOverview: React.FC = () => {
                 width={600}
                 height={400}
                 className="w-full h-auto rounded-xl shadow-lg"
+                unoptimized={true}
               />
             </div>
           </motion.div>
@@ -163,3 +164,4 @@ const ProductOverview: React.FC = () => {
 };
 
 export default ProductOverview;
+

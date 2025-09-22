@@ -9,81 +9,81 @@ const Comparison: React.FC = () => {
     {
       feature: "Task Customization",
       other: "Limited",
-      prismo: "Advanced & Flexible",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#2563eb\"/><path d=\"M12 8v4l3 2\" stroke=\"#fff\" strokeWidth=\"2\" strokeLinecap=\"round\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Advanced & Flexible",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2563eb"/><path d="M12 8v4l3 2" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Progress Tracking",
       other: "Slow & Manual",
-      prismo: "Real-Time & Automated",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect x=\"4\" y=\"12\" width=\"4\" height=\"8\" fill=\"#22d3ee\"/><rect x=\"10\" y=\"8\" width=\"4\" height=\"12\" fill=\"#2563eb\"/><rect x=\"16\" y=\"4\" width=\"4\" height=\"16\" fill=\"#10b981\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Real-Time & Automated",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="4" y="12" width="4" height="8" fill="#22d3ee"/><rect x="10" y="8" width="4" height="12" fill="#2563eb"/><rect x="16" y="4" width="4" height="16" fill="#10b981"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "User Interface",
       other: "Complex",
-      prismo: "Intuitive & Modern",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"12\" rx=\"3\" fill=\"#6366f1\"/><rect x=\"7\" y=\"19\" width=\"10\" height=\"2\" rx=\"1\" fill=\"#fff\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Intuitive & Modern",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3" fill="#6366f1"/><rect x="7" y="19" width="10" height="2" rx="1" fill="#fff"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Data Entry",
       other: "Manual",
-      prismo: "Automated",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect x=\"6\" y=\"8\" width=\"12\" height=\"8\" rx=\"4\" fill=\"#f59e42\"/><circle cx=\"9\" cy=\"12\" r=\"1.5\" fill=\"#fff\"/><circle cx=\"15\" cy=\"12\" r=\"1.5\" fill=\"#fff\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Automated",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="6" y="8" width="12" height="8" rx="4" fill="#f59e42"/><circle cx="9" cy="12" r="1.5" fill="#fff"/><circle cx="15" cy="12" r="1.5" fill="#fff"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Integrations",
       other: "Limited",
-      prismo: "Seamless Across Tools",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path d=\"M8 12a4 4 0 0 1 4-4h4a4 4 0 1 1 0 8h-4a4 4 0 0 1-4-4z\" stroke=\"#10b981\" strokeWidth=\"2\"/><path d=\"M16 12a4 4 0 0 0-4-4H8a4 4 0 1 0 0 8h4a4 4 0 0 0 4-4z\" stroke=\"#2563eb\" strokeWidth=\"2\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Seamless Across Tools",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M8 12a4 4 0 0 1 4-4h4a4 4 0 1 1 0 8h-4a4 4 0 0 1-4-4z" stroke="#10b981" strokeWidth="2"/><path d="M16 12a4 4 0 0 0-4-4H8a4 4 0 1 0 0 8h4a4 4 0 0 0 4-4z" stroke="#2563eb" strokeWidth="2"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Bulk Actions",
       other: "Not Supported",
-      prismo: "Powerful Support",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path d=\"M13 2L3 14h7v8l8-12h-7V2z\" fill=\"#f59e42\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Powerful Support",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M13 2L3 14h7v8l8-12h-7V2z" fill="#f59e42"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Document Management",
       other: "Inconsistent",
-      prismo: "Efficient & Organized",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"7\" width=\"18\" height=\"12\" rx=\"3\" fill=\"#6366f1\"/><rect x=\"7\" y=\"3\" width=\"6\" height=\"4\" rx=\"2\" fill=\"#22d3ee\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Efficient & Organized",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="3" fill="#6366f1"/><rect x="7" y="3" width="6" height="4" rx="2" fill="#22d3ee"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Reporting",
       other: "Limited",
-      prismo: "Comprehensive & AI-Driven",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path d=\"M4 20V4h16v16H4z\" fill=\"#2563eb\"/><path d=\"M8 16l3-4 2 3 3-5\" stroke=\"#fff\" strokeWidth=\"2\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Comprehensive & AI-Driven",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M4 20V4h16v16H4z" fill="#2563eb"/><path d="M8 16l3-4 2 3 3-5" stroke="#fff" strokeWidth="2"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Security",
       other: "Basic",
-      prismo: "Enterprise-Grade",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><rect x=\"6\" y=\"10\" width=\"12\" height=\"8\" rx=\"4\" fill=\"#10b981\"/><rect x=\"10\" y=\"14\" width=\"4\" height=\"4\" rx=\"2\" fill=\"#fff\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Enterprise-Grade",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="8" rx="4" fill="#10b981"/><rect x="10" y="14" width="4" height="4" rx="2" fill="#fff"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
     {
       feature: "Scalability",
       other: "Limited",
-      prismo: "Unlimited",
-      icon: "<svg width=\"24\" height=\"24\" fill=\"none\" viewBox=\"0 0 24 24\"><path d=\"M4 20V4h16v16H4z\" fill=\"#22d3ee\"/><path d=\"M8 16l3-4 2 3 3-5\" stroke=\"#fff\" strokeWidth=\"2\"/></svg>",
-      prismoCheck: true,
+      Deepkore: "Unlimited",
+      icon: '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M4 20V4h16v16H4z" fill="#22d3ee"/><path d="M8 16l3-4 2 3 3-5" stroke="#fff" strokeWidth="2"/></svg>',
+      DeepkoreCheck: true,
       otherCheck: false,
     },
   ];
@@ -106,7 +106,9 @@ const Comparison: React.FC = () => {
             Enterprise-Grade Comparison
           </h2>
           <p className="text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-            Discover how Deepkore&apos;s advanced platform delivers superior performance, security, and scalability compared to traditional solutions.
+            Discover how Deepkore&apos;s advanced platform delivers superior
+            performance, security, and scalability compared to traditional
+            solutions.
           </p>
         </motion.div>
 
@@ -131,10 +133,18 @@ const Comparison: React.FC = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-600/30 to-green-400/30 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30 shadow-lg">
-                      <span dangerouslySetInnerHTML={{__html: comparisons[1].icon}} />
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: comparisons[1].icon,
+                        }}
+                      />
                     </div>
-                    <h3 className="text-2xl font-bold mb-1 tracking-tight">Core Features</h3>
-                    <p className="text-slate-300 text-base font-medium">Enterprise Capabilities</p>
+                    <h3 className="text-2xl font-bold mb-1 tracking-tight">
+                      Core Features
+                    </h3>
+                    <p className="text-slate-300 text-base font-medium">
+                      Enterprise Capabilities
+                    </p>
                   </motion.div>
 
                   {/* VS Column */}
@@ -147,14 +157,20 @@ const Comparison: React.FC = () => {
                   >
                     <div className="relative">
                       <div className="w-20 h-20 bg-gradient-to-br from-blue-700 to-green-500 rounded-full flex items-center justify-center mx-auto mb-3 border-4 border-blue-400 shadow-xl">
-                        <span className="text-2xl font-extrabold text-white tracking-widest">VS</span>
+                        <span className="text-2xl font-extrabold text-white tracking-widest">
+                          VS
+                        </span>
                       </div>
                       <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-lg font-bold text-white">✓</span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-1 tracking-tight">Comparison</h3>
-                    <p className="text-slate-400 text-base font-medium">Side-by-Side Analysis</p>
+                    <h3 className="text-xl font-semibold mb-1 tracking-tight">
+                      Comparison
+                    </h3>
+                    <p className="text-slate-400 text-base font-medium">
+                      Side-by-Side Analysis
+                    </p>
                   </motion.div>
 
                   {/* Deepkore Column */}
@@ -175,7 +191,9 @@ const Comparison: React.FC = () => {
                       />
                     </div>
 
-                    <p className="text-slate-300 text-base font-medium">Next-Generation Enterprise Solution</p>
+                    <p className="text-slate-300 text-base font-medium">
+                      Next-Generation Enterprise Solution
+                    </p>
                   </motion.div>
                 </div>
 
@@ -229,7 +247,10 @@ const Comparison: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <div className="flex items-center space-x-5">
-                    <span className="text-2xl drop-shadow-lg" dangerouslySetInnerHTML={{__html: comparison.icon}} />
+                    <span
+                      className="text-2xl drop-shadow-lg"
+                      dangerouslySetInnerHTML={{ __html: comparison.icon }}
+                    />
                     <span className="font-semibold text-white text-xl tracking-tight group-hover:text-blue-400 transition-colors duration-200">
                       {comparison.feature}
                     </span>
@@ -244,14 +265,16 @@ const Comparison: React.FC = () => {
                     >
                       {comparison.otherCheck ? "✓" : "✗"}
                     </span>
-                    <span className="text-gray-400 text-lg font-medium group-hover:text-red-400 transition-colors duration-200">{comparison.other}</span>
+                    <span className="text-gray-400 text-lg font-medium group-hover:text-red-400 transition-colors duration-200">
+                      {comparison.other}
+                    </span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <span className="w-7 h-7 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-base font-bold text-white shadow-md">
                       ✓
                     </span>
                     <span className="text-gray-200 font-semibold text-lg group-hover:text-green-400 transition-colors duration-200">
-                      {comparison.prismo}
+                      {comparison.Deepkore}
                     </span>
                   </div>
                 </motion.div>
@@ -272,19 +295,47 @@ const Comparison: React.FC = () => {
                 </h3>
                 <div className="grid md:grid-cols-3 gap-10 text-center">
                   <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-blue-500/10">
-                    <div className="mb-3"><span dangerouslySetInnerHTML={{__html: comparisons[8].icon}} className="text-4xl" /></div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">99.9% Uptime</h4>
-                    <p className="text-gray-300 text-base">Guaranteed reliability for mission-critical operations</p>
+                    <div className="mb-3">
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: comparisons[8].icon,
+                        }}
+                        className="text-4xl"
+                      />
+                    </div>
+                    <h4 className="font-semibold text-white mb-2 text-xl">
+                      99.9% Uptime
+                    </h4>
+                    <p className="text-gray-300 text-base">
+                      Guaranteed reliability for mission-critical operations
+                    </p>
                   </div>
                   <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-green-500/10">
-                    <div className="mb-3"><span dangerouslySetInnerHTML={{__html: comparisons[5].icon}} className="text-4xl" /></div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">50x Faster</h4>
-                    <p className="text-gray-300 text-base">Accelerated workflows and data processing</p>
+                    <div className="mb-3">
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: comparisons[5].icon,
+                        }}
+                        className="text-4xl"
+                      />
+                    </div>
+                    <h4 className="font-semibold text-white mb-2 text-xl">
+                      50x Faster
+                    </h4>
+                    <p className="text-gray-300 text-base">
+                      Accelerated workflows and data processing
+                    </p>
                   </div>
                   <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-yellow-500/10">
-                    <div className="mb-3"><span className="text-4xl">💰</span></div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">40% Cost Savings</h4>
-                    <p className="text-gray-300 text-base">Reduced operational costs and increased ROI</p>
+                    <div className="mb-3">
+                      <span className="text-4xl">💰</span>
+                    </div>
+                    <h4 className="font-semibold text-white mb-2 text-xl">
+                      40% Cost Savings
+                    </h4>
+                    <p className="text-gray-300 text-base">
+                      Reduced operational costs and increased ROI
+                    </p>
                   </div>
                 </div>
               </div>
@@ -302,7 +353,8 @@ const Comparison: React.FC = () => {
                   Ready for Enterprise Excellence?
                 </h3>
                 <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg font-medium">
-                  Join leading enterprises already transforming their operations with Deepkore&apos;s advanced platform.
+                  Join leading enterprises already transforming their operations
+                  with Deepkore&apos;s advanced platform.
                 </p>
                 <a href="/getstarted">
                   <motion.button
@@ -323,3 +375,4 @@ const Comparison: React.FC = () => {
 };
 
 export default Comparison;
+

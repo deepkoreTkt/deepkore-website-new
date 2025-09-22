@@ -6,27 +6,56 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
 import Comparison from "./Comparison";
+import Link from "next/dist/client/link";
 // Feature card data
 const features = [
   {
     title: "Data Form",
     description: "Visualize tasks and deadlines at a glance.",
-    image: "/dataForm.svg",
+    image: "/dataform1.png",
+    href: "/dataform",
   },
   {
     title: "Process",
     description: "Manage projects with priorities and due dates.",
-    image: "/process.svg",
+    image: "/process.png",
+    href: "/process",
   },
   {
     title: "Integration",
     description: "Connect through task comments and updates.",
-    image: "/integration.svg",
+    image: "/classic02.png",
+    href: "/integration",
   },
   {
     title: "Analytics",
     description: "Stay updated with alerts for key changes.",
-    image: "/analytics.svg",
+    image: "/analytics1.png",
+    href: "/analytics",
+  },
+  {
+    title: "Report",
+    description: "Generate insightful reports with ease.",
+    image: "/report1.png",
+    href: "/report",
+  },
+  {
+    title: "Security",
+    description: "Protect your data with advanced security features.",
+    image: "/bg22.png",
+    href: "/governance",
+  },
+  {
+    title: "Workflow Automation",
+    description: "Connect all workflows to power enterprise-grade automation.",
+    image: "/classic02.png",
+    href: "/workflow-automation",
+  },
+  {
+    title: "Formula Builder",
+    description: "Create custom formulas to automate calculations.",
+    image: "/classic04.png",
+    href: "/formula-builder",
   },
 ];
 
@@ -72,7 +101,7 @@ const testimonials = [
     metric: "10X",
     metricLabel: "Revenue Boost",
     quote:
-      "Prismo has completely transformed how our team manages tasks. The platform has made our workflow seamless and boosted overall productivity.",
+      "Deepkore has completely transformed how our team manages tasks. The platform has made our workflow seamless and boosted overall productivity.",
     author: "John Matthews",
     role: "Project Manager",
     avatar:
@@ -82,7 +111,7 @@ const testimonials = [
     metric: "2X",
     metricLabel: "Increase Efficiency",
     quote:
-      "With Prismo, we've streamlined our project management, reducing time spent on administrative tasks. It's user-friendly, and our team is now more efficient than ever.",
+      "With Deepkore, we've streamlined our project management, reducing time spent on administrative tasks. It's user-friendly, and our team is now more efficient than ever.",
     author: "Sarah Collins",
     role: "Operations Lead",
     avatar:
@@ -92,7 +121,7 @@ const testimonials = [
     metric: "5X",
     metricLabel: "Team Growth",
     quote:
-      "We saw a massive improvement in our team's collaboration and communication. Prismo helped us organize tasks efficiently, leading to better outcomes across all projects.",
+      "We saw a massive improvement in our team's collaboration and communication. Deepkore helped us organize tasks efficiently, leading to better outcomes across all projects.",
     author: "David Chen",
     role: "Team Lead",
     avatar:
@@ -102,7 +131,7 @@ const testimonials = [
     metric: "3X",
     metricLabel: "Increased Productivity",
     quote:
-      "We've increased our efficiency by at least 40% since implementing Prismo. It's helped our team stay aligned and deliver exceptional results.",
+      "We've increased our efficiency by at least 40% since implementing Deepkore. It's helped our team stay aligned and deliver exceptional results.",
     author: "Olivia Turner",
     role: "Operations Director",
     avatar:
@@ -111,22 +140,25 @@ const testimonials = [
 ];
 
 const comparisonFeatures = [
-  { other: "Limited Task Customization", prismo: "Everything in Basic +" },
-  { other: "Slow Progress Tracking", prismo: "Real-Time Progress Updates" },
-  { other: "Complex User Interface", prismo: "Intuitive User Experience" },
-  { other: "Manual Data Entry Required", prismo: "Automated Data Entry" },
+  { other: "Limited Task Customization", Deepkore: "Everything in Basic +" },
+  { other: "Slow Progress Tracking", Deepkore: "Real-Time Progress Updates" },
+  { other: "Complex User Interface", Deepkore: "Intuitive User Experience" },
+  { other: "Manual Data Entry Required", Deepkore: "Automated Data Entry" },
   {
     other: "Lack of Seamless Integration",
-    prismo: "Seamless Integrations Across Tools",
+    Deepkore: "Seamless Integrations Across Tools",
   },
-  { other: "No Bulk Actions Support", prismo: "Powerful Bulk Action Support" },
+  {
+    other: "No Bulk Actions Support",
+    Deepkore: "Powerful Bulk Action Support",
+  },
   {
     other: "Inconsistent Document Management",
-    prismo: "Efficient Document Organization",
+    Deepkore: "Efficient Document Organization",
   },
   {
     other: "Limited Reporting Features",
-    prismo: "Comprehensive Reporting Insights",
+    Deepkore: "Comprehensive Reporting Insights",
   },
 ];
 
@@ -240,7 +272,7 @@ export default function Feature() {
       <Header />
       {/* Hero Features Section */}
       <section className="py-40 bg-gradient-to-br from-[#00A551]/10 to-[#2791D0]/10">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 30 }}
@@ -250,31 +282,40 @@ export default function Feature() {
             All Your Tasks, Organized Effortlessly
           </motion.h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                className="group bg-white rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 border border-gray-100"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-[#00A551]/20 to-[#2791D0]/20 rounded-full flex items-center justify-center mb-6">
+                <div className="relative w-full h-40 md:h-48 lg:h-52 bg-white/90 border border-gray-100 rounded-xl flex items-center justify-center mb-6 overflow-hidden shadow-sm">
                   <Image
                     src={feature.image}
                     alt={feature.title}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 object-contain"
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 768px) 320px, 100vw"
+                    className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent"></div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
+                {feature.href && (
+                  <Link
+                    href={feature.href}
+                    className="mt-4 inline-block text-blue-600 hover:underline"
+                  >
+                    Learn More
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>
@@ -283,7 +324,7 @@ export default function Feature() {
 
       {/* Powerful Features Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -308,7 +349,7 @@ export default function Feature() {
             {powerfulFeatures.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-[#00A551]/5 to-[#C5FF28]/5 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-[#00A551]/20"
+                className="bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border border-[#00A551]/20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
@@ -330,7 +371,7 @@ export default function Feature() {
 
       {/* Wave Goodbye Section */}
       <section className="py-20 bg-gradient-to-r from-red-50 to-orange-50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-12 text-gray-800"
             initial={{ opacity: 0, y: 30 }}
@@ -366,7 +407,7 @@ export default function Feature() {
 
       {/* Statistics Section */}
       <section className="py-20 bg-gradient-to-br from-[#00A551] to-[#2791D0] text-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <motion.div
@@ -380,7 +421,7 @@ export default function Feature() {
                 <div className="text-5xl md:text-6xl font-bold mb-4">
                   {stat.number}
                 </div>
-                <div className="text-xl text-[#C5FF28]">{stat.label}</div>
+                <div className="text-xl text-[#2791D0]">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -388,10 +429,10 @@ export default function Feature() {
       </section>
 
       {/* Testimonials Section */}
-      <Comparison />
+      {/* <Comparison /> */}
       {/* Product Overview Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -457,7 +498,7 @@ export default function Feature() {
 
       {/* Unique Features Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -466,10 +507,10 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Unleash Prismo&apos;sUnique Potential for you
+              Unleash Deepkore&apos;s Unique Potential for you
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover Prismo&apos;s powerful and unique tools that set it
+              Discover Deepkore&apos;s powerful and unique tools that set it
               apart, offering unmatched efficiency, customization, and
               collaboration.
             </p>
@@ -520,7 +561,7 @@ export default function Feature() {
               </div>
             </div>
             <blockquote className="text-gray-700 leading-relaxed italic">
-              &ldquo;Prismo has transformed how our team collaborates, tracks
+              &ldquo;Deepkore has transformed how our team collaborates, tracks
               progress, and shares documents. It made our works more
               efficient&rdquo;
             </blockquote>
@@ -530,7 +571,7 @@ export default function Feature() {
 
       {/* Industry Insights Section */}
       <section className="py-20 bg-gradient-to-br from-[#00A551]/5 to-[#2791D0]/5">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -761,7 +802,7 @@ export default function Feature() {
 
       {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-8 md:px-40 lg:px-30">
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800"
             initial={{ opacity: 0, y: 30 }}
@@ -811,7 +852,7 @@ export default function Feature() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto px-8 md:px-40 lg:px-40 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
@@ -832,7 +873,7 @@ export default function Feature() {
             without any commitment!
           </motion.p>
           <motion.button
-            className="bg-[#ffffff] text-[#000000] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#ffffff] text-[#000000] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -857,3 +898,4 @@ export default function Feature() {
     </div>
   );
 }
+

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
 const WhatIsLowCode: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -54,31 +53,38 @@ const WhatIsLowCode: React.FC = () => {
       </div>
 
       {/* Hero Section - Full Width */}
-      <section className="relative bg-gradient-to-br from-[#00A551] via-[#2791D0] to-[#00A551] text-white py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        {/* Animated background elements */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-teal-400 to-green-600 text-white py-40 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+        {/* Enhanced animated background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-[#C5FF28]/20 rounded-full animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/10 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 right-1/3 w-24 h-24 bg-[#2791D0]/20 rounded-full animate-bounce delay-500"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/30 to-transparent rounded-full animate-float-slow"></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-bl from-teal-400/30 to-transparent rounded-full animate-float-medium"></div>
+          <div className="absolute -bottom-10 left-1/4 w-40 h-40 bg-gradient-to-tr from-green-400/30 to-transparent rounded-full animate-float-fast"></div>
+          <div className="absolute bottom-40 right-1/3 w-36 h-36 bg-gradient-to-tl from-blue-500/30 to-transparent rounded-full animate-float-medium"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full animate-pulse-slow blur-3xl"></div>
         </div>
+        ;
         <div className="relative container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="animate-fade-in-up">
-              <h1 className="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-white to-[#C5FF28] bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-[#2791D0] to-white bg-clip-text text-transparent animate-gradient-x">
                 What is low-code?
               </h1>
-              <p className="text-xl md:text-2xl leading-relaxed mb-12 opacity-95 max-w-4xl mx-auto">
+              <p className="text-xl md:text-2xl leading-relaxed mb-12 opacity-95 max-w-4xl mx-auto font-light tracking-wide">
                 Low-code is an approach to visual software development that
-                accelerates application creation by minimizing the amount of
-                hand coding. Transform your ideas into reality faster than ever.
+                <span className="font-medium text-[#2791D0]">
+                  {" "}
+                  accelerates application creation{" "}
+                </span>
+                by minimizing the amount of hand coding. Transform your ideas
+                into reality faster than ever.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-300">
               <a
                 href="#"
-                className="group inline-block bg-[#C5FF28] hover:bg-[#C5FF28]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                className="group inline-block bg-gradient-to-r from-[#2791D0] to-[#2791D0]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
               >
                 <span className="flex items-center gap-2">
                   FREE 14-DAY TRIAL
@@ -124,12 +130,13 @@ const WhatIsLowCode: React.FC = () => {
       {/* Main Layout with Sidebar */}
       <div className="flex">
         {/* Left Sidebar - Table of Contents */}
-        <aside className="hidden lg:block w-80 bg-white shadow-lg border-r border-gray-200 sticky top-0 h-screen">
+        <aside className="hidden lg:block w-80 bg-white/80 backdrop-blur-md shadow-lg border-r border-gray-200/50 sticky top-0 h-screen">
           <div className="p-6">
-            <h2 className="text-xl font-bold mb-6 text-gray-800 border-b border-gray-200 pb-4">
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent">
               Table of Contents
             </h2>
-            <nav className="space-y-2">
+            <div className="h-px w-full bg-gradient-to-r from-[#00A551]/20 to-[#2791D0]/20 mb-6"></div>
+            <nav className="space-y-2 pr-2 max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar">
               {[
                 { title: "What is low-code?", id: "what-is-low-code" },
                 {
@@ -168,9 +175,9 @@ const WhatIsLowCode: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => scrollToSection(item.id)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-200 hover:bg-[#00A551]/10 hover:shadow-md ${
+                  className={`w-full text-left p-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00A551]/10 hover:to-[#2791D0]/10 hover:shadow-md group ${
                     activeSection === item.id
-                      ? "bg-[#00A551]/20 text-[#00A551] font-semibold border-l-4 border-[#00A551] shadow-sm"
+                      ? "bg-gradient-to-r from-[#00A551]/20 to-[#2791D0]/20 text-[#00A551] font-semibold shadow-sm backdrop-blur-sm"
                       : "text-gray-700 hover:text-[#00A551]"
                   }`}
                 >
@@ -246,9 +253,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* What is low-code */}
               <div
                 id="what-is-low-code"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover:shadow-2xl hover:border-[#00A551]/40 transition-all duration-500 group"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent mb-6 group-hover:scale-105 transform transition-transform duration-500">
                   What is low-code?
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -333,7 +340,7 @@ const WhatIsLowCode: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="border-l-4 border-[#C5FF28] pl-6">
+                  <div className="border-l-4 border-[#2791D0] pl-6">
                     <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                       Security
                     </h3>
@@ -370,7 +377,7 @@ const WhatIsLowCode: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="border-l-4 border-[#C5FF28] pl-6">
+                  <div className="border-l-4 border-[#2791D0] pl-6">
                     <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                       Artificial Intelligence
                     </h3>
@@ -566,9 +573,10 @@ const WhatIsLowCode: React.FC = () => {
                   ].map((industry, index) => (
                     <div
                       key={index}
-                      className="bg-gradient-to-br from-[#00A551]/10 to-[#2791D0]/10 p-4 rounded-lg text-center hover:shadow-md transition-shadow"
+                      className="group bg-gradient-to-br from-[#00A551]/10 via-[#2791D0]/10 to-[#2791D0]/10 p-6 rounded-lg text-center hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-transparent hover:border-[#00A551]/30 backdrop-blur-sm relative overflow-hidden"
                     >
-                      <span className="text-gray-900 font-medium">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#00A551]/0 via-[#2791D0]/0 to-[#2791D0]/0 group-hover:from-[#00A551]/20 group-hover:via-[#2791D0]/20 group-hover:to-[#2791D0]/20 transition-all duration-500"></div>
+                      <span className="relative z-10 text-gray-900 font-medium text-lg group-hover:text-[#00A551] transition-colors duration-300">
                         {industry}
                       </span>
                     </div>
@@ -701,9 +709,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* FAQ */}
               <div
                 id="low-code-faq"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover:shadow-2xl transition-all duration-500"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent mb-8 animate-gradient-x">
                   Low-code FAQ
                 </h2>
                 <div className="space-y-4">
@@ -740,7 +748,7 @@ const WhatIsLowCode: React.FC = () => {
                     >
                       <button
                         onClick={() => toggleFaq(index)}
-                        className="w-full text-left p-6 bg-gradient-to-r from-[#00A551]/5 to-[#2791D0]/5 hover:from-[#00A551]/10 hover:to-[#2791D0]/10 transition-all duration-200 flex justify-between items-center"
+                        className="w-full text-left p-6 bg-gradient-to-r from-[#00A551]/5 via-transparent to-[#2791D0]/5 hover:from-[#00A551]/20 hover:via-[#2791D0]/10 hover:to-[#2791D0]/20 transition-all duration-300 flex justify-between items-center group backdrop-blur-sm"
                       >
                         <h3 className="text-lg font-semibold text-gray-900 pr-4">
                           {faq.question}
@@ -789,7 +797,7 @@ const WhatIsLowCode: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="#"
-                    className="inline-block bg-[#C5FF28] hover:bg-[#C5FF28]/90 text-[#00A551] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="inline-block bg-[#2791D0] hover:bg-[#2791D0]/90 text-[#00A551] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     FREE 14-DAY TRIAL
                   </a>
@@ -835,3 +843,4 @@ const WhatIsLowCode: React.FC = () => {
 };
 
 export default WhatIsLowCode;
+

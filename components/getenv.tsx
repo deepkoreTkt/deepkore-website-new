@@ -10,3 +10,4 @@ const getEnvConfig = () => {
 };
 
 export default getEnvConfig;
+

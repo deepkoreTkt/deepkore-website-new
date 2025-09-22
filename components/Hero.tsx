@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import ProductShowcase from "./ProductShowcase";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const Hero = () => {
 
   // Get the current dashboard image based on hovered feature
   const getCurrentDashboardImage = () => {
-    if (!hoveredFeature) return "/bg22.png";
+    if (!hoveredFeature) return "/herobg.svg";
 
     const featureImages: { [key: string]: string } = {
       Dashboards: "/bg22.png",
@@ -36,7 +37,7 @@ const Hero = () => {
       Chat: "/Chat.png",
     };
 
-    return featureImages[hoveredFeature] || "/bg22.png";
+    return featureImages[hoveredFeature] || "/herobg.svg";
   };
 
   // Get the glow shadow based on hovered feature
@@ -79,94 +80,95 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <motion.div className="absolute inset-0" style={{ y }}>
-        {/* Horizontal gradient: green → white → blue */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r
+    <div className="relative">
+      <section className="relative  flex items-center justify-center overflow-hidden">
+        {/* Background gradient */}
+        <motion.div className="absolute inset-0" style={{ y }}>
+          {/* Horizontal gradient: green → white → blue */}
+          <div
+            className="absolute inset-0 bg-gradient-to-r
          from-blue-200 via-white to-green-100"
-        ></div>
+          ></div>
 
-        {/* Optional soft glow */}
-        <div className="absolute inset-0 bg-white/10 blur-3xl pointer-events-none"></div>
-      </motion.div>
+          {/* Optional soft glow */}
+          <div className="absolute inset-0 bg-white/10 blur-3xl pointer-events-none"></div>
+        </motion.div>
 
-      <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-25 relative z-10">
-        <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
-          {/* Enhanced Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-center space-y-4"
-          >
-            {/* Main Heading - WorkFast.ai Style */}
+        <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-25 relative z-10">
+          <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
+            {/* Enhanced Text Content */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="space-y-2"
-            >
-              <h1
-                className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
-              >
-                Building the Future of
-              </h1>
-              <h1
-                className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
-              >
-                <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
-                  AI Driven Business
-                </span>
-              </h1>
-            </motion.div>
-
-            {/* Subheading - Exact Match */}
-            <motion.p
-              className={`${inter.className} text-base md:text-lg lg:text-xl text-black max-w-4xl mx-auto leading-relaxed font-medium`}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="text-center space-y-4"
             >
-              Deepkore lets you transform ideas into powerful Enterprise
-              Applications
-              <span> that adapt to your business needs.</span>{" "}
-              {/* <span>applications that adapt to your business needs.</span> */}
-            </motion.p>
-
-            {/* CTA Section - WorkFast.ai Style */}
-            <motion.div
-              className="space-y-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              <div className="flex flex-col items-center gap-2">
-                <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+              {/* Main Heading - WorkFast.ai Style */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                className="space-y-2"
+              >
+                <h1
+                  className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
                 >
-                  Book a Demo
-                </motion.button>
-              </div>
-            </motion.div>
-            <Image
-              src={getCurrentDashboardImage()}
-              alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
-              width={800}
-              height={500}
-              className="w-full h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
-              priority
-              style={{
-                boxShadow: "0 0 10px 10px rgba(223, 189, 255, 0.5)",
-                background:
-                  "linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
-              }}
-            />
+                  Building the Future of
+                </h1>
+                <h1
+                  className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
+                >
+                  <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
+                    AI Driven Business
+                  </span>
+                </h1>
+              </motion.div>
 
-            {/* <motion.div
+              {/* Subheading - Exact Match */}
+              <motion.p
+                className={`${inter.className} text-base md:text-lg lg:text-xl text-black max-w-4xl mx-auto leading-relaxed font-medium`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+              >
+                Deepkore lets you transform ideas into powerful Enterprise
+                Applications
+                <span> that adapt to your business needs.</span>{" "}
+                {/* <span>applications that adapt to your business needs.</span> */}
+              </motion.p>
+
+              {/* CTA Section - WorkFast.ai Style */}
+              <motion.div
+                className="space-y-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <motion.button
+                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                    whileHover={{ scale: 1.03, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book a Demo
+                  </motion.button>
+                </div>
+              </motion.div>
+              <Image
+                src={getCurrentDashboardImage()}
+                alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
+                width={800}
+                height={500}
+                className="w-full h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
+                priority
+                style={{
+                  boxShadow: "0 0 10px 10px rgba(223, 189, 255, 0.5)",
+                  background:
+                    "linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
+                }}
+              />
+
+              {/* <motion.div
               className="w-full max-w-5xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -262,10 +264,10 @@ const Hero = () => {
                 })}
               </div>
             </motion.div> */}
-          </motion.div>
+            </motion.div>
 
-          {/* New Dashboard Section - Unique UI */}
-          {/* <motion.div
+            {/* New Dashboard Section - Unique UI */}
+            {/* <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
@@ -323,9 +325,10 @@ const Hero = () => {
               </div>
             </div>
           </motion.div> */}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

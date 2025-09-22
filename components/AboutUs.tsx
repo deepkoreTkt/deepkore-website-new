@@ -142,7 +142,7 @@ const AboutUs: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Making an Impact Worldwide
             </h2>
-            <p className="text-xl text-[#C5FF28]/80 max-w-3xl mx-auto">
+            <p className="text-xl text-[#2791D0]/80 max-w-3xl mx-auto">
               Join thousands of teams that have transformed their workflow with
               Deepkore
             </p>
@@ -158,7 +158,7 @@ const AboutUs: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl md:text-6xl font-bold mb-4 text-[#C5FF28]">
+                <div className="text-5xl md:text-6xl font-bold mb-4 text-[#2791D0]">
                   {stat.number}
                 </div>
                 <div className="text-xl text-white">{stat.label}</div>
@@ -231,7 +231,7 @@ const AboutUs: React.FC = () => {
               whileHover={{ y: -5 }}
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#2791D0]/20 to-[#C5FF28]/20 rounded-xl flex items-center justify-center mr-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#2791D0]/20 to-[#2791D0]/20 rounded-xl flex items-center justify-center mr-4">
                   <span className="text-3xl">🤝</span>
                 </div>
                 <div>
@@ -407,7 +407,7 @@ const AboutUs: React.FC = () => {
             Ready to transform your workflow?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-[#C5FF28]/80"
+            className="text-xl mb-8 text-[#2791D0]/80"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -417,7 +417,7 @@ const AboutUs: React.FC = () => {
             projects
           </motion.p>
           <motion.button
-            className="bg-[#C5FF28] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#2791D0] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -436,3 +436,4 @@ const AboutUs: React.FC = () => {
 };
 
 export default AboutUs;
+

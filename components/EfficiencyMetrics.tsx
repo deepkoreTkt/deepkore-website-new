@@ -662,3 +662,4 @@ const EfficiencyMetrics: React.FC = () => {
 };
 
 export default EfficiencyMetrics;
+

@@ -86,11 +86,14 @@ const Footer: React.FC = () => {
   ];
 
   const productLinks = [
-    { name: "Human Resource", href: "/human-resource" },
-    { name: "Data Management Tools", href: "/data-management-tools" },
-    { name: "Procurement", href: "/procurement" },
-    { name: "Finance", href: "/finance" },
-    { name: "Admin & Ops", href: "/admin-ops" },
+    { name: "CRM", href: "/crm" },
+    { name: "IT Service Desk", href: "/itservicedesk" },
+    { name: "More", href: "/" },
+    // { name: "Human Resource", href: "/human-resource" },
+    // { name: "Data Management Tools", href: "/data-management-tools" },
+    // { name: "Procurement", href: "/procurement" },
+    // { name: "Finance", href: "/finance" },
+    // { name: "Admin & Ops", href: "/admin-ops" },
     // { name: "Customer Support", href: "/customer-support" },
     // { name: "Sales", href: "/sales" },
     // { name: "Marketing", href: "/marketing" },
@@ -103,7 +106,7 @@ const Footer: React.FC = () => {
     { name: "Asset Management", href: "/asset-management" },
     { name: "Manufacturing & Production", href: "/manufacturing-production" },
     { name: "Healthcare & Medical", href: "/healthcare-medical" },
-    { name: "Retail & E-commerce", href: "/retail-ecommerce" },
+    { name: "More", href: "/solution" },
     // { name: "Education & E-learning", href: "/education-elearning" },
     // { name: "Logistics & Transportation", href: "/logistics-transportation" },
   ];
@@ -400,3 +403,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

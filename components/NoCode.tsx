@@ -203,7 +203,7 @@ const NoCode: React.FC = () => {
           <div className="space-y-20">
             {/* What is No-Code - Full Width */}
             <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-              <div className="container mx-auto px-6">
+              <div className="container mx-auto px-40">
                 <div className="max-w-4xl mx-auto text-center">
                   <h2 className="text-5xl font-black mb-8 bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 bg-clip-text text-transparent">
                     What is No-Code?
@@ -228,7 +228,7 @@ const NoCode: React.FC = () => {
             </section>
 
             {/* Development Section - Split */}
-            <section className="container mx-auto px-6">
+            <section className="container mx-auto px-40">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-6">
                   <h2 className="text-4xl font-black text-slate-800">
@@ -290,7 +290,7 @@ const NoCode: React.FC = () => {
 
             {/* Technologies Section - Cards Grid */}
             <section className="bg-slate-50 py-20">
-              <div className="container mx-auto px-6">
+              <div className="container mx-auto px-40">
                 <div className="text-center mb-16">
                   <h2 className="text-4xl font-black text-slate-800 mb-6">
                     No-Code Technologies:
@@ -356,7 +356,7 @@ const NoCode: React.FC = () => {
 
         {/* Features Section */}
         {activeTab === "features" && (
-          <section className="container mx-auto px-6 py-20">
+          <section className="container mx-auto px-40 py-20">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-slate-800 mb-6">
                 DeepKore No-Code
@@ -925,3 +925,4 @@ const NoCode: React.FC = () => {
 };
 
 export default NoCode;
+

@@ -9,3 +9,4 @@ const TermsAndServicesPage = () => {
 };
 
 export default TermsAndServicesPage;
+

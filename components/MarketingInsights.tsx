@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import IconMenuMarquee from "../components/IconMenuMarquee";
 
 const MarketingInsights: React.FC = () => {
   const insights = [
@@ -72,7 +73,7 @@ const MarketingInsights: React.FC = () => {
                 </p>
               </div>
               <motion.button
-                className="mt-auto w-full py-3 text-lg font-bold rounded-full bg-gradient-to-r from-green-600 to-blue-600 text-[#ffffff] hover:bg-[#C5FF28]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+                className="mt-auto w-full py-3 text-lg font-bold rounded-full bg-gradient-to-r from-green-600 to-blue-600 text-[#ffffff] hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -83,8 +84,10 @@ const MarketingInsights: React.FC = () => {
           ))}
         </div>
       </div>
+      <IconMenuMarquee />
     </section>
   );
 };
 
 export default MarketingInsights;
+

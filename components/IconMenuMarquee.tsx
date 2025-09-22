@@ -1,19 +1,32 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  Folder,
+  Settings,
+  BarChart,
+  Link,
+  Timer,
+  TrendingUp,
+  Calendar,
+  FileText,
+  Clipboard,
+  Users,
+  Megaphone,
+} from "lucide-react";
 
 const ITEMS = [
-  { name: "Dataform", color: "bg-indigo-100", symbol: "📁" },
-  { name: "Process", color: "bg-yellow-100", symbol: "⚙️" },
-  { name: "Analysis", color: "bg-gray-100", symbol: "📊" },
-  { name: "Integration", color: "bg-amber-100", symbol: "🔗" },
-  { name: "Time Tracking", color: "bg-sky-100", symbol: "⏱️" },
-  { name: "Chart", color: "bg-indigo-100", symbol: "📈" },
-  { name: "Schedule", color: "bg-amber-100", symbol: "📅" },
-  { name: "Report", color: "bg-amber-100", symbol: "📝" },
-  { name: "Kanban", color: "bg-pink-100", symbol: "📋" },
-  { name: "People", color: "bg-violet-100", symbol: "👥" },
-  { name: "Dashboards", color: "bg-amber-100", symbol: "📊" },
-  { name: "Channel", color: "bg-yellow-100", symbol: "📢" },
+  { name: "Dataform", color: "bg-indigo-100", icon: Folder },
+  { name: "Process", color: "bg-yellow-100", icon: Settings },
+  { name: "Analysis", color: "bg-gray-100", icon: BarChart },
+  { name: "Integration", color: "bg-amber-100", icon: Link },
+  { name: "Time Tracking", color: "bg-sky-100", icon: Timer },
+  { name: "Chart", color: "bg-indigo-100", icon: TrendingUp },
+  { name: "Schedule", color: "bg-amber-100", icon: Calendar },
+  { name: "Report", color: "bg-amber-100", icon: FileText },
+  { name: "Kanban", color: "bg-pink-100", icon: Clipboard },
+  { name: "People", color: "bg-violet-100", icon: Users },
+  { name: "Dashboards", color: "bg-amber-100", icon: BarChart },
+  { name: "Channel", color: "bg-yellow-100", icon: Megaphone },
 ];
 
 const MarqueeRow = ({ reverse = false, speed = 30 }) => (
@@ -37,7 +50,7 @@ const MarqueeRow = ({ reverse = false, speed = 30 }) => (
         whileHover={{ scale: 1.05 }}
       >
         <motion.span
-          className={`flex items-center justify-center h-8 w-8 rounded-lg text-xl ${it.color} text-gray-800`}
+          className={`flex items-center justify-center h-8 w-8 rounded-lg ${it.color} text-gray-800`}
           animate={{ y: [0, -5, 0] }}
           transition={{
             duration: 3,
@@ -46,7 +59,7 @@ const MarqueeRow = ({ reverse = false, speed = 30 }) => (
             delay: idx * 0.2,
           }}
         >
-          {it.symbol}
+          <it.icon className="h-5 w-5" />
         </motion.span>
         <span className="text-sm font-medium text-gray-700">{it.name}</span>
       </motion.button>
