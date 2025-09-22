@@ -157,9 +157,9 @@ const Hero = () => {
               <Image
                 src={getCurrentDashboardImage()}
                 alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
-                width={800}
-                height={500}
-                className="w-full h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
+                width={600}
+                height={300}
+                className="w-250 h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
                 priority
                 style={{
                   boxShadow: "0 0 10px 10px rgba(223, 189, 255, 0.5)",
