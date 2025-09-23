@@ -98,7 +98,7 @@ const Header: React.FC = () => {
               {item.icon ? <item.icon className="w-4 h-4" /> : null}
             </span>
             <div className="flex-1">
-              <div className="font-medium text-[13px] text-gray-900 group-hover:text-blue-600">
+              <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
                 {item.label}
               </div>
               <div className="text-xs text-gray-500 leading-relaxed mt-0.5">
@@ -286,7 +286,7 @@ const Header: React.FC = () => {
         title: "Industry Solutions",
         items: [
           {
-            href: "/manufacturing-production",
+            href: "/manufacturing",
             label: "Manufacturing & Production",
             icon: Factory,
             description: "Optimize manufacturing processes",
@@ -457,7 +457,7 @@ const Header: React.FC = () => {
                                         ) : null}
                                       </span>
                                       <div className="flex-1">
-                                        <div className="font-medium text-[13px] text-gray-900 group-hover:text-blue-600">
+                                        <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
                                           {item.label}
                                         </div>
                                         <div className="text-xs text-gray-500 leading-relaxed mt-0.5">
@@ -495,7 +495,7 @@ const Header: React.FC = () => {
                                         ) : null}
                                       </span>
                                       <div className="flex-1">
-                                        <div className="font-medium text-[13px] text-gray-900 group-hover:text-blue-600">
+                                        <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
                                           {item.label}
                                         </div>
                                       </div>
@@ -527,7 +527,7 @@ const Header: React.FC = () => {
                 }}
               >
                 <motion.button
-                  className="flex items-center justify-center px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-full hover:bg-gray-50/80 hover:shadow-sm"
+                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -554,9 +554,10 @@ const Header: React.FC = () => {
                       <div className="grid grid-cols-2 gap-8">
                         {menuSections.products[0].items.map(
                           (item: MenuItem, idx) => (
-                            <motion.div
+                            <motion.a
                               key={item.href}
-                              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100/50"
+                              href={item.href}
+                              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100/50 block"
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{
@@ -564,6 +565,7 @@ const Header: React.FC = () => {
                                 duration: 0.3,
                                 ease: [0.16, 1, 0.3, 1],
                               }}
+                              onClick={() => setIsProductOpen(false)}
                             >
                               <div className="space-y-4">
                                 <div className="flex items-center gap-3">
@@ -572,11 +574,11 @@ const Header: React.FC = () => {
                                       <item.icon className="w-4 h-4" />
                                     ) : null}
                                   </span>
-                                  <h3 className="text-xl font-semibold text-gray-900">
+                                  <h3 className="text-md font-semibold text-gray-900">
                                     {item.label}
                                   </h3>
                                 </div>
-                                <p className="text-gray-600">
+                                <p className="text-sm text-gray-600">
                                   {item.description}
                                 </p>
                                 {item.featured.length > 0 && (
@@ -609,7 +611,7 @@ const Header: React.FC = () => {
                                   </div>
                                 )}
                               </div>
-                            </motion.div>
+                            </motion.a>
                           )
                         )}
                       </div>
@@ -618,7 +620,7 @@ const Header: React.FC = () => {
                           <motion.a
                             key={item.href}
                             href={item.href}
-                            className="flex items-center justify-end gap-2 text-blue-600 hover:text-blue-700"
+                            className="flex items-center justify-end gap-2 text-sm text-blue-600 hover:text-blue-700"
                             onClick={() => setIsProductOpen(false)}
                           >
                             <span>{item.label}</span>
@@ -642,7 +644,7 @@ const Header: React.FC = () => {
                 }}
               >
                 <motion.button
-                  className="flex items-center justify-center space-x-1 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-base transition-all duration-200 rounded-full hover:bg-gray-50/80 hover:shadow-sm"
+                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -701,7 +703,7 @@ const Header: React.FC = () => {
                                         <item.icon className="w-4 h-4" />
                                       </span>
                                       <div className="flex-1">
-                                        <div className="font-medium text-[13px] text-gray-900 group-hover:text-blue-600">
+                                        <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
                                           {item.label}
                                         </div>
                                         <div className="text-xs text-gray-500 leading-relaxed mt-0.5">
@@ -737,7 +739,7 @@ const Header: React.FC = () => {
                                         <item.icon className="w-4 h-4" />
                                       </span>
                                       <div className="flex-1">
-                                        <div className="font-medium text-[13px] text-gray-900 group-hover:text-blue-600">
+                                        <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
                                           {item.label}
                                         </div>
                                         <div className="text-xs text-gray-500 leading-relaxed mt-0.5">
@@ -761,7 +763,7 @@ const Header: React.FC = () => {
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  className="flex items-center justify-center px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-full hover:bg-gray-50/80 hover:shadow-sm"
+                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 + 0.2 }}

@@ -11,24 +11,24 @@ const ProductShowcase: React.FC = () => {
 
   const demos = [
     {
-      title: "Dataform",
+      title: "Visual Development",
       description:
-        "Our platform's Data Form feature allows you to create custom forms effortlessly without coding. With a drag-and-drop interface, it streamlines data collection, validation, and integration into your applications.",
+        "Our platform's Visual Development feature allows you to create custom forms effortlessly without coding. With a drag-and-drop interface, it streamlines data collection, validation, and integration into your applications.",
       image: "/classic02.png",
       features: ["Drag & Drop", "No Coding", "Data Validation"],
     },
     {
-      title: "Process Automation",
+      title: "Workflow Automation",
       description:
-        "Automate complex workflows without code. Our platform's Process feature lets you design and automate processes with a simple drag-and-drop interface. Integrates seamlessly with your data and scales with your business.",
+        "Automate complex workflows without code. Our platform's Workflow Automation feature lets you design and automate processes with a simple drag-and-drop interface. Integrates seamlessly with your data and scales with your business.",
       image: "/classic04.png",
       features: ["Workflow Automation", "Drag & Drop", "Seamless Integration"],
     },
     {
-      title: "Custom Applications",
+      title: "Intergration Capabilities",
       description:
-        "Our platform's App feature allows you to create custom applications tailored to your business needs without any coding. With an intuitive interface and pre-built components, you can design, deploy, and manage apps quickly.",
-      image: "/classic05.png",
+        "Our platform's Integration Capabilities From simple triggers to complex enterprise workflows, our integration platform adapts to your needs and scales with your business.",
+      image: "/integration1.svg",
       features: ["No Coding", "Pre-built Components", "Quick Deployment"],
     },
     {

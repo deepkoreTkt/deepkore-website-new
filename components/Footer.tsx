@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
   const solutionLinks = [
     { name: "Sales & CRM", href: "/sales-crm" },
     { name: "Asset Management", href: "/asset-management" },
-    { name: "Manufacturing & Production", href: "/manufacturing-production" },
+    { name: "Manufacturing & Production", href: "/manufacturing" },
     { name: "Healthcare & Medical", href: "/healthcare-medical" },
     { name: "More", href: "/solution" },
     // { name: "Education & E-learning", href: "/education-elearning" },
@@ -403,4 +403,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-

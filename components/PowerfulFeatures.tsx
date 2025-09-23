@@ -70,7 +70,7 @@ const PowerfulFeatures: React.FC = () => {
               </span>
             </div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 drop-shadow-lg leading-tight">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
             All Your Tasks, Organized Effortlessly
           </h2>
         </motion.div>

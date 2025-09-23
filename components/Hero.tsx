@@ -144,15 +144,17 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
               >
-                <div className="flex flex-col items-center gap-2">
-                  <motion.button
-                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                    whileHover={{ scale: 1.03, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Book a Demo
-                  </motion.button>
-                </div>
+                <a href="/getstarted" className="text-lg font-medium">
+                  <div className="flex flex-col items-center gap-2">
+                    <motion.button
+                      className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      whileHover={{ scale: 1.03, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Book a Demo
+                    </motion.button>
+                  </div>
+                </a>
               </motion.div>
               <Image
                 src={getCurrentDashboardImage()}

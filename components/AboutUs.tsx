@@ -6,6 +6,17 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
 import About from "./About";
+import {
+  Target,
+  Zap,
+  Bot,
+  Lock,
+  Users,
+  Newspaper,
+  UserSquare2,
+  BarChart3,
+  UsersRound,
+} from "lucide-react";
 
 // Company logos data
 const companyLogos = [
@@ -47,25 +58,25 @@ const promises = [
     title: "Uncomplicated Solutions",
     description:
       "Our enterprise-grade solutions are designed to be easy to implement, use, and configure. We make work easier and processes less complex.",
-    icon: "🎯",
+    icon: "Target",
   },
   {
     title: "Rapid Impact",
     description:
       "Our software makes a real difference in days or weeks, not months. We enable fast and accurate service that customers and employees love.",
-    icon: "⚡",
+    icon: "Zap",
   },
   {
     title: "AI-Powered Automation",
     description:
       "Our AI-assisted software is a force-multiplier, meant to help people deliver exceptional results. We put our customers first, always.",
-    icon: "🤖",
+    icon: "Bot",
   },
   {
     title: "No Surprises",
     description:
       "Our reliable products, transparent pricing, and honest approach won&apos;t surprise you with exorbitant costs. We&apos;re here to earn your trust.",
-    icon: "🔒",
+    icon: "Lock",
   },
 ];
 
@@ -76,7 +87,7 @@ const futureLinks = [
       "Be part of our mission to make work more satisfying and productive for everyone",
     buttonText: "Careers",
     buttonLink: "#careers",
-    icon: "👥",
+    icon: "Users",
   },
   {
     title: "Check out the latest news",
@@ -84,7 +95,7 @@ const futureLinks = [
       "Keep up with the story of a company that&apos;s reshaping the world of work",
     buttonText: "Newsroom",
     buttonLink: "#newsroom",
-    icon: "📰",
+    icon: "Newspaper",
   },
   {
     title: "Get to know our leadership",
@@ -92,11 +103,35 @@ const futureLinks = [
       "Meet the industry-leading executives creating the future of business software",
     buttonText: "Leadership",
     buttonLink: "#leadership",
-    icon: "👔",
+    icon: "UserSquare2",
   },
 ];
 
 const AboutUs: React.FC = () => {
+  const getIcon = (iconName: string, className: string = "w-8 h-8") => {
+    switch (iconName) {
+      case "Target":
+        return <Target className={className} />;
+      case "Zap":
+        return <Zap className={className} />;
+      case "Bot":
+        return <Bot className={className} />;
+      case "Lock":
+        return <Lock className={className} />;
+      case "Users":
+        return <Users className={className} />;
+      case "Newspaper":
+        return <Newspaper className={className} />;
+      case "UserSquare2":
+        return <UserSquare2 className={className} />;
+      case "BarChart3":
+        return <BarChart3 className={className} />;
+      case "UsersRound":
+        return <UsersRound className={className} />;
+      default:
+        return null;
+    }
+  };
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -142,7 +177,7 @@ const AboutUs: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Making an Impact Worldwide
             </h2>
-            <p className="text-xl text-[#2791D0]/80 max-w-3xl mx-auto">
+            <p className="text-xl text-[#edf3f5]/80 max-w-3xl mx-auto">
               Join thousands of teams that have transformed their workflow with
               Deepkore
             </p>
@@ -158,7 +193,7 @@ const AboutUs: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl md:text-6xl font-bold mb-4 text-[#2791D0]">
+                <div className="text-5xl md:text-6xl font-bold mb-4 text-[#edf3f5]">
                   {stat.number}
                 </div>
                 <div className="text-xl text-white">{stat.label}</div>
@@ -198,7 +233,7 @@ const AboutUs: React.FC = () => {
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#00A551]/20 to-[#2791D0]/20 rounded-xl flex items-center justify-center mr-4">
-                  <span className="text-3xl">📊</span>
+                  <BarChart3 className="w-8 h-8" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
@@ -232,7 +267,7 @@ const AboutUs: React.FC = () => {
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#2791D0]/20 to-[#2791D0]/20 rounded-xl flex items-center justify-center mr-4">
-                  <span className="text-3xl">🤝</span>
+                  <UsersRound className="w-8 h-8" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
@@ -250,7 +285,7 @@ const AboutUs: React.FC = () => {
               </p>
               <a
                 href="#teams"
-                className="inline-flex items-center text-[#2791D0] font-semibold hover:text-[#2791D0]/80 transition-colors"
+                className="inline-flex items-center text-[#edf3f5] font-semibold hover:text-[#edf3f5]/80 transition-colors"
               >
                 Explore Teams →
               </a>
@@ -289,7 +324,7 @@ const AboutUs: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="text-4xl mb-4">{promise.icon}</div>
+                <div className="mb-4">{getIcon(promise.icon, "w-12 h-12")}</div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   {promise.title}
                 </h3>
@@ -332,7 +367,7 @@ const AboutUs: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-5xl mb-6">{link.icon}</div>
+                <div className="mb-6">{getIcon(link.icon, "w-14 h-14")}</div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   {link.title}
                 </h3>
@@ -407,7 +442,7 @@ const AboutUs: React.FC = () => {
             Ready to transform your workflow?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-[#2791D0]/80"
+            className="text-xl mb-8 text-[#edf3f5]/80"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -417,7 +452,7 @@ const AboutUs: React.FC = () => {
             projects
           </motion.p>
           <motion.button
-            className="bg-[#2791D0] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#edf3f5] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -436,4 +471,3 @@ const AboutUs: React.FC = () => {
 };
 
 export default AboutUs;
-

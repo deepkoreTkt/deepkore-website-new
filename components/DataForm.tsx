@@ -4,6 +4,30 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
+import {
+  Type,
+  Mail,
+  Hash,
+  FileText,
+  List,
+  CheckSquare,
+  Circle,
+  Calendar,
+  Briefcase,
+  Code,
+  Settings,
+  Users,
+  TrendingUp,
+  PenTool,
+  Shuffle,
+  CheckCircle,
+  FolderOpen,
+  Table,
+  Clipboard,
+  Rocket,
+  Target,
+  DollarSign,
+} from "lucide-react";
 
 interface FormField {
   id: string;
@@ -22,14 +46,14 @@ const DataForm: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const fieldTypes = [
-    { type: "text", label: "Text Input", icon: "📝" },
-    { type: "email", label: "Email", icon: "📧" },
-    { type: "number", label: "Number", icon: "🔢" },
-    { type: "textarea", label: "Text Area", icon: "📄" },
-    { type: "select", label: "Select", icon: "📋" },
-    { type: "checkbox", label: "Checkbox", icon: "☑️" },
-    { type: "radio", label: "Radio", icon: "⭕" },
-    { type: "date", label: "Date", icon: "📅" },
+    { type: "text", label: "Text Input", icon: <Type size={20} /> },
+    { type: "email", label: "Email", icon: <Mail size={20} /> },
+    { type: "number", label: "Number", icon: <Hash size={20} /> },
+    { type: "textarea", label: "Text Area", icon: <FileText size={20} /> },
+    { type: "select", label: "Select", icon: <List size={20} /> },
+    { type: "checkbox", label: "Checkbox", icon: <CheckSquare size={20} /> },
+    { type: "radio", label: "Radio", icon: <Circle size={20} /> },
+    { type: "date", label: "Date", icon: <Calendar size={20} /> },
   ];
 
   const addField = (type: string) => {
@@ -495,7 +519,10 @@ const DataForm: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.3 }}
                       >
-                        <div className="text-7xl mb-6">📋</div>
+                        <div className="text-7xl mb-6">
+                          {" "}
+                          <Clipboard size={72} />
+                        </div>
                         <p className="text-2xl font-medium mb-3 text-slate-700">
                           No elements added yet
                         </p>
@@ -554,7 +581,9 @@ const DataForm: React.FC = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.3 }}
                     >
-                      <div className="text-6xl mb-6">🎯</div>
+                      <div className="text-6xl mb-6">
+                        <Target size={60} />
+                      </div>
                       <p className="text-slate-600 text-xl mb-3 font-medium">
                         Start crafting your professional form
                       </p>
@@ -626,7 +655,9 @@ const DataForm: React.FC = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.4 }}
                       >
-                        <div className="text-7xl mb-6">🚀</div>
+                        <div className="text-7xl mb-6">
+                          <Rocket size={72} />
+                        </div>
                         <p className="text-2xl font-medium mb-3 text-slate-700">
                           Ready to create
                         </p>
@@ -670,7 +701,7 @@ const DataForm: React.FC = () => {
               className="inline-block mb-6"
             >
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-sm font-medium tracking-wide">
-                COLLABORATIVE PARTNERSHIPS
+                STRATEGIC ALLIANCES
               </span>
             </motion.div>
             <motion.h2
@@ -679,9 +710,9 @@ const DataForm: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Unified Teams Driving
+              Collaborative Forces Propelling
               <span className="block bg-gradient-to-r from-slate-600 to-slate-800 bg-clip-text text-transparent">
-                Digital Transformation
+                Technological Advancement
               </span>
             </motion.h2>
             <motion.p
@@ -690,9 +721,9 @@ const DataForm: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              Strategic partnerships between business leaders and technology
-              experts deliver scalable solutions that transform enterprise
-              operations and accelerate digital transformation.
+              Effective alliances between business executives and tech
+              specialists produce flexible solutions that revolutionize
+              corporate activities and boost technological progress.
             </motion.p>
           </motion.div>
 
@@ -708,27 +739,28 @@ const DataForm: React.FC = () => {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    👔
+                    <Briefcase size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-wide">
-                    IT Leadership
+                    Technology Management
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    CIOs and IT directors managing complex enterprise backlogs
-                    and digital transformation initiatives.
+                    Chief Information Officers and IT managers overseeing
+                    intricate corporate project lists and technological
+                    innovation efforts.
                   </p>
                   <div className="w-full space-y-3">
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-slate-400 rounded-full mr-3"></div>
-                      Enterprise applications
+                      Corporate software
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-slate-400 rounded-full mr-3"></div>
-                      Workflow automation
+                      Process mechanization
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-slate-400 rounded-full mr-3"></div>
-                      Service desk optimization
+                      Support center enhancement
                     </div>
                   </div>
                 </div>
@@ -746,27 +778,28 @@ const DataForm: React.FC = () => {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    👨‍💻
+                    <Code size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-wide">
-                    Development Teams
+                    Engineering Groups
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    CTOs and development leaders accelerating delivery cycles
-                    and reducing technical debt.
+                    Chief Technology Officers and development managers speeding
+                    up production timelines and minimizing technical
+                    liabilities.
                   </p>
                   <div className="w-full space-y-3">
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
-                      10x productivity gains
+                      10x efficiency improvements
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
-                      AI-assisted development
+                      AI-supported coding
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
-                      Enterprise integrations
+                      Corporate connections
                     </div>
                   </div>
                 </div>
@@ -784,27 +817,27 @@ const DataForm: React.FC = () => {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    ⚙️
+                    <Settings size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-wide">
-                    Process Owners
+                    Workflow Managers
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    Operations leaders digitizing workflows and optimizing
-                    business processes.
+                    Operational directors converting procedures to digital
+                    formats and enhancing business operations.
                   </p>
                   <div className="w-full space-y-3">
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
-                      No-code automation
+                      Low-code mechanization
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
-                      Complex process handling
+                      Intricate workflow management
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
-                      AI-powered insights
+                      AI-driven analytics
                     </div>
                   </div>
                 </div>
@@ -822,27 +855,27 @@ const DataForm: React.FC = () => {
               <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                 <div className="flex flex-col items-center text-center h-full">
                   <div className="w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    👥
+                    <Users size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-wide">
-                    Business Users
+                    End Users
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
-                    End users across departments leveraging intuitive tools for
-                    daily operations.
+                    Staff members throughout divisions utilizing user-friendly
+                    applications for routine tasks.
                   </p>
                   <div className="w-full space-y-3">
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                      Zero-code workflows
+                      No-code processes
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                      AI-enhanced tasks
+                      AI-augmented activities
                     </div>
                     <div className="flex items-center text-sm text-slate-600">
                       <div className="w-2 h-2 bg-violet-400 rounded-full mr-3"></div>
-                      Enterprise interfaces
+                      Corporate platforms
                     </div>
                   </div>
                 </div>
@@ -852,7 +885,7 @@ const DataForm: React.FC = () => {
         </div>
       </section>
 
-      {/* Enterprise Power Up Forms Section */}
+      {/* Integrations That Power Your Workflow Section */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
         {/* Professional Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -879,7 +912,7 @@ const DataForm: React.FC = () => {
               className="inline-block mb-6"
             >
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm font-medium tracking-wide">
-                WORKFLOW AUTOMATION
+                POWERFUL INTEGRATIONS
               </span>
             </motion.div>
             <motion.h2
@@ -888,9 +921,9 @@ const DataForm: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Seamless Workflow
+              Integrations That Power
               <span className="block bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent">
-                Automation Platform
+                Your Dataform
               </span>
             </motion.h2>
             <motion.p
@@ -899,9 +932,9 @@ const DataForm: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              Transform every form submission into immediate business value.
-              Capture leads, collect signatures, sync files, and automate
-              workflows — all in one seamless automation platform.
+              Transform every form submission into powerful business outcomes.
+              Connect your forms to essential tools and automate workflows that
+              drive growth and efficiency across your entire organization.
             </motion.p>
           </motion.div>
 
@@ -909,74 +942,74 @@ const DataForm: React.FC = () => {
             {/* Integration Cards - Enterprise Style */}
             {[
               {
-                icon: "�",
-                title: "Customer Management",
+                icon: <TrendingUp size={28} />,
+                title: "Customer Growth",
                 description:
-                  "Capture leads and customer info the moment they submit — keep your pipeline updated in real time.",
+                  "Convert every form into new opportunities and stronger relationships.",
                 features: [
-                  "Real-time lead capture",
-                  "CRM auto-sync",
-                  "Pipeline management",
+                  "Lead generation",
+                  "Relationship building",
+                  "Opportunity tracking",
                 ],
                 gradient: "from-blue-600 to-indigo-600",
               },
               {
-                icon: "🖊️",
+                icon: <PenTool size={28} />,
                 title: "Digital Signatures",
                 description:
-                  "Collect secure, legally binding signatures directly from your forms — no extra steps needed.",
+                  "Seal approvals instantly with secure e-signatures.",
                 features: [
-                  "Legally binding signatures",
-                  "Secure authentication",
-                  "Compliance ready",
+                  "Instant approvals",
+                  "Secure e-signatures",
+                  "Legal compliance",
                 ],
                 gradient: "from-emerald-600 to-teal-600",
               },
               {
-                icon: "☁️",
-                title: "Smart File Sync",
+                icon: <FileText size={28} />,
+                title: "Smart Documents",
                 description:
-                  "Store uploaded files safely in your preferred cloud or enterprise drive, automatically organized.",
+                  "Keep submissions organized and accessible in your workspace.",
                 features: [
-                  "Auto-organization",
-                  "Cloud storage integration",
-                  "Secure file handling",
+                  "Organized submissions",
+                  "Workspace integration",
+                  "Easy access",
                 ],
                 gradient: "from-violet-600 to-purple-600",
               },
               {
-                icon: "✅",
-                title: "Task & Project Boards",
+                icon: <Users size={28} />,
+                title: "Team Collaboration",
                 description:
-                  "Convert submissions into tasks, tickets, or project cards so work starts the second a form is sent.",
+                  "Turn inputs into tasks and projects—streamlined for action.",
                 features: [
-                  "Auto-task creation",
-                  "Project management sync",
-                  "Workflow automation",
+                  "Task creation",
+                  "Project management",
+                  "Streamlined workflows",
                 ],
                 gradient: "from-amber-600 to-orange-600",
               },
               {
-                icon: "�",
-                title: "Marketing Automation",
+                icon: <Mail size={28} />,
+                title: "Audience Engagement",
                 description:
-                  "Feed new contacts straight into your campaigns and keep your audience lists fresh — automatically.",
+                  "Automatically build and nurture your mailing lists.",
                 features: [
-                  "Campaign integration",
-                  "Audience segmentation",
+                  "Mailing list building",
                   "Automated nurturing",
+                  "Audience growth",
                 ],
                 gradient: "from-rose-600 to-pink-600",
               },
               {
-                icon: "�",
-                title: "Finance & Operations",
+                icon: <DollarSign size={28} />,
+                title: "Finance Made Simple",
                 description:
-                  "Kick-off invoices, payments, or vendor profiles right from form data, streamlining back-office work.",
+                  "From invoices to payments—manage it all from one place.",
                 features: [
-                  "Invoice generation",
+                  "Invoice management",
                   "Payment processing",
-                  "Vendor management",
+                  "Financial operations",
                 ],
                 gradient: "from-cyan-600 to-blue-600",
               },
@@ -1093,28 +1126,28 @@ const DataForm: React.FC = () => {
                       {[
                         {
                           id: 0,
-                          icon: "�",
+                          icon: <Table size={24} />,
                           title: "Dynamic Tables",
                           subtitle: "Professional data management",
                           color: "from-slate-600 to-slate-800",
                         },
                         {
                           id: 1,
-                          icon: "🗂️",
+                          icon: <FolderOpen size={24} />,
                           title: "Smart Field Groups",
                           subtitle: "Smart organization",
                           color: "from-blue-600 to-indigo-600",
                         },
                         {
                           id: 2,
-                          icon: "✅",
+                          icon: <CheckCircle size={24} />,
                           title: "Advanced Validation",
                           subtitle: "Enterprise-grade validation",
                           color: "from-emerald-600 to-teal-600",
                         },
                         {
                           id: 3,
-                          icon: "🔀",
+                          icon: <Shuffle size={24} />,
                           title: "Intelligent Logic",
                           subtitle: "Adaptive workflows",
                           color: "from-violet-600 to-purple-600",
@@ -1181,7 +1214,7 @@ const DataForm: React.FC = () => {
                       >
                         <div className="flex items-center space-x-6 mb-8">
                           <div className="w-20 h-20 bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl flex items-center justify-center text-4xl shadow-xl">
-                            �
+                            <Table size={40} />
                           </div>
                           <div>
                             <h3 className="text-4xl font-bold text-slate-900 tracking-tight">
@@ -1234,7 +1267,7 @@ const DataForm: React.FC = () => {
                       >
                         <div className="flex items-center space-x-6 mb-8">
                           <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-4xl shadow-xl">
-                            🗂️
+                            <FolderOpen size={40} />
                           </div>
                           <div>
                             <h3 className="text-4xl font-bold text-slate-900 tracking-tight">
@@ -1285,7 +1318,7 @@ const DataForm: React.FC = () => {
                       >
                         <div className="flex items-center space-x-6 mb-8">
                           <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-4xl shadow-xl">
-                            ✅
+                            <CheckCircle size={40} />
                           </div>
                           <div>
                             <h3 className="text-4xl font-bold text-slate-900 tracking-tight">
@@ -1336,7 +1369,7 @@ const DataForm: React.FC = () => {
                       >
                         <div className="flex items-center space-x-6 mb-8">
                           <div className="w-20 h-20 bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl flex items-center justify-center text-4xl shadow-xl">
-                            🔀
+                            <Shuffle size={40} />
                           </div>
                           <div>
                             <h3 className="text-4xl font-bold text-slate-900 tracking-tight">
@@ -1389,4 +1422,3 @@ const DataForm: React.FC = () => {
 };
 
 export default DataForm;
-

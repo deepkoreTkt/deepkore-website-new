@@ -3,6 +3,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import Image from "next/image";
+import {
+  Target,
+  BookOpen,
+  Users,
+  Diamond,
+  Rocket,
+  Globe,
+  Zap,
+  Shield,
+  Cloud,
+  Lock,
+  BoltIcon,
+} from "lucide-react";
 
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState("mission");
@@ -21,68 +34,68 @@ const About: React.FC = () => {
       title: "Foundation",
       description:
         "Deepkore was founded with a vision to democratize artificial intelligence.",
-      icon: "🚀",
+      icon: <Rocket className="w-6 h-6" />,
     },
     {
       year: "2021",
       title: "First Breakthrough",
       description:
         "Launched our first neural network model, revolutionizing creative workflows.",
-      icon: "🧠",
+      icon: <BoltIcon className="w-6 h-6" />,
     },
     {
       year: "2022",
       title: "Global Expansion",
       description: "Expanded to serve millions of users across 80+ countries.",
-      icon: "🌍",
+      icon: <Globe className="w-6 h-6" />,
     },
     {
       year: "2023",
       title: "Neural Vision 3.0",
       description:
         "Released advanced computer vision capabilities with unprecedented accuracy.",
-      icon: "👁️",
+      icon: <Target className="w-6 h-6" />,
     },
     {
       year: "2024",
       title: "Enterprise Solutions",
       description:
         "Launched enterprise-grade AI solutions for Fortune 500 companies.",
-      icon: "🏢",
+      icon: <Shield className="w-6 h-6" />,
     },
     {
       year: "2025",
       title: "Neural Vision 3.5",
       description:
         "Current generation with cutting-edge multimodal AI capabilities.",
-      icon: "⚡",
+      icon: <Zap className="w-6 h-6" />,
     },
   ];
 
   const values = [
     {
-      icon: "🚀",
+      icon: <Rocket className="w-8 h-8" />,
       title: "No Code - No Limits",
       description:
         "Empower your team to build applications faster with our intuitive no-code platform that removes technical barriers.",
       color: "from-[#00A551] to-[#2791D0]",
     },
     {
-      icon: "☁️",
+      icon: <Cloud className="w-8 h-8" />,
       title: "Run It Your Way",
       description:
         "Deploy your applications in the cloud or on-premises - you choose what works best for your organization.",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: "🔒",
+      icon: <Lock className="w-8 h-8" />,
       title: "Enterprise-Grade Security",
       description:
         "Bank-level security with comprehensive data protection, encryption, and compliance standards.",
       color: "from-green-500 to-emerald-500",
     },
     {
-      icon: "🛡️",
+      icon: <Shield className="w-8 h-8" />,
       title: "Secure Data Access",
       description:
         "Advanced authorization, secure data access controls, and comprehensive audit trail generation for full compliance.",
@@ -247,10 +260,26 @@ const About: React.FC = () => {
             <div className="bg-gray-100/50 backdrop-blur-xl rounded-2xl p-2 border border-gray-300/50">
               <div className="flex flex-wrap justify-center gap-2">
                 {[
-                  { id: "mission", label: "Our Mission", icon: "🎯" },
-                  { id: "story", label: "Our Story", icon: "📖" },
-                  { id: "team", label: "Our Team", icon: "👥" },
-                  { id: "values", label: "Our Values", icon: "💎" },
+                  {
+                    id: "mission",
+                    label: "Our Mission",
+                    icon: <Target className="w-5 h-5" />,
+                  },
+                  {
+                    id: "story",
+                    label: "Our Story",
+                    icon: <BookOpen className="w-5 h-5" />,
+                  },
+                  {
+                    id: "team",
+                    label: "Our Team",
+                    icon: <Users className="w-5 h-5" />,
+                  },
+                  {
+                    id: "values",
+                    label: "Our Values",
+                    icon: <Diamond className="w-5 h-5" />,
+                  },
                 ].map((tab) => (
                   <motion.button
                     key={tab.id}
@@ -317,17 +346,17 @@ const About: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                       {[
                         {
-                          icon: "🚀",
+                          icon: <Rocket className="w-8 h-8" />,
                           title: "Innovation",
                           desc: "Pushing AI boundaries",
                         },
                         {
-                          icon: "🌍",
+                          icon: <Globe className="w-8 h-8" />,
                           title: "Accessibility",
                           desc: "AI for everyone",
                         },
                         {
-                          icon: "⚡",
+                          icon: <Zap className="w-8 h-8" />,
                           title: "Efficiency",
                           desc: "Faster workflows",
                         },
@@ -558,4 +587,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-

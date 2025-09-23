@@ -3,31 +3,33 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Users, BarChart3, Code, Shield } from "lucide-react";
 
 const ProductOverview: React.FC = () => {
   const features = [
     {
-      title: "Custom Application Development",
-      description: "Building tailored applications for specific needs",
-      icon: "/appwithhand.svg",
+      title: "For Business Users",
+      description: "Bring your ideas to life—no coding, just creating.",
+      iconComponent: Users,
       bgColor: "bg-[#e3f2fd]",
     },
     {
-      title: "Task Automation",
-      description: "Automating repetitive tasks to save time",
-      icon: "/process.svg",
+      title: "For Business",
+      description:
+        "Stay ahead with smarter decisions. Powered by data-driven insights.",
+      iconComponent: BarChart3,
       bgColor: "bg-[#e8f5e9]",
     },
     {
-      title: "System Integration",
-      description: "Seamlessly integrating with existing systems",
-      icon: "/integration.svg",
+      title: "For Developers",
+      description: "Code less, build more—launch powerful apps 10× faster.",
+      iconComponent: Code,
       bgColor: "bg-[#f3e5f5]",
     },
     {
-      title: "Real-time Analytics",
-      description: "Gaining insights through real-time data analysis",
-      icon: "/analytics.svg",
+      title: "For IT Leaders",
+      description: "Unlock agility and scale—accelerate IT like never before.",
+      iconComponent: Shield,
       bgColor: "bg-[#e0f7fa]",
     },
   ];
@@ -54,8 +56,7 @@ const ProductOverview: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Deepkore is built to simplify and accelerate digital transformation
-            for enterprises
+            Innovation in Every Hand
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover features designed to simplify workflows, boost
@@ -63,44 +64,35 @@ const ProductOverview: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className={`${feature.bgColor} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#ffffff] rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-16">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className={`${feature.bgColor} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-[#ffffff] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <feature.iconComponent size={24} className="text-gray-900" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
 
           {/* Dashboard Image */}
-          <motion.div
+          {/* <motion.div
             className="relative"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -117,11 +109,11 @@ const ProductOverview: React.FC = () => {
                 unoptimized={true}
               />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Additional Features */}
-        <motion.div
+        {/* <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +140,7 @@ const ProductOverview: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA */}
         <motion.div
@@ -164,4 +156,3 @@ const ProductOverview: React.FC = () => {
 };
 
 export default ProductOverview;
-
