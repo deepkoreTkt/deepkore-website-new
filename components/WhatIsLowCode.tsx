@@ -68,12 +68,12 @@ const WhatIsLowCode: React.FC = () => {
         <div className="relative container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="animate-fade-in-up">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-[#2791D0] to-white bg-clip-text text-transparent animate-gradient-x">
+              <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white  to-white bg-clip-text text-transparent animate-gradient-x">
                 What is low-code?
               </h1>
               <p className="text-xl md:text-2xl leading-relaxed mb-12 opacity-95 max-w-4xl mx-auto font-light tracking-wide">
                 Low-code is an approach to visual software development that
-                <span className="font-medium text-[#2791D0]">
+                <span className="font-medium text-[#ffffff]">
                   {" "}
                   accelerates application creation{" "}
                 </span>
@@ -84,7 +84,7 @@ const WhatIsLowCode: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-300">
               <a
                 href="#"
-                className="group inline-block bg-gradient-to-r from-[#2791D0] to-[#2791D0]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
+                className="group inline-block bg-gradient-to-r from-[#ffffff] to-[#ffffff]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
               >
                 <span className="flex items-center gap-2">
                   FREE 14-DAY TRIAL
@@ -797,7 +797,7 @@ const WhatIsLowCode: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="#"
-                    className="inline-block bg-[#2791D0] hover:bg-[#2791D0]/90 text-[#00A551] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    className="inline-block bg-[#ffffff] hover:bg-[#ffffff]/90 text-[#00A551] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     FREE 14-DAY TRIAL
                   </a>
@@ -843,4 +843,3 @@ const WhatIsLowCode: React.FC = () => {
 };
 
 export default WhatIsLowCode;
-

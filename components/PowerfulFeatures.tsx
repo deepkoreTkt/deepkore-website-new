@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const PowerfulFeatures: React.FC = () => {
   const features = [
@@ -10,23 +11,27 @@ const PowerfulFeatures: React.FC = () => {
       title: "Data Form",
       description: "Create custom forms effortlessly without coding.",
       avatar: "/dataformbg1.svg",
+      href: "/dataform",
     },
     {
       title: "Process",
       description:
         "Design and automate processes with a simple drag-and-drop interface.",
       avatar: "/process.png",
+      href: "/process",
     },
     {
       title: "Integration",
       description:
         "Connect seamlessly with your existing tools and applications.",
       avatar: "/integration1.svg",
+      href: "/integration",
     },
     {
       title: "Analytics",
       description: "Turn data into actionable insights effortlessly.",
       avatar: "/analytics1.png",
+      href: "/analytics",
     },
   ];
 
@@ -104,6 +109,12 @@ const PowerfulFeatures: React.FC = () => {
                   <p className="text-sm opacity-90 leading-relaxed">
                     {feature.description}
                   </p>
+                  <Link
+                    href={feature.href}
+                    className="inline-block mt-2 px-0 py-2  text-[#006ce8] font-semibold text-sm rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </button>
             ))}

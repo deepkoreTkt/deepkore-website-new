@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 import {
   FileText,
   Users,
@@ -26,7 +27,7 @@ const inter = Inter({
 });
 
 const TemplateHR = () => {
-  const [hoveredTemplate, setHoveredTemplate] = useState<string | null>(null);
+  const ratings = [4.5, 4.7, 4.9, 4.2, 4.8, 4.4, 4.6, 4.3, 4.1, 4.5];
 
   const templates = [
     {
@@ -47,6 +48,7 @@ const TemplateHR = () => {
       ],
       image: "/dataform.png",
       category: "Human Resources",
+      href: "/templates/hr",
     },
     {
       title: "Attendance Monitoring",
@@ -222,200 +224,167 @@ const TemplateHR = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="relative min-h-screen bg-[#f2f5f5]">
       <Header />
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100/10 to-green-100/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-50/50 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-200/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-40 lg:px-40 py-40">
+      <div className="relative z-10 container mx-auto px-40 lg:px-40 py-24">
         {/* Hero Section */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="max-w-4xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="inline-block mb-6"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="px-6 py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-              <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">
-                HR Templates
-              </span>
-            </div>
-          </motion.div>
-
           <motion.h1
-            className={`${inter.className} text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className={`${inter.className} text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight text-center px-10`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
-            Welcome to DeepKore&apos;s
-            <span className="bg-gradient-to-r from-blue-600 via-teal-500 to-green-500 bg-clip-text text-transparent">
+            Simplify HR Management with Ready-to-Use
+            <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
               {" "}
-              HR Templates
+              Enterprise-Grade Templates
             </span>
           </motion.h1>
 
           <motion.p
-            className={`${inter.className} text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            className={`${inter.className} text-lg text-gray-600 mb-8 text-center mx-auto max-w-3xl`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
           >
-            Revolutionize your HR processes with cutting-edge automation
-            templates that enhance efficiency, compliance, and employee
-            engagement.
+            Deploy standardized HR processes across your organization with our
+            comprehensive suite of templates designed for enterprise compliance,
+            efficiency, and scalability.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-              Browse HR Templates
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
-              Watch Demo
-            </button>
+            <a href="/getstarted">
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors flex items-center gap-2">
+                Schedule a Demo
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </a>
           </motion.div>
         </motion.div>
 
         {/* Templates Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.4 }}
         >
           {templates.map((template, index) => (
             <motion.div
               key={index}
-              className={`group relative ${template.bgColor} rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden`}
-              whileHover={{ y: -5, scale: 1.02 }}
-              onHoverStart={() => setHoveredTemplate(template.title)}
-              onHoverEnd={() => setHoveredTemplate(null)}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="group relative bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-all duration-200"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 * index }}
             >
-              {/* Background Gradient on Hover */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${template.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}
-              ></div>
+              <div className="p-6">
+                {/* Icon and Category */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-center w-10 h-10 bg-blue-50 rounded-lg">
+                    <div className="text-blue-600">{template.icon}</div>
+                  </div>
+                  <span className="text-xs font-medium text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
+                    {template.category}
+                  </span>
+                </div>
 
-              {/* Category Badge */}
-              <div className="relative z-10 mb-4">
-                <span className="inline-block px-3 py-1 bg-white/70 text-slate-600 text-xs font-medium rounded-full">
-                  {template.category}
-                </span>
-              </div>
-
-              {/* Icon */}
-              <div
-                className={`relative z-10 w-12 h-12 rounded-xl bg-gradient-to-br ${template.gradient} flex items-center justify-center mb-4 text-white shadow-lg`}
-              >
-                {template.icon}
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {template.title}
                 </h3>
-                <h4 className="text-sm font-medium text-slate-600 mb-3">
-                  {template.subtitle}
-                </h4>
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+
+                {/* Description */}
+                <p className="text-sm text-gray-600 mb-4 line-clamp-2">
                   {template.description}
                 </p>
 
                 {/* Features List */}
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-6">
                   {template.features.slice(0, 3).map((feature, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center space-x-2 text-xs text-slate-600"
+                      className="flex items-center text-sm text-gray-600"
                     >
-                      <div
-                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${template.gradient}`}
-                      ></div>
-                      <span>{feature}</span>
+                      <div className="w-1 h-1 bg-blue-400 rounded-full mr-2"></div>
+                      {feature}
                     </div>
                   ))}
-                  {template.features.length > 3 && (
-                    <div className="text-xs text-slate-500 font-medium">
-                      +{template.features.length - 3} more features
-                    </div>
-                  )}
                 </div>
 
-                {/* CTA */}
-                <button
-                  className={`w-full py-2 px-4 bg-gradient-to-r ${template.gradient} text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105`}
-                >
-                  Explore Template
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
+                {/* Implementation Stats */}
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
+                  <div className="flex items-center">
+                    <Users className="w-4 h-4 mr-1" />
+                    {Math.floor(Math.random() * 500) + 100}+ implementations
+                  </div>
+                  <div className="flex items-center">
+                    <BarChart3 className="w-4 h-4 mr-1" />
+                    {ratings[index]} rating
+                  </div>
+                </div>
 
-              {/* Hover Image Preview */}
-              <AnimatePresence>
-                {hoveredTemplate === template.title && (
-                  <motion.div
-                    className="absolute top-4 right-4 w-20 h-20 rounded-lg overflow-hidden border-2 border-white/50 shadow-lg"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Image
-                      src={template.image}
-                      alt={template.title}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                {/* Action Buttons */}
+                <div className="flex gap-2">
+                  <button className="flex-1 py-2 px-4 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                    Preview
+                  </button>
+                  <button className="flex-1 py-2 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-1">
+                    Deploy
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
         >
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              Empower Your HR Team Today
-            </h3>
-            <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-              Deploy our HR templates instantly and transform manual processes
-              into automated workflows that drive results.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Started Free
-              </button>
-              <button className="px-8 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
-                Contact Sales
-              </button>
+          <div className="bg-white rounded-lg p-8 border border-gray-200">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-left">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Ready to Transform Your HR Operations?
+                </h3>
+                <p className="text-gray-600">
+                  Schedule a consultation with our enterprise solutions team to
+                  discuss your specific requirements.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <a href="/getstarted">
+                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    Request Demo
+                  </button>
+                </a>
+                <a href="/contact">
+                  <button className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                    Contact Sales
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>

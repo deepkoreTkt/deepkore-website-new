@@ -411,4 +411,3 @@ const TermsAndConditions: React.FC = () => {
 };
 
 export default TermsAndConditions;
-

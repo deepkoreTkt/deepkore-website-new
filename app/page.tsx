@@ -28,9 +28,9 @@ export default function Home() {
         <Hero />
 
         <PowerfulFeatures />
-        <ProductShowcase />
+        {/* <ProductShowcase /> */}
         <TargetAudience />
-        <EfficiencyMetrics />
+        {/* <EfficiencyMetrics /> */}
 
         {/* <About /> */}
         <Stats />
@@ -54,4 +54,3 @@ export default function Home() {
     </div>
   );
 }
-

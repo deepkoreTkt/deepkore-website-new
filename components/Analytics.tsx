@@ -101,7 +101,7 @@ const Analytics: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#8112db] via-blue-600 to-green-600 bg-clip-text text-transparent">
-              Smarter Decisions with DeepKore Analytics
+              Smarter Decisions with Deepkore Analytics
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
               Transform raw data into strategic advantage
@@ -286,7 +286,7 @@ const Analytics: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               See how organizations are transforming their decision-making with
-              DeepKore Analytics
+              Deepkore Analytics
             </p>
           </motion.div>
 
@@ -405,4 +405,3 @@ const Analytics: React.FC = () => {
 };
 
 export default Analytics;
-

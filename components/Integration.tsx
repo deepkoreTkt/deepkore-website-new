@@ -374,7 +374,7 @@ const Integration: React.FC = () => {
             viewport={{ once: true }}
           >
             Join thousands of organizations that have unified their tech stack
-            with DeepKore integrations
+            with Deepkore integrations
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -405,4 +405,3 @@ const Integration: React.FC = () => {
 };
 
 export default Integration;
-

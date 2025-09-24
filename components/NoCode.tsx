@@ -220,7 +220,7 @@ const NoCode: React.FC = () => {
                       applications faster than ever before&#34;
                     </p>
                     <p className="text-cyan-400 text-sm mt-4">
-                      - DeepKore Vision
+                      - Deepkore Vision
                     </p>
                   </div>
                 </div>
@@ -359,7 +359,7 @@ const NoCode: React.FC = () => {
           <section className="container mx-auto px-40 py-20">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black text-slate-800 mb-6">
-                DeepKore No-Code
+                Deepkore No-Code
                 <span className="block bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                   Platform Features
                 </span>
@@ -717,7 +717,7 @@ const NoCode: React.FC = () => {
                 </h2>
                 <p className="text-xl text-white/90 max-w-3xl mx-auto">
                   See how organizations are transforming their business with
-                  DeepKore&apos;s no-code platform
+                  Deepkore&apos;s no-code platform
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
@@ -801,7 +801,7 @@ const NoCode: React.FC = () => {
                   {
                     question: "Is no-code development secure?",
                     answer:
-                      "Absolutely. DeepKore&apos;s no-code platform includes enterprise-grade security features like encryption, role-based access control, audit trails, and compliance with industry standards like SOC 2, GDPR, and HIPAA.",
+                      "Absolutely. Deepkore&apos;s no-code platform includes enterprise-grade security features like encryption, role-based access control, audit trails, and compliance with industry standards like SOC 2, GDPR, and HIPAA.",
                   },
                   {
                     question: "Can no-code applications scale?",
@@ -880,7 +880,7 @@ const NoCode: React.FC = () => {
             </h2>
             <p className="text-xl mb-12 text-slate-300 max-w-3xl mx-auto">
               Join thousands of organizations already transforming their
-              business with DeepKore&apos;s no-code platform.
+              business with Deepkore&apos;s no-code platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
@@ -925,4 +925,3 @@ const NoCode: React.FC = () => {
 };
 
 export default NoCode;
-

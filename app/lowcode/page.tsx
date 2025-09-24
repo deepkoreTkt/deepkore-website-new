@@ -1,6 +1,6 @@
-import WhatIsLowCode from "@/components/WhatIsLowCode";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import WhatIsLowCode from "../../components/WhatIsLowCode";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const LowCodePage = () => {
   return (
@@ -15,4 +15,3 @@ const LowCodePage = () => {
 };
 
 export default LowCodePage;
-

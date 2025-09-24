@@ -177,25 +177,31 @@ const Header: React.FC = () => {
       {
         title: "Pre-Built Templates",
         items: [
-          { href: "/hr", label: "Human Resource", icon: Users, featured: [] },
           {
-            href: "/data-management",
-            label: "Data Management Tools",
-            icon: FileText,
+            href: "/templates/hr",
+            label: "Human Resource",
+            icon: Users,
             featured: [],
           },
           {
-            href: "/procurement",
+            href: "/templates/procurement",
             label: "Procurement",
             icon: ShoppingCart,
             featured: [],
           },
           {
-            href: "/finance",
+            href: "/templates/finance",
             label: "Finance",
             icon: DollarSign,
             featured: [],
           },
+          {
+            href: "/templates/adminops",
+            label: "Admin & Ops",
+            icon: FileText,
+            featured: [],
+          },
+
           {
             href: "/templates",
             label: "Explore all templates",
