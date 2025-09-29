@@ -273,14 +273,14 @@ const Header: React.FC = () => {
         title: "Core Solutions",
         items: [
           {
-            href: "/sales-crm",
+            href: "/solution/sales",
             label: "Sales & CRM",
             icon: Briefcase,
             description: "Streamline your sales processes",
             featured: [],
           },
           {
-            href: "/asset-management",
+            href: "/solution/assetmanagement",
             label: "Asset Management",
             icon: Package,
             description: "Track and manage assets effectively",
@@ -292,7 +292,7 @@ const Header: React.FC = () => {
         title: "Industry Solutions",
         items: [
           {
-            href: "/manufacturing",
+            href: "/solution/manufacturing",
             label: "Manufacturing & Production",
             icon: Factory,
             description: "Optimize manufacturing processes",
@@ -306,7 +306,7 @@ const Header: React.FC = () => {
             featured: [],
           },
           {
-            href: "/retail-ecommerce",
+            href: "/solution/retail",
             label: "Retail & E-commerce",
             icon: ShoppingBag,
             description: "Retail and online commerce tools",
@@ -318,14 +318,14 @@ const Header: React.FC = () => {
         title: "More Industries",
         items: [
           {
-            href: "/education-elearning",
+            href: "/solution/education",
             label: "Education & E-learning",
             icon: BookOpen,
             description: "Educational platform solutions",
             featured: [],
           },
           {
-            href: "/logistics-transportation",
+            href: "/solution/transportation",
             label: "Logistics & Transportation",
             icon: Truck,
             description: "Logistics and transportation management",

@@ -21,7 +21,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/sales",
+      link: "/solution/sales",
     },
     {
       title: "Human Resources",
@@ -37,7 +37,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/hr",
+      link: "/solution/hr",
     },
     {
       title: "Asset Management",
@@ -52,7 +52,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/asset-management",
+      link: "/solution/assetmanagement",
     },
     {
       title: "AI Analytics & Reporting",
@@ -67,7 +67,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/analytics",
+      link: "/solution/analytics",
     },
     {
       title: "Procurement & Supply Chain",
@@ -82,7 +82,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/procurement",
+      link: "/solution/procurement",
     },
     {
       title: "Manufacturing & Production",
@@ -97,7 +97,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/manufacturing",
+      link: "/solution/manufacturing",
     },
     {
       title: "Banking & Financial Services",
@@ -111,7 +111,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/banking",
+      link: "/solution/banking",
     },
     {
       title: "Healthcare & Medical",
@@ -125,7 +125,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/healthcare",
+      link: "/solution/healthcare",
     },
     {
       title: "Retail & E-commerce",
@@ -139,7 +139,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/retail",
+      link: "/solution/retail",
     },
     {
       title: "Education & E-learning",
@@ -153,7 +153,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/education",
+      link: "/solution/education",
     },
     {
       title: "Government & Public Sector",
@@ -167,7 +167,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/government",
+      link: "/solution/government",
     },
     {
       title: "Logistics & Transportation",
@@ -181,7 +181,7 @@ const Solution: React.FC = () => {
       ],
       image:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center",
-      link: "/industries/logistics",
+      link: "/solution/logistics",
     },
   ];
 
@@ -374,4 +374,3 @@ const Solution: React.FC = () => {
 };
 
 export default Solution;
-
