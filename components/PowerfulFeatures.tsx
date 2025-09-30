@@ -17,7 +17,7 @@ const PowerfulFeatures: React.FC = () => {
       title: "Process",
       description:
         "Design and automate processes with a simple drag-and-drop interface.",
-      avatar: "/process.png",
+      avatar: "/classic04.gif",
       href: "/process",
     },
     {

@@ -203,7 +203,7 @@ const Process: React.FC = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Process Excellence in Numbers
             </h2>
-            <p className="text-xl text-[#2791D0]/90 max-w-3xl mx-auto">
+            <p className="text-xl text-[#ffffff]/90 max-w-3xl mx-auto">
               Join thousands of businesses transforming their operations with
               automated processes
             </p>
@@ -222,7 +222,7 @@ const Process: React.FC = () => {
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:border-[#2791D0]/50 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-[#2791D0]/20">
                   <motion.div
-                    className="text-5xl md:text-7xl font-bold mb-4 text-[#2791D0] group-hover:scale-110 transition-transform duration-500"
+                    className="text-5xl md:text-7xl font-bold mb-4 text-[#ffffff] group-hover:scale-110 transition-transform duration-500"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.6, delay: idx * 0.15 + 0.3 }}
@@ -533,7 +533,7 @@ const Process: React.FC = () => {
             Ready to Automate Your Processes?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-[#2791D0]/80"
+            className="text-xl mb-8 text-[#ffffff]/80"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -543,7 +543,7 @@ const Process: React.FC = () => {
             their operations
           </motion.p>
           <motion.button
-            className="bg-[#2791D0] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -562,4 +562,3 @@ const Process: React.FC = () => {
 };
 
 export default Process;
-

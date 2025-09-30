@@ -94,22 +94,84 @@ const Comparison: React.FC = () => {
         <div className="w-full h-full bg-gradient-to-r from-blue-700/30 via-transparent to-green-500/30"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="text-center mb-16"
+          className="absolute -top-16 -left-16 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 -right-16 w-48 h-48 bg-green-500/20 rounded-full blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -100, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-32 left-1/4 w-24 h-24 bg-purple-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.5, 0.8, 0.5],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-40 relative z-10">
+        <motion.div
+          className="text-center mb-12 sm:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-green-400 to-blue-600 mb-6 tracking-tight drop-shadow-lg">
-            Enterprise-Grade Comparison
-          </h2>
-          <p className="text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+          <motion.span
+            className="inline-block text-blue-400 text-lg font-semibold mb-4 px-6 py-2 rounded-full bg-blue-950/50 border border-blue-500/20"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Platform Comparison
+          </motion.span>
+          <motion.h2
+            className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-500 mb-8 tracking-tight drop-shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Enterprise-Grade <br className="hidden md:block" />
+            Comparison
+          </motion.h2>
+          <motion.p
+            className="text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             Discover how Deepkore&apos;s advanced platform delivers superior
             performance, security, and scalability compared to traditional
             solutions.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="max-w-7xl mx-auto">
@@ -121,79 +183,114 @@ const Comparison: React.FC = () => {
             viewport={{ once: true }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 p-10 text-white border-b border-slate-600">
-              <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-3 gap-8 items-center">
+            <div className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 p-12 text-white border-b border-slate-600 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-green-600/5"></div>
+              <div className="max-w-6xl mx-auto relative">
+                <div className="grid grid-cols-3 gap-12 items-center">
                   {/* Features Column */}
                   <motion.div
-                    className="text-center"
+                    className="text-center relative group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600/30 to-green-400/30 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-blue-500/30 shadow-lg">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: comparisons[1].icon,
-                        }}
-                      />
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-blue-400/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative">
+                      <motion.div
+                        className="w-20 h-20 bg-gradient-to-br from-blue-600/30 to-green-400/30 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30 shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      >
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: comparisons[1].icon,
+                          }}
+                          className="text-3xl transform group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </motion.div>
+                      <h3 className="text-2xl font-bold mb-2 tracking-tight group-hover:text-blue-400 transition-colors duration-200">
+                        Core Features
+                      </h3>
+                      <p className="text-slate-300 text-lg font-medium">
+                        Enterprise Capabilities
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold mb-1 tracking-tight">
-                      Core Features
-                    </h3>
-                    <p className="text-slate-300 text-base font-medium">
-                      Enterprise Capabilities
-                    </p>
                   </motion.div>
 
                   {/* VS Column */}
                   <motion.div
-                    className="text-center"
+                    className="text-center relative group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                   >
                     <div className="relative">
-                      <div className="w-20 h-20 bg-gradient-to-br from-blue-700 to-green-500 rounded-full flex items-center justify-center mx-auto mb-3 border-4 border-blue-400 shadow-xl">
-                        <span className="text-2xl font-extrabold text-white tracking-widest">
+                      <motion.div
+                        className="w-24 h-24 bg-gradient-to-br from-blue-700 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-blue-400/50 shadow-xl group-hover:shadow-blue-500/50 transition-all duration-300"
+                        whileHover={{ scale: 1.1, rotate: -5 }}
+                      >
+                        <span className="text-3xl font-extrabold text-white tracking-widest">
                           VS
                         </span>
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                        <span className="text-lg font-bold text-white">✓</span>
-                      </div>
+                        <motion.div
+                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            rotate: [0, 10, 0],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        >
+                          <span className="text-lg font-bold text-white">
+                            ✓
+                          </span>
+                        </motion.div>
+                      </motion.div>
+                      <h3 className="text-2xl font-bold mb-2 tracking-tight group-hover:text-green-400 transition-colors duration-200">
+                        Comparison
+                      </h3>
+                      <p className="text-slate-300 text-lg font-medium">
+                        Side-by-Side Analysis
+                      </p>
                     </div>
-                    <h3 className="text-xl font-semibold mb-1 tracking-tight">
-                      Comparison
-                    </h3>
-                    <p className="text-slate-400 text-base font-medium">
-                      Side-by-Side Analysis
-                    </p>
                   </motion.div>
 
                   {/* Deepkore Column */}
                   <motion.div
-                    className="text-center"
+                    className="text-center relative group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                   >
-                    <div className="flex items-center justify-center mb-3">
-                      <Image
-                        src="/lightlogo.png"
-                        alt="Deepkore Logo"
-                        width={120}
-                        height={30}
-                        className="w-auto h-8"
-                      />
+                    <div className="relative">
+                      <motion.div
+                        className="flex items-center justify-center mb-4 relative"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-2xl blur-xl"></div>
+                        <Image
+                          src="/lightlogo.png"
+                          alt="Deepkore Logo"
+                          width={160}
+                          height={40}
+                          className="w-auto h-10 relative"
+                        />
+                      </motion.div>
+                      <h3 className="text-2xl font-bold mb-2 tracking-tight group-hover:text-blue-400 transition-colors duration-200">
+                        Deepkore
+                      </h3>
+                      <p className="text-slate-300 text-lg font-medium">
+                        Next-Generation Enterprise Solution
+                      </p>
                     </div>
-
-                    <p className="text-slate-300 text-base font-medium">
-                      Next-Generation Enterprise Solution
-                    </p>
                   </motion.div>
                 </div>
 
@@ -240,27 +337,56 @@ const Comparison: React.FC = () => {
               {comparisons.map((comparison, index) => (
                 <motion.div
                   key={index}
-                  className="grid grid-cols-3 gap-8 p-7 hover:bg-gradient-to-r hover:from-blue-900/20 hover:to-green-900/20 transition-all duration-300 group"
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 p-4 sm:p-8 hover:bg-gradient-to-r hover:from-blue-900/30 hover:to-green-900/30 transition-all duration-300 group relative overflow-hidden rounded-xl mx-2"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <div className="flex items-center space-x-5">
-                    <span
-                      className="text-2xl drop-shadow-lg"
-                      dangerouslySetInnerHTML={{ __html: comparison.icon }}
-                    />
-                    <span className="font-semibold text-white text-xl tracking-tight group-hover:text-blue-400 transition-colors duration-200">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="flex items-center space-x-5 relative">
+                    <motion.div className="relative" whileHover="hover">
+                      <motion.div
+                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/20 to-green-400/20 flex items-center justify-center border border-blue-500/20 shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300 cursor-help"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <span
+                          className="text-2xl drop-shadow-lg transform group-hover:scale-110 transition-transform duration-300"
+                          dangerouslySetInnerHTML={{ __html: comparison.icon }}
+                        />
+                      </motion.div>
+                      <motion.div
+                        className="absolute left-0 bottom-full mb-2 w-48 p-3 bg-slate-800/90 backdrop-blur-lg rounded-lg text-sm text-white shadow-xl border border-white/10 pointer-events-none z-50"
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        variants={{
+                          hover: { opacity: 1, y: 0, scale: 1 },
+                        }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="font-medium text-blue-400 mb-1">
+                          Feature Details
+                        </div>
+                        <p className="text-gray-300">
+                          Compare how {comparison.feature.toLowerCase()} works
+                          in Deepkore vs other platforms
+                        </p>
+                        <div className="absolute left-4 bottom-0 w-2 h-2 bg-slate-800/90 transform rotate-45 translate-y-1/2 border-r border-b border-white/10"></div>
+                      </motion.div>
+                    </motion.div>
+                    <motion.span
+                      className="font-semibold text-white text-xl tracking-tight group-hover:text-blue-400 transition-colors duration-200 cursor-pointer"
+                      whileHover={{ x: 5 }}
+                    >
                       {comparison.feature}
-                    </span>
+                    </motion.span>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 relative">
                     <span
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-base font-bold shadow-md ${
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center text-base font-bold shadow-lg transform group-hover:scale-110 transition-transform duration-300 ${
                         comparison.otherCheck
-                          ? "bg-green-500 text-white"
-                          : "bg-red-500 text-white"
+                          ? "bg-gradient-to-br from-green-500 to-green-600 text-white"
+                          : "bg-gradient-to-br from-red-500 to-red-600 text-white"
                       }`}
                     >
                       {comparison.otherCheck ? "✓" : "✗"}
@@ -269,8 +395,8 @@ const Comparison: React.FC = () => {
                       {comparison.other}
                     </span>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <span className="w-7 h-7 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-base font-bold text-white shadow-md">
+                  <div className="flex items-center space-x-4 relative">
+                    <span className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-xl flex items-center justify-center text-base font-bold text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                       ✓
                     </span>
                     <span className="text-gray-200 font-semibold text-lg group-hover:text-green-400 transition-colors duration-200">
@@ -290,82 +416,166 @@ const Comparison: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="text-center">
-                <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-600 mb-6 tracking-tight drop-shadow-lg">
+                <motion.h3
+                  className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-600 mb-12 tracking-tight drop-shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
                   Enterprise Benefits
-                </h3>
-                <div className="grid md:grid-cols-3 gap-10 text-center">
-                  <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-blue-500/10">
-                    <div className="mb-3">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: comparisons[8].icon,
-                        }}
-                        className="text-4xl"
-                      />
+                </motion.h3>
+                <div className="grid md:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
+                  <motion.div
+                    className="relative group"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-slate-900/80 rounded-3xl p-10 shadow-xl border border-blue-500/20 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300">
+                      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: comparisons[8].icon,
+                          }}
+                          className="text-5xl"
+                        />
+                      </div>
+                      <h4 className="font-bold text-white mb-4 text-2xl">
+                        99.9% Uptime
+                      </h4>
+                      <p className="text-gray-300 text-lg leading-relaxed">
+                        Guaranteed reliability for mission-critical operations
+                      </p>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">
-                      99.9% Uptime
-                    </h4>
-                    <p className="text-gray-300 text-base">
-                      Guaranteed reliability for mission-critical operations
-                    </p>
-                  </div>
-                  <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-green-500/10">
-                    <div className="mb-3">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: comparisons[5].icon,
-                        }}
-                        className="text-4xl"
-                      />
+                  </motion.div>
+                  <motion.div
+                    className="relative group"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-slate-900/80 rounded-3xl p-10 shadow-xl border border-green-500/20 backdrop-blur-sm hover:border-green-500/40 transition-all duration-300">
+                      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: comparisons[5].icon,
+                          }}
+                          className="text-5xl"
+                        />
+                      </div>
+                      <h4 className="font-bold text-white mb-4 text-2xl">
+                        50x Faster
+                      </h4>
+                      <p className="text-gray-300 text-lg leading-relaxed">
+                        Accelerated workflows and data processing
+                      </p>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">
-                      50x Faster
-                    </h4>
-                    <p className="text-gray-300 text-base">
-                      Accelerated workflows and data processing
-                    </p>
-                  </div>
-                  <div className="bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-yellow-500/10">
-                    <div className="mb-3">
-                      <span className="text-4xl">💰</span>
+                  </motion.div>
+                  <motion.div
+                    className="relative group"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <div className="relative bg-slate-900/80 rounded-3xl p-10 shadow-xl border border-yellow-500/20 backdrop-blur-sm hover:border-yellow-500/40 transition-all duration-300">
+                      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-5xl">💰</span>
+                      </div>
+                      <h4 className="font-bold text-white mb-4 text-2xl">
+                        40% Cost Savings
+                      </h4>
+                      <p className="text-gray-300 text-lg leading-relaxed">
+                        Reduced operational costs and increased ROI
+                      </p>
                     </div>
-                    <h4 className="font-semibold text-white mb-2 text-xl">
-                      40% Cost Savings
-                    </h4>
-                    <p className="text-gray-300 text-base">
-                      Reduced operational costs and increased ROI
-                    </p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-r from-blue-700/30 to-green-700/30 p-12 text-center border-t border-white/10">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-600 mb-4 tracking-tight drop-shadow-lg">
-                  Ready for Enterprise Excellence?
-                </h3>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg font-medium">
-                  Join leading enterprises already transforming their operations
-                  with Deepkore&apos;s advanced platform.
-                </p>
-                <a href="/getstarted">
-                  <motion.button
-                    className="px-12 py-5 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-extrabold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-xl tracking-wide"
-                    whileHover={{ scale: 1.07, y: -3 }}
-                    whileTap={{ scale: 0.98 }}
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-green-600/20 blur-3xl"></div>
+              <div className="relative bg-gradient-to-r from-blue-900/50 to-green-900/50 p-16 text-center border-t border-white/10">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  viewport={{ once: true }}
+                  className="max-w-4xl mx-auto"
+                >
+                  <motion.span
+                    className="inline-block text-blue-400 text-lg font-semibold mb-6 px-6 py-2 rounded-full bg-blue-950/50 border border-blue-500/20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
                   >
-                    Start Enterprise Trial
-                  </motion.button>
-                </a>
-              </motion.div>
+                    Get Started Today
+                  </motion.span>
+                  <motion.h3
+                    className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-500 mb-6 tracking-tight drop-shadow-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    Ready for Enterprise Excellence?
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-300 mb-10 max-w-2xl mx-auto text-xl font-medium leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    Join leading enterprises already transforming their
+                    operations with Deepkore&apos;s advanced platform.
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <a href="/getstarted" className="inline-block">
+                      <motion.button
+                        className="relative px-12 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-extrabold rounded-2xl shadow-xl text-xl tracking-wide overflow-hidden group"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-green-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                        <span className="relative flex items-center space-x-2">
+                          <span>Start Enterprise Trial</span>
+                          <svg
+                            className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 7l5 5m0 0l-5 5m5-5H6"
+                            />
+                          </svg>
+                        </span>
+                      </motion.button>
+                    </a>
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -375,4 +585,3 @@ const Comparison: React.FC = () => {
 };
 
 export default Comparison;
-

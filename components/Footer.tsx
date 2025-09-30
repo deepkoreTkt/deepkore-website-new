@@ -111,6 +111,14 @@ const Footer: React.FC = () => {
     // { name: "Logistics & Transportation", href: "/logistics-transportation" },
   ];
 
+  const quickLinks = [
+    { name: "Blog", href: "/blog" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "FAQ", href: "/faq" },
+    { name: "About Us", href: "/aboutus" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
   return (
     <footer className="relative bg-white overflow-hidden">
       {/* Background Elements */}
@@ -121,10 +129,10 @@ const Footer: React.FC = () => {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 lg:px-40 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-16 gap-5 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-12">
             {/* Company Info */}
             <motion.div
-              className="lg:col-span-4"
+              className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -170,7 +178,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <motion.div
-              className="lg:col-span-3"
+              className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -195,7 +203,7 @@ const Footer: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="lg:col-span-3"
+              className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -218,7 +226,7 @@ const Footer: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="lg:col-span-3"
+              className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -242,9 +250,34 @@ const Footer: React.FC = () => {
               </ul>
             </motion.div>
 
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-black font-semibold mb-3 text-lg">
+                Quick Links
+              </h4>
+              <ul className="space-y-4">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <motion.a
+                      href={link.href}
+                      className="text-gray-600 hover:text-purple-400 transition-colors duration-300 text-base"
+                      whileHover={{ x: 5 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
             {/* Newsletter */}
             <motion.div
-              className="lg:col-span-3"
+              className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}

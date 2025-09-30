@@ -67,7 +67,7 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems: MenuItem[] = [
-    { href: "/usecase", label: "Use Cases", featured: [] },
+    { href: "/pricing", label: "Pricing", featured: [] },
     { href: "/aboutus", label: "About Us", featured: [] },
   ];
 

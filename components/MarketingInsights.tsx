@@ -28,7 +28,7 @@ const MarketingInsights: React.FC = () => {
       description:
         "Explore our library of case studies, product tours, webinars and insights.",
       buttonText: "Browse more",
-      href: "/getstarted",
+      href: "/solution",
     },
   ];
 
@@ -90,4 +90,3 @@ const MarketingInsights: React.FC = () => {
 };
 
 export default MarketingInsights;
-

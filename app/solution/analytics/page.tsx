@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   BarChart3,
@@ -374,9 +375,11 @@ const Analytics: React.FC = () => {
                 <div className="relative">
                   {/* Main Dashboard Image */}
                   <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-gray-200/50">
-                    <img
+                    <Image
                       src="/images/classic05.png"
                       alt="Analytics Dashboard"
+                      width={800}
+                      height={600}
                       className="w-full h-80 md:h-96 object-cover rounded-2xl"
                       onError={(e) => {
                         e.currentTarget.src =
@@ -723,11 +726,13 @@ const Analytics: React.FC = () => {
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={useCase.image}
                       alt={useCase.title}
+                      width={400}
+                      height={300}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={(e) => {
+                      onError={(e: { currentTarget: { src: string } }) => {
                         e.currentTarget.src =
                           "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGNEY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFuYWx5dGljczwvdGV4dD48L3N2Zz4=";
                       }}
