@@ -86,7 +86,7 @@ const futureLinks = [
     description:
       "Be part of our mission to make work more satisfying and productive for everyone",
     buttonText: "Careers",
-    buttonLink: "#careers",
+    buttonLink: "/getstarted",
     icon: "Users",
   },
   {
@@ -94,7 +94,7 @@ const futureLinks = [
     description:
       "Keep up with the story of a company that&apos;s reshaping the world of work",
     buttonText: "Newsroom",
-    buttonLink: "#newsroom",
+    buttonLink: "/getstarted",
     icon: "Newspaper",
   },
   {
@@ -102,7 +102,7 @@ const futureLinks = [
     description:
       "Meet the industry-leading executives creating the future of business software",
     buttonText: "Leadership",
-    buttonLink: "#leadership",
+    buttonLink: "/getstarted",
     icon: "UserSquare2",
   },
 ];
@@ -250,7 +250,7 @@ const AboutUs: React.FC = () => {
                 with ease.
               </p>
               <a
-                href="#analytics"
+                href="/analytics"
                 className="inline-flex items-center text-[#00A551] font-semibold hover:text-[#00A551]/80 transition-colors"
               >
                 Explore Analytics →
@@ -284,7 +284,7 @@ const AboutUs: React.FC = () => {
                 anywhere in the world.
               </p>
               <a
-                href="#teams"
+                href="/termsandservices"
                 className="inline-flex items-center text-[#edf3f5] font-semibold hover:text-[#edf3f5]/80 transition-colors"
               >
                 Explore Teams →

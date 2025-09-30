@@ -168,7 +168,10 @@ const TargetAudience: React.FC = () => {
                     </div>
                   </div>
                   <div className="mt-2">
-                    <a href="#" className="text-blue-600 text-xs underline">
+                    <a
+                      href="/getstarted"
+                      className="text-blue-600 text-xs underline"
+                    >
                       {stats[currentSlide].link}
                     </a>
                   </div>

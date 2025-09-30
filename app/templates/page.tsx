@@ -414,7 +414,7 @@ const Templates = () => {
                 </div>
 
                 {/* CTA */}
-                <Link href={template.href ?? "#"}>
+                <Link href={template.href ?? "/templates"}>
                   <button
                     className={`w-full py-2 px-4 bg-gradient-to-r ${template.gradient} text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-105`}
                   >

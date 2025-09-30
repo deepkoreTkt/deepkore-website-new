@@ -223,9 +223,9 @@ const Header: React.FC = () => {
             description:
               "Comprehensive customer relationship management solution that streamlines sales processes, enhances customer engagement, and drives business growth through intelligent automation and insights.",
             featured: [
-              { label: "Product Tour", href: "/crm/tour", icon: Play },
-              { label: "What's New", href: "/crm/updates", icon: Bell },
-              { label: "Documentation", href: "/crm/docs", icon: FileText },
+              { label: "Product Tour", href: "/crm", icon: Play },
+              { label: "What's New", href: "/crm", icon: Bell },
+              { label: "Documentation", href: "/crm", icon: FileText },
             ],
           },
           {
@@ -237,17 +237,17 @@ const Header: React.FC = () => {
             featured: [
               {
                 label: "Product Tour",
-                href: "/itservicedesk/tour",
+                href: "/itservicedesk",
                 icon: Play,
               },
               {
                 label: "What's New",
-                href: "/itservicedesk/updates",
+                href: "/itservicedesk",
                 icon: Bell,
               },
               {
                 label: "Documentation",
-                href: "/itservicedesk/docs",
+                href: "/itservicedesk",
                 icon: FileText,
               },
             ],

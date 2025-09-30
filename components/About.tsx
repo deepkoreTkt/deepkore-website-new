@@ -88,32 +88,46 @@ const About: React.FC = () => {
 
   const values = [
     {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Innovate with Purpose",
+      description:
+        "We are driven by a relentless curiosity to push the boundaries of what's possible with AI. But for us, innovation isn't just about creating new technology; it's about solving real-world business problems. We build intelligent solutions with a clear purpose: to deliver practical, powerful, and transformative results for our customers.",
+      color: "from-blue-500 to-purple-500",
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Customer Success is Our Success",
+      description:
+        "We view our customers as partners on a shared journey of transformation. Your goals are our goals. We are deeply committed to understanding your challenges and are not satisfied until our platform delivers a tangible, measurable impact on your ROI and operational efficiency. Your success is the ultimate measure of our own.",
+      color: "from-green-500 to-blue-500",
+    },
+    {
       icon: <Rocket className="w-8 h-8" />,
-      title: "No Code - No Limits",
+      title: "Move with Agility and Excellence",
       description:
-        "Empower your team to build applications faster with our intuitive no-code platform that removes technical barriers.",
-      color: "from-[#00A551] to-[#2791D0]",
+        "In the modern enterprise, speed is critical, but it can never come at the expense of quality. We operate with a sense of urgency to help you innovate faster, while holding ourselves to the highest standards of excellence, security, and reliability. We deliver robust, enterprise-grade solutions with the speed and agility your business demands.",
+      color: "from-orange-500 to-red-500",
     },
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: "Run It Your Way",
+      icon: <BookOpen className="w-8 h-8" />,
+      title: "Empowerment Through Simplicity",
       description:
-        "Deploy your applications in the cloud or on-premises - you choose what works best for your organization.",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: <Lock className="w-8 h-8" />,
-      title: "Enterprise-Grade Security",
-      description:
-        "Bank-level security with comprehensive data protection, encryption, and compliance standards.",
-      color: "from-green-500 to-emerald-500",
+        "Our mission is to democratize the power of advanced AI. We believe the most powerful solutions are those that are accessible to everyone. We are passionate about transforming complex technology into simple, intuitive tools that empower your business experts—the people who know your processes best—to build, innovate, and drive change from within.",
+      color: "from-cyan-500 to-blue-500",
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Secure Data Access",
+      title: "Act with Integrity, Always",
       description:
-        "Advanced authorization, secure data access controls, and comprehensive audit trail generation for full compliance.",
-      color: "from-purple-500 to-pink-500",
+        "Trust is the currency of every great partnership. We are committed to upholding the highest standards of transparency, honesty, and security in everything we do. From protecting your data to communicating openly, we believe that acting with unwavering integrity is the only way to build lasting relationships with our customers, partners, and team.",
+      color: "from-gray-500 to-slate-500",
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Champion Ethical AI",
+      description:
+        "We are committed to developing AI that is ethical, transparent, and beneficial to society. We prioritize responsible AI practices, ensuring our technology enhances human potential without compromising values or privacy.",
+      color: "from-indigo-500 to-purple-500",
     },
   ];
 
@@ -585,13 +599,15 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Join Our Mission
-          </motion.button>
+          <a href="/get-started">
+            <motion.button
+              className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Join Our Mission
+            </motion.button>
+          </a>
 
           <motion.p
             className="text-gray-600 mt-4 text-sm"

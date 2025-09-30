@@ -155,7 +155,6 @@ const AllProducts: React.FC = () => {
               Service Desk, Manufacturing, and more. Build intelligent
               applications that adapt to your business needs.
             </motion.p>
-
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 20 }}
@@ -163,12 +162,16 @@ const AllProducts: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg">
-                Explore Products
-              </button>
-              <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
-                Get Demo
-              </button>
+              <a href="/getstarted">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg">
+                  Explore Products
+                </button>
+              </a>
+              <a href="/getstarted">
+                <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
+                  Get Demo
+                </button>
+              </a>
             </motion.div>
           </motion.div>
 

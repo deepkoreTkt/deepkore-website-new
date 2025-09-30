@@ -644,14 +644,14 @@ const Demo: React.FC = () => {
                     <p className="text-xs text-slate-500 text-center leading-relaxed">
                       By submitting, you agree to our{" "}
                       <a
-                        href="#"
+                        href="/termsandservices"
                         className="text-[#00A551] hover:text-[#2791D0] transition-colors"
                       >
                         Terms
                       </a>{" "}
                       and{" "}
                       <a
-                        href="#"
+                        href="/privacypolicy"
                         className="text-[#00A551] hover:text-[#2791D0] transition-colors"
                       >
                         Privacy Policy
