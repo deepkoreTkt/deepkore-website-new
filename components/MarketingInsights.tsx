@@ -10,7 +10,7 @@ const MarketingInsights: React.FC = () => {
       label: "Trial",
       stats: "Free to try. Fast to scale.",
       description:
-        "Take better customer and employee experience for a spin with a free trial of Freshdesk or Freshservice. No credit card required.",
+        "Take better customer and employee experience for a spin with a free trial of Deepkore. No credit card required.",
       buttonText: "Try it free",
       href: "/getstarted",
     },
@@ -18,7 +18,7 @@ const MarketingInsights: React.FC = () => {
       label: "Contact Sales",
       stats: "See rapid impact in action",
       description:
-        "Let our product experts show you how Freshworks can solve your specific challenges. Get a personalized walkthrough tailored to your needs.",
+        "Let our product experts show you how Deepkore can solve your specific challenges. Get a personalized walkthrough tailored to your needs.",
       buttonText: "Book a demo",
       href: "/getstarted",
     },

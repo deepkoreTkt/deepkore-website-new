@@ -196,7 +196,7 @@ const Demo: React.FC = () => {
       formData.company !== ""
     ) {
       axios
-        .post(`${getEnvConfig()}/site/leadsignup`, {
+        .post(`${getEnvConfig()}/api/customer/scheduledemo`, {
           name: `${formData.firstName} ${formData.lastName}`,
           business_email: formData.email,
           mobile: `${selectedCountry.code} ${formData.phone}`,

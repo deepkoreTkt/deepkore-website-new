@@ -41,40 +41,40 @@ const Process: React.FC = () => {
 
   const workflowTools = [
     {
-      title: "Dynamic Boards",
+      title: "Workflow",
       description:
-        "Map out projects and workflows on flexible, interactive boards that adapt to your team's needs.",
-      icon: "📋",
+        "Streamline your business processes with intuitive workflow management that guides tasks from start to finish.",
+      icon: "�",
       details:
-        "Stay organized, eliminate clutter, and ensure every task stays on track.",
+        "Create efficient workflows that automate routine tasks and improve team collaboration.",
       image: "/classic02.png",
     },
     {
-      title: "Streamlined Processes",
+      title: "Chart Communication",
       description:
-        "Simplify each stage of work with intuitive workflows that make planning, prioritization, and delegation seamless.",
-      icon: "⚙️",
+        "Visualize data and communicate insights effectively through interactive charts and dashboards.",
+      icon: "📈",
       details:
-        "Stay organized, eliminate clutter, and ensure every task stays on track.",
-      image: "/classic04.png",
+        "Transform complex data into clear, actionable visualizations for better decision-making.",
+      image: "/images/process/process3.svg",
     },
     {
-      title: "Flexible Customization",
+      title: "Deadline Notification",
       description:
-        "Create tailored forms that match any process requirement without limitation.",
-      icon: "🔧",
+        "Stay on track with automated deadline notifications that keep your team informed and accountable.",
+      icon: "⏰",
       details:
-        "Decide who initiates workflows, control visibility, and define permissions at every stage.",
-      image: "/classic05.png",
+        "Never miss important deadlines with customizable alerts and reminders.",
+      image: "/images/process/process2.svg",
     },
     {
-      title: "Seamless Integration",
+      title: "Customizable Form",
       description:
-        "Link different workflows and processes together for smooth, multi-step operations—all without a single line of code.",
-      icon: "🔗",
+        "Create tailored forms that match your specific process requirements without any coding.",
+      icon: "�",
       details:
-        "Effortlessly shift between structured and unstructured flows for maximum adaptability.",
-      image: "/classic02.png",
+        "Design forms with custom fields, validation rules, and conditional logic to fit your needs.",
+      image: "/images/process/process1.svg",
     },
   ];
 
@@ -411,7 +411,7 @@ const Process: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Powerful Tools for Workflow Acceleration
+              Powerful Tools for Process Acceleration
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Clear, structured, and effortless solutions to transform your
@@ -542,17 +542,19 @@ const Process: React.FC = () => {
             Join thousands of businesses already using Deepkore to streamline
             their operations
           </motion.p>
-          <motion.button
-            className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Free Trial
-          </motion.button>
+          <a href="/getstarted" target="_blank" rel="noopener noreferrer">
+            <motion.button
+              className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ffffff]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started
+            </motion.button>
+          </a>
         </div>
       </section>
 

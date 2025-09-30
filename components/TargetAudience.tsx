@@ -122,7 +122,7 @@ const TargetAudience: React.FC = () => {
             </h2>
             <p className="text-gray-700 text-lg mb-6">
               Faster implementation. Better ROI. Totally transparent costs.
-              Freshworks delivers enterprise-grade performance without the
+              Deepkore delivers enterprise-grade performance without the
               enterprise-level complexity.
             </p>
           </div>
@@ -236,4 +236,3 @@ const TargetAudience: React.FC = () => {
   );
 };
 export default TargetAudience;
-

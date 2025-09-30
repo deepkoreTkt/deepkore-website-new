@@ -17,7 +17,7 @@ const PowerfulFeatures: React.FC = () => {
       title: "Process",
       description:
         "Design and automate processes with a simple drag-and-drop interface.",
-      avatar: "/classic04.gif",
+      avatar: "/images/process/processgif.gif",
       href: "/process",
     },
     {
@@ -150,6 +150,7 @@ const PowerfulFeatures: React.FC = () => {
                   width={800}
                   height={500}
                   className="w-full h-auto rounded-lg"
+                  unoptimized={features[activeTab].avatar.includes(".gif")}
                 />
               )}
             </div>

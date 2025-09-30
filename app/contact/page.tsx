@@ -87,11 +87,12 @@ const Contact: React.FC = () => {
     }
 
     try {
-      const response = await axios.post("/api/customer/contactus", {
-        name: `${formData.firstName} ${formData.lastName}`,
-        business_email: formData.businessEmail,
-        company_name: formData.companyName,
-        job_title: formData.jobTitle,
+      const response = await axios.post("/api/contact", {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        businessEmail: formData.businessEmail,
+        companyName: formData.companyName,
+        jobTitle: formData.jobTitle,
         phone: `${selectedCountry.code} ${formData.phone}`,
         country: formData.country,
         message: formData.message,
