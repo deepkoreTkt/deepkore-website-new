@@ -24,7 +24,7 @@ const Features: React.FC = () => {
         "Streamline your entire sales process with AI-powered automation for order processing, reporting, and customer management.",
       gradient: "bg-blue-500/50",
       icon: <ShoppingCart className="w-16 h-16" />,
-      image: "/dataform.png",
+      image: "/images/sales.svg",
       bgPattern:
         "radial-gradient(circle at 30% 70%, rgba(135, 206, 235, 0.15) 0%, transparent 60%)",
       stats: { orders: "10K+", processing: "95%", reports: "Real-time" },
@@ -44,7 +44,7 @@ const Features: React.FC = () => {
         "Comprehensive customer relationship management with AI-driven insights, automated workflows, and personalized customer experiences.",
       gradient: "bg-red-500/50",
       icon: <Users className="w-16 h-16" />,
-      image: "/classic02.png",
+      image: "/crm.png",
       bgPattern:
         "radial-gradient(circle at 60% 40%, rgba(255, 99, 71, 0.15) 0%, transparent 60%)",
       stats: { customers: "50K+", engagement: "95%", retention: "85%" },
@@ -64,7 +64,7 @@ const Features: React.FC = () => {
         "Boost service desk performance with AI-powered workflows, intuitive automation, and actionable analytics.",
       gradient: "bg-green-500/50",
       icon: <Settings className="w-5 h-5" />,
-      image: "/process.png",
+      image: "/images/it.svg",
       bgPattern:
         "radial-gradient(circle at 70% 30%, rgba(144, 238, 144, 0.15) 0%, transparent 60%)",
       stats: { tickets: "1M+", resolution: "90%", efficiency: "75%" },
@@ -82,7 +82,7 @@ const Features: React.FC = () => {
         "Intelligent asset management with automated tracking, maintenance scheduling, and comprehensive reporting capabilities.",
       gradient: "bg-purple-500/50",
       icon: <Building className="w-16 h-16" />,
-      image: "/classic02.png",
+      image: "/images/asset.svg",
       bgPattern:
         "radial-gradient(circle at 50% 50%, rgba(221, 160, 221, 0.15) 0%, transparent 60%)",
       stats: { assets: "25K+", uptime: "99%", maintenance: "Auto" },
@@ -412,4 +412,3 @@ const Features: React.FC = () => {
 };
 
 export default Features;
-

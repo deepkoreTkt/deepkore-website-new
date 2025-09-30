@@ -20,9 +20,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
+    // Get backend URL
+    const backendUrl = getEnvConfig();
+    if (!backendUrl) {
+      return NextResponse.json(
+        { error: "Backend URL not configured" },
+        { status: 500 }
+      );
+    }
+
     // Forward request to your backend API
     const backendResponse = await fetch(
-      `${getEnvConfig()}/api/customer/scheduledemo`,
+      `${backendUrl}/api/customer/scheduledemo`,
       {
         method: "POST",
         headers: {

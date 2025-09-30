@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
                   />
                 </div>
                 <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                  One platform. No coding. Completely hassle-free.
+                  Building the Future of AI Driven Business
                 </p>
               </div>
 

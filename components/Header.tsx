@@ -270,20 +270,26 @@ const Header: React.FC = () => {
     ],
     solutions: [
       {
-        title: "Core Solutions",
+        title: "Use Cases",
         items: [
           {
-            href: "/solution/sales",
-            label: "Sales & CRM",
+            href: "/usecase",
+            label: "Performance Management",
             icon: Briefcase,
             description: "Streamline your sales processes",
             featured: [],
           },
           {
-            href: "/solution/assetmanagement",
-            label: "Asset Management",
+            href: "/usecase",
+            label: "Virtual Care Platform",
             icon: Package,
             description: "Track and manage assets effectively",
+            featured: [],
+          },
+          {
+            href: "//usecase",
+            label: "Explore All Use Cases",
+            icon: ArrowRight,
             featured: [],
           },
         ],

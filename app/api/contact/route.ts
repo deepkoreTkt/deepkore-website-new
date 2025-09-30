@@ -35,26 +35,32 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
+    // Get backend URL
+    const backendUrl = getEnvConfig();
+    if (!backendUrl) {
+      return NextResponse.json(
+        { error: "Backend URL not configured" },
+        { status: 500 }
+      );
+    }
+
     // Forward request to your backend API
-    const backendResponse = await fetch(
-      `${getEnvConfig()}/site/lead/contactus`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          businessEmail,
-          companyName,
-          jobTitle,
-          phone,
-          country,
-          message,
-        }),
-      }
-    );
+    const backendResponse = await fetch(`${backendUrl}/site/lead/contactus`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        businessEmail,
+        companyName,
+        jobTitle,
+        phone,
+        country,
+        message,
+      }),
+    });
 
     let responseData;
     if (backendResponse.ok) {
