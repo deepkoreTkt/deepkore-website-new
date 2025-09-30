@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Comparison from "@/components/Comparison";
 
 const Pricing: React.FC = () => {
   const plans = [
@@ -20,11 +19,11 @@ const Pricing: React.FC = () => {
         "Limited Reports & Analytics",
         "Limited Support",
       ],
-      buttonText: "Get Started",
+      buttonText: "Get a Quote",
       popular: false,
     },
     {
-      name: "Advanced",
+      name: "Pro",
       price: "$24.99",
       period: "per month",
       // credits: "1000 credits",
@@ -36,7 +35,7 @@ const Pricing: React.FC = () => {
         "Limited Reports & Analytics",
         "Limited Support",
       ],
-      buttonText: "Start Basic",
+      buttonText: "Get a Quote",
       popular: false,
     },
     {
@@ -51,8 +50,22 @@ const Pricing: React.FC = () => {
         "Priority processing",
         "Advanced analytics",
       ],
-      buttonText: "Customize Plan",
+      buttonText: "Get a Quote",
       popular: true,
+    },
+    {
+      name: "Flexi",
+      price: "$49.99",
+      period: "per month",
+      features: [
+        "All Pro features",
+        "Advanced Integrations",
+        "Enhanced Reports & Analytics",
+        "Priority Support",
+        "Custom Workflows",
+      ],
+      buttonText: "Customize Plan",
+      popular: false,
     },
   ];
 
@@ -94,7 +107,7 @@ const Pricing: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

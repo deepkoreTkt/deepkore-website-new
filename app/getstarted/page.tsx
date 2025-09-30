@@ -202,7 +202,7 @@ const Demo: React.FC = () => {
           mobile: `${selectedCountry.code} ${formData.phone}`,
           company_name: formData.company,
         })
-        .then(function (response) {
+        .then(function (_) {
           setEmailCheck(false);
           setSuccessMessage(true);
 
