@@ -26,7 +26,7 @@ const WhatMakesUsUnique: React.FC = () => {
 
   const stats = [
     { number: "500+", label: "Active Users" },
-    { number: "10K+", label: "Apps Built" },
+    { number: "100+", label: "Apps Built" },
     { number: "99.9%", label: "Uptime" },
     { number: "24/7", label: "Support" },
   ];

@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 const Pricing: React.FC = () => {
   const plans = [
     {
-      name: "Basic",
-      price: "$0.00",
+      name: "",
+      price: "Basic",
       period: "per month",
       // credits: "Up to 250 credits",
       features: [
@@ -23,8 +23,8 @@ const Pricing: React.FC = () => {
       popular: false,
     },
     {
-      name: "Pro",
-      price: "$24.99",
+      name: "",
+      price: "Pro",
       period: "per month",
       // credits: "1000 credits",
       features: [
@@ -39,8 +39,8 @@ const Pricing: React.FC = () => {
       popular: false,
     },
     {
-      name: "Enterprise",
-      price: "Custom Pricing",
+      name: "",
+      price: "Enterprise",
       period: "per month",
       // credits: "Unlimited credits",
       features: [
@@ -54,8 +54,8 @@ const Pricing: React.FC = () => {
       popular: true,
     },
     {
-      name: "Flexi",
-      price: "$49.99",
+      name: "",
+      price: "Flexi",
       period: "per month",
       features: [
         "All Pro features",
@@ -86,7 +86,7 @@ const Pricing: React.FC = () => {
 
   return (
     <div>
-      <section className="py-40 bg-slate-900">
+      <section className="py-40 bg-[#f5f7f7]">
         <Header />
         <div className="container mx-auto px-4">
           <motion.div
@@ -96,10 +96,10 @@ const Pricing: React.FC = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
               Choose the Plan That Fits Your Needs
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-black max-w-2xl mx-auto">
               Whether you&apos;re just starting out or looking to expand your
               capabilities, our plans provide the perfect solution for your
               needs.

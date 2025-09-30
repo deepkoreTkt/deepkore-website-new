@@ -287,7 +287,7 @@ const Header: React.FC = () => {
             featured: [],
           },
           {
-            href: "//usecase",
+            href: "/usecase",
             label: "Explore All Use Cases",
             icon: ArrowRight,
             featured: [],

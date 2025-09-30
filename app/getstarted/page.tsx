@@ -196,13 +196,13 @@ const Demo: React.FC = () => {
       formData.company !== ""
     ) {
       axios
-        .post(`${getEnvConfig()}/api/customer/scheduledemo`, {
+        .post(`${getEnvConfig()}/site/leadsignup`, {
           name: `${formData.firstName} ${formData.lastName}`,
           business_email: formData.email,
           mobile: `${selectedCountry.code} ${formData.phone}`,
           company_name: formData.company,
         })
-        .then(function (_) {
+        .then(function (response) {
           setEmailCheck(false);
           setSuccessMessage(true);
 

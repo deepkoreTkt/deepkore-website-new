@@ -316,7 +316,7 @@ const CRM: React.FC = () => {
             >
               Transform Customer Relationships with
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400 block mt-2">
-                AI & Low-Code CRM
+                AI Enabled CRM
               </span>
             </motion.h2>
 

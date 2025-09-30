@@ -332,9 +332,9 @@ const ITServiceDesk: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Transform IT Service Management with
+              Transform IT Service Management through
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400 block mt-2">
-                AI & Low-Code
+                Automation and Intelligence.
               </span>
             </motion.h2>
 

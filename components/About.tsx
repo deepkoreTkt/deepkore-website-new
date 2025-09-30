@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import Image from "next/image";
+import Image from "next/image";
 import {
   Target,
   BookOpen,
@@ -15,6 +15,7 @@ import {
   Cloud,
   Lock,
   BoltIcon,
+  Linkedin,
 } from "lucide-react";
 
 const About: React.FC = () => {
@@ -22,53 +23,66 @@ const About: React.FC = () => {
   const [currentStat, setCurrentStat] = useState(0);
 
   const stats = [
-    { label: "AI Models Trained", value: 500, suffix: "+" },
-    { label: "Users Worldwide", value: 1000000, suffix: "+" },
-    { label: "Countries Served", value: 120, suffix: "+" },
+    { label: "AI Agents Implemented", value: 100, suffix: "+" },
+    { label: "Users Worldwide", value: 1000, suffix: "+" },
+    { label: "Industries Served", value: 12, suffix: "+" },
     { label: "Uptime", value: 99.9, suffix: "%" },
   ];
 
   const milestones = [
     {
-      year: "2020",
-      title: "Foundation",
+      year: "Nov 2023",
+      title: "Product Design & Dev",
       description:
-        "Deepkore was founded with a vision to democratize artificial intelligence.",
-      icon: <Rocket className="w-6 h-6" />,
-    },
-    {
-      year: "2021",
-      title: "First Breakthrough",
-      description:
-        "Launched our first neural network model, revolutionizing creative workflows.",
-      icon: <BoltIcon className="w-6 h-6" />,
-    },
-    {
-      year: "2022",
-      title: "Global Expansion",
-      description: "Expanded to serve millions of users across 80+ countries.",
-      icon: <Globe className="w-6 h-6" />,
-    },
-    {
-      year: "2023",
-      title: "Neural Vision 3.0",
-      description:
-        "Released advanced computer vision capabilities with unprecedented accuracy.",
+        "Initial phase focused on designing and developing our core platform.",
       icon: <Target className="w-6 h-6" />,
     },
     {
-      year: "2024",
-      title: "Enterprise Solutions",
+      year: "Jan 2025",
+      title: "Product Completion",
       description:
-        "Launched enterprise-grade AI solutions for Fortune 500 companies.",
-      icon: <Shield className="w-6 h-6" />,
+        "Successfully completed the development of our core product features and capabilities.",
+      icon: <BoltIcon className="w-6 h-6" />,
     },
     {
-      year: "2025",
-      title: "Neural Vision 3.5",
+      year: "Mar 2025",
+      title: "Product Launch",
+      description: "Official launch of Deepkore platform to the market.",
+      icon: <Rocket className="w-6 h-6" />,
+    },
+    {
+      year: "April 2025",
+      title: "Multiple verticals",
       description:
-        "Current generation with cutting-edge multimodal AI capabilities.",
+        "Expansion into diverse industry verticals with specialized solutions.",
+      icon: <Diamond className="w-6 h-6" />,
+    },
+    {
+      year: "June 2025",
+      title: "First Customer",
+      description:
+        "Onboarding of our first customer, marking a significant milestone.",
+      icon: <Diamond className="w-6 h-6" />,
+    },
+    {
+      year: "Sept 2025",
+      title: "AI enablement",
+      description:
+        "Integration of advanced AI capabilities across our platform.",
       icon: <Zap className="w-6 h-6" />,
+    },
+
+    {
+      year: "Jan 2027",
+      title: "Geographic Expansion",
+      description: "Strategic expansion into new geographic markets worldwide.",
+      icon: <Globe className="w-6 h-6" />,
+    },
+    {
+      year: "June 2027",
+      title: "IPO",
+      description: "Major milestone with our initial public offering.",
+      icon: <Shield className="w-6 h-6" />,
     },
   ];
 
@@ -106,17 +120,19 @@ const About: React.FC = () => {
   const team = [
     {
       name: "Murugan Mariappan",
-      role: "Founder at Deepkore",
-      //   image:
-      //     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBAQEBAWEBAVEBYbEBUVDRsQEA4WIB0iIiAdHx8kKDQsJCYxJx8fLTItMSs3MEQwIys9QD8uQDQuMC0BCgoKDQ0NFg0PFSsaHxkrLTc3Ly0tKzc3NysrKy44LTc3Ky03KystKys3NystKysrKysrKysrKysrKysrNy4rK//AABEIAMgAyAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAABAAIEBQYDBwj/xAA9EAABAwMBBQUGBQIFBQEAAAABAAIRAwQhMQUGEkFRImFxgZEHEzKhscEjQlLR4WLwFIKSorIkM3LC8RX/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJhEBAQACAgICAQMFAAAAAAAAAAECEQMhEjEEQWEiUYETIzIzQv/aAAwDAQACEQMRAD8A8iRQATltASSSQJJJJAkUISCoMIFElNz0QJJN4D4JobyUHTCBXMtIQpHMIOiSdg59QgQqGwlCKSgaUESggCSKSBqSKSBIIlJBIhJOQhAAEYRCMKhsJQnwlCBhCCeQmPMSgTy0anK4/wCIM4RfTxMqXsjZFW5qBlNpPUxhoWbdLJvqIDqrikJI00XqNnuFTDQH5PPClHc23bo09+cLl/Vj0T49eS03aymuOsYXol9ubSkxKzm092jTJ4TI71qckrGXBlGeJk49VNc2QOcxJ8VFq0y08JEJvvCBrzyukrkkObBIPJMK7cXEwGNAB/8AVxKqGlJEoKAJIoIAkiUECKCJQQTEoSSVBCKCQRBSSSRShcq7cFdUKmhQChSwxoySde5et7pWDKVJvC0AkSe8rzDYtI1KtJjQJdqegXp9LbNG2EOkhojxK48nfUejh63a04BjAUaowzkKFsvfe3qu4PdlvQnmtC2pTflsGBK5eOnome2eurcnks3tWzJ5LW3e2qQY8gZZ8QXn+095rioSKdEhnXhKsx2ZZ6Ve0NnS04WVrUDJHRbfZO0DUeKVUZccYyFS7esjRrAxLSfIr0Yzp48+6pbCqA7hPwn6ovEEjvQo0PxQIntY5p1Y9px7ytfTmYgiUkDUCnFNKAJJJKAJIoIJpSRSCqAinQjCBkJJ8IEIGwk4SCO5FEBBe+zyjx13E6hkN8SQFu7q1oU4bUAe78xOn7rH7nUH0q1Vhc4BppvLPyvPWP71W1qWnvKoqHtRlsLjbNvVhjbjpQXe06YqcNqwCGy4BpcAO/p5rSbBvX9oOa4ksnTs88EeRzC6nYheTwtbTDvjPAOJ/jCnWtlwvqPBlgpimzGpBJcfUgeRUysvp1xxs6rIUL4Nr1S9gc7PCHdvhPcoO8dxcNaz8FzuMSHBwc0DoY0P7rnvEH0rg1M8JdBI/KVOFE1WD8RwBGMyFd6jPjbbNs7bVNHQ4FpmHN0cM6/Tn9VaXnHeUHk0w9zQ4hzewWxJk9VIp7ONMVGg8QeOnP8Asq82TYGjQeSMcBJ8IXTG79OOeOvbzIEA8R1DSQYjKqiratSyHDI940OBH6uKP+J+SqnBb3vpx8dTZqSSSiAUCiUCimpJJIEUEUlBNTgEoSCqCikkgSBTkCqGhFJJQbyg9rqlrcM0qUOF/c9p0+q3Gz7bALIPODp68l5vutWJt3siRTuGOn9PEC37L0zZtUADwXly6r38d3jt2r++ENHCxoEvIJc6O44hRLTeGh+IxrSG0xHEaZFM+DtF22htijbNdUqvAnDRzPgsza7x1aziGUvwyTAA+vqtL5SXTN7b3hD6z6bWcTCcnhkKfuhSFVtZhDqYBmn2iPHyXDfysWua5jQHYMcMOiOarNh71im4B7eHvV7s6Y8pMu2l/wAKRUAknxMrVUmg0XN5cBCyb70Go17TIOnetVs88VN3euvF6cub28k2gPd1LqlPE1rWOz+SoIAH+4+Sz5Wy39thSceACKlU8ZDfie3WT/m+SxpC1pyyv0CBRKBRgEEUEAQRQRSQRQUFikhKIcqgohAFFUJBEoSECSTS5CSg1e6O07ajSuG1iRUfHuzwkh0aD1XoNhWHC3OCMLxPiXo+7G1BUoMBPaA+Y1Xn5cft6uHP/lV720q9faApUhOG8JPwtEK72du4yiz8SoWujLpDc+JVts2o33hecuI15q0vqdOq3LQ4d+hU23Jq215ztuzoyS1xqE/ES/jJKzVTZTzppqF6JdUaDJPu2gTyWV2ndtDjwRHKFZbvpM/GztzseJnAxxz46L0XY9xFFp5kiF5hYvL3fKVtbS7lzaTSSGNl3kNPNdsOnDO7Yje/aL6lzcU5/Dbc1C0d+hP+0KgK63T3F7y/4i4l06zOVxJVciKBQSQJBIoIEgkgikkkkoJsJ0IohVDYTgiElQHFNhFFA2EoTkgCcDJQDhWk3OY5xqsE8MAg8mu5eufRQ9nbuXFYiG8APN+Plqrfb9L/APPpW9Ck78UvNR7xjiIwPLKlx3NNY5au0ipd16b8CSNR1XV+8FcMPYIMHvhcbTaTLzB/DuAMx8Lx1C5XVvXEgEfuuF/TdV6Z33Kq7rbr+EtdxTmZCoXXJJOFYXljVLoKh16ApntHyHxFaxv7OeUv2fa3Lm5bry6BWn+PNKkKVMzVquHG7UhoMn1wFnalwToOEDorvd+1NTiqnQENZ5ZP2XbGfdcrfqNVvfuoK7W3VtAquaDUp8qp6jv+vjr5/cWdWnPHTc2DmWEQvTqd+eFrT+VuFCpy6o4gwSJMc+R+y3cZWHmyEL0i93ct60l1Pgd1ZDD6aH0VFebk1RJo1G1B0cOB/wBx8ws+NXbJoKffbIuKM+9ovaOvDLPUYUBZASSSKAJJJILBGUElQpSSVpsnYdW4hwhrJ1PPrAQVS72tpUqmKbC49wwPNbnZ+6NFsFw4z1dp6LR2uz2MAAAAGgELXim2I2bue50Gs8AdG/utNYbDpUoDKYB6/m9VckRoE3hOCMdcTha1pDqNJtPxXmu/V3x33CDPBTAPicr0h74kleN390a13cVNZeY8FPtXWm8tIc08LgZaQcgrW7P23QrsDa4NOqObTDX98LHEqXbbONRgqB4idMyP77ljmxxs7d/jzPLLWK/25c0KIlrnPeR2W4b5uOseCxVYlzi4nJKmbQYWuy4OJzIKr6jlMMZJtOW5eWq51Xr0fd/ZrWWlEEZc3id4nP0XndlbGrWp0hq94HhJ1XsTqYaABoBAWnJVVbfhGIjx0CZZVg+q33YLgJD3D4IjSesxgK1c1rpBAPURMrk5raQpgCGlwaAPy+HcrsSA3HRNIXZrAMDl1THfZA1lRwnOPFV9/sSzuJNSiGO5vpHgd4wMHzCsmN9YXGoz1jKu0ZO+3Bdrb12vHJtQcDvXIPyWX2nsqvbO4K9J1M8pHZd4HQ+S9PfULcjB8Vo9hU6d0HW9ywVaZEFrhPp0PeFNSj5/SVtvXsg2V5cW2SKdQhhOrmHLT6EJLDTiiE2UZVRL2daGtVp0m6ucB4DmV6hs2zDS5gA4KbWtZ6Sfssd7ObXjui8iRTpk+Zx9JW/2W0H3561j/wAWreKV1Y2EXNPNdi2P4XN3IDzWkRyw849E9/8AeF0IOnf81xq4Bz9llVXt+791bVn9KZheQ2YMcXV2V6J7RbjgtAwfncBqsA0QwDuSe1c7+t+RvP4lbbAquZSc2AZJIz2hA1AVfSoyQAMlaq1tm07Z41dBh0Twk4xqufI9vwsbcrlPpib6s73hzJBx0wlBMRz+SZWYeLOsqZSbkK4R5uW/qq23ItOK9aeVNpcZ9PuvQ6o4iOnis37P7SBcVtJcGjyEn6haKmSTJHOFvTm6tpzGoUaoC6vTbPwNLzjmcD7qw4O7wUDZ44n1qmsv4W+Df5LkE8fdMc3IB708t+RXNwzg4hAg3uicFNe3nMTphI8+9Me3AMHUhQRh2njoBJ8v5Uzd69LariP1TKrnENp1XzkkNE+v3Td16w95AMydOSsSq722W4N3b3LR2a1uJPV7DB+RaktP7Q9k++snU4l9MGtQPgO23zE+YCSzlO1lePSjKaisj0j2X234NepzdUDR4NE/+y1Wy/hcY+Kq/wBAY+yrdxbX3dhRkZcHOPmcfKFbbOH4Yjq+P9RXSemXWt4R5LmGd66nqmAc8qjm9uQFxq8sc8KQ/UeHXC4OGfBRp5/7UKvat2c5JIWTGT3BXntIqzeMbOBTH1KpKQwmPsqy2NR4nk9B8z5hXN4TwnlkhsjPe0Tyx1Ubd63JYTqCTj9X95VleU+xrMjUavHKIPKVxzvb7XxOPXFPywt/Sh4H9QT6WT3BLaru2ANZOn996kbPocb2Uxq5wA8yunG+Z8nU5LI9G2BQ9zZUwdXDiPUz/EKbatk94Tr+GhrAMNaBHcMJ9jTEeHpK28595V93Se88mmO8rlYW/uqTG6uAl3e4zJ9ShtPtVLehMhz+J3/i3P14fVTakz9Mwg5OiYiVHcc4ClGAc6qJVPa1+SBHTJ5qPcOifFOc7XKrr+4gOUV2qYt2SJ4iTnxwuOybmn71sAMM6KTtppZSps/SwYnuWZou4Xgk5lEe00GNq0g0wSPhRVPu/fcVNpByIIRWmXgMrpbUjUexg1c4AeJMLkr7ce197fUAdGkuPkJHzhco29gtaLadNtMYDWBrfIQFzsP+2OfxAf6iu4GCVHs9HD9NRw+/3XRl0PNAjyXWPLOqaWeeFFcXHXnjCFOnnzXVzQPNFwyOiK8d9or52g4Dkxo+v7qqbyCs/aE2NoPPVo5KBsylx1GDq4ekqT7ak3ZG62Xa+7o02c4BI5zOvguW1n9jvPPv6CRoYXcScDOP9XUHuUa/b2T0jUauGdIPKVw/Nfop1jMYwm0GxUYPGB05fZaXcS047wOOlNpd56D6/JUW2W/9Q0f08vErdbh2vu7arXIzUdDT/S3+SfRd+P0+D8n/AG2La7PE89JVjbABo5BQaFOXElS7qv7uk98SQOyOrjgDzK04ItgRUr1q0YbFNnllx9ceSn1AJHiuVjbe6psYdQ3tHTiJyT5lOdpr80HOtr06qDXd8ypF1UgnuVXc3HWIn7IBXrwdOSgh3vKtOnk8T2giOU5+S5XlzHqn7rEvu2n9LXuzy5fdRVlvNUzgclmaYPFrzwrzeCTUycSYVA6oQfNBstiXTmAEFJVezqnZGfzDvSW2Xna3Psttpq16v6WBo8zJ/wCKw4XqPs1tuG0c/wDXVJ8gAPsVyx9tVrHVIB6BVuybsGvXpgz2GuGekg/ZS7xh4X8OpbhZXdwubeguOHNLT6T9QtstnH7o8+uPNPnXwTSNZ/hRReNCmMbnqumI05pAZPJB5F7UKUXTHdW59VB3Yo8VZuJhpJ7uX3Wg9q9v2qL/AOqCoG51MF9QjJDQI6ydPks3qV6PjY+XLjGjosI9ckfmOIPgom0DnJAzk9DjAnkVYkjxx4F/9Kp7h5LidYHLSM4HeuHt9+9RjtoO4rp8CIaAB0wML1mlQ91QoUYgtptDh3xn5yvNt2bL3+0wwgke9l09G5z6L0+8fLzHJejD0/O813yZUbenphMufxK9Onq1hFR/0aPWT/lUlrgxpc7AAJPLCg7IBc19dwIdVdxRPwt0aPT6rTkmVtdeqZUOCMeQXG6qkGRIx0VXcVXEGS7ywqO10/JJ8Z8ln7y4BJJcAJnWUy9BOpMTzVVdaGBiFAby/D5gEAYE88aq93BaC+u88mADzn9ljXP18VstwRFOq6NXgeg/lZipG8EcZ1WerDU96v8AbkcXl4qhqjGn7qiTaXXCAD+pJcC3sz9klUZgL2ndK393ZWzetIE+fa+6CSziVZ1jr4ZlYa7qe7vKT5gCo0n1ykktI306/sncWUklFENnHenD5/dJJFYn2p282vF0IPzWY3E/7dVx5vA78D+Uklzzez4M/uz+Wm4pnPcY5HlCiVKQBJMAj0pnqUElzyfZRPZlbcVe7uP0yAe9x/YH1WtDpdnmZ15JJL0Y+o/N5/5VH2xUL3UrVv581egpjX1wPNWBkAdqBp8Hd4pJKsIdbPM+Qj7KBckCZM/5z9EElRR3VcAY17hCob2qTM9OqSSzVV5K3G4jvwj/AOR9Uklme1SduMhwP9KoqjUklpDrMgvDCMFJJJaiV//Z",
-      // },
+      role: "Co-Founder at Deepkore",
+      image: "/images/muru.jpg",
+      bio: "With 25+ years in global consultancy and leadership across regions, specializing in SAP solutions, process optimization, and continuous improvement. Early experience in cement, chemical, and rubber manufacturing shaped a passion for efficiency, further refined in industries like oil & gas, petrochemicals, manufacturing, and utilities.",
+      linkedin:
+        "https://www.linkedin.com/in/murugan-mariappan-02623b2/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWvtdeGq4SfaG%2Bd8ANnWMkg%3D%3D",
     },
     {
       name: "Kris Gopalakrishnan",
-      role: "Founder at Deepkore",
-      //   image:
-      //     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-      // },
+      role: "Co-Founder at Deepkore",
+      image: "/images/kris.jpeg",
+      bio: "25+ years' experience in transformative IT strategies, ERP implementation, and digital business growth, client focus, and risk mitigation. Proven track record in driving high-profile transformations across Oil & Gas, Engineering, Manufacturing, and FMCG sectors, delivering innovative digital initiatives and surpassing expectations.",
+      linkedin:
+        "https://www.linkedin.com/in/kris-sr-technology-and-business-transformation-leadership-expert/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbzhLeDSkS1qzRXgSWPXVAQ%3D%3D",
     },
   ];
 
@@ -333,32 +349,29 @@ const About: React.FC = () => {
                       🎯
                     </motion.div>
                     <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                      Democratizing Artificial Intelligence
+                      Our Mission & Approach
                     </h3>
                     <p className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
-                      We believe that artificial intelligence should be
-                      accessible to everyone, not just large corporations. Our
-                      mission is to create intuitive, powerful AI tools that
-                      empower creators, entrepreneurs, and innovators to bring
-                      their ideas to life faster and more efficiently than ever
-                      before.
+                      Our mission is to democratize AI-powered development. We
+                      believe that the people with the best understanding of a
+                      business process should be empowered to improve it.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                       {[
                         {
                           icon: <Rocket className="w-8 h-8" />,
-                          title: "Innovation",
-                          desc: "Pushing AI boundaries",
-                        },
-                        {
-                          icon: <Globe className="w-8 h-8" />,
-                          title: "Accessibility",
-                          desc: "AI for everyone",
+                          title: "Speed",
+                          desc: "Turn months of development into days, allowing you to innovate and adapt at the speed of your market",
                         },
                         {
                           icon: <Zap className="w-8 h-8" />,
-                          title: "Efficiency",
-                          desc: "Faster workflows",
+                          title: "Intelligence",
+                          desc: "Beyond automation with autonomous AI agents managing complex workflows, analyzing data, and optimizing outcomes",
+                        },
+                        {
+                          icon: <Users className="w-8 h-8" />,
+                          title: "Partnership",
+                          desc: "Strategic partner in business transformation, aligning technical innovation with enterprise growth and ROI",
                         },
                       ].map((item, index) => (
                         <motion.div
@@ -449,7 +462,7 @@ const About: React.FC = () => {
                   <h3 className="text-3xl md:text-4xl font-bold text-black text-center mb-12">
                     Meet Our Visionaries
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                     {team.map((member, index) => (
                       <motion.div
                         key={index}
@@ -470,24 +483,33 @@ const About: React.FC = () => {
                           whileHover={{ scale: 1.1 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
-                          {/* <Image
+                          <Image
                             src={member.image}
                             alt={member.name}
                             width={120}
                             height={120}
                             className="rounded-full mx-auto shadow-lg"
-                          /> */}
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          />
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-green-500/20 opacity-0  transition-opacity duration-300"></div>
                         </motion.div>
                         <h4 className="text-xl font-bold text-black mb-2">
                           {member.name}
                         </h4>
-                        <p className="text-blue-400 font-medium mb-2">
+                        <p className="text-blue-400 font-medium mb-4">
                           {member.role}
                         </p>
-                        {/* <p className="text-gray-600 text-sm">
-                          {member.expertise}
-                        </p> */}
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                          {member.bio}
+                        </p>
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                          <span className="text-sm font-medium">LinkedIn</span>
+                        </a>
                       </motion.div>
                     ))}
                   </div>
