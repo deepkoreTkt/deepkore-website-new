@@ -171,7 +171,7 @@ const Integration: React.FC = () => {
                 Start Integrating
               </motion.a>
               <motion.a
-                href="#connectors"
+                href="/blog"
                 className="inline-flex items-center px-8 py-4 border-2 border-[#8112db] text-[#8112db] font-semibold rounded-full hover:bg-[#8112db] hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

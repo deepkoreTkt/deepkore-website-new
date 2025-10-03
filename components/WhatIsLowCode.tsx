@@ -83,7 +83,7 @@ const WhatIsLowCode: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-300">
               <a
-                href="#"
+                href="/getstarted"
                 className="group inline-block bg-gradient-to-r from-[#ffffff] to-[#ffffff]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
               >
                 <span className="flex items-center gap-2">
@@ -102,7 +102,7 @@ const WhatIsLowCode: React.FC = () => {
                 </span>
               </a>
               <a
-                href="#"
+                href="/getstarted"
                 className="group inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 border border-white/20"
               >
                 <span className="flex items-center gap-2">
@@ -796,13 +796,13 @@ const WhatIsLowCode: React.FC = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="#"
+                    href="/getstarted"
                     className="inline-block bg-[#ffffff] hover:bg-[#ffffff]/90 text-[#00A551] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
-                    FREE 14-DAY TRIAL
+                    Get Started
                   </a>
                   <a
-                    href="#"
+                    href="/getstarted"
                     className="inline-block bg-white hover:bg-gray-100 text-[#2791D0] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     GET A DEMO

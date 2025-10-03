@@ -87,40 +87,44 @@ const NoCode: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
-                  <span className="flex items-center gap-3">
-                    Start Building Free
-                    <svg
-                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <button className="group bg-white/80 backdrop-blur-sm hover:bg-white text-slate-800 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-slate-200/50 shadow-lg">
-                  <span className="flex items-center gap-3">
-                    Watch Demo
-                    <svg
-                      className="w-5 h-5 group-hover:scale-110 transition-transform"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </span>
-                </button>
+                <a href="/getstarted">
+                  <button className="group bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
+                    <span className="flex items-center gap-3">
+                      Start Building Free
+                      <svg
+                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </a>
+                <a href="/getstarted">
+                  <button className="group bg-white/80 backdrop-blur-sm hover:bg-white text-slate-800 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-slate-200/50 shadow-lg">
+                    <span className="flex items-center gap-3">
+                      Watch Demo
+                      <svg
+                        className="w-5 h-5 group-hover:scale-110 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </a>
               </div>
 
               {/* Stats */}

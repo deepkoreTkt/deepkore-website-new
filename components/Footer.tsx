@@ -427,12 +427,12 @@ const Footer: React.FC = () => {
                   Privacy Policy
                 </a>
                 <span className="text-gray-400">•</span>
-                <a
+                {/* <a
                   href="#"
                   className="hover:text-blue-400 transition-colors duration-300"
                 >
                   Cookies
-                </a>
+                </a> */}
               </motion.div>
             </div>
           </div>

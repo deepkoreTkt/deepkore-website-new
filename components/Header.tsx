@@ -305,7 +305,7 @@ const Header: React.FC = () => {
             featured: [],
           },
           {
-            href: "/healthcare-medical",
+            href: "/solution/healthcare",
             label: "Healthcare & Medical",
             icon: Hospital,
             description: "Healthcare management solutions",
@@ -929,7 +929,7 @@ const Header: React.FC = () => {
 
                     {/* Other Nav Items */}
                     <motion.a
-                      href="#blog"
+                      href="/blog"
                       className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-all duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -952,7 +952,7 @@ const Header: React.FC = () => {
                   </div>
 
                   <motion.a
-                    href="#contact"
+                    href="/contact"
                     className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-[#8112db] hover:bg-[#8112db]/90 rounded-full transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                     initial={{ opacity: 0, y: 10 }}
