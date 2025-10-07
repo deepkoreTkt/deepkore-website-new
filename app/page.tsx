@@ -12,10 +12,7 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div
-      className="relative bg-gradient-to-r
-         from-blue-200 via-white to-green-100"
-    >
+    <div className="relative bg-[#fffdfa]">
       {/* <FloatingElements /> */}
       <Header />
       <main>

@@ -81,18 +81,27 @@ const Hero = () => {
 
   return (
     <div className="relative">
-      <section className="relative  flex items-center justify-center overflow-hidden">
+      <section
+        className="relative  flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: `url(/bgnew7.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         {/* Background gradient */}
-        <motion.div className="absolute inset-0" style={{ y }}>
-          {/* Horizontal gradient: green → white → blue */}
-          <div
-            className="absolute inset-0 bg-gradient-to-r
-         from-blue-200 via-white to-green-100"
-          ></div>
 
-          {/* Optional soft glow */}
-          <div className="absolute inset-0 bg-white/10 blur-3xl pointer-events-none"></div>
-        </motion.div>
+        {/* Clean gradient: light cyan → white → soft pink */}
+        {/* <div
+          style={{
+            backgroundImage: `url(https://dz1x1c630cl14.cloudfront.net/webassets/images/website-background.png)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div> */}
+
+        {/* Optional soft glow */}
+        {/* <div className="absolute inset-0 bg-white/20 blur-3xl pointer-events-none"></div> */}
 
         <div className="container mx-auto px-6 lg:px-12 py-20 lg:py-25 relative z-10">
           <div className="flex flex-col items-center gap-12 lg:gap-16 max-w-7xl mx-auto">
@@ -118,7 +127,7 @@ const Hero = () => {
                 <h1
                   className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
                 >
-                  <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                     AI Driven Business
                   </span>
                 </h1>
@@ -147,7 +156,7 @@ const Hero = () => {
                 <a href="/getstarted" className="text-lg font-medium">
                   <div className="flex flex-col items-center gap-2">
                     <motion.button
-                      className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="px-8 py-4 bg-[#248aff] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                       whileHover={{ scale: 1.03, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -164,9 +173,9 @@ const Hero = () => {
                 className="w-250 h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm "
                 priority
                 style={{
-                  boxShadow: "0 0 10px 10px rgba(223, 189, 255, 0.5)",
-                  background:
-                    "linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
+                  boxShadow: "0 0 10px 5px rgba(28, 5, 50, 0.5)",
+                  //background:
+                  //"linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
                 }}
               />
 

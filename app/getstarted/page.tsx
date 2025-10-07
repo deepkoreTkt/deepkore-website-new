@@ -750,7 +750,7 @@ const Demo: React.FC = () => {
               </span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-              74,000+ Businesses Choose Deepkore
+              Leading Businesses Choose Deepkore
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Join thousands of companies that have revolutionized their
@@ -758,7 +758,7 @@ const Demo: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {companyLogos.map((company, idx) => (
               <motion.div
                 key={idx}
@@ -781,7 +781,7 @@ const Demo: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 

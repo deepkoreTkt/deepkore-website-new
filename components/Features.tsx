@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ShoppingCart,
   Settings,
@@ -36,6 +37,7 @@ const Features: React.FC = () => {
         "Order Tracking",
         "Revenue Analytics",
       ],
+      link: "/solution/sales",
     },
     {
       title: "CRM",
@@ -56,6 +58,7 @@ const Features: React.FC = () => {
         "Automated Campaigns",
         "Support Integration",
       ],
+      link: "/crm",
     },
     {
       title: "IT Service Management",
@@ -74,6 +77,7 @@ const Features: React.FC = () => {
         "Actionable Analytics",
         "Performance Boost",
       ],
+      link: "/itservicedesk",
     },
     {
       title: "Asset Management",
@@ -94,6 +98,7 @@ const Features: React.FC = () => {
         "Maintenance Reports",
         "Asset Tracking",
       ],
+      link: "/solution/assetmanagement",
     },
     // {
     //   title: "Analytics & Reporting",
@@ -134,6 +139,7 @@ const Features: React.FC = () => {
         "Procurement Reports",
         "Supplier Analytics",
       ],
+      link: "/solution/procurement",
     },
     {
       title: "Manufacturing",
@@ -154,6 +160,7 @@ const Features: React.FC = () => {
         "Process Optimization",
         "Inventory Management",
       ],
+      link: "/solution/manufacturing",
     },
   ];
 
@@ -350,15 +357,15 @@ const Features: React.FC = () => {
                   <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-6">
                     <motion.div
                       className="relative"
-                      animate={{
-                        scale: [1, 1.02, 1],
-                        rotate: [0, 1, -1, 0],
-                      }}
-                      transition={{
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
+                      // animate={{
+                      //   scale: [1, 1.02, 1],
+                      //   rotate: [0, 1, -1, 0],
+                      // }}
+                      // transition={{
+                      //   duration: 6,
+                      //   repeat: Infinity,
+                      //   ease: "easeInOut",
+                      // }}
                     >
                       <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                         <Image
@@ -398,13 +405,15 @@ const Features: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.button
-            className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-sm lg:text-base"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Try {features[activeFeature].title} Now
-          </motion.button>
+          <Link href={features[activeFeature].link}>
+            <motion.button
+              className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-sm lg:text-base"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Try {features[activeFeature].title} Now
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

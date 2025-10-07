@@ -68,8 +68,7 @@ const WhatMakesUsUnique: React.FC = () => {
   ];
 
   const achievements = [
-    { title: "Forrester Wave Leader", year: "2024", icon: "🏆" },
-    { title: "Gartner Magic Quadrant", year: "2024", icon: "⭐" },
+    { title: "D-U-N-S Verified", year: "2025", icon: "🏆" },
     { title: "ISO 27001 Certified", year: "2024", icon: "🔒" },
     { title: "Best No-Code Platform", year: "2024", icon: "🎯" },
   ];
@@ -225,7 +224,7 @@ const WhatMakesUsUnique: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -378,20 +377,24 @@ const WhatMakesUsUnique: React.FC = () => {
               with Deepkore Technologies
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="bg-white text-[#00A551] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Start Free Trial
-              </motion.button>
-              <motion.button
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Demo
-              </motion.button>
+              <a href="/getstarted">
+                <motion.button
+                  className="bg-white text-[#00A551] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Start Free Trial
+                </motion.button>
+              </a>
+              <a href="/contact">
+                <motion.button
+                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Schedule Demo
+                </motion.button>
+              </a>
             </div>
           </motion.div>
         </div>

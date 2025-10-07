@@ -48,23 +48,18 @@ interface MenuSection {
 }
 
 const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isUserGuideOpen, setIsUserGuideOpen] = useState(false);
-  const [isProductOpen, setIsProductOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
+    null
+  );
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    return () => {
+      if (dropdownTimeout) clearTimeout(dropdownTimeout);
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [dropdownTimeout]);
 
   const navItems: MenuItem[] = [
     { href: "/pricing", label: "Pricing", featured: [] },
@@ -89,7 +84,7 @@ const Header: React.FC = () => {
             key={item.href}
             href={item.href}
             className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
-            onClick={() => setIsUserGuideOpen(false)}
+            onClick={() => setIsDropdownOpen(false)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: idx * 0.1 }}
@@ -352,7 +347,7 @@ const Header: React.FC = () => {
     <>
       {/* Backdrop */}
       <AnimatePresence>
-        {activeDropdown && (
+        {isDropdownOpen && (
           <motion.div
             className="fixed inset-0 bg-black/5 backdrop-blur-[1px] z-40"
             initial={{ opacity: 0 }}
@@ -360,23 +355,16 @@ const Header: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
             onClick={() => {
-              setIsUserGuideOpen(false);
-              setIsProductOpen(false);
-              setIsSolutionsOpen(false);
-              setActiveDropdown(null);
+              setIsDropdownOpen(false);
+              setActiveSection(null);
             }}
           />
         )}
       </AnimatePresence>
 
-      <motion.header
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <div className="bg-white/90 backdrop-blur-xl border border-gray-200/50 rounded-full shadow-lg px-4 py-2 relative">
-          <div className="flex items-center justify-between min-w-[320px] lg:min-w-[720px]">
+      <motion.header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
+        <div className="bg-white/90 backdrop-blur-xl border border-gray-200/50 rounded-full shadow-lg px-4 py-2.5 relative">
+          <div className="flex items-center justify-between min-w-[340px] lg:min-w-[800px]">
             {/* Logo Section */}
             <motion.a
               href="/"
@@ -394,21 +382,27 @@ const Header: React.FC = () => {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {/* User Guide Dropdown */}
+            <nav className="hidden lg:flex items-center space-x-3">
+              {/* Platform Button */}
               <div
                 className="relative"
                 onMouseEnter={() => {
-                  setIsUserGuideOpen(true);
-                  setActiveDropdown("platform");
+                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                  setActiveSection("platform");
+                  setIsDropdownOpen(true);
                 }}
                 onMouseLeave={() => {
-                  setIsUserGuideOpen(false);
-                  setActiveDropdown(null);
+                  const timeout = setTimeout(() => {
+                    setIsDropdownOpen(false);
+                    setActiveSection(null);
+                  }, 200);
+                  setDropdownTimeout(timeout);
                 }}
               >
                 <motion.button
-                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
+                  className={`flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
+                    activeSection === "platform" ? "bg-gray-50" : ""
+                  }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -418,7 +412,12 @@ const Header: React.FC = () => {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    animate={{ rotate: isUserGuideOpen ? 180 : 0 }}
+                    animate={{
+                      rotate:
+                        isDropdownOpen && activeSection === "platform"
+                          ? 180
+                          : 0,
+                    }}
                     transition={{ duration: 0.2 }}
                   >
                     <path
@@ -429,16 +428,121 @@ const Header: React.FC = () => {
                     />
                   </motion.svg>
                 </motion.button>
+              </div>
 
-                <AnimatePresence>
-                  {isUserGuideOpen && (
-                    <motion.div
-                      className="absolute top-full left-1/10 -translate-x-1/5 mt-1 bg-white rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 p-6 min-w-[720px] backdrop-blur-sm"
-                      initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    >
+              {/* Solutions Dropdown */}
+
+              {/* Product Button */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                  setActiveSection("product");
+                  setIsDropdownOpen(true);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setIsDropdownOpen(false);
+                    setActiveSection(null);
+                  }, 200);
+                  setDropdownTimeout(timeout);
+                }}
+              >
+                <motion.button
+                  className={`flex items-center justify-center space-x-2 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
+                    activeSection === "product" ? "bg-gray-50" : ""
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span>Product</span>
+                  <motion.svg
+                    className="w-2.5 h-2.5 ml-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    animate={{
+                      rotate:
+                        isDropdownOpen && activeSection === "product" ? 180 : 0,
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </motion.svg>
+                </motion.button>
+              </div>
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                  setActiveSection("solutions");
+                  setIsDropdownOpen(true);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setIsDropdownOpen(false);
+                    setActiveSection(null);
+                  }, 200);
+                  setDropdownTimeout(timeout);
+                }}
+              >
+                <motion.button
+                  className={`flex items-center justify-center space-x-2 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
+                    activeSection === "solutions" ? "bg-gray-50" : ""
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span>Solutions</span>
+                  <motion.svg
+                    className="w-2.5 h-2.5 ml-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    animate={{
+                      rotate:
+                        isDropdownOpen && activeSection === "solutions"
+                          ? 180
+                          : 0,
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </motion.svg>
+                </motion.button>
+              </div>
+
+              {/* Unified Dropdown */}
+              <AnimatePresence>
+                {isDropdownOpen && activeSection && (
+                  <motion.div
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-1 bg-white rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 p-6 min-w-[720px] backdrop-blur-sm"
+                    initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    onMouseEnter={() => {
+                      if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                    }}
+                    onMouseLeave={() => {
+                      const timeout = setTimeout(() => {
+                        setIsDropdownOpen(false);
+                        setActiveSection(null);
+                      }, 200);
+                      setDropdownTimeout(timeout);
+                    }}
+                  >
+                    {activeSection === "platform" && (
                       <div className="flex gap-8">
                         {renderMenuSection(menuSections.platform[0], true)}
                         <div className="flex-1">
@@ -454,7 +558,10 @@ const Header: React.FC = () => {
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
-                                      onClick={() => setIsUserGuideOpen(false)}
+                                      onClick={() => {
+                                        setIsDropdownOpen(false);
+                                        setActiveSection(null);
+                                      }}
                                       initial={{ opacity: 0, x: -10 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{
@@ -462,8 +569,10 @@ const Header: React.FC = () => {
                                         duration: 0.2,
                                         ease: [0.16, 1, 0.3, 1],
                                       }}
+                                      whileHover={{ scale: 1.02, x: 4 }}
+                                      whileTap={{ scale: 0.98 }}
                                     >
-                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0">
+                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
                                           <item.icon className="w-4 h-4" />
                                         ) : null}
@@ -492,7 +601,10 @@ const Header: React.FC = () => {
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
-                                      onClick={() => setIsUserGuideOpen(false)}
+                                      onClick={() => {
+                                        setIsDropdownOpen(false);
+                                        setActiveSection(null);
+                                      }}
                                       initial={{ opacity: 0, x: -10 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{
@@ -500,8 +612,10 @@ const Header: React.FC = () => {
                                         duration: 0.2,
                                         ease: [0.16, 1, 0.3, 1],
                                       }}
+                                      whileHover={{ scale: 1.02, x: 4 }}
+                                      whileTap={{ scale: 0.98 }}
                                     >
-                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0">
+                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
                                           <item.icon className="w-4 h-4" />
                                         ) : null}
@@ -519,50 +633,8 @@ const Header: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Solutions Dropdown */}
-
-              {/* Product Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  setIsProductOpen(true);
-                  setActiveDropdown("product");
-                }}
-                onMouseLeave={() => {
-                  setIsProductOpen(false);
-                  setActiveDropdown(null);
-                }}
-              >
-                <motion.button
-                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span>Product</span>
-                  <motion.svg
-                    className="w-2.5 h-2.5 ml-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    animate={{ rotate: isProductOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </motion.svg>
-                </motion.button>
-                <AnimatePresence>
-                  {isProductOpen && (
-                    <motion.div className="absolute top-full left-1/10 -translate-x-1/3 mt-1 bg-white rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 p-6 min-w-[720px] backdrop-blur-sm">
+                    )}
+                    {activeSection === "product" && (
                       <div className="grid grid-cols-2 gap-8">
                         {menuSections.products[0].items.map(
                           (item: MenuItem, idx) => (
@@ -577,7 +649,12 @@ const Header: React.FC = () => {
                                 duration: 0.3,
                                 ease: [0.16, 1, 0.3, 1],
                               }}
-                              onClick={() => setIsProductOpen(false)}
+                              onClick={() => {
+                                setIsDropdownOpen(false);
+                                setActiveSection(null);
+                              }}
+                              whileHover={{ scale: 1.03, y: -2 }}
+                              whileTap={{ scale: 0.98 }}
                             >
                               <div className="space-y-4">
                                 <div className="flex items-center gap-3">
@@ -604,19 +681,22 @@ const Header: React.FC = () => {
                                           feature: FeaturedItem,
                                           fidx: number
                                         ) => (
-                                          <a
+                                          <motion.a
                                             key={fidx}
                                             href={feature.href}
-                                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600"
-                                            onClick={() =>
-                                              setIsProductOpen(false)
-                                            }
+                                            className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                                            onClick={() => {
+                                              setIsDropdownOpen(false);
+                                              setActiveSection(null);
+                                            }}
+                                            whileHover={{ scale: 1.02, x: 2 }}
+                                            whileTap={{ scale: 0.98 }}
                                           >
                                             {feature.icon ? (
                                               <feature.icon className="w-4 h-4" />
                                             ) : null}
                                             <span>{feature.label}</span>
-                                          </a>
+                                          </motion.a>
                                         )
                                       )}
                                     </div>
@@ -627,66 +707,28 @@ const Header: React.FC = () => {
                           )
                         )}
                       </div>
+                    )}
+                    {activeSection === "product" && (
                       <div className="mt-6 pt-4 border-t">
                         {menuSections.products[1].items.map((item, idx) => (
                           <motion.a
                             key={item.href}
                             href={item.href}
-                            className="flex items-center justify-end gap-2 text-sm text-blue-600 hover:text-blue-700"
-                            onClick={() => setIsProductOpen(false)}
+                            className="flex items-center justify-end gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors duration-200"
+                            onClick={() => {
+                              setIsDropdownOpen(false);
+                              setActiveSection(null);
+                            }}
+                            whileHover={{ scale: 1.05, x: -2 }}
+                            whileTap={{ scale: 0.95 }}
                           >
                             <span>{item.label}</span>
                             <item.icon className="w-5 h-5" />
                           </motion.a>
                         ))}
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  setIsSolutionsOpen(true);
-                  setActiveDropdown("solutions");
-                }}
-                onMouseLeave={() => {
-                  setIsSolutionsOpen(false);
-                  setActiveDropdown(null);
-                }}
-              >
-                <motion.button
-                  className="flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span>Solutions</span>
-                  <motion.svg
-                    className="w-2.5 h-2.5 ml-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    animate={{ rotate: isSolutionsOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </motion.svg>
-                </motion.button>
-
-                <AnimatePresence>
-                  {isSolutionsOpen && (
-                    <motion.div
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-1 bg-white rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 p-6 min-w-[720px] backdrop-blur-sm"
-                      initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    >
+                    )}
+                    {activeSection === "solutions" && (
                       <div className="flex gap-8">
                         {renderMenuSection(menuSections.solutions[0], true)}
                         <div className="flex-1">
@@ -702,7 +744,10 @@ const Header: React.FC = () => {
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
-                                      onClick={() => setIsSolutionsOpen(false)}
+                                      onClick={() => {
+                                        setIsDropdownOpen(false);
+                                        setActiveSection(null);
+                                      }}
                                       initial={{ opacity: 0, x: -10 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{
@@ -710,9 +755,13 @@ const Header: React.FC = () => {
                                         duration: 0.2,
                                         ease: [0.16, 1, 0.3, 1],
                                       }}
+                                      whileHover={{ scale: 1.02, x: 4 }}
+                                      whileTap={{ scale: 0.98 }}
                                     >
-                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0">
-                                        <item.icon className="w-4 h-4" />
+                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
+                                        {item.icon ? (
+                                          <item.icon className="w-4 h-4" />
+                                        ) : null}
                                       </span>
                                       <div className="flex-1">
                                         <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
@@ -738,7 +787,10 @@ const Header: React.FC = () => {
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
-                                      onClick={() => setIsSolutionsOpen(false)}
+                                      onClick={() => {
+                                        setIsDropdownOpen(false);
+                                        setActiveSection(null);
+                                      }}
                                       initial={{ opacity: 0, x: -10 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{
@@ -746,9 +798,13 @@ const Header: React.FC = () => {
                                         duration: 0.2,
                                         ease: [0.16, 1, 0.3, 1],
                                       }}
+                                      whileHover={{ scale: 1.02, x: 4 }}
+                                      whileTap={{ scale: 0.98 }}
                                     >
-                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0">
-                                        <item.icon className="w-4 h-4" />
+                                      <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
+                                        {item.icon ? (
+                                          <item.icon className="w-4 h-4" />
+                                        ) : null}
                                       </span>
                                       <div className="flex-1">
                                         <div className="font-medium text-sm text-gray-900 group-hover:text-blue-600">
@@ -766,10 +822,10 @@ const Header: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {navItems.map((item, index) => (
                 <motion.a
@@ -790,7 +846,7 @@ const Header: React.FC = () => {
             <div className="hidden lg:flex items-center">
               <motion.a
                 href="/getstarted"
-                className="inline-flex items-center justify-center px-3.5 py-1.5 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-green-600  hover:bg-[#8112db]/90 rounded-md transition-colors duration-200 shadow-sm hover:shadow-md"
+                className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-[#248aff]  rounded-md transition-colors duration-200 shadow-sm hover:shadow-xl"
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}

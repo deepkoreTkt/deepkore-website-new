@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Workflow, Handshake, Link, Lock, BarChart3 } from "lucide-react";
 
 const Benefits: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,39 +14,39 @@ const Benefits: React.FC = () => {
       subtitle: "Automate Your workflows, from manual to Seamless",
       description:
         "Transform manual processes into seamless automated workflows with Deepkore's intelligent automation tools.",
-      icon: "�",
-      gradient: "from-blue-500 to-green-600",
+      icon: <Workflow className="w-12 h-12 md:w-16 md:h-16 text-white" />,
+      gradient: "from-blue-500 to-purple-600",
     },
     {
       title: "Lack of Functional Collaboration",
       subtitle: "Design and Automate Workflows to Connect Department",
       description:
         "Bridge departmental silos with automated workflows that enhance collaboration and efficiency across your organization.",
-      icon: "🤝",
-      gradient: "from-green-500 to-blue-600",
+      icon: <Handshake className="w-12 h-12 md:w-16 md:h-16 text-white" />,
+      gradient: "from-blue-500 to-purple-600",
     },
     {
       title: "Poor Integration Between System",
       subtitle: "Integration tools and pre-built connectors.",
       description:
         "Seamlessly connect disparate systems using our comprehensive integration tools and pre-built connectors.",
-      icon: "🔗",
-      gradient: "from-blue-600 to-green-500",
+      icon: <Link className="w-12 h-12 md:w-16 md:h-16 text-white" />,
+      gradient: "from-blue-500 to-purple-600",
     },
     {
       title: "Restricted View of Critical Data",
       subtitle: "Grant Controlled Data Access to Authorized Users",
       description:
         "Ensure secure and controlled access to critical data for authorized users across your organization.",
-      icon: "🔒",
-      gradient: "from-green-600 to-blue-500",
+      icon: <Lock className="w-12 h-12 md:w-16 md:h-16 text-white" />,
+      gradient: "from-blue-500 to-purple-600",
     },
     {
       title: "Gaps in Process Insights & Analysis",
       subtitle: "Centralized Analytics and Data Management Solutions.",
       description:
         "Fill the gaps with centralized analytics and robust data management solutions for comprehensive insights.",
-      icon: "📊",
+      icon: <BarChart3 className="w-12 h-12 md:w-16 md:h-16 text-white" />,
       gradient: "from-blue-500 to-purple-600",
     },
   ];
@@ -143,7 +144,7 @@ const Benefits: React.FC = () => {
                 >
                   <div className="flex flex-col md:flex-row items-center justify-between h-full">
                     <div className="flex-1 text-center md:text-left">
-                      <div className="text-6xl md:text-7xl mb-6">
+                      <div className="mb-6 flex justify-center md:justify-start">
                         {benefits[currentSlide].icon}
                       </div>
                       <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -273,4 +274,3 @@ const Benefits: React.FC = () => {
 };
 
 export default Benefits;
-

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const stats = [
   {
@@ -46,6 +47,7 @@ const stats = [
 ];
 
 const TargetAudience: React.FC = () => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -168,12 +170,12 @@ const TargetAudience: React.FC = () => {
                     </div>
                   </div>
                   <div className="mt-2">
-                    <a
-                      href="/getstarted"
-                      className="text-blue-600 text-xs underline"
+                    <button
+                      onClick={() => router.push("/getstarted")}
+                      className="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition-colors"
                     >
                       {stats[currentSlide].link}
-                    </a>
+                    </button>
                   </div>
                 </div>
               </motion.div>

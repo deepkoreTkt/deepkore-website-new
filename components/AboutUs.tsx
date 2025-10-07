@@ -405,7 +405,7 @@ const AboutUs: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {companyLogos.map((company, idx) => (
               <motion.div
                 key={idx}
@@ -425,7 +425,7 @@ const AboutUs: React.FC = () => {
                 />
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 

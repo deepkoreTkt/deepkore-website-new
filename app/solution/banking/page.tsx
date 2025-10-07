@@ -11,19 +11,11 @@ import {
   BarChart3,
   Clock,
   TrendingUp,
-  DollarSign,
-  Globe,
   CheckCircle,
-  Lock,
   Users,
-  Calculator,
-  Banknote,
   Eye,
-  Settings,
   ArrowRight,
   PlayCircle,
-  MessageSquare,
-  Building2,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
