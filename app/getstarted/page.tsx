@@ -292,12 +292,12 @@ const Demo: React.FC = () => {
                 </motion.div>
 
                 <motion.h1
-                  className="text-6xl lg:text-7xl font-black leading-tight"
+                  className="text-5xl lg:text-6xl font-semibold leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <span className="bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent">
                     Unlock
                   </span>
                   <br />
@@ -812,31 +812,34 @@ const Demo: React.FC = () => {
               </span>
             </h2>
 
-            <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl mb-10 text-white max-w-2xl mx-auto leading-relaxed">
               Experience the power of Deepkore with a 14-day free trial. No
               credit card required, no strings attached.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-              <motion.button
-                className="bg-[#ffffff] text-[#00A551] px-10 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-[#2791D0]/50 transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center gap-3"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>🎯</span>
-                Start Free Trial
-              </motion.button>
-
-              <motion.button
-                className="border-2 border-white/30 text-white px-10 py-4 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Schedule Demo
-              </motion.button>
+              <a href="/getstarted" className="w-full sm:w-auto">
+                <motion.button
+                  className="bg-[#ffffff] text-[#00A551] px-10 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-[#2791D0]/50 transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center gap-3"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>🎯</span>
+                  Start Free Trial
+                </motion.button>
+              </a>
+              <a href="/getstarted">
+                <motion.button
+                  className="border-2 border-white/30 text-white px-10 py-4 rounded-2xl font-bold text-lg backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Schedule Demo
+                </motion.button>
+              </a>
             </div>
 
-            <div className="flex items-center justify-center gap-8 text-white/80">
+            <div className="flex items-center justify-center gap-8 text-white">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">⭐</span>
                 <span className="font-semibold">4.9 Rating</span>

@@ -358,9 +358,11 @@ const CRM: React.FC = () => {
                   Get Started Today
                 </button>
               </a>
-              <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
-                Watch Demo
-              </button>
+              <a href="/getstarted">
+                <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
+                  Watch Demo
+                </button>
+              </a>
             </motion.div>
           </motion.div>
 

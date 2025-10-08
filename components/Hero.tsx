@@ -120,14 +120,14 @@ const Hero = () => {
                 className="space-y-2"
               >
                 <h1
-                  className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
+                  className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-[65px] font-bold leading-tight tracking-tight text-slate-900 max-w-5xl mx-auto`}
                 >
                   Building the Future of
                 </h1>
                 <h1
                   className={`${inter.className} text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-5xl mx-auto`}
                 >
-                  <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent">
                     AI Driven Business
                   </span>
                 </h1>
@@ -142,6 +142,7 @@ const Hero = () => {
               >
                 Deepkore lets you transform ideas into powerful Enterprise
                 Applications
+                <br />
                 <span> that adapt to your business needs.</span>{" "}
                 {/* <span>applications that adapt to your business needs.</span> */}
               </motion.p>

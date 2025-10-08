@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
@@ -51,15 +51,6 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
-    null
-  );
-
-  useEffect(() => {
-    return () => {
-      if (dropdownTimeout) clearTimeout(dropdownTimeout);
-    };
-  }, [dropdownTimeout]);
 
   const navItems: MenuItem[] = [
     { href: "/pricing", label: "Pricing", featured: [] },
@@ -384,25 +375,20 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-3">
               {/* Platform Button */}
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
-                  setActiveSection("platform");
-                  setIsDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  const timeout = setTimeout(() => {
-                    setIsDropdownOpen(false);
-                    setActiveSection(null);
-                  }, 200);
-                  setDropdownTimeout(timeout);
-                }}
-              >
+              <div className="relative">
                 <motion.button
                   className={`flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
                     activeSection === "platform" ? "bg-gray-50" : ""
                   }`}
+                  onClick={() => {
+                    if (activeSection === "platform" && isDropdownOpen) {
+                      setIsDropdownOpen(false);
+                      setActiveSection(null);
+                    } else {
+                      setActiveSection("platform");
+                      setIsDropdownOpen(true);
+                    }
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -433,25 +419,20 @@ const Header: React.FC = () => {
               {/* Solutions Dropdown */}
 
               {/* Product Button */}
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
-                  setActiveSection("product");
-                  setIsDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  const timeout = setTimeout(() => {
-                    setIsDropdownOpen(false);
-                    setActiveSection(null);
-                  }, 200);
-                  setDropdownTimeout(timeout);
-                }}
-              >
+              <div className="relative">
                 <motion.button
                   className={`flex items-center justify-center space-x-2 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
                     activeSection === "product" ? "bg-gray-50" : ""
                   }`}
+                  onClick={() => {
+                    if (activeSection === "product" && isDropdownOpen) {
+                      setIsDropdownOpen(false);
+                      setActiveSection(null);
+                    } else {
+                      setActiveSection("product");
+                      setIsDropdownOpen(true);
+                    }
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -476,25 +457,20 @@ const Header: React.FC = () => {
                   </motion.svg>
                 </motion.button>
               </div>
-              <div
-                className="relative"
-                onMouseEnter={() => {
-                  if (dropdownTimeout) clearTimeout(dropdownTimeout);
-                  setActiveSection("solutions");
-                  setIsDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  const timeout = setTimeout(() => {
-                    setIsDropdownOpen(false);
-                    setActiveSection(null);
-                  }, 200);
-                  setDropdownTimeout(timeout);
-                }}
-              >
+              <div className="relative">
                 <motion.button
                   className={`flex items-center justify-center space-x-2 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
                     activeSection === "solutions" ? "bg-gray-50" : ""
                   }`}
+                  onClick={() => {
+                    if (activeSection === "solutions" && isDropdownOpen) {
+                      setIsDropdownOpen(false);
+                      setActiveSection(null);
+                    } else {
+                      setActiveSection("solutions");
+                      setIsDropdownOpen(true);
+                    }
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -531,16 +507,6 @@ const Header: React.FC = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.95 }}
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    onMouseEnter={() => {
-                      if (dropdownTimeout) clearTimeout(dropdownTimeout);
-                    }}
-                    onMouseLeave={() => {
-                      const timeout = setTimeout(() => {
-                        setIsDropdownOpen(false);
-                        setActiveSection(null);
-                      }, 200);
-                      setDropdownTimeout(timeout);
-                    }}
                   >
                     {activeSection === "platform" && (
                       <div className="flex gap-8">

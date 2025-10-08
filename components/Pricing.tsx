@@ -13,7 +13,7 @@ const Pricing: React.FC = () => {
     {
       name: "Free",
       price: "$0.00",
-      period: "per month",
+
       credits: "Up to 250 credits",
       features: [
         "Essential features",
@@ -26,7 +26,7 @@ const Pricing: React.FC = () => {
     {
       name: "Basic",
       price: "$24.99",
-      period: "per month",
+
       credits: "1000 credits",
       features: [
         "Essential features",
@@ -40,7 +40,7 @@ const Pricing: React.FC = () => {
     {
       name: "Pro",
       price: "$49.00",
-      period: "per month",
+
       credits: "Unlimited credits",
       features: [
         "Full access to all features",
@@ -122,7 +122,7 @@ const Pricing: React.FC = () => {
                   <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 mb-1">
                     {plan.price}
                   </div>
-                  <div className="text-gray-400">{plan.period}</div>
+
                   <div className="text-blue-300 font-semibold mt-2">
                     {plan.credits}
                   </div>
@@ -163,4 +163,3 @@ const Pricing: React.FC = () => {
 };
 
 export default Pricing;
-

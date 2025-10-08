@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
@@ -360,7 +361,7 @@ const DataForm: React.FC = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/3 via-transparent to-indigo-500/3 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-8 lg:px-12">
+        <div className="relative z-10 container mx-auto px-40 lg:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -400,276 +401,20 @@ const DataForm: React.FC = () => {
             </motion.p>
           </motion.div>
 
-          {/* Professional CTA Section */}
-          <div className="flex justify-center mb-16">
-            <motion.div
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-            >
-              <button
-                onClick={() => setIsPreview(false)}
-                className={`px-8 py-4 rounded-xl font-semibold text-base transition-all duration-500 ${
-                  !isPreview
-                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25"
-                    : "text-slate-300 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                Form Builder
-              </button>
-              <button
-                onClick={() => setIsPreview(true)}
-                className={`px-8 py-4 rounded-xl font-semibold text-base transition-all duration-500 ${
-                  isPreview
-                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25"
-                    : "text-slate-300 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                Interactive Demo
-              </button>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {/* Professional Field Palette */}
-            {!isPreview && (
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="lg:col-span-1"
-              >
-                <div className="bg-white/5 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 p-8 sticky top-8">
-                  <motion.h3
-                    className="text-xl font-bold text-white mb-8 tracking-wide"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    Form Elements
-                  </motion.h3>
-                  <div className="space-y-3">
-                    {fieldTypes.map((fieldType, index) => (
-                      <motion.div
-                        key={fieldType.type}
-                        draggable={!isPreview}
-                        onDragStart={() => handleDragStart(fieldType.type)}
-                        onDragEnd={handleDragEnd}
-                        className="flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-xl cursor-move border border-white/5 hover:border-white/20 transition-all duration-300 group select-none"
-                        whileHover={{ scale: 1.02, x: 4 }}
-                        whileTap={{ scale: 0.98 }}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 + index * 0.1 }}
-                      >
-                        <span className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300">
-                          {fieldType.icon}
-                        </span>
-                        <span className="font-medium text-slate-200 group-hover:text-white transition-colors duration-300">
-                          {fieldType.label}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* Professional Form Canvas */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className={`${isPreview ? "lg:col-span-4" : "lg:col-span-3"}`}
-            >
-              <div
-                className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-8 lg:p-12 min-h-[600px]"
-                onDrop={isPreview ? undefined : handleDrop}
-                onDragOver={isPreview ? undefined : handleDragOver}
-              >
-                {isPreview ? (
-                  <div>
-                    <motion.h3
-                      className="text-3xl font-bold text-slate-900 mb-8 tracking-tight"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      Form Demonstration
-                      <span className="ml-4 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
-                        <svg
-                          className="w-4 h-4 mr-1"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        View Only
-                      </span>
-                    </motion.h3>
-                    {fields.length === 0 ? (
-                      <motion.div
-                        className="text-center py-20 text-slate-500"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        <div className="text-7xl mb-6">
-                          {" "}
-                          <Clipboard size={72} />
-                        </div>
-                        <p className="text-2xl font-medium mb-3 text-slate-700">
-                          No elements added yet
-                        </p>
-                        <p className="text-lg text-slate-500">
-                          Switch to Builder mode to add form components
-                        </p>
-                      </motion.div>
-                    ) : (
-                      <motion.form
-                        className="space-y-8 max-w-2xl mx-auto"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        <AnimatePresence>
-                          {fields.map((field, index) => (
-                            <motion.div
-                              key={field.id}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -20 }}
-                              transition={{ delay: 0.1 * index }}
-                              layout
-                            >
-                              {renderField(field, true)}
-                            </motion.div>
-                          ))}
-                        </AnimatePresence>
-                        <motion.button
-                          type="submit"
-                          className="w-full bg-gradient-to-r from-slate-900 to-slate-800 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-xl shadow-slate-900/25 hover:shadow-2xl hover:shadow-slate-900/40 transition-all duration-300 border border-slate-700"
-                          whileHover={{ scale: 1.02, y: -2 }}
-                          whileTap={{ scale: 0.98 }}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.5 + fields.length * 0.1 }}
-                        >
-                          Submit Form
-                        </motion.button>
-                      </motion.form>
-                    )}
-                  </div>
-                ) : (
-                  <div>
-                    <motion.h3
-                      className="text-3xl font-bold text-slate-900 mb-8 tracking-tight"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      Form Builder
-                    </motion.h3>
-                    <motion.div
-                      className="border-2 border-dashed border-slate-300/50 rounded-2xl p-16 text-center mb-8 bg-gradient-to-br from-slate-50/50 to-transparent"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <div className="text-6xl mb-6">
-                        <Target size={60} />
-                      </div>
-                      <p className="text-slate-600 text-xl mb-3 font-medium">
-                        Start crafting your professional form
-                      </p>
-                      <p className="text-slate-500 text-lg">
-                        Drag components from the palette or click to add them
-                      </p>
-                    </motion.div>
-                    <AnimatePresence>
-                      {fields.map((field, index) => (
-                        <React.Fragment key={field.id}>
-                          {/* Drop zone above field */}
-                          {!isPreview && (
-                            <div
-                              className={`h-2 rounded-lg transition-all duration-200 ${
-                                draggedField
-                                  ? "bg-blue-200 opacity-50"
-                                  : "bg-transparent"
-                              }`}
-                              onDrop={(e) => {
-                                e.preventDefault();
-                                if (draggedField && draggedField !== field.id) {
-                                  const fromIndex = fields.findIndex(
-                                    (f) => f.id === draggedField
-                                  );
-                                  moveField(fromIndex, index);
-                                }
-                                setDraggedField(null);
-                              }}
-                              onDragOver={handleDragOver}
-                            />
-                          )}
-                          <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ delay: 0.1 * index }}
-                            layout
-                          >
-                            {renderField(field)}
-                          </motion.div>
-                        </React.Fragment>
-                      ))}
-                      {/* Drop zone at the end */}
-                      {!isPreview && (
-                        <div
-                          className={`h-2 rounded-lg transition-all duration-200 ${
-                            draggedField
-                              ? "bg-blue-200 opacity-50"
-                              : "bg-transparent"
-                          }`}
-                          onDrop={(e) => {
-                            e.preventDefault();
-                            if (draggedField) {
-                              const fromIndex = fields.findIndex(
-                                (f) => f.id === draggedField
-                              );
-                              moveField(fromIndex, fields.length);
-                            }
-                            setDraggedField(null);
-                          }}
-                          onDragOver={handleDragOver}
-                        />
-                      )}
-                    </AnimatePresence>
-                    {fields.length === 0 && (
-                      <motion.div
-                        className="text-center py-20 text-slate-500"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        <div className="text-7xl mb-6">
-                          <Rocket size={72} />
-                        </div>
-                        <p className="text-2xl font-medium mb-3 text-slate-700">
-                          Ready to create
-                        </p>
-                        <p className="text-lg text-slate-500">
-                          Drag components from the palette or click to add them
-                        </p>
-                      </motion.div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </motion.div>
+          <div className="w-full flex justify-center">
+            <Image
+              src="images/dataform1.svg"
+              alt="Deepkore Enterprise Dashboard - WorkFast.ai Style"
+              width={600}
+              height={300}
+              className="mx-auto w-250 h-full object-cover rounded-xl hover:scale-[1.02] transition-all duration-300 mt-8 border border-slate-200/30 bg-white/90 backdrop-blur-sm"
+              priority
+              style={{
+                boxShadow: "0 0 10px 5px rgba(28, 5, 50, 0.5)",
+                //background:
+                //"linear-gradient(90deg, rgba(223, 189, 255, 0.5) 0%, rgba(223, 189, 255, 0.5) 100%)",
+              }}
+            />
           </div>
         </div>
       </section>
@@ -686,7 +431,7 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-8 lg:px-12">
+        <div className="relative z-10 container mx-auto px-40 lg:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -897,7 +642,7 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-8 lg:px-12">
+        <div className="relative z-10 container mx-auto px-40 lg:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1072,7 +817,7 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-8 lg:px-12">
+        <div className="relative z-10 container mx-auto px-40 lg:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

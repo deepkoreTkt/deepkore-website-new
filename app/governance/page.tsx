@@ -18,9 +18,9 @@ const Governance = () => {
       <main className={`${inter.className} min-h-screen`}>
         {/* Hero Section */}
         <section className="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-r from-blue-50 via-white to-green-50">
-          <div className="container mx-auto px-6 lg:px-12 text-center">
+          <div className="container mx-auto px-40 lg:px-40 text-center">
             <div className="max-w-4xl mx-auto space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-black">
                 <span className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                   AI-Powered Governance
                 </span>
@@ -46,8 +46,8 @@ const Governance = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-6 lg:px-12">
+        <section className="py-16 lg:py- bg-white">
+          <div className="container mx-auto px-40 lg:px-40">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Powerful Intelligence Right Where You Need It
@@ -226,7 +226,7 @@ const Governance = () => {
 
         {/* Data Policies Section */}
         <section className="py-16 lg:py-24 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-40 lg:px-40">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Data Policies
@@ -331,7 +331,7 @@ const Governance = () => {
 
         {/* App Monitoring Section */}
         <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-40 lg:px-40">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 App Monitoring
@@ -460,7 +460,7 @@ const Governance = () => {
 
         {/* User Monitoring Section */}
         <section className="py-16 lg:py-24 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-40 lg:px-40">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 User Monitoring
@@ -565,7 +565,7 @@ const Governance = () => {
 
         {/* Role-Based Access Section */}
         <section className="py-16 lg:py-24 bg-white">
-          <div className="container mx-auto px-6 lg:px-12">
+          <div className="container mx-auto px-40 lg:px-40">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                 Role-Based Access
@@ -700,7 +700,7 @@ const Governance = () => {
 
         {/* CTA Section */}
         <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-600 via-teal-500 to-green-600">
-          <div className="container mx-auto px-6 lg:px-12 text-center">
+          <div className="container mx-auto px-40 lg:px-40 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Transform Your Governance?
@@ -709,9 +709,11 @@ const Governance = () => {
                 Join leading enterprises leveraging AI-powered governance to
                 achieve unprecedented control and compliance.
               </p>
-              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Start Your AI Governance Journey
-              </button>
+              <a href="/getstarted">
+                <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                  Start Your AI Governance Journey
+                </button>
+              </a>
             </div>
           </div>
         </section>
@@ -722,4 +724,3 @@ const Governance = () => {
 };
 
 export default Governance;
-

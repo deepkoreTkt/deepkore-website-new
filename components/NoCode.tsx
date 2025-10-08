@@ -3,6 +3,35 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import {
+  Target,
+  Zap,
+  Rocket,
+  Smartphone,
+  Settings,
+  BarChart3,
+  Link,
+  Palette,
+  Bot,
+  Brain,
+  Shield,
+  Users,
+  ShoppingCart,
+  Briefcase,
+  ClipboardList,
+  Package,
+  Calendar,
+  Building2,
+  Hospital,
+  Landmark,
+  Factory,
+  HelpCircle,
+  Eye,
+  Play,
+  DollarSign,
+  RefreshCw,
+  Handshake,
+} from "lucide-react";
 
 const NoCode: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("overview");
@@ -28,13 +57,13 @@ const NoCode: React.FC = () => {
   };
 
   const tabs = [
-    { id: "overview", label: "Overview", icon: "🎯" },
-    { id: "features", label: "Features", icon: "⚡" },
-    { id: "benefits", label: "Benefits", icon: "🚀" },
-    { id: "comparison", label: "vs Low-Code", icon: "⚖️" },
-    { id: "applications", label: "Applications", icon: "🏗️" },
-    { id: "success", label: "Success", icon: "⭐" },
-    { id: "faq", label: "FAQ", icon: "❓" },
+    { id: "overview", label: "Overview", icon: Target },
+    { id: "features", label: "Features", icon: Zap },
+    { id: "benefits", label: "Benefits", icon: Rocket },
+    { id: "comparison", label: "vs Low-Code", icon: Settings },
+    { id: "applications", label: "Applications", icon: Building2 },
+    { id: "success", label: "Success", icon: BarChart3 },
+    { id: "faq", label: "FAQ", icon: HelpCircle },
   ];
 
   return (
@@ -47,10 +76,10 @@ const NoCode: React.FC = () => {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-teal-200/30 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-cyan-200/40 rounded-full blur-lg animate-bounce"></div>
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-green-200/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-teal-300/25 rounded-full blur-xl animate-bounce delay-500"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-teal-200/30 rounded-full blur-xl "></div>
+          <div className="absolute top-40 right-20 w-24 h-24 bg-cyan-200/40 rounded-full blur-lg "></div>
+          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-green-200/20 rounded-full blur-2xl "></div>
+          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-teal-300/25 rounded-full blur-xl"></div>
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
@@ -68,13 +97,13 @@ const NoCode: React.FC = () => {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 bg-teal-100/80 backdrop-blur-sm px-4 py-2 rounded-full border border-teal-200/50">
-                <span className="text-2xl">🚀</span>
+                <Rocket className="w-5 h-5 text-teal-600" />
                 <span className="text-teal-800 font-medium">
                   No-Code Revolution
                 </span>
               </div>
 
-              <h1 className="text-6xl lg:text-7xl font-black bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-6xl lg:text-7xl font-semibold bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent leading-tight">
                 Build Without
                 <br />
                 <span className="text-slate-800">Limits</span>
@@ -88,7 +117,7 @@ const NoCode: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/getstarted">
-                  <button className="group bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
+                  <button className="group bg-[#248aff] hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
                     <span className="flex items-center gap-3">
                       Start Building Free
                       <svg
@@ -109,19 +138,7 @@ const NoCode: React.FC = () => {
                   <button className="group bg-white/80 backdrop-blur-sm hover:bg-white text-slate-800 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-slate-200/50 shadow-lg">
                     <span className="flex items-center gap-3">
                       Watch Demo
-                      <svg
-                        className="w-5 h-5 group-hover:scale-110 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
+                      <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     </span>
                   </button>
                 </a>
@@ -150,13 +167,13 @@ const NoCode: React.FC = () => {
             <div className="relative">
               <div className="relative z-10">
                 {/* Floating Cards */}
-                <div className="grid grid-cols-2 gap-4 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="grid grid-cols-2 gap-4 transform rotate-0 hover:rotate-0 transition-transform duration-500">
                   <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105">
                     <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mb-4">
-                      <span className="text-2xl">📱</span>
+                      <Smartphone className="w-6 h-6 text-teal-600" />
                     </div>
                     <h3 className="font-bold text-slate-800 mb-2">
-                      Mobile Apps
+                      Enterprise Apps
                     </h3>
                     <p className="text-sm text-slate-600">
                       Native iOS & Android apps
@@ -164,7 +181,7 @@ const NoCode: React.FC = () => {
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 mt-8">
                     <div className="w-12 h-12 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4">
-                      <span className="text-2xl">⚡</span>
+                      <Zap className="w-6 h-6 text-cyan-600" />
                     </div>
                     <h3 className="font-bold text-slate-800 mb-2">Workflows</h3>
                     <p className="text-sm text-slate-600">
@@ -173,7 +190,7 @@ const NoCode: React.FC = () => {
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 -mt-4">
                     <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-4">
-                      <span className="text-2xl">📊</span>
+                      <BarChart3 className="w-6 h-6 text-green-600" />
                     </div>
                     <h3 className="font-bold text-slate-800 mb-2">
                       Dashboards
@@ -184,7 +201,7 @@ const NoCode: React.FC = () => {
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 mt-4">
                     <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mb-4">
-                      <span className="text-2xl">🔗</span>
+                      <Link className="w-6 h-6 text-teal-600" />
                     </div>
                     <h3 className="font-bold text-slate-800 mb-2">
                       Integrations
@@ -198,10 +215,8 @@ const NoCode: React.FC = () => {
         </div>
       </section>
 
-      {/* Horizontal Tab Navigation */}
-
       {/* Main Content */}
-      <main className="py-20">
+      <main className="py-0">
         {/* Overview Section */}
         {activeTab === "overview" && (
           <div className="space-y-20">
@@ -260,7 +275,7 @@ const NoCode: React.FC = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-3xl p-8 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <div className="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-3xl p-8 transform rotate-0 hover:rotate-0 transition-transform duration-500">
                     <div className="bg-white rounded-2xl p-6 shadow-xl">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-teal-500 rounded-xl flex items-center justify-center">
@@ -311,25 +326,25 @@ const NoCode: React.FC = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[
                     {
-                      icon: "🎨",
+                      icon: Palette,
                       title: "Visual Canvas",
                       desc: "Drag-and-drop interfaces that make building applications feel like assembling a digital puzzle.",
                       color: "from-teal-500 to-cyan-500",
                     },
                     {
-                      icon: "🤖",
+                      icon: Bot,
                       title: "Smart Automation",
                       desc: "Intelligent workflows that adapt to your business needs with simple visual logic.",
                       color: "from-cyan-500 to-teal-500",
                     },
                     {
-                      icon: "🧠",
+                      icon: Brain,
                       title: "AI Assistance",
                       desc: "Built-in AI that suggests optimizations and helps you build better applications faster.",
                       color: "from-green-400 to-teal-500",
                     },
                     {
-                      icon: "🔗",
+                      icon: Link,
                       title: "Integration Hub",
                       desc: "Connect with any system through pre-built connectors and APIs seamlessly.",
                       color: "from-teal-500 to-orange-400",
@@ -342,7 +357,11 @@ const NoCode: React.FC = () => {
                       <div
                         className={`w-16 h-16 bg-gradient-to-r ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                       >
-                        <span className="text-2xl">{tech.icon}</span>
+                        {typeof tech.icon === "string" ? (
+                          <span className="text-2xl">{tech.icon}</span>
+                        ) : (
+                          <tech.icon className="w-8 h-8 text-white" />
+                        )}
                       </div>
                       <h3 className="text-xl font-bold text-slate-800 mb-4">
                         {tech.title}
@@ -374,37 +393,37 @@ const NoCode: React.FC = () => {
                 {
                   title: "Visual Application Designer",
                   desc: "Create stunning, responsive applications with our intuitive drag-and-drop designer. Build complex workflows and user interfaces without any coding knowledge.",
-                  icon: "🎨",
+                  icon: Palette,
                   color: "from-teal-500 to-cyan-500",
                 },
                 {
                   title: "Intelligent Workflow Automation",
                   desc: "Design sophisticated business processes with visual workflow builders. Automate approvals, notifications, and data routing with conditional logic.",
-                  icon: "⚙️",
+                  icon: Settings,
                   color: "from-cyan-500 to-teal-500",
                 },
                 {
                   title: "AI-Powered Analytics & Insights",
                   desc: "Built-in analytics that provide real-time insights into your application performance and user behavior. Make data-driven decisions effortlessly.",
-                  icon: "📊",
+                  icon: BarChart3,
                   color: "from-orange-400 to-teal-500",
                 },
                 {
                   title: "Seamless Integration Capabilities",
                   desc: "Connect with 100+ systems through pre-built connectors. REST APIs, webhooks, and custom integrations ensure your applications work with your existing tech stack.",
-                  icon: "🔗",
+                  icon: Link,
                   color: "from-teal-500 to-orange-400",
                 },
                 {
                   title: "Enterprise Security & Governance",
                   desc: "Role-based access control, audit trails, and compliance features ensure your applications meet the highest security standards.",
-                  icon: "🛡️",
+                  icon: Shield,
                   color: "from-cyan-500 to-orange-400",
                 },
                 {
                   title: "Mobile-First Responsive Design",
                   desc: "Every application you build is automatically optimized for desktop, tablet, and mobile devices. Reach your users wherever they are.",
-                  icon: "📱",
+                  icon: Smartphone,
                   color: "from-orange-400 to-cyan-500",
                 },
               ].map((feature, index) => (
@@ -413,7 +432,13 @@ const NoCode: React.FC = () => {
                   className={`bg-gradient-to-br ${feature.color} rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-300 shadow-xl`}
                 >
                   <div className="flex items-start gap-6">
-                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <div className="text-4xl mb-4">
+                      {typeof feature.icon === "string" ? (
+                        <span>{feature.icon}</span>
+                      ) : (
+                        <feature.icon className="w-10 h-10 text-white" />
+                      )}
+                    </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold mb-4">
                         {feature.title}
@@ -446,42 +471,42 @@ const NoCode: React.FC = () => {
                   {
                     title: "Democratize Innovation",
                     desc: "Empower every team member to contribute to digital transformation. No-code breaks down silos between business and IT.",
-                    icon: "🚀",
+                    icon: Rocket,
                     stats: "100%",
                     statLabel: "Team Involvement",
                   },
                   {
                     title: "Accelerate Time-to-Market",
                     desc: "Build and deploy applications in days, not months. Respond to market changes with unprecedented speed.",
-                    icon: "⚡",
+                    icon: Zap,
                     stats: "10x",
                     statLabel: "Faster Delivery",
                   },
                   {
                     title: "Reduce Development Costs",
                     desc: "Eliminate the need for extensive developer resources. Focus your IT budget on strategic initiatives.",
-                    icon: "💰",
+                    icon: DollarSign,
                     stats: "95%",
                     statLabel: "Cost Reduction",
                   },
                   {
                     title: "Ensure Scalability & Security",
                     desc: "Enterprise-grade architecture that grows with your business. Built-in security and compliance features.",
-                    icon: "🛡️",
+                    icon: Shield,
                     stats: "∞",
                     statLabel: "Scalability",
                   },
                   {
                     title: "Foster Continuous Improvement",
                     desc: "Iterate rapidly based on user feedback. Make changes instantly without complex deployments.",
-                    icon: "🔄",
+                    icon: RefreshCw,
                     stats: "24/7",
                     statLabel: "Deployment",
                   },
                   {
                     title: "Bridge the Skills Gap",
                     desc: "Address the global developer shortage by enabling citizen development across your organization.",
-                    icon: "🤝",
+                    icon: Handshake,
                     stats: "0",
                     statLabel: "Coding Required",
                   },
@@ -492,7 +517,11 @@ const NoCode: React.FC = () => {
                   >
                     <div className="text-center mb-6">
                       <div className="text-5xl mb-4 group-hover:animate-bounce">
-                        {benefit.icon}
+                        {typeof benefit.icon === "string" ? (
+                          <span>{benefit.icon}</span>
+                        ) : (
+                          <benefit.icon className="w-12 h-12 text-teal-600" />
+                        )}
                       </div>
                       <div className="text-3xl font-black text-teal-600 mb-1">
                         {benefit.stats}
@@ -529,7 +558,7 @@ const NoCode: React.FC = () => {
               <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <div className="bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl p-8 text-white">
                   <div className="text-center mb-8">
-                    <div className="text-6xl mb-4">🎯</div>
+                    <Target className="w-16 h-16 text-white mx-auto mb-4" />
                     <h3 className="text-3xl font-bold mb-4">
                       No-Code: True Accessibility
                     </h3>
@@ -558,7 +587,7 @@ const NoCode: React.FC = () => {
 
                 <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
                   <div className="text-center mb-8">
-                    <div className="text-6xl mb-4">⚙️</div>
+                    <Settings className="w-16 h-16 text-teal-600 mx-auto mb-4" />
                     <h3 className="text-3xl font-bold mb-4 text-slate-800">
                       Low-Code: Professional Flexibility
                     </h3>
@@ -609,47 +638,47 @@ const NoCode: React.FC = () => {
                 {[
                   {
                     name: "Customer Portals",
-                    icon: "👥",
+                    icon: Users,
                     desc: "Self-service platforms for customers",
                   },
                   {
                     name: "Workflow Automation",
-                    icon: "⚙️",
+                    icon: Settings,
                     desc: "Streamline business processes",
                   },
                   {
                     name: "Data Dashboards",
-                    icon: "📊",
+                    icon: BarChart3,
                     desc: "Real-time analytics and reporting",
                   },
                   {
                     name: "Mobile Apps",
-                    icon: "📱",
+                    icon: Smartphone,
                     desc: "Native mobile applications",
                   },
                   {
                     name: "E-commerce Platforms",
-                    icon: "🛒",
+                    icon: ShoppingCart,
                     desc: "Online stores and marketplaces",
                   },
                   {
                     name: "HR Management Systems",
-                    icon: "👔",
+                    icon: Briefcase,
                     desc: "Employee lifecycle management",
                   },
                   {
                     name: "Project Management Tools",
-                    icon: "📋",
+                    icon: ClipboardList,
                     desc: "Team collaboration platforms",
                   },
                   {
                     name: "Inventory Systems",
-                    icon: "📦",
+                    icon: Package,
                     desc: "Stock and supply chain management",
                   },
                   {
                     name: "Booking & Reservation",
-                    icon: "📅",
+                    icon: Calendar,
                     desc: "Appointment and resource scheduling",
                   },
                 ].map((app, index) => (
@@ -659,7 +688,11 @@ const NoCode: React.FC = () => {
                   >
                     <div className="text-center">
                       <div className="text-5xl mb-6 group-hover:animate-bounce">
-                        {app.icon}
+                        {typeof app.icon === "string" ? (
+                          <span>{app.icon}</span>
+                        ) : (
+                          <app.icon className="w-12 h-12 text-teal-400" />
+                        )}
                       </div>
                       <h3 className="text-xl font-bold mb-4 text-white">
                         {app.name}
@@ -731,7 +764,7 @@ const NoCode: React.FC = () => {
                     achievement: "300% faster app deployment",
                     description:
                       "Built a comprehensive inventory management system in 2 weeks instead of 6 months.",
-                    icon: "🏪",
+                    icon: Building2,
                     color: "from-orange-400 to-teal-500",
                   },
                   {
@@ -739,7 +772,7 @@ const NoCode: React.FC = () => {
                     achievement: "95% reduction in paperwork",
                     description:
                       "Digitized patient intake and appointment scheduling, eliminating manual processes.",
-                    icon: "🏥",
+                    icon: Hospital,
                     color: "from-teal-500 to-cyan-500",
                   },
                   {
@@ -747,7 +780,7 @@ const NoCode: React.FC = () => {
                     achievement: "$2.5M annual savings",
                     description:
                       "Automated compliance reporting and risk assessment workflows.",
-                    icon: "🏦",
+                    icon: Landmark,
                     color: "from-cyan-500 to-orange-400",
                   },
                   {
@@ -755,7 +788,7 @@ const NoCode: React.FC = () => {
                     achievement: "50% improvement in efficiency",
                     description:
                       "Created real-time production monitoring and quality control dashboards.",
-                    icon: "🏭",
+                    icon: Factory,
                     color: "from-orange-400 to-cyan-500",
                   },
                 ].map((story, index) => (
@@ -767,7 +800,11 @@ const NoCode: React.FC = () => {
                       <div
                         className={`w-16 h-16 bg-gradient-to-r ${story.color} rounded-2xl flex items-center justify-center`}
                       >
-                        <span className="text-3xl">{story.icon}</span>
+                        {typeof story.icon === "string" ? (
+                          <span className="text-3xl">{story.icon}</span>
+                        ) : (
+                          <story.icon className="w-8 h-8 text-white" />
+                        )}
                       </div>
                       <div>
                         <div className="text-orange-300 font-bold text-lg">
@@ -887,41 +924,20 @@ const NoCode: React.FC = () => {
               business with Deepkore&apos;s no-code platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                START FREE TRIAL
-              </button>
-              <button className="bg-white hover:bg-slate-100 text-slate-800 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                SCHEDULE DEMO
-              </button>
+              <a href="/getstarted" className="w-full sm:w-auto">
+                <button className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                  START FREE TRIAL
+                </button>
+              </a>
+              <a href="/getstarted" className="w-full sm:w-auto">
+                <button className="bg-white hover:bg-slate-100 text-slate-800 px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                  SCHEDULE DEMO
+                </button>
+              </a>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Back to Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`fixed bottom-8 right-8 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white p-4 rounded-2xl shadow-2xl transition-all duration-300 transform hover:scale-110 z-50 ${
-          scrollProgress > 10
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4"
-        }`}
-        aria-label="Back to top"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </button>
 
       <Footer />
     </div>

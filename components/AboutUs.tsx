@@ -85,7 +85,7 @@ const futureLinks = [
     title: "Discover a better way to work",
     description:
       "Be part of our mission to make work more satisfying and productive for everyone",
-    buttonText: "Careers",
+    buttonText: "Get Started",
     buttonLink: "/getstarted",
     icon: "Users",
   },
@@ -233,7 +233,7 @@ const AboutUs: React.FC = () => {
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#00A551]/20 to-[#2791D0]/20 rounded-xl flex items-center justify-center mr-4">
-                  <BarChart3 className="w-8 h-8" />
+                  <BarChart3 className="w-8 h-8 text-[#248aff]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
@@ -251,7 +251,7 @@ const AboutUs: React.FC = () => {
               </p>
               <a
                 href="/analytics"
-                className="inline-flex items-center text-[#00A551] font-semibold hover:text-[#00A551]/80 transition-colors"
+                className="inline-flex items-center text-[#248aff] font-semibold hover:text-[#00A551]/80 transition-colors"
               >
                 Explore Analytics →
               </a>
@@ -267,14 +267,14 @@ const AboutUs: React.FC = () => {
             >
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#2791D0]/20 to-[#2791D0]/20 rounded-xl flex items-center justify-center mr-4">
-                  <UsersRound className="w-8 h-8" />
+                  <UsersRound className="w-8 h-8 text-[#248aff]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">
-                    Deepkore Teams
+                    Virtual Development Environment
                   </h3>
                   <p className="text-gray-600">
-                    Seamless collaboration platform
+                    Collaborative workspace for teams
                   </p>
                 </div>
               </div>
@@ -284,10 +284,10 @@ const AboutUs: React.FC = () => {
                 anywhere in the world.
               </p>
               <a
-                href="/termsandservices"
-                className="inline-flex items-center text-[#edf3f5] font-semibold hover:text-[#edf3f5]/80 transition-colors"
+                href="/dataform"
+                className="inline-flex items-center text-[#248aff] font-semibold hover:text-[#248aff]]/80 transition-colors"
               >
-                Explore Teams →
+                Explore Datafrom →
               </a>
             </motion.div>
           </div>
@@ -324,7 +324,9 @@ const AboutUs: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="mb-4">{getIcon(promise.icon, "w-12 h-12")}</div>
+                <div className="mb-4 text-[#248aff]">
+                  {getIcon(promise.icon, "w-12 h-12")}
+                </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   {promise.title}
                 </h3>
@@ -367,7 +369,9 @@ const AboutUs: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="mb-6">{getIcon(link.icon, "w-14 h-14")}</div>
+                <div className="mb-6 text-[#248aff]">
+                  {getIcon(link.icon, "w-14 h-14")}
+                </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">
                   {link.title}
                 </h3>
@@ -451,17 +455,19 @@ const AboutUs: React.FC = () => {
             Join thousands of teams already using Deepkore to streamline their
             projects
           </motion.p>
-          <motion.button
-            className="bg-[#edf3f5] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2791D0]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start Your Free Trial
-          </motion.button>
+          <a href="/getstarted">
+            <motion.button
+              className="bg-[#edf3f5] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#edf3f5]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Free Trial
+            </motion.button>
+          </a>
         </div>
       </section>
 

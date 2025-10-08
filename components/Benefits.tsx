@@ -259,7 +259,7 @@ const Benefits: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+          <div className="bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent">
             <h3 className="text-2xl font-bold mb-2">
               We use advanced AI tools to enhance our systems
             </h3>

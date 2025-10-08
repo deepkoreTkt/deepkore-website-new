@@ -105,7 +105,7 @@ const TargetAudience: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Drive your digital transformation forward with
           </h2>
-          <h2 className=" bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-4">
+          <h2 className=" bg-[#248aff] bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-4">
             Deepkore
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
@@ -172,7 +172,7 @@ const TargetAudience: React.FC = () => {
                   <div className="mt-2">
                     <button
                       onClick={() => router.push("/getstarted")}
-                      className="bg-blue-600 text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition-colors"
+                      className="bg-[#248aff] text-white text-xs px-3 py-1 rounded hover:bg-blue-700 transition-colors"
                     >
                       {stats[currentSlide].link}
                     </button>

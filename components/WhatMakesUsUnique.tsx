@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
 import Image from "next/image";
+import { Rocket, Microscope, Handshake } from "lucide-react";
 
 const WhatMakesUsUnique: React.FC = () => {
   const fadeInUp = {
@@ -37,7 +38,7 @@ const WhatMakesUsUnique: React.FC = () => {
       title: "True No-Code Innovation",
       subtitle:
         "Build enterprise applications effortlessly using visual designers and natural language - no coding required.",
-      image: "/classic04.png",
+      image: "/whydeepkroe.svg",
       cta: "Explore Our Platform",
       ctaLink: "/feature",
       stats: "50% Faster Development",
@@ -48,7 +49,7 @@ const WhatMakesUsUnique: React.FC = () => {
       title: "AI-Powered Automation",
       subtitle:
         "Transform your workflows with intelligent automation that learns and adapts to your business needs.",
-      image: "/classic02.png",
+      image: "/images/process/process2.svg",
       cta: "Discover AI Features",
       ctaLink: "/feature",
       stats: "70% Efficiency Boost",
@@ -67,11 +68,11 @@ const WhatMakesUsUnique: React.FC = () => {
     },
   ];
 
-  const achievements = [
-    { title: "D-U-N-S Verified", year: "2025", icon: "🏆" },
-    { title: "ISO 27001 Certified", year: "2024", icon: "🔒" },
-    { title: "Best No-Code Platform", year: "2024", icon: "🎯" },
-  ];
+  // const achievements = [
+  //   { title: "D-U-N-S Verified", year: "2025", icon: "🏆" },
+  //   { title: "ISO 27001 Certified", year: "2024", icon: "🔒" },
+  //   { title: "Best No-Code Platform", year: "2024", icon: "🎯" },
+  // ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -201,7 +202,7 @@ const WhatMakesUsUnique: React.FC = () => {
                       alt={feature.title}
                       className="w-full h-96 object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div> */}
                   </motion.div>
                 </div>
               </motion.div>
@@ -211,7 +212,7 @@ const WhatMakesUsUnique: React.FC = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      {/* <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div className="text-center mb-16" {...fadeInUp}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -230,7 +231,7 @@ const WhatMakesUsUnique: React.FC = () => {
             whileInView="whileInView"
             viewport={{ once: true }}
           >
-            {achievements.map((achievement, idx) => (
+            {/* {achievements.map((achievement, idx) => (
               <motion.div
                 key={idx}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300"
@@ -245,10 +246,10 @@ const WhatMakesUsUnique: React.FC = () => {
                   {achievement.year}
                 </div>
               </motion.div>
-            ))}
+            ))} 
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* ROI Section */}
       <section className="py-24 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
@@ -292,7 +293,7 @@ const WhatMakesUsUnique: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-6xl md:text-7xl font-bold mb-4 opacity-20">
+                <div className="text-6xl md:text-7xl font-bold mb-4 ">
                   {item.metric}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
@@ -321,19 +322,19 @@ const WhatMakesUsUnique: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
-                icon: "🚀",
+                icon: Rocket,
                 title: "Customer-First Approach",
                 description:
                   "Every decision we make is guided by our commitment to your success and growth.",
               },
               {
-                icon: "🔬",
+                icon: Microscope,
                 title: "Continuous Innovation",
                 description:
                   "We invest heavily in R&D to bring you cutting-edge solutions that stay ahead of the curve.",
               },
               {
-                icon: "🤝",
+                icon: Handshake,
                 title: "Trusted Partnership",
                 description:
                   "We build long-term relationships based on transparency, reliability, and mutual success.",
@@ -351,7 +352,7 @@ const WhatMakesUsUnique: React.FC = () => {
                   className="w-20 h-20 bg-gradient-to-r from-[#00A551]/10 to-[#2791D0]/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                   whileHover={{ rotate: 5 }}
                 >
-                  <span className="text-4xl">{item.icon}</span>
+                  <item.icon className="text-4xl text-[#00A551]" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {item.title}

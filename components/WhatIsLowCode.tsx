@@ -53,18 +53,11 @@ const WhatIsLowCode: React.FC = () => {
       </div>
 
       {/* Hero Section - Full Width */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-teal-400 to-green-600 text-white py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20"></div>
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
-        {/* Enhanced animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/30 to-transparent rounded-full animate-float-slow"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-bl from-teal-400/30 to-transparent rounded-full animate-float-medium"></div>
-          <div className="absolute -bottom-10 left-1/4 w-40 h-40 bg-gradient-to-tr from-green-400/30 to-transparent rounded-full animate-float-fast"></div>
-          <div className="absolute bottom-40 right-1/3 w-36 h-36 bg-gradient-to-tl from-blue-500/30 to-transparent rounded-full animate-float-medium"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-600/20 to-green-600/20 rounded-full animate-pulse-slow blur-3xl"></div>
-        </div>
-        ;
+      <section
+        className="relative bg-cover bg-center bg-no-repeat text-white py-40 overflow-hidden"
+        style={{ backgroundImage: "url('/bg1122.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>;
         <div className="relative container mx-auto px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="animate-fade-in-up">
@@ -683,7 +676,7 @@ const WhatIsLowCode: React.FC = () => {
               {/* Industry forecasts */}
               <div
                 id="low-code-industry-forecasts"
-                className="bg-gradient-to-r from-[#00A551] to-[#2791D0] rounded-2xl p-8 text-white"
+                className="bg-[#f5f7f7] rounded-2xl p-8 text-gray-900"
               >
                 <h2 className="text-3xl font-bold mb-8">
                   Low-code industry forecasts
@@ -700,7 +693,7 @@ const WhatIsLowCode: React.FC = () => {
                       key={index}
                       className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
                     >
-                      <p className="text-white font-medium">{forecast}</p>
+                      <p className="text-gray-900 font-medium">{forecast}</p>
                     </div>
                   ))}
                 </div>

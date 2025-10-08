@@ -6,6 +6,16 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Image from "next/image";
 import Processicon from "../../components/Processicon";
+import {
+  Target,
+  Zap,
+  Users,
+  RefreshCw,
+  Shuffle,
+  BarChart2,
+  Clock,
+  FileText,
+} from "lucide-react";
 
 const Process: React.FC = () => {
   const features = [
@@ -13,28 +23,28 @@ const Process: React.FC = () => {
       title: "Tailored Processes",
       description:
         "Customize processes and ensure greater alignment with business goals and processes that fit like a glove",
-      icon: "🎯",
+      icon: <Target size={28} />,
       image: "/images/process-1.webp", // Placeholder, replace with actual image
     },
     {
       title: "Enhanced Productivity",
       description:
         "Reduce manual effort and errors by automating processes, enabling teams to focus on more strategic tasks",
-      icon: "⚡",
+      icon: <Zap size={28} />,
       image: "/images/process-2.webp",
     },
     {
       title: "Cross-functional Synergy",
       description:
         "Foster teamwork across departments, break down silos, and promote cross-functional cooperation",
-      icon: "🤝",
+      icon: <Users size={28} />,
       image: "/images/process-3.webp",
     },
     {
       title: "Long-term Adaptability",
       description:
         "Ensure that the system remains aligned with the evolving needs of the business and maintains process excellence",
-      icon: "🔄",
+      icon: <RefreshCw size={28} />,
       image: "/images/process-4.webp",
     },
   ];
@@ -44,16 +54,16 @@ const Process: React.FC = () => {
       title: "Workflow",
       description:
         "Streamline your business processes with intuitive workflow management that guides tasks from start to finish.",
-      icon: "�",
+      icon: <Shuffle size={24} />,
       details:
         "Create efficient workflows that automate routine tasks and improve team collaboration.",
-      image: "/classic02.png",
+      image: "/images/process/processgif.gif",
     },
     {
       title: "Chart Communication",
       description:
         "Visualize data and communicate insights effectively through interactive charts and dashboards.",
-      icon: "📈",
+      icon: <BarChart2 size={24} />,
       details:
         "Transform complex data into clear, actionable visualizations for better decision-making.",
       image: "/images/process/process3.svg",
@@ -62,7 +72,7 @@ const Process: React.FC = () => {
       title: "Deadline Notification",
       description:
         "Stay on track with automated deadline notifications that keep your team informed and accountable.",
-      icon: "⏰",
+      icon: <Clock size={24} />,
       details:
         "Never miss important deadlines with customizable alerts and reminders.",
       image: "/images/process/process2.svg",
@@ -71,7 +81,7 @@ const Process: React.FC = () => {
       title: "Customizable Form",
       description:
         "Create tailored forms that match your specific process requirements without any coding.",
-      icon: "�",
+      icon: <FileText size={24} />,
       details:
         "Design forms with custom fields, validation rules, and conditional logic to fit your needs.",
       image: "/images/process/process1.svg",
@@ -139,29 +149,33 @@ const Process: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.button
-              className="group relative bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Get Started Free</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2791D0] to-[#00A551] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </motion.button>
-            <motion.button
-              className="group border-2 border-[#00A551] text-[#00A551] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#00A551] hover:text-white transition-all duration-500 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center gap-2">
-                Book a Demo
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  →
-                </motion.span>
-              </span>
-            </motion.button>
+            <a href="/getstarted">
+              <motion.button
+                className="group relative bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Get Started Free</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#2791D0] to-[#00A551] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.button>
+            </a>
+            <a href="/contact">
+              <motion.button
+                className="group border-2 border-[#00A551] text-[#00A551] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#00A551] hover:text-white transition-all duration-500 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="flex items-center gap-2">
+                  Book a Demo
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    →
+                  </motion.span>
+                </span>
+              </motion.button>
+            </a>
           </motion.div>
 
           {/* Trust indicators */}

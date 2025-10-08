@@ -117,9 +117,20 @@ const Footer: React.FC = () => {
     // { name: "Education & E-learning", href: "/education-elearning" },
     // { name: "Logistics & Transportation", href: "/logistics-transportation" },
   ];
+  const Blog = [
+    { name: "AI Powered lowcode", href: "/blog" },
+    { name: "Data Security in no code", href: "/blog" },
+    { name: "Digital Transformation", href: "/blog" },
+  ];
+  const Usecase = [
+    { name: "Supply Chain Management", href: "/usecase" },
+    { name: "Customer Portal", href: "/usecase" },
+    { name: "Manufacturing Execution", href: "/usecase" },
+    { name: "Asset Management Portal", href: "/usecase" },
+    { name: "More", href: "/usecase" },
+  ];
 
   const quickLinks = [
-    { name: "Blog", href: "/blog" },
     { name: "Pricing", href: "/pricing" },
     { name: "FAQ", href: "/faq" },
     { name: "About Us", href: "/aboutus" },
@@ -136,7 +147,7 @@ const Footer: React.FC = () => {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 lg:px-40 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-12">
             {/* Company Info */}
             <motion.div
               className="lg:col-span-1"
@@ -216,6 +227,28 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
+              <h4 className="text-black font-semibold mb-3 text-lg">Blog</h4>
+              <ul className="space-y-4">
+                {Blog.map((link) => (
+                  <li key={link.name}>
+                    <motion.a
+                      href={link.href}
+                      className="text-gray-600 hover:text-green-400 transition-colors duration-300 text-base"
+                      whileHover={{ x: 5 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <h4 className="text-black font-semibold mb-3 text-lg">Product</h4>
               <ul className="space-y-4">
                 {productLinks.map((link) => (
@@ -231,7 +264,28 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
             </motion.div>
-
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-black font-semibold mb-3 text-lg">UseCase</h4>
+              <ul className="space-y-4">
+                {Usecase.map((link) => (
+                  <li key={link.name}>
+                    <motion.a
+                      href={link.href}
+                      className="text-gray-600 hover:text-green-400 transition-colors duration-300 text-base"
+                      whileHover={{ x: 5 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
             <motion.div
               className="lg:col-span-1"
               initial={{ opacity: 0, y: 30 }}
@@ -310,7 +364,7 @@ const Footer: React.FC = () => {
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white py-3 px-6 rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
+                  className="w-full bg-[#248aff] text-white py-3 px-6 rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.98 }}
                 >

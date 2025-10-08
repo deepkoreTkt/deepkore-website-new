@@ -88,42 +88,42 @@ const About: React.FC = () => {
 
   const values = [
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Zap className="w-8 h-8 text-[#248aff]" />,
       title: "Innovate with Purpose",
       description:
         "We are driven by a relentless curiosity to push the boundaries of what's possible with AI. But for us, innovation isn't just about creating new technology; it's about solving real-world business problems. We build intelligent solutions with a clear purpose: to deliver practical, powerful, and transformative results for our customers.",
       color: "from-blue-500 to-purple-500",
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-8 h-8 text-[#248aff]" />,
       title: "Customer Success is Our Success",
       description:
         "We view our customers as partners on a shared journey of transformation. Your goals are our goals. We are deeply committed to understanding your challenges and are not satisfied until our platform delivers a tangible, measurable impact on your ROI and operational efficiency. Your success is the ultimate measure of our own.",
       color: "from-green-500 to-blue-500",
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
+      icon: <Rocket className="w-8 h-8 text-[#248aff]" />,
       title: "Move with Agility and Excellence",
       description:
         "In the modern enterprise, speed is critical, but it can never come at the expense of quality. We operate with a sense of urgency to help you innovate faster, while holding ourselves to the highest standards of excellence, security, and reliability. We deliver robust, enterprise-grade solutions with the speed and agility your business demands.",
       color: "from-orange-500 to-red-500",
     },
     {
-      icon: <BookOpen className="w-8 h-8" />,
+      icon: <BookOpen className="w-8 h-8 text-[#248aff]" />,
       title: "Empowerment Through Simplicity",
       description:
         "Our mission is to democratize the power of advanced AI. We believe the most powerful solutions are those that are accessible to everyone. We are passionate about transforming complex technology into simple, intuitive tools that empower your business experts—the people who know your processes best—to build, innovate, and drive change from within.",
       color: "from-cyan-500 to-blue-500",
     },
     {
-      icon: <Shield className="w-8 h-8" />,
+      icon: <Shield className="w-8 h-8 text-[#248aff]" />,
       title: "Act with Integrity, Always",
       description:
         "Trust is the currency of every great partnership. We are committed to upholding the highest standards of transparency, honesty, and security in everything we do. From protecting your data to communicating openly, we believe that acting with unwavering integrity is the only way to build lasting relationships with our customers, partners, and team.",
       color: "from-gray-500 to-slate-500",
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-8 h-8 text-[#248aff]" />,
       title: "Champion Ethical AI",
       description:
         "We are committed to developing AI that is ethical, transparent, and beneficial to society. We prioritize responsible AI practices, ensuring our technology enhances human potential without compromising values or privacy.",
@@ -348,20 +348,9 @@ const About: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <motion.div
-                      className="text-6xl md:text-8xl mb-8"
-                      animate={{
-                        rotate: [0, 10, -10, 0],
-                        scale: [1, 1.1, 1],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
+                    {/* <motion.div className="text-6xl md:text-8xl mb-8">
                       🎯
-                    </motion.div>
+                    </motion.div> */}
                     <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">
                       Our Mission & Approach
                     </h3>
@@ -370,7 +359,7 @@ const About: React.FC = () => {
                       believe that the people with the best understanding of a
                       business process should be empowered to improve it.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-[#248aff]">
                       {[
                         {
                           icon: <Rocket className="w-8 h-8" />,
@@ -442,7 +431,7 @@ const About: React.FC = () => {
                               whileHover={{ scale: 1.05 }}
                               transition={{ type: "spring", stiffness: 300 }}
                             >
-                              <div className="text-2xl mb-2">
+                              <div className="text-2xl mb-2 text-[#248affBring your team together ]">
                                 {milestone.icon}
                               </div>
                               <h4 className="text-xl font-bold text-black mb-2">
@@ -552,18 +541,7 @@ const About: React.FC = () => {
                         viewport={{ once: true }}
                       >
                         <div className="flex items-start space-x-6">
-                          <motion.div
-                            className="text-5xl"
-                            animate={{
-                              rotate: [0, 10, -10, 0],
-                            }}
-                            transition={{
-                              duration: 4,
-                              repeat: Infinity,
-                              delay: index * 0.5,
-                              ease: "easeInOut",
-                            }}
-                          >
+                          <motion.div className="text-5xl">
                             {value.icon}
                           </motion.div>
                           <div className="flex-1">
@@ -599,7 +577,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <a href="/get-started">
+          <a href="/getstarted">
             <motion.button
               className="px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-lg"
               whileHover={{ scale: 1.05, y: -2 }}

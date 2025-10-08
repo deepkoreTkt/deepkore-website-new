@@ -23,7 +23,7 @@ const Features: React.FC = () => {
       subtitle: "Complete Sales Lifecycle",
       description:
         "Streamline your entire sales process with AI-powered automation for order processing, reporting, and customer management.",
-      gradient: "bg-blue-500/50",
+      gradient: "bg-[#248aff]",
       icon: <ShoppingCart className="w-16 h-16" />,
       image: "/images/sales.svg",
       bgPattern:
@@ -44,7 +44,7 @@ const Features: React.FC = () => {
       subtitle: "Customer Relationship Management",
       description:
         "Comprehensive customer relationship management with AI-driven insights, automated workflows, and personalized customer experiences.",
-      gradient: "bg-red-500/50",
+      gradient: "bg-[#248aff]",
       icon: <Users className="w-16 h-16" />,
       image: "/crm.png",
       bgPattern:
@@ -65,7 +65,7 @@ const Features: React.FC = () => {
       subtitle: "AI-Powered Workflows",
       description:
         "Boost service desk performance with AI-powered workflows, intuitive automation, and actionable analytics.",
-      gradient: "bg-green-500/50",
+      gradient: "bg-[#248aff]",
       icon: <Settings className="w-5 h-5" />,
       image: "/images/it.svg",
       bgPattern:
@@ -84,7 +84,7 @@ const Features: React.FC = () => {
       subtitle: "Smart Asset Tracking",
       description:
         "Intelligent asset management with automated tracking, maintenance scheduling, and comprehensive reporting capabilities.",
-      gradient: "bg-purple-500/50",
+      gradient: "bg-[#248aff]",
       icon: <Building className="w-16 h-16" />,
       image: "/images/asset.svg",
       bgPattern:
@@ -125,9 +125,9 @@ const Features: React.FC = () => {
       subtitle: "Smart Procurement Solutions",
       description:
         "AI-enhanced procurement management with intelligent vendor selection, automated ordering, and comprehensive tracking.",
-      gradient: "bg-indigo-500/50",
+      gradient: "bg-[#248aff]",
       icon: <Package className="w-16 h-16" />,
-      image: "/classic04.png",
+      image: "images/procurement.svg",
       bgPattern:
         "radial-gradient(circle at 80% 20%, rgba(216, 191, 216, 0.15) 0%, transparent 60%)",
       stats: { vendors: "2K+", orders: "15K+", savings: "25%" },
@@ -146,9 +146,9 @@ const Features: React.FC = () => {
       subtitle: "Production Excellence",
       description:
         "End-to-end manufacturing management with AI-driven production planning, quality control, and performance optimization.",
-      gradient: "bg-teal-500/50",
+      gradient: "bg-[#248aff]",
       icon: <Factory className="w-16 h-16" />,
-      image: "/classic02.png",
+      image: "images/manufacturing.svg",
       bgPattern:
         "radial-gradient(circle at 40% 60%, rgba(175, 238, 238, 0.15) 0%, transparent 60%)",
       stats: { production: "100K+", quality: "99.5%", efficiency: "85%" },
@@ -212,7 +212,7 @@ const Features: React.FC = () => {
             viewport={{ once: true }}
           >
             Deepkore is evolving with
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#248aff] to-[#00d24b]">
               {" "}
               AI at its core
             </span>
@@ -239,7 +239,7 @@ const Features: React.FC = () => {
                   onClick={() => setActiveFeature(index)}
                   className={`px-3 py-2 lg:px-6 lg:py-3 rounded-xl font-semibold transition-all duration-300 text-sm lg:text-base ${
                     activeFeature === index
-                      ? "bg-gradient-to-r from-blue-600 to-green-600 text-white shadow-lg"
+                      ? "bg-gradient-to-r from-[#248aff] to-[#00d24b] text-white shadow-lg"
                       : "text-gray-600 hover:text-black hover:bg-gray-200/50"
                   }`}
                   whileHover={{ scale: 1.05 }}
@@ -293,7 +293,7 @@ const Features: React.FC = () => {
                   </motion.h3>
 
                   <motion.h4
-                    className="text-xl sm:text-2xl lg:text-3xl text-blue-700 mb-4 lg:mb-6 font-medium"
+                    className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-4 lg:mb-6 font-medium"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -325,7 +325,7 @@ const Features: React.FC = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                       >
-                        <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-[#248aff] rounded-full flex-shrink-0"></div>
                         <span className="text-sm lg:text-base font-medium">
                           {item}
                         </span>
@@ -343,15 +343,15 @@ const Features: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <motion.div
-                  className={`relative h-80 sm:h-96 lg:h-[450px] bg-gradient-to-br ${features[activeFeature].gradient} rounded-3xl shadow-2xl overflow-hidden border border-white/10`}
+                  className={`relative h-80 sm:h-96 lg:h-[450px] bg-[#ffffff] rounded-3xl shadow-2xl overflow-hidden border border-white/10`}
                   whileHover={{ scale: 1.02, rotateY: 2 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   {/* Background Pattern */}
-                  <div
+                  {/* <div
                     className="absolute inset-0 opacity-20"
                     style={{ background: features[activeFeature].bgPattern }}
-                  />
+                  /> */}
 
                   {/* Animated Elements */}
                   <div className="absolute inset-0 flex items-center justify-center p-4 lg:p-6">
@@ -367,7 +367,7 @@ const Features: React.FC = () => {
                       //   ease: "easeInOut",
                       // }}
                     >
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                      <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                         <Image
                           src={features[activeFeature].image ?? "/fallback.png"}
                           alt={features[activeFeature].title}
@@ -407,7 +407,7 @@ const Features: React.FC = () => {
         >
           <Link href={features[activeFeature].link}>
             <motion.button
-              className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-sm lg:text-base"
+              className="px-6 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-[#248aff] to-[#00d24b] text-white font-semibold rounded-full shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 text-sm lg:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
