@@ -367,7 +367,7 @@ const Features: React.FC = () => {
                       //   ease: "easeInOut",
                       // }}
                     >
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                      <div className="relative rounded-2xl overflow-hidden border-4 bg-[#ffffff] border-gray-200 shadow-lg shadow-gray-500/10">
                         <Image
                           src={features[activeFeature].image ?? "/fallback.png"}
                           alt={features[activeFeature].title}

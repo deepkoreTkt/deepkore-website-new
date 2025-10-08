@@ -294,7 +294,7 @@ const ITServiceDesk: React.FC = () => {
       <Header />
       <section
         id="itservicedesk"
-        className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50"
+        className="relative py-30 overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50"
       >
         {/* Background Elements */}
         <div className="absolute inset-0">

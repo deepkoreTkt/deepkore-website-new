@@ -756,10 +756,12 @@ const Healthcare: React.FC = () => {
                     </div>
 
                     {/* Learn More Link */}
-                    <div className="mt-6 flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    <a href="/getstarted">
+                      <div className="mt-6 flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </a>
                   </div>
                 </motion.div>
               ))}

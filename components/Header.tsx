@@ -71,14 +71,11 @@ const Header: React.FC = () => {
       </h3>
       <div className={!isFirstSection ? "grid grid-cols-2 gap-4" : ""}>
         {section.items.map((item, idx) => (
-          <motion.a
+          <a
             key={item.href}
             href={item.href}
             className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
             onClick={() => setIsDropdownOpen(false)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: idx * 0.1 }}
           >
             <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0">
               {item.icon ? <item.icon className="w-4 h-4" /> : null}
@@ -91,7 +88,7 @@ const Header: React.FC = () => {
                 {item.description}
               </div>
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
     </div>
@@ -377,7 +374,7 @@ const Header: React.FC = () => {
               {/* Platform Button */}
               <div className="relative">
                 <motion.button
-                  className={`flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
+                  className={`flex items-center justify-center space-x-1 px-2.5 py-1 text-black hover:text-gray-900 font-medium text-sm rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
                     activeSection === "platform" ? "bg-gray-50" : ""
                   }`}
                   onClick={() => {
@@ -398,13 +395,6 @@ const Header: React.FC = () => {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    animate={{
-                      rotate:
-                        isDropdownOpen && activeSection === "platform"
-                          ? 180
-                          : 0,
-                    }}
-                    transition={{ duration: 0.2 }}
                   >
                     <path
                       strokeLinecap="round"
@@ -520,7 +510,7 @@ const Header: React.FC = () => {
                               <div className="space-y-2">
                                 {menuSections.platform[1].items.map(
                                   (item, itemIdx) => (
-                                    <motion.a
+                                    <a
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
@@ -528,15 +518,6 @@ const Header: React.FC = () => {
                                         setIsDropdownOpen(false);
                                         setActiveSection(null);
                                       }}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{
-                                        delay: itemIdx * 0.05,
-                                        duration: 0.2,
-                                        ease: [0.16, 1, 0.3, 1],
-                                      }}
-                                      whileHover={{ scale: 1.02, x: 4 }}
-                                      whileTap={{ scale: 0.98 }}
                                     >
                                       <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
@@ -551,7 +532,7 @@ const Header: React.FC = () => {
                                           {item.description}
                                         </div>
                                       </div>
-                                    </motion.a>
+                                    </a>
                                   )
                                 )}
                               </div>
@@ -563,7 +544,7 @@ const Header: React.FC = () => {
                               <div className="space-y-2">
                                 {menuSections.platform[2].items.map(
                                   (item, itemIdx) => (
-                                    <motion.a
+                                    <a
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
@@ -571,15 +552,6 @@ const Header: React.FC = () => {
                                         setIsDropdownOpen(false);
                                         setActiveSection(null);
                                       }}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{
-                                        delay: itemIdx * 0.05,
-                                        duration: 0.2,
-                                        ease: [0.16, 1, 0.3, 1],
-                                      }}
-                                      whileHover={{ scale: 1.02, x: 4 }}
-                                      whileTap={{ scale: 0.98 }}
                                     >
                                       <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
@@ -591,7 +563,7 @@ const Header: React.FC = () => {
                                           {item.label}
                                         </div>
                                       </div>
-                                    </motion.a>
+                                    </a>
                                   )
                                 )}
                               </div>
@@ -604,23 +576,14 @@ const Header: React.FC = () => {
                       <div className="grid grid-cols-2 gap-8">
                         {menuSections.products[0].items.map(
                           (item: MenuItem, idx) => (
-                            <motion.a
+                            <a
                               key={item.href}
                               href={item.href}
                               className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100/50 block"
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{
-                                delay: idx * 0.1,
-                                duration: 0.3,
-                                ease: [0.16, 1, 0.3, 1],
-                              }}
                               onClick={() => {
                                 setIsDropdownOpen(false);
                                 setActiveSection(null);
                               }}
-                              whileHover={{ scale: 1.03, y: -2 }}
-                              whileTap={{ scale: 0.98 }}
                             >
                               <div className="space-y-4">
                                 <div className="flex items-center gap-3">
@@ -647,7 +610,7 @@ const Header: React.FC = () => {
                                           feature: FeaturedItem,
                                           fidx: number
                                         ) => (
-                                          <motion.a
+                                          <a
                                             key={fidx}
                                             href={feature.href}
                                             className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200"
@@ -655,21 +618,19 @@ const Header: React.FC = () => {
                                               setIsDropdownOpen(false);
                                               setActiveSection(null);
                                             }}
-                                            whileHover={{ scale: 1.02, x: 2 }}
-                                            whileTap={{ scale: 0.98 }}
                                           >
                                             {feature.icon ? (
                                               <feature.icon className="w-4 h-4" />
                                             ) : null}
                                             <span>{feature.label}</span>
-                                          </motion.a>
+                                          </a>
                                         )
                                       )}
                                     </div>
                                   </div>
                                 )}
                               </div>
-                            </motion.a>
+                            </a>
                           )
                         )}
                       </div>
@@ -677,7 +638,7 @@ const Header: React.FC = () => {
                     {activeSection === "product" && (
                       <div className="mt-6 pt-4 border-t">
                         {menuSections.products[1].items.map((item, idx) => (
-                          <motion.a
+                          <a
                             key={item.href}
                             href={item.href}
                             className="flex items-center justify-end gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors duration-200"
@@ -685,12 +646,10 @@ const Header: React.FC = () => {
                               setIsDropdownOpen(false);
                               setActiveSection(null);
                             }}
-                            whileHover={{ scale: 1.05, x: -2 }}
-                            whileTap={{ scale: 0.95 }}
                           >
                             <span>{item.label}</span>
                             <item.icon className="w-5 h-5" />
-                          </motion.a>
+                          </a>
                         ))}
                       </div>
                     )}
@@ -706,7 +665,7 @@ const Header: React.FC = () => {
                               <div className="space-y-2">
                                 {menuSections.solutions[1].items.map(
                                   (item, itemIdx) => (
-                                    <motion.a
+                                    <a
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
@@ -714,15 +673,6 @@ const Header: React.FC = () => {
                                         setIsDropdownOpen(false);
                                         setActiveSection(null);
                                       }}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{
-                                        delay: itemIdx * 0.05,
-                                        duration: 0.2,
-                                        ease: [0.16, 1, 0.3, 1],
-                                      }}
-                                      whileHover={{ scale: 1.02, x: 4 }}
-                                      whileTap={{ scale: 0.98 }}
                                     >
                                       <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
@@ -737,7 +687,7 @@ const Header: React.FC = () => {
                                           {item.description}
                                         </div>
                                       </div>
-                                    </motion.a>
+                                    </a>
                                   )
                                 )}
                               </div>
@@ -749,7 +699,7 @@ const Header: React.FC = () => {
                               <div className="space-y-2">
                                 {menuSections.solutions[2].items.map(
                                   (item, itemIdx) => (
-                                    <motion.a
+                                    <a
                                       key={item.href}
                                       href={item.href}
                                       className="flex items-start gap-3 py-2.5 text-gray-600 hover:bg-gray-50/80 rounded transition-all duration-200 group"
@@ -757,15 +707,6 @@ const Header: React.FC = () => {
                                         setIsDropdownOpen(false);
                                         setActiveSection(null);
                                       }}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{
-                                        delay: itemIdx * 0.05,
-                                        duration: 0.2,
-                                        ease: [0.16, 1, 0.3, 1],
-                                      }}
-                                      whileHover={{ scale: 1.02, x: 4 }}
-                                      whileTap={{ scale: 0.98 }}
                                     >
                                       <span className="text-base w-7 h-7 flex items-center justify-center bg-blue-50 text-blue-600 rounded shrink-0 group-hover:bg-blue-100 transition-colors duration-200">
                                         {item.icon ? (
@@ -780,7 +721,7 @@ const Header: React.FC = () => {
                                           {item.description}
                                         </div>
                                       </div>
-                                    </motion.a>
+                                    </a>
                                   )
                                 )}
                               </div>

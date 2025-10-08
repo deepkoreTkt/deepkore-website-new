@@ -143,7 +143,7 @@ const Manufacturing: React.FC = () => {
       `}</style>
       <div>
         <Header />
-        <section className="relative py-20 bg-gray-50">
+        <section className="relative py-30 bg-gray-50">
           {/* Background Elements */}
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
@@ -169,7 +169,7 @@ const Manufacturing: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <div className="px-6 py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-                    <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">
+                    <span className="text-blue-500 font-medium text-sm tracking-wider uppercase">
                       Manufacturing ERP Solutions
                     </span>
                   </div>
@@ -205,12 +205,16 @@ const Manufacturing: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
-                  <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg">
-                    Book a Free Demo
-                  </button>
-                  <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
-                    Start Building
-                  </button>
+                  <a href="/getstarted">
+                    <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg">
+                      Book a Free Demo
+                    </button>
+                  </a>
+                  <a href="/contact">
+                    <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
+                      Start Building
+                    </button>
+                  </a>
                 </motion.div>
               </div>
 

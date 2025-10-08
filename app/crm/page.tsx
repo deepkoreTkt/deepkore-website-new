@@ -149,36 +149,48 @@ const CRM: React.FC = () => {
       title: "Data Silos",
       description:
         "Customer data scattered across multiple disconnected systems and platforms.",
+      bgColor: "bg-red-50",
+      iconColor: "text-red-600",
     },
     {
       icon: "Clock",
       title: "Manual Processes",
       description:
         "Time-consuming manual data entry and follow-up tasks that slow down sales teams.",
+      bgColor: "bg-orange-50",
+      iconColor: "text-orange-600",
     },
     {
       icon: "Eye",
       title: "Lack of Visibility",
       description:
         "Limited visibility into customer interactions and sales pipeline performance.",
+      bgColor: "bg-yellow-50",
+      iconColor: "text-yellow-600",
     },
     {
       icon: "Phone",
       title: "Inefficient Communication",
       description:
         "Poor coordination between sales, marketing, and customer service teams.",
+      bgColor: "bg-amber-50",
+      iconColor: "text-amber-600",
     },
     {
       icon: "TrendingDown",
       title: "Inaccurate Forecasting",
       description:
         "Difficulty in predicting sales trends and customer behavior due to outdated data.",
+      bgColor: "bg-pink-50",
+      iconColor: "text-pink-600",
     },
     {
       icon: "Shield",
       title: "Data Security Concerns",
       description:
         "Risks associated with storing sensitive customer information across multiple systems.",
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600",
     },
   ];
 
@@ -188,36 +200,48 @@ const CRM: React.FC = () => {
       title: "Unified Customer View",
       description:
         "Consolidate all customer data into a single, comprehensive platform for better insights.",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600",
     },
     {
       icon: "Workflow",
       title: "Automated Workflows",
       description:
         "Streamline lead management and follow-up processes with intelligent automation.",
+      bgColor: "bg-green-50",
+      iconColor: "text-green-600",
     },
     {
       icon: "PieChart",
       title: "Real-Time Analytics",
       description:
         "Get instant visibility into sales performance and customer behavior patterns.",
+      bgColor: "bg-teal-50",
+      iconColor: "text-teal-600",
     },
     {
       icon: "Link",
       title: "Integrated Communication",
       description:
         "Connect all customer-facing teams with seamless collaboration tools.",
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600",
     },
     {
       icon: "Brain",
       title: "Predictive Analytics",
       description:
         "Leverage AI-powered forecasting to predict sales trends and customer needs.",
+      bgColor: "bg-indigo-50",
+      iconColor: "text-indigo-600",
     },
     {
       icon: "Lock",
       title: "Secure Data Management",
       description:
         "Enterprise-grade security with compliance features for sensitive customer data.",
+      bgColor: "bg-emerald-50",
+      iconColor: "text-emerald-600",
     },
   ];
 
@@ -276,7 +300,7 @@ const CRM: React.FC = () => {
       <Header />
       <section
         id="crm"
-        className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50"
+        className="relative py-30 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50"
       >
         {/* Background Elements */}
         <div className="absolute inset-0">
@@ -301,7 +325,7 @@ const CRM: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="px-6 py-3 bg-gradient-to-r from-blue-500/10 to-green-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
-                <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">
+                <span className="text-blue-600 font-medium text-sm tracking-wider uppercase">
                   CRM Solutions
                 </span>
               </div>
@@ -315,7 +339,7 @@ const CRM: React.FC = () => {
               viewport={{ once: true }}
             >
               Transform Customer Relationships with
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-cyan-400 block mt-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-500 to-green-500 block mt-2">
                 AI Enabled CRM
               </span>
             </motion.h2>
@@ -617,7 +641,7 @@ const CRM: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className={`${challenge.bgColor} backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 group`}
                   whileHover={{ scale: 1.02, y: -5 }}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -627,7 +651,7 @@ const CRM: React.FC = () => {
                   <div className="mb-4">
                     {getIcon(
                       challenge.icon,
-                      "text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300"
+                      `text-4xl md:text-5xl ${challenge.iconColor} group-hover:scale-110 transition-transform duration-300`
                     )}
                   </div>
                   <h4 className="text-lg md:text-xl font-bold text-black mb-3 leading-tight">
@@ -674,7 +698,7 @@ const CRM: React.FC = () => {
               {solutions.map((solution, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gradient-to-br from-blue-50/60 to-green-50/60 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className={`${solution.bgColor} backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 group`}
                   whileHover={{ scale: 1.02, y: -5 }}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -684,7 +708,7 @@ const CRM: React.FC = () => {
                   <div className="mb-4">
                     {getIcon(
                       solution.icon,
-                      "text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300"
+                      `text-4xl md:text-5xl ${solution.iconColor} group-hover:scale-110 transition-transform duration-300`
                     )}
                   </div>
                   <h4 className="text-lg md:text-xl font-bold text-black mb-3 leading-tight">

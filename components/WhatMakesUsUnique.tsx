@@ -165,27 +165,28 @@ const WhatMakesUsUnique: React.FC = () => {
                       Average improvement with our platform
                     </div>
                   </div>
-
-                  <motion.button
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {feature.cta}
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <a href={feature.ctaLink}>
+                    <motion.button
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </motion.button>
+                      {feature.cta}
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </motion.button>
+                  </a>
                 </div>
 
                 {/* Image */}

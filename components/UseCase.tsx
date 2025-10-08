@@ -22,7 +22,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
       category: "Healthcare",
-      link: "/use-cases/virtual-care",
+      link: "/blog",
     },
     {
       title: "Order Management System",
@@ -37,7 +37,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
       category: "E-commerce",
-      link: "/use-cases/order-management",
+      link: "/blog",
     },
     {
       title: "Performance Management",
@@ -52,7 +52,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&h=300&fit=crop&crop=center",
       category: "HR",
-      link: "/use-cases/performance-management",
+      link: "/blog",
     },
     {
       title: "Supply Chain Management",
@@ -67,7 +67,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center",
       category: "Logistics",
-      link: "/use-cases/supply-chain",
+      link: "/blog",
     },
     {
       title: "Home Banking Portal",
@@ -82,7 +82,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center",
       category: "Banking",
-      link: "/use-cases/home-banking",
+      link: "/blog",
     },
     {
       title: "Insurance Portals & Apps",
@@ -97,7 +97,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&crop=center",
       category: "Insurance",
-      link: "/use-cases/insurance-portals",
+      link: "/blog",
     },
     {
       title: "Intelligent Automation",
@@ -112,7 +112,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
       category: "Automation",
-      link: "/use-cases/intelligent-automation",
+      link: "/blog",
     },
     {
       title: "Customer Portal",
@@ -127,7 +127,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center",
       category: "Customer Service",
-      link: "/use-cases/customer-portal",
+      link: "/blog",
     },
     {
       title: "Learning Management System",
@@ -142,7 +142,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
       category: "Education",
-      link: "/use-cases/learning-management",
+      link: "/blog",
     },
     {
       title: "Asset Management Portal",
@@ -157,7 +157,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center",
       category: "Operations",
-      link: "/use-cases/asset-management",
+      link: "/blog",
     },
     {
       title: "Government Services Portal",
@@ -172,7 +172,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop&crop=center",
       category: "Government",
-      link: "/use-cases/government-services",
+      link: "/blog",
     },
     {
       title: "Manufacturing Execution",
@@ -187,7 +187,7 @@ const UseCase: React.FC = () => {
       image:
         "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
       category: "Manufacturing",
-      link: "/use-cases/manufacturing-execution",
+      link: "/blog",
     },
   ];
 
@@ -381,4 +381,3 @@ const UseCase: React.FC = () => {
 };
 
 export default UseCase;
-

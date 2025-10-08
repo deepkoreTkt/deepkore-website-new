@@ -391,47 +391,6 @@ const AboutUs: React.FC = () => {
       </section>
 
       {/* Trusted Companies Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Trusted by 74,000+ Businesses Worldwide
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of companies that have transformed their operations
-              with Deepkore
-            </p>
-          </motion.div>
-
-          {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {companyLogos.map((company, idx) => (
-              <motion.div
-                key={idx}
-                className="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={company.logo}
-                  alt={company.name}
-                  width={120}
-                  height={60}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
-          </div> */}
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">

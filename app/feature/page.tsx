@@ -358,7 +358,7 @@ export default function Feature() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Powerful Features
             </h2>
             <h3 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-8">

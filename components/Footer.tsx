@@ -96,16 +96,6 @@ const Footer: React.FC = () => {
     { name: "CRM", href: "/crm" },
     { name: "IT Service Desk", href: "/itservicedesk" },
     { name: "More", href: "/all-products" },
-    // { name: "Human Resource", href: "/human-resource" },
-    // { name: "Data Management Tools", href: "/data-management-tools" },
-    // { name: "Procurement", href: "/procurement" },
-    // { name: "Finance", href: "/finance" },
-    // { name: "Admin & Ops", href: "/admin-ops" },
-    // { name: "Customer Support", href: "/customer-support" },
-    // { name: "Sales", href: "/sales" },
-    // { name: "Marketing", href: "/marketing" },
-    // { name: "CRM", href: "/crm" },
-    // { name: "IT Service Desk", href: "/it-service-desk" },
   ];
 
   const solutionLinks = [
@@ -166,7 +156,7 @@ const Footer: React.FC = () => {
                     className="relative"
                   />
                 </div>
-                <p className="text-gray-600 text-lg leading-relaxed max-w-md">
+                <p className="text-gray-600 text-lg font-bold leading-relaxed max-w-md">
                   Building the Future of AI Driven Business
                 </p>
               </div>
@@ -202,7 +192,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-black font-semibold mb-6 text-lg">
+              <h4 className="text-black font-semibold mb-3 text-lg">
                 Platform
               </h4>
               <ul className="space-y-4">

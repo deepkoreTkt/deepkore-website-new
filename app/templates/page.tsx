@@ -46,7 +46,6 @@ const Templates = () => {
         "Training Programs",
         "Engagement Surveys",
       ],
-      image: "/classic04.png",
       category: "Human Resource",
       href: "/templates/hr",
     },
@@ -334,13 +333,17 @@ const Templates = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
-              Browse All Templates
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
-              Watch Demo
-            </button>
+            <a href="/getstarted">
+              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                Browse All Templates
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </a>
+            <a href="/getstarted">
+              <button className="px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
+                Watch Demo
+              </button>
+            </a>
           </motion.div>
         </motion.div>
 
@@ -425,25 +428,6 @@ const Templates = () => {
               </div>
 
               {/* Hover Image Preview */}
-              <AnimatePresence>
-                {hoveredTemplate === template.title && (
-                  <motion.div
-                    className="absolute top-4 right-4 w-20 h-20 rounded-lg overflow-hidden border-2 border-white/50 shadow-lg"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Image
-                      src={template.image}
-                      alt={template.title}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.div>
           ))}
         </motion.div>

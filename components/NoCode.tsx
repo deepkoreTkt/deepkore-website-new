@@ -117,7 +117,7 @@ const NoCode: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/getstarted">
-                  <button className="group bg-[#248aff] hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg">
+                  <button className="group bg-[#248aff] hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg   hover:shadow-2xl shadow-lg">
                     <span className="flex items-center gap-3">
                       Start Building Free
                       <svg

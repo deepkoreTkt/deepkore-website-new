@@ -60,9 +60,9 @@ const Process: React.FC = () => {
       image: "/images/process/processgif.gif",
     },
     {
-      title: "Chart Communication",
+      title: "Chat Communication",
       description:
-        "Visualize data and communicate insights effectively through interactive charts and dashboards.",
+        "Facilitate real-time communication within your processes to enhance collaboration and decision-making.",
       icon: <BarChart2 size={24} />,
       details:
         "Transform complex data into clear, actionable visualizations for better decision-making.",
@@ -179,22 +179,6 @@ const Process: React.FC = () => {
           </motion.div>
 
           {/* Trust indicators */}
-          <motion.div
-            className="mt-16 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <p className="text-gray-500 mb-4">
-              Trusted by 74,000+ businesses worldwide
-            </p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              <div className="text-2xl">🏆</div>
-              <div className="text-2xl">⭐</div>
-              <div className="text-2xl">🎯</div>
-              <div className="text-2xl">🚀</div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -477,20 +461,22 @@ const Process: React.FC = () => {
                   </p>
 
                   {/* Enterprise-style CTA */}
-                  <motion.button
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn More
-                    <motion.span
-                      className="ml-2"
-                      animate={{ x: [0, 3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
+                  <a href="/getstarted">
+                    <motion.button
+                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      →
-                    </motion.span>
-                  </motion.button>
+                      Learn More
+                      <motion.span
+                        className="ml-2"
+                        animate={{ x: [0, 3, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        →
+                      </motion.span>
+                    </motion.button>
+                  </a>
                 </div>
 
                 {/* Image Section */}
@@ -556,7 +542,7 @@ const Process: React.FC = () => {
             Join thousands of businesses already using Deepkore to streamline
             their operations
           </motion.p>
-          <a href="/getstarted" target="_blank" rel="noopener noreferrer">
+          <a href="/getstarted">
             <motion.button
               className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ffffff]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
               initial={{ opacity: 0, y: 30 }}

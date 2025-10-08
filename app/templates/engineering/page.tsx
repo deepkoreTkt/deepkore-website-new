@@ -341,13 +341,17 @@ const Engineering = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-2">
-                  <button className="flex-1 py-2 px-4 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
-                    Preview
-                  </button>
-                  <button className="flex-1 py-2 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-1">
-                    Deploy
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
+                  <a href="/getstarted">
+                    <button className="flex-1 py-2 px-4 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                      Preview
+                    </button>
+                  </a>
+                  <a href="/contact">
+                    <button className="flex-1 py-2 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-1">
+                      Deploy
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

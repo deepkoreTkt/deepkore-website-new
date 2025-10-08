@@ -1,6 +1,24 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  Globe,
+  ChevronDown,
+  ArrowUp,
+  Rocket,
+  Users,
+  Zap,
+  Target,
+  DollarSign,
+  Shield,
+  BarChart2,
+  Smartphone,
+  Wrench,
+  Link as LucideLink,
+  Bot,
+  RefreshCw,
+} from "lucide-react";
 const WhatIsLowCode: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -81,17 +99,7 @@ const WhatIsLowCode: React.FC = () => {
               >
                 <span className="flex items-center gap-2">
                   FREE 14-DAY TRIAL
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
               <a
@@ -100,19 +108,7 @@ const WhatIsLowCode: React.FC = () => {
               >
                 <span className="flex items-center gap-2">
                   GET A DEMO
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
+                  <Globe className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
             </div>
@@ -399,43 +395,43 @@ const WhatIsLowCode: React.FC = () => {
                       title: "Freedom to own your automation",
                       description:
                         "Meet changing business needs with various customization and configuration capabilities, unparalleled agility, and resilience.",
-                      icon: "🚀",
+                      icon: <Rocket className="w-8 h-8 text-[#00A551]" />,
                     },
                     {
                       title: "Improved business-IT alignment",
                       description:
                         "Build up technical literacy and turn your business-line employees into citizen developers. Low-code tools democratize software development.",
-                      icon: "🤝",
+                      icon: <Users className="w-8 h-8 text-[#2791D0]" />,
                     },
                     {
                       title: "Faster digital transformation",
                       description:
                         "Digital transformation is about people. Make your employees the change champions by allowing them to develop the digital solutions they need.",
-                      icon: "⚡",
+                      icon: <Zap className="w-8 h-8 text-[#00A551]" />,
                     },
                     {
                       title: "Enhanced customer experience (CX)",
                       description:
                         "Create omnichannel customer journeys, mobile-first apps, and AI-enabled solutions to keep up with the latest CX trends.",
-                      icon: "🎯",
+                      icon: <Target className="w-8 h-8 text-[#2791D0]" />,
                     },
                     {
                       title: "Reduced total cost of ownership (TCO)",
                       description:
                         "Build more digital assets with the same resources while reducing maintenance costs. Repurpose and reuse system modules.",
-                      icon: "💰",
+                      icon: <DollarSign className="w-8 h-8 text-[#00A551]" />,
                     },
                     {
                       title: "Improved governance and risk management",
                       description:
                         "Configure the system&#39;s security using admin tools, access control, and threat assessments with third-party attested certifications.",
-                      icon: "🛡️",
+                      icon: <Shield className="w-8 h-8 text-[#2791D0]" />,
                     },
                     {
                       title: "Higher productivity",
                       description:
                         "Empower your employees to automate repetitive tasks and make changes to workflows and business apps to increase their productivity.",
-                      icon: "📈",
+                      icon: <BarChart2 className="w-8 h-8 text-[#00A551]" />,
                     },
                   ].map((benefit, index) => (
                     <div
@@ -594,15 +590,60 @@ const WhatIsLowCode: React.FC = () => {
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { name: "Web Applications", icon: "🌐" },
-                    { name: "Mobile Applications", icon: "📱" },
-                    { name: "Workflow Automation", icon: "⚙️" },
-                    { name: "Customer Portals", icon: "👥" },
-                    { name: "Internal Tools", icon: "🛠️" },
-                    { name: "Data Analytics Dashboards", icon: "📊" },
-                    { name: "Integration Solutions", icon: "🔗" },
-                    { name: "AI-Powered Applications", icon: "🤖" },
-                    { name: "Legacy System Modernization", icon: "🔄" },
+                    {
+                      name: "Web Applications",
+                      icon: (
+                        <Globe className="w-12 h-12 text-[#00A551] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Mobile Applications",
+                      icon: (
+                        <Smartphone className="w-12 h-12 text-[#2791D0] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Workflow Automation",
+                      icon: (
+                        <Wrench className="w-12 h-12 text-[#00A551] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Customer Portals",
+                      icon: (
+                        <Users className="w-12 h-12 text-[#2791D0] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Internal Tools",
+                      icon: (
+                        <Wrench className="w-12 h-12 text-[#00A551] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Data Analytics Dashboards",
+                      icon: (
+                        <BarChart2 className="w-12 h-12 text-[#2791D0] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Integration Solutions",
+                      icon: (
+                        <LucideLink className="w-12 h-12 text-[#00A551] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "AI-Powered Applications",
+                      icon: (
+                        <Bot className="w-12 h-12 text-[#2791D0] mx-auto mb-4" />
+                      ),
+                    },
+                    {
+                      name: "Legacy System Modernization",
+                      icon: (
+                        <RefreshCw className="w-12 h-12 text-[#00A551] mx-auto mb-4" />
+                      ),
+                    },
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -746,21 +787,11 @@ const WhatIsLowCode: React.FC = () => {
                         <h3 className="text-lg font-semibold text-gray-900 pr-4">
                           {faq.question}
                         </h3>
-                        <svg
+                        <ChevronDown
                           className={`w-5 h-5 text-[#00A551] transform transition-transform duration-200 ${
                             expandedFaq === index ? "rotate-180" : ""
                           }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
+                        />
                       </button>
                       <div
                         className={`overflow-hidden transition-all duration-300 ${
@@ -817,19 +848,7 @@ const WhatIsLowCode: React.FC = () => {
         }`}
         aria-label="Back to top"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
+        <ArrowUp className="w-6 h-6" />
       </button>
     </div>
   );
