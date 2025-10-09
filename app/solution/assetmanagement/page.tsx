@@ -23,6 +23,67 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const CircularProgress: React.FC<{
+  percentage: number;
+  color: string;
+  size?: number;
+}> = ({ percentage, color, size = 80 }) => {
+  const radius = (size - 10) / 2;
+  const circumference = radius * 2 * Math.PI;
+  const strokeDasharray = circumference;
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case "blue":
+        return { bg: "text-blue-600", stroke: "#2563eb" };
+      case "green":
+        return { bg: "text-green-600", stroke: "#16a34a" };
+      case "purple":
+        return { bg: "text-purple-600", stroke: "#9333ea" };
+      case "orange":
+        return { bg: "text-orange-600", stroke: "#ea580c" };
+      default:
+        return { bg: "text-blue-600", stroke: "#2563eb" };
+    }
+  };
+
+  const colorClasses = getColorClasses(color);
+
+  return (
+    <div className="relative inline-flex items-center justify-center">
+      <svg width={size} height={size} className="transform -rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="currentColor"
+          strokeWidth="8"
+          fill="transparent"
+          className="text-gray-200"
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke={colorClasses.stroke}
+          strokeWidth="8"
+          fill="transparent"
+          strokeDasharray={strokeDasharray}
+          strokeDashoffset={strokeDashoffset}
+          strokeLinecap="round"
+          className="transition-all duration-1000 ease-out"
+        />
+      </svg>
+      <div
+        className={`absolute inset-0 flex items-center justify-center ${colorClasses.bg}`}
+      >
+        <span className="text-lg font-bold">{percentage}%</span>
+      </div>
+    </div>
+  );
+};
+
 const AssetManagement: React.FC = () => {
   const keyFeatures = [
     {
@@ -113,6 +174,7 @@ const AssetManagement: React.FC = () => {
         "Optimize asset utilization and maintenance costs with predictive maintenance and efficient resource allocation.",
       metric: "25%",
       metricLabel: "Cost Reduction",
+      color: "green",
     },
     {
       icon: TrendingUp,
@@ -121,6 +183,7 @@ const AssetManagement: React.FC = () => {
         "Maximize asset performance and lifespan through better tracking, maintenance, and lifecycle management.",
       metric: "40%",
       metricLabel: "Utilization Increase",
+      color: "blue",
     },
     {
       icon: Eye,
@@ -129,6 +192,7 @@ const AssetManagement: React.FC = () => {
         "Real-time visibility into asset locations, status, and performance across your entire organization.",
       metric: "100%",
       metricLabel: "Asset Visibility",
+      color: "purple",
     },
     {
       icon: Clock,
@@ -137,6 +201,7 @@ const AssetManagement: React.FC = () => {
         "Reduce unplanned downtime with predictive maintenance and proactive asset management strategies.",
       metric: "60%",
       metricLabel: "Downtime Reduction",
+      color: "orange",
     },
   ];
 
@@ -147,6 +212,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Time-consuming manual processes for asset inventory, maintenance records, and documentation.",
       impact: "Administrative Burden",
+      color: "red",
     },
     {
       icon: AlertTriangle,
@@ -154,6 +220,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Unexpected equipment failures and maintenance issues leading to costly production interruptions.",
       impact: "Operational Disruption",
+      color: "orange",
     },
     {
       icon: Calculator,
@@ -161,6 +228,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Poor visibility into asset costs, utilization rates, and maintenance expenses.",
       impact: "Financial Waste",
+      color: "yellow",
     },
     {
       icon: Shield,
@@ -168,6 +236,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Difficulty maintaining regulatory compliance and audit trails for critical assets.",
       impact: "Legal Risk",
+      color: "purple",
     },
     {
       icon: Search,
@@ -175,6 +244,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Lost or misplaced assets due to inadequate tracking and inventory management systems.",
       impact: "Resource Management",
+      color: "blue",
     },
     {
       icon: BarChart3,
@@ -182,6 +252,7 @@ const AssetManagement: React.FC = () => {
       description:
         "Lack of real-time data on asset performance, utilization, and maintenance needs.",
       impact: "Strategic Planning",
+      color: "teal",
     },
   ];
 
@@ -257,7 +328,15 @@ const AssetManagement: React.FC = () => {
       `}</style>
 
       <div className="relative min-h-screen bg-white">
-        <Header />
+        {/* Floating Background Elements */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-10 w-16 h-16 bg-green-500/10 rounded-full blur-lg animate-pulse delay-3000"></div>
+          <div className="absolute top-1/3 left-1/3 w-28 h-28 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-20 h-20 bg-teal-500/10 rounded-full blur-xl animate-pulse delay-2500"></div>
+        </div>
 
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
@@ -594,13 +673,29 @@ const AssetManagement: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="w-8 h-8" />
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <CircularProgress
+                      percentage={parseInt(benefit.metric.replace("%", ""))}
+                      color={benefit.color}
+                      size={64}
+                    />
                   </div>
 
                   {/* Metric */}
                   <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                    <div
+                      className={`text-4xl font-bold mb-2 ${
+                        benefit.color === "blue"
+                          ? "text-blue-600"
+                          : benefit.color === "green"
+                          ? "text-green-600"
+                          : benefit.color === "purple"
+                          ? "text-purple-600"
+                          : benefit.color === "orange"
+                          ? "text-orange-600"
+                          : "text-blue-600"
+                      }`}
+                    >
                       {benefit.metric}
                     </div>
                     <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
@@ -652,13 +747,41 @@ const AssetManagement: React.FC = () => {
                 >
                   {/* Impact Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                        challenge.color === "red"
+                          ? "bg-red-100 text-red-800"
+                          : challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-800"
+                          : challenge.color === "yellow"
+                          ? "bg-yellow-100 text-yellow-800"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-800"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-800"
+                          : "bg-teal-100 text-teal-800"
+                      }`}
+                    >
                       {challenge.impact}
                     </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 ${
+                      challenge.color === "red"
+                        ? "bg-red-100 text-red-600"
+                        : challenge.color === "orange"
+                        ? "bg-orange-100 text-orange-600"
+                        : challenge.color === "yellow"
+                        ? "bg-yellow-100 text-yellow-600"
+                        : challenge.color === "purple"
+                        ? "bg-purple-100 text-purple-600"
+                        : challenge.color === "blue"
+                        ? "bg-blue-100 text-blue-600"
+                        : "bg-teal-100 text-teal-600"
+                    }`}
+                  >
                     <challenge.icon className="w-6 h-6" />
                   </div>
 
@@ -722,6 +845,17 @@ const AssetManagement: React.FC = () => {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/80 via-purple-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                      <div className="p-6 text-white">
+                        <h4 className="text-lg font-bold mb-2">
+                          {useCase.title}
+                        </h4>
+                        <p className="text-sm opacity-90 line-clamp-2">
+                          {useCase.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -761,8 +895,15 @@ const AssetManagement: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
-          <div className="container mx-auto px-40">
+        <section className="relative py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-40">
             <motion.div
               className="text-center text-white"
               initial={{ opacity: 0, y: 30 }}
@@ -770,16 +911,34 @@ const AssetManagement: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 Ready to Optimize Your Asset Management?
-              </h2>
-              <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+              </motion.h2>
+              <motion.p
+                className="text-xl mb-8 opacity-90 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
                 Join thousands of organizations using Deepkore to track,
                 maintain, and optimize their valuable assets for maximum
                 performance and ROI.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
                 <motion.a
                   href="/getstarted"
                   className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
@@ -796,9 +955,15 @@ const AssetManagement: React.FC = () => {
                 >
                   Schedule Demo
                 </motion.a>
-              </div>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm opacity-80">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm opacity-80"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4" />
                   <span>14-day free trial</span>
@@ -811,7 +976,7 @@ const AssetManagement: React.FC = () => {
                   <CheckCircle className="w-4 h-4" />
                   <span>Cancel anytime</span>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>

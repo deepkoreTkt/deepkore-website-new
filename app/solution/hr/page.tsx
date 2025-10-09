@@ -32,6 +32,67 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Circular Progress Component
+const CircularProgress: React.FC<{
+  percentage: number;
+  color: string;
+  size?: number;
+}> = ({ percentage, color, size = 80 }) => {
+  const radius = (size - 10) / 2;
+  const circumference = radius * 2 * Math.PI;
+  const strokeDasharray = circumference;
+  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+  const getColorHex = (colorName: string) => {
+    const colors: { [key: string]: string } = {
+      blue: "#3B82F6",
+      green: "#10B981",
+      purple: "#8B5CF6",
+      orange: "#F59E0B",
+      red: "#EF4444",
+      teal: "#14B8A6",
+    };
+    return colors[colorName] || "#3B82F6";
+  };
+
+  return (
+    <div className="relative inline-flex items-center justify-center">
+      <svg width={size} height={size} className="transform -rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke="currentColor"
+          strokeWidth="8"
+          fill="transparent"
+          className="text-gray-200"
+        />
+        <motion.circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          stroke={getColorHex(color)}
+          strokeWidth="8"
+          fill="transparent"
+          strokeDasharray={strokeDasharray}
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          strokeLinecap="round"
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span
+          className="text-lg font-bold"
+          style={{ color: getColorHex(color) }}
+        >
+          {percentage}%
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const HR: React.FC = () => {
   const keyFeatures = [
     {
@@ -120,32 +181,36 @@ const HR: React.FC = () => {
       title: "Reduce Administrative Time",
       description:
         "Automate routine HR tasks and streamline processes to focus more on strategic initiatives and employee development.",
-      metric: "60%",
+      metric: "60",
       metricLabel: "Time Savings",
+      color: "blue",
     },
     {
       icon: TrendingUp,
       title: "Improve Employee Experience",
       description:
         "Enhance employee satisfaction with self-service portals, faster processes, and personalized experiences.",
-      metric: "40%",
+      metric: "40",
       metricLabel: "Employee Satisfaction",
+      color: "green",
     },
     {
       icon: Eye,
       title: "Complete HR Visibility",
       description:
         "Real-time insights into workforce metrics, compliance status, and organizational performance.",
-      metric: "100%",
+      metric: "100",
       metricLabel: "Data Visibility",
+      color: "purple",
     },
     {
       icon: DollarSign,
       title: "Optimize HR Costs",
       description:
         "Reduce operational costs through automation, better resource allocation, and improved efficiency.",
-      metric: "30%",
+      metric: "30",
       metricLabel: "Cost Reduction",
+      color: "orange",
     },
   ];
 
@@ -156,6 +221,7 @@ const HR: React.FC = () => {
       description:
         "Time-consuming manual data entry, paperwork, and administrative tasks that slow down HR operations.",
       impact: "Administrative Burden",
+      color: "red",
     },
     {
       icon: Users,
@@ -163,6 +229,7 @@ const HR: React.FC = () => {
       description:
         "Difficulty maintaining accurate, up-to-date employee information across multiple systems and departments.",
       impact: "Data Accuracy",
+      color: "orange",
     },
     {
       icon: MessageSquare,
@@ -170,6 +237,7 @@ const HR: React.FC = () => {
       description:
         "Poor communication between HR, managers, and employees leading to misunderstandings and delays.",
       impact: "Employee Relations",
+      color: "blue",
     },
     {
       icon: Shield,
@@ -177,6 +245,7 @@ const HR: React.FC = () => {
       description:
         "Challenges in maintaining regulatory compliance and audit trails for HR processes and employee data.",
       impact: "Legal Risk",
+      color: "purple",
     },
     {
       icon: BarChart3,
@@ -184,6 +253,7 @@ const HR: React.FC = () => {
       description:
         "Limited ability to track employee performance, engagement, and development progress effectively.",
       impact: "Talent Management",
+      color: "green",
     },
     {
       icon: Calculator,
@@ -191,6 +261,7 @@ const HR: React.FC = () => {
       description:
         "Lack of comprehensive analytics for workforce planning, turnover prediction, and strategic decision-making.",
       impact: "Strategic Planning",
+      color: "teal",
     },
   ];
 
@@ -266,6 +337,14 @@ const HR: React.FC = () => {
       `}</style>
 
       <div className="relative min-h-screen bg-white">
+        {/* Floating Background Elements */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-10 w-16 h-16 bg-green-500/10 rounded-full blur-lg animate-pulse delay-3000"></div>
+        </div>
+
         <Header />
 
         {/* Hero Section */}
@@ -602,18 +681,29 @@ const HR: React.FC = () => {
                   whileHover={{ y: -8 }}
                 >
                   {/* Background Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                      benefit.color === "blue"
+                        ? "from-blue-500/5 to-indigo-500/5"
+                        : benefit.color === "green"
+                        ? "from-green-500/5 to-emerald-500/5"
+                        : benefit.color === "purple"
+                        ? "from-purple-500/5 to-violet-500/5"
+                        : "from-orange-500/5 to-red-500/5"
+                    }`}
+                  ></div>
 
-                  {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="w-8 h-8" />
+                  {/* Circular Progress */}
+                  <div className="relative mb-6">
+                    <CircularProgress
+                      percentage={parseInt(benefit.metric)}
+                      color={benefit.color}
+                      size={80}
+                    />
                   </div>
 
-                  {/* Metric */}
+                  {/* Metric Label */}
                   <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
-                      {benefit.metric}
-                    </div>
                     <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                       {benefit.metricLabel}
                     </div>
@@ -663,13 +753,41 @@ const HR: React.FC = () => {
                 >
                   {/* Impact Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                        challenge.color === "red"
+                          ? "bg-red-100 text-red-800"
+                          : challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-800"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-800"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-800"
+                          : challenge.color === "green"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-teal-100 text-teal-800"
+                      }`}
+                    >
                       {challenge.impact}
                     </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 ${
+                      challenge.color === "red"
+                        ? "bg-red-100 text-red-600"
+                        : challenge.color === "orange"
+                        ? "bg-orange-100 text-orange-600"
+                        : challenge.color === "blue"
+                        ? "bg-blue-100 text-blue-600"
+                        : challenge.color === "purple"
+                        ? "bg-purple-100 text-purple-600"
+                        : challenge.color === "green"
+                        ? "bg-green-100 text-green-600"
+                        : "bg-teal-100 text-teal-600"
+                    }`}
+                  >
                     <challenge.icon className="w-6 h-6" />
                   </div>
 
@@ -732,12 +850,13 @@ const HR: React.FC = () => {
                           "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGNEY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhyIE1hbmFnZW1lbnQ8L3RleHQ+PC9zdmc+";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
 
                   {/* Content */}
                   <div className="p-8">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                       {useCase.title}
                     </h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">
@@ -751,7 +870,7 @@ const HR: React.FC = () => {
                           key={benefitIndex}
                           className="flex items-center space-x-3"
                         >
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 group-hover:text-blue-500 transition-colors" />
                           <span className="text-sm text-gray-600">
                             {benefit}
                           </span>
@@ -772,8 +891,15 @@ const HR: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
-          <div className="container mx-auto px-40">
+        <section className="relative py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-40">
             <motion.div
               className="text-center text-white"
               initial={{ opacity: 0, y: 30 }}
@@ -781,16 +907,48 @@ const HR: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <motion.div
+                className="inline-block mb-6"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
+                  <span className="text-white font-semibold text-sm tracking-wide uppercase">
+                    Start Your HR Transformation Today
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
                 Ready to Transform Your HR Operations?
-              </h2>
-              <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+              </motion.h2>
+              <motion.p
+                className="text-xl mb-8 opacity-90 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
                 Join thousands of organizations using Deepkore to streamline HR
                 processes, enhance employee experience, and drive organizational
                 success.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
                 <motion.a
                   href="/getstarted"
                   className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
@@ -807,9 +965,15 @@ const HR: React.FC = () => {
                 >
                   Schedule Demo
                 </motion.a>
-              </div>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm opacity-80">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm opacity-80"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
                 <div className="flex items-center space-x-2">
                   <CheckCircle className="w-4 h-4" />
                   <span>14-day free trial</span>
@@ -822,7 +986,7 @@ const HR: React.FC = () => {
                   <CheckCircle className="w-4 h-4" />
                   <span>Cancel anytime</span>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>

@@ -26,6 +26,76 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Analytics: React.FC = () => {
+  // Helper function to get color hex values
+  const getColorHex = (color: string) => {
+    switch (color) {
+      case "blue":
+        return "#3b82f6";
+      case "green":
+        return "#10b981";
+      case "purple":
+        return "#8b5cf6";
+      case "orange":
+        return "#f97316";
+      case "red":
+        return "#ef4444";
+      case "teal":
+        return "#14b8a6";
+      default:
+        return "#10b981";
+    }
+  };
+
+  // Circular Progress Component
+  const CircularProgress = ({
+    percentage,
+    size = 80,
+    strokeWidth = 8,
+    color = "#10b981",
+  }: {
+    percentage: number;
+    size?: number;
+    strokeWidth?: number;
+    color?: string;
+  }) => {
+    const radius = (size - strokeWidth) / 2;
+    const circumference = radius * 2 * Math.PI;
+    const strokeDasharray = circumference;
+    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+    return (
+      <div className="relative inline-flex items-center justify-center">
+        <svg width={size} height={size} className="transform -rotate-90">
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="#e5e7eb"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+          />
+          <motion.circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke={color}
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            strokeDasharray={strokeDasharray}
+            initial={{ strokeDashoffset: circumference }}
+            animate={{ strokeDashoffset }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            strokeLinecap="round"
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-xl font-bold" style={{ color }}>
+            {percentage}%
+          </span>
+        </div>
+      </div>
+    );
+  };
   const keyFeatures = [
     {
       icon: BarChart3,
@@ -113,32 +183,36 @@ const Analytics: React.FC = () => {
       title: "Faster Decision Making",
       description:
         "Reduce decision-making time by 50% with real-time insights and automated reporting that provide instant access to critical business metrics.",
-      metric: "50%",
+      metric: "50",
       metricLabel: "Faster Decisions",
+      color: "green",
     },
     {
       icon: Target,
       title: "Improved Accuracy",
       description:
         "Enhance forecast accuracy and reduce errors with AI-powered predictive analytics and automated data validation processes.",
-      metric: "75%",
+      metric: "75",
       metricLabel: "Accuracy Improvement",
+      color: "blue",
     },
     {
       icon: Eye,
       title: "Complete Data Visibility",
       description:
         "Gain 360-degree visibility into your business operations with comprehensive dashboards and cross-functional data integration.",
-      metric: "360°",
+      metric: "360",
       metricLabel: "Data Visibility",
+      color: "purple",
     },
     {
       icon: DollarSign,
       title: "Cost Optimization",
       description:
         "Identify cost-saving opportunities and optimize resource allocation with detailed analytics and ROI tracking across all business functions.",
-      metric: "25%",
+      metric: "25",
       metricLabel: "Cost Savings",
+      color: "orange",
     },
   ];
 
@@ -149,6 +223,7 @@ const Analytics: React.FC = () => {
       description:
         "Fragmented data across multiple systems and departments prevents comprehensive analysis and informed decision-making.",
       impact: "Limited Insights",
+      color: "orange",
     },
     {
       icon: Clock,
@@ -156,6 +231,7 @@ const Analytics: React.FC = () => {
       description:
         "Time-consuming manual report generation and data compilation delays access to critical business intelligence.",
       impact: "Delayed Decisions",
+      color: "blue",
     },
     {
       icon: AlertTriangle,
@@ -163,6 +239,7 @@ const Analytics: React.FC = () => {
       description:
         "Inconsistent data formats, duplicates, and inaccuracies compromise the reliability of analytics and reporting.",
       impact: "Poor Accuracy",
+      color: "red",
     },
     {
       icon: Shield,
@@ -170,6 +247,7 @@ const Analytics: React.FC = () => {
       description:
         "Concerns about data privacy and security when consolidating sensitive business information from multiple sources.",
       impact: "Compliance Risk",
+      color: "purple",
     },
     {
       icon: Activity,
@@ -177,6 +255,7 @@ const Analytics: React.FC = () => {
       description:
         "Lack of real-time data processing capabilities hinders timely response to changing business conditions.",
       impact: "Reactive Approach",
+      color: "green",
     },
     {
       icon: BarChart3,
@@ -184,6 +263,143 @@ const Analytics: React.FC = () => {
       description:
         "Difficulty creating meaningful visualizations from complex datasets without specialized technical skills.",
       impact: "User Adoption",
+      color: "teal",
+    },
+  ];
+
+  const chartTypes = [
+    {
+      icon: PieChart,
+      title: "Pie Chart",
+      description:
+        "Perfect for showing proportions and percentages of a whole dataset",
+      useCase: "Market share analysis, budget allocation",
+      color: "blue",
+    },
+    {
+      icon: PieChart,
+      title: "Donut Chart",
+      description:
+        "Similar to pie charts but with a hollow center for additional information",
+      useCase: "Category breakdowns with center metrics",
+      color: "green",
+    },
+    {
+      icon: TrendingUp,
+      title: "Radar Chart",
+      description:
+        "Displays multivariate data in a two-dimensional chart with multiple axes",
+      useCase: "Performance comparisons, skill assessments",
+      color: "purple",
+    },
+    {
+      icon: TrendingUp,
+      title: "Funnel Chart",
+      description: "Visualizes a linear process with stages that narrow down",
+      useCase: "Sales funnels, conversion rates, user journeys",
+      color: "orange",
+    },
+    {
+      icon: BarChart3,
+      title: "Bar Chart",
+      description: "Compares different categories using rectangular bars",
+      useCase: "Category comparisons, frequency distributions",
+      color: "red",
+    },
+    {
+      icon: BarChart3,
+      title: "Column Chart",
+      description: "Vertical bar charts for comparing values across categories",
+      useCase: "Time series data, category comparisons",
+      color: "teal",
+    },
+    {
+      icon: BarChart3,
+      title: "Stacked Horizontal Bar Chart",
+      description:
+        "Shows part-to-whole relationships horizontally with stacked segments",
+      useCase: "Component breakdowns, progress tracking",
+      color: "blue",
+    },
+    {
+      icon: BarChart3,
+      title: "Stacked Vertical Bar Chart",
+      description:
+        "Vertical bars with stacked segments showing part-to-whole relationships",
+      useCase: "Time-based component analysis",
+      color: "green",
+    },
+    {
+      icon: BarChart3,
+      title: "100% Stacked Horizontal Chart",
+      description: "Horizontal bars showing 100% distribution of components",
+      useCase: "Percentage breakdowns, composition analysis",
+      color: "purple",
+    },
+    {
+      icon: BarChart3,
+      title: "100% Stacked Vertical Chart",
+      description: "Vertical bars showing 100% distribution of components",
+      useCase: "Percentage comparisons over time",
+      color: "orange",
+    },
+    {
+      icon: TrendingUp,
+      title: "Box Plot",
+      description:
+        "Statistical chart showing distribution through quartiles and outliers",
+      useCase: "Statistical analysis, data distribution",
+      color: "red",
+    },
+    {
+      icon: BarChart3,
+      title: "Pareto Chart",
+      description:
+        "Combines bar and line charts to show frequency and cumulative percentage",
+      useCase: "80/20 rule analysis, priority identification",
+      color: "teal",
+    },
+    {
+      icon: TrendingUp,
+      title: "Bump Chart",
+      description: "Shows ranking changes over time with connected lines",
+      useCase: "Ranking trends, position changes",
+      color: "blue",
+    },
+    {
+      icon: LineChart,
+      title: "Line Chart",
+      description: "Connects data points with lines to show trends over time",
+      useCase: "Time series analysis, trend identification",
+      color: "green",
+    },
+    {
+      icon: BarChart3,
+      title: "Combo Chart",
+      description: "Combines different chart types in one visualization",
+      useCase: "Multiple data relationships, complex comparisons",
+      color: "purple",
+    },
+    {
+      icon: TrendingUp,
+      title: "Stacked Area Chart",
+      description: "Area charts with stacked layers showing cumulative values",
+      useCase: "Cumulative trends, component contributions",
+      color: "orange",
+    },
+    {
+      icon: TrendingUp,
+      title: "Area Chart",
+      description: "Filled line charts showing quantity beneath the line",
+      useCase: "Volume trends, cumulative data",
+      color: "red",
+    },
+    {
+      icon: TrendingUp,
+      title: "Scatter Chart",
+      description: "Plots individual data points on x-y coordinates",
+      useCase: "Correlation analysis, distribution patterns",
+      color: "teal",
     },
   ];
 
@@ -268,6 +484,32 @@ const Analytics: React.FC = () => {
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl"></div>
+            {/* Additional Floating Elements */}
+            <motion.div
+              className="absolute top-10 right-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl"
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-10 left-10 w-16 h-16 bg-purple-400/20 rounded-full blur-xl"
+              animate={{ y: [0, 20, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute top-1/3 left-10 w-12 h-12 bg-orange-400/20 rounded-full blur-xl"
+              animate={{ x: [0, 30, 0] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            ></motion.div>
           </div>
 
           <div className="relative z-10 container mx-auto px-40">
@@ -463,33 +705,41 @@ const Analytics: React.FC = () => {
               {keyFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  className="group relative bg-gradient-to-br from-white to-gray-50/50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100/50 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{
+                    y: -10,
+                    rotateZ: index % 2 === 0 ? 2 : -2,
+                    scale: 1.03,
+                  }}
                 >
-                  {/* Background Color Accent */}
+                  {/* Asymmetrical Background Shape */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-100/30 to-purple-100/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
+                  <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-green-100/20 to-blue-100/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-500 delay-100"></div>
+
+                  {/* Color Accent Triangle */}
                   <div
-                    className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
+                    className={`absolute top-6 right-6 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] opacity-80 group-hover:opacity-100 transition-opacity duration-300 ${
                       feature.color === "blue"
-                        ? "from-blue-500 to-blue-600"
+                        ? "border-l-transparent border-r-transparent border-b-blue-400"
                         : feature.color === "green"
-                        ? "from-green-500 to-green-600"
+                        ? "border-l-transparent border-r-transparent border-b-green-400"
                         : feature.color === "purple"
-                        ? "from-purple-500 to-purple-600"
+                        ? "border-l-transparent border-r-transparent border-b-purple-400"
                         : feature.color === "orange"
-                        ? "from-orange-500 to-orange-600"
+                        ? "border-l-transparent border-r-transparent border-b-orange-400"
                         : feature.color === "red"
-                        ? "from-red-500 to-red-600"
-                        : "from-teal-500 to-teal-600"
+                        ? "border-l-transparent border-r-transparent border-b-red-400"
+                        : "border-l-transparent border-r-transparent border-b-teal-400"
                     }`}
                   ></div>
 
-                  {/* Icon */}
-                  <div
-                    className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 ${
+                  {/* Icon with Floating Animation */}
+                  <motion.div
+                    className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 transition-all duration-300 ${
                       feature.color === "blue"
                         ? "bg-blue-100 text-blue-600"
                         : feature.color === "green"
@@ -502,9 +752,13 @@ const Analytics: React.FC = () => {
                         ? "bg-red-100 text-red-600"
                         : "bg-teal-100 text-teal-600"
                     }`}
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <feature.icon className="w-8 h-8" />
-                  </div>
+                    {/* Pulsing Dot */}
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-current rounded-full opacity-60 animate-ping"></div>
+                  </motion.div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
                     {feature.title}
@@ -514,51 +768,181 @@ const Analytics: React.FC = () => {
                     {feature.description}
                   </p>
 
-                  {/* Features List */}
-                  <div className="space-y-2">
+                  {/* Features List with Staggered Animation */}
+                  <div className="space-y-3">
                     {feature.features.map((item, itemIndex) => (
-                      <div
+                      <motion.div
                         key={itemIndex}
                         className="flex items-center space-x-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: itemIndex * 0.1 }}
+                        viewport={{ once: true }}
                       >
-                        <CheckCircle
-                          className={`w-4 h-4 ${
+                        <div
+                          className={`w-5 h-5 rounded-full flex items-center justify-center ${
                             feature.color === "blue"
-                              ? "text-blue-500"
+                              ? "bg-blue-100"
                               : feature.color === "green"
-                              ? "text-green-500"
+                              ? "bg-green-100"
                               : feature.color === "purple"
-                              ? "text-purple-500"
+                              ? "bg-purple-100"
                               : feature.color === "orange"
-                              ? "text-orange-500"
+                              ? "bg-orange-100"
                               : feature.color === "red"
-                              ? "text-red-500"
-                              : "text-teal-500"
+                              ? "bg-red-100"
+                              : "bg-teal-100"
                           }`}
-                        />
+                        >
+                          <CheckCircle
+                            className={`w-3 h-3 ${
+                              feature.color === "blue"
+                                ? "text-blue-600"
+                                : feature.color === "green"
+                                ? "text-green-600"
+                                : feature.color === "purple"
+                                ? "text-purple-600"
+                                : feature.color === "orange"
+                                ? "text-orange-600"
+                                : feature.color === "red"
+                                ? "text-red-600"
+                                : "text-teal-600"
+                            }`}
+                          />
+                        </div>
                         <span className="text-sm text-gray-600">{item}</span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
-                  {/* Hover Effect Arrow */}
-                  <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowRight
-                      className={`w-5 h-5 ${
-                        feature.color === "blue"
-                          ? "text-blue-500"
-                          : feature.color === "green"
-                          ? "text-green-500"
-                          : feature.color === "purple"
-                          ? "text-purple-500"
-                          : feature.color === "orange"
-                          ? "text-orange-500"
-                          : feature.color === "red"
-                          ? "text-red-500"
-                          : "text-teal-500"
-                      }`}
-                    />
+                  {/* Decorative Corner Element */}
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                    <div className="w-8 h-8 border-2 border-current rounded-tl-2xl"></div>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comprehensive Chart Library Section */}
+        <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+          <div className="container mx-auto px-40">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Comprehensive Chart Library
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Choose from 18+ powerful chart types to visualize your data
+                exactly how you need it. From simple bar charts to complex
+                statistical plots, create stunning visualizations that bring
+                your data to life.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {chartTypes.map((chart, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 overflow-hidden"
+                  initial={{ opacity: 0, y: 30, rotateY: -15 }}
+                  whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -12,
+                    rotateY: 5,
+                    rotateX: 5,
+                    scale: 1.05,
+                    transformPerspective: 1000,
+                  }}
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  {/* Animated Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Diagonal Color Accent */}
+                  <div
+                    className={`absolute top-0 right-0 w-20 h-20 transform rotate-45 translate-x-10 -translate-y-10 opacity-20 group-hover:opacity-30 transition-opacity duration-300 ${
+                      chart.color === "blue"
+                        ? "bg-blue-500"
+                        : chart.color === "green"
+                        ? "bg-green-500"
+                        : chart.color === "purple"
+                        ? "bg-purple-500"
+                        : chart.color === "orange"
+                        ? "bg-orange-500"
+                        : chart.color === "red"
+                        ? "bg-red-500"
+                        : "bg-teal-500"
+                    }`}
+                  ></div>
+
+                  {/* Floating Particles */}
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-current opacity-20 rounded-full animate-ping"></div>
+                  <div className="absolute bottom-4 left-4 w-1 h-1 bg-current opacity-30 rounded-full animate-pulse"></div>
+
+                  {/* Content Container */}
+                  <div className="relative z-10">
+                    {/* Icon with Glow Effect */}
+                    <div className="relative mb-4">
+                      <div
+                        className={`inline-flex items-center justify-center w-14 h-14 rounded-xl group-hover:scale-110 transition-all duration-300 ${
+                          chart.color === "blue"
+                            ? "bg-blue-100 text-blue-600 shadow-blue-200"
+                            : chart.color === "green"
+                            ? "bg-green-100 text-green-600 shadow-green-200"
+                            : chart.color === "purple"
+                            ? "bg-purple-100 text-purple-600 shadow-purple-200"
+                            : chart.color === "orange"
+                            ? "bg-orange-100 text-orange-600 shadow-orange-200"
+                            : chart.color === "red"
+                            ? "bg-red-100 text-red-600 shadow-red-200"
+                            : "bg-teal-100 text-teal-600 shadow-teal-200"
+                        } shadow-lg`}
+                      >
+                        <chart.icon className="w-7 h-7" />
+                      </div>
+                      {/* Glow Ring */}
+                      <div
+                        className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 ${
+                          chart.color === "blue"
+                            ? "bg-blue-400"
+                            : chart.color === "green"
+                            ? "bg-green-400"
+                            : chart.color === "purple"
+                            ? "bg-purple-400"
+                            : chart.color === "orange"
+                            ? "bg-orange-400"
+                            : chart.color === "red"
+                            ? "bg-red-400"
+                            : "bg-teal-400"
+                        } blur-xl`}
+                      ></div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors">
+                      {chart.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      {chart.description}
+                    </p>
+
+                    {/* Use Case Badge */}
+                    <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 group-hover:bg-gray-200 transition-colors duration-300">
+                      <span className="truncate">{chart.useCase}</span>
+                    </div>
+                  </div>
+
+                  {/* Hover Effect Border */}
+                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-current opacity-0 group-hover:opacity-10 transition-all duration-300"></div>
                 </motion.div>
               ))}
             </div>
@@ -589,37 +973,94 @@ const Analytics: React.FC = () => {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center overflow-hidden"
+                  className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 text-center overflow-hidden border border-gray-100/50"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{
+                    y: -15,
+                    scale: 1.08,
+                    rotateY: 10,
+                    transformPerspective: 1000,
+                  }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* Background Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Radial Background */}
+                  <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/50 to-white/80 rounded-3xl"></div>
 
-                  {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="w-8 h-8" />
-                  </div>
+                  {/* Orbiting Elements */}
+                  <motion.div
+                    className="absolute top-4 right-4 w-3 h-3 bg-current rounded-full opacity-20"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  ></motion.div>
+                  <motion.div
+                    className="absolute bottom-4 left-4 w-2 h-2 bg-current rounded-full opacity-30"
+                    animate={{ rotate: -360 }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: 1,
+                    }}
+                  ></motion.div>
 
-                  {/* Metric */}
-                  <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
-                      {benefit.metric}
+                  {/* Icon with Magnetic Effect */}
+                  <motion.div
+                    className="relative inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 transition-all duration-300"
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <div
+                      className={`w-full h-full rounded-full flex items-center justify-center ${
+                        benefit.color === "green"
+                          ? "bg-gradient-to-br from-green-100 to-green-200 text-green-600 shadow-green-200"
+                          : benefit.color === "blue"
+                          ? "bg-gradient-to-br from-blue-100 to-blue-200 text-blue-600 shadow-blue-200"
+                          : benefit.color === "purple"
+                          ? "bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600 shadow-purple-200"
+                          : benefit.color === "orange"
+                          ? "bg-gradient-to-br from-orange-100 to-orange-200 text-orange-600 shadow-orange-200"
+                          : "bg-gradient-to-br from-blue-100 to-blue-200 text-blue-600 shadow-blue-200"
+                      } shadow-lg`}
+                    >
+                      <benefit.icon className="w-10 h-10" />
                     </div>
-                    <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    {/* Magnetic Field Effect */}
+                    <div className="absolute inset-0 rounded-full border-2 border-current opacity-0 group-hover:opacity-20 scale-110 transition-all duration-300"></div>
+                  </motion.div>
+
+                  {/* Metric with Enhanced Circular Progress */}
+                  <div className="relative mb-6 flex flex-col items-center">
+                    <div className="relative">
+                      <CircularProgress
+                        percentage={parseInt(benefit.metric)}
+                        color={getColorHex(benefit.color)}
+                        size={100}
+                        strokeWidth={6}
+                      />
+                      {/* Inner Glow */}
+                      <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/50 to-transparent blur-sm"></div>
+                    </div>
+                    <div className="text-sm font-bold text-gray-600 uppercase tracking-wider mt-3 px-3 py-1 bg-gray-50 rounded-full">
                       {benefit.metricLabel}
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {benefit.description}
                   </p>
+
+                  {/* Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </motion.div>
               ))}
             </div>
@@ -650,37 +1091,102 @@ const Analytics: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
+                  whileHover={{
+                    y: -8,
+                    rotateX: 5,
+                    skewX: index % 2 === 0 ? 2 : -2,
+                    scale: 1.02,
+                    transformPerspective: 1000,
+                  }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* Impact Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                  {/* Angular Background Pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-gray-200 to-transparent transform rotate-12"></div>
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-transparent via-gray-200 to-transparent transform -rotate-12"></div>
+                  </div>
+
+                  {/* Impact Badge with Pulse */}
+                  <div className="absolute top-4 right-4 z-10">
+                    <motion.span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold shadow-lg ${
+                        challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-800"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-800"
+                          : challenge.color === "green"
+                          ? "bg-green-100 text-green-800"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-800"
+                          : challenge.color === "red"
+                          ? "bg-red-100 text-red-800"
+                          : "bg-teal-100 text-teal-800"
+                      }`}
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
                       {challenge.impact}
-                    </span>
+                    </motion.span>
                   </div>
 
-                  {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
-                    <challenge.icon className="w-6 h-6" />
+                  {/* Icon with Geometric Background */}
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 transform rotate-45 scale-150 opacity-20"></div>
+                    <div
+                      className={`relative inline-flex items-center justify-center w-14 h-14 rounded-lg group-hover:scale-110 transition-all duration-300 ${
+                        challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-600"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-600"
+                          : challenge.color === "green"
+                          ? "bg-green-100 text-green-600"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-600"
+                          : challenge.color === "red"
+                          ? "bg-red-100 text-red-600"
+                          : "bg-teal-100 text-teal-600"
+                      }`}
+                    >
+                      <challenge.icon className="w-7 h-7" />
+                    </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors pr-16">
                     {challenge.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
                     {challenge.description}
                   </p>
 
-                  {/* Solution Indicator */}
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Solved by Deepkore</span>
-                  </div>
+                  {/* Solution Indicator with Arrow */}
+                  <motion.div
+                    className="flex items-center justify-between"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center space-x-2 text-sm text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                      <CheckCircle className="w-4 h-4" />
+                      <span>Solved by Deepkore</span>
+                    </div>
+                    <motion.div
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ArrowRight className="w-5 h-5 text-blue-600" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Corner Accents */}
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gray-200 opacity-30"></div>
+                  <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-gray-200 opacity-20"></div>
                 </motion.div>
               ))}
             </div>
@@ -731,7 +1237,11 @@ const Analytics: React.FC = () => {
                           "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGNEY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFuYWx5dGljczwvdGV4dD48L3N2Zz4=";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-all duration-300"></div>
+                    {/* Hover Overlay Text */}
+                    <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h4 className="text-lg font-bold">{useCase.title}</h4>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -771,7 +1281,25 @@ const Analytics: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-10 right-10 w-24 h-24 bg-indigo-400/20 rounded-full blur-xl"
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            ></motion.div>
+          </div>
           <div className="container mx-auto px-40">
             <motion.div
               className="text-center text-white"

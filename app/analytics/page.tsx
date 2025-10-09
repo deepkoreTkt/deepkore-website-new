@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingElements from "@/components/FloatingElements";
 import Image from "next/image";
+import { motion, useScroll, useSpring } from "framer-motion";
 import {
   Bot,
   BarChart3,
@@ -24,6 +25,15 @@ import {
   ScatterChart,
   AreaChart,
   Link as LinkIcon,
+  Database,
+  Cloud,
+  Zap,
+  Server,
+  Smartphone,
+  Settings,
+  Table,
+  Play,
+  ArrowRight,
 } from "lucide-react";
 
 // Analytics features data
@@ -98,12 +108,12 @@ const successStories = [
 
 // Integration capabilities
 const integrations = [
-  "Database Connectors",
-  "Cloud Storage",
-  "API Integrations",
-  "IoT Data Streams",
-  "ERP Systems",
-  "CRM Platforms",
+  { name: "Database Connectors", icon: Database },
+  { name: "Cloud Storage", icon: Cloud },
+  { name: "API Integrations", icon: Zap },
+  { name: "IoT Data Streams", icon: Server },
+  { name: "ERP Systems", icon: Settings },
+  { name: "CRM Platforms", icon: Smartphone },
 ];
 
 // Chart types data
@@ -225,65 +235,107 @@ const chartTypes = [
   },
 ];
 
+// Pivot table features data
+const pivotTableFeatures = [
+  {
+    title: "Drag-and-Drop Simplicity",
+    description:
+      "Build complex pivot tables with intuitive drag-and-drop interface. No coding required to transform your data.",
+    icon: Table,
+  },
+  {
+    title: "Advanced Aggregations",
+    description:
+      "Sum, average, count, min, max, and custom calculations to analyze your data comprehensively and accurately.",
+    icon: TrendingUp,
+  },
+  {
+    title: "Multi-Level Grouping",
+    description:
+      "Group data by multiple dimensions to uncover hidden patterns and relationships in your datasets.",
+    icon: Scale,
+  },
+];
+
 const Analytics: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#8112db]/10 via-blue-50 to-green-50">
-        <div className="max-w-7xl mx-auto px-40">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#8112db] via-blue-600 to-green-600 bg-clip-text text-transparent">
+      <section className="pt-32 pb-20 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40 relative z-10">
+          <div className="text-center mb-16">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent"
+            >
               Smarter Decisions with Deepkore Analytics
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
+            </motion.h1>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-2xl md:text-3xl font-semibold text-slate-700 mb-8"
+            >
               Transform raw data into strategic advantage
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8"
+            >
               Move beyond static spreadsheets to dynamic, AI-powered
               visualizations that drive smarter decision-making. Our analytics
               platform empowers you to uncover insights, predict trends, and
               take action with confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <a
                 href="/getstarted"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#8112db] to-blue-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-indigo-500/25 transition-all duration-300 group"
               >
+                <BarChart3 className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                 Start Analyzing Data
-              </motion.a>
-              <motion.a
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+              <a
                 href="/getstarted"
-                className="inline-flex items-center px-8 py-4 border-2 border-[#8112db] text-[#8112db] font-semibold rounded-full hover:bg-[#8112db] hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center px-8 py-4 border-2 border-indigo-600 text-indigo-600 font-semibold rounded-full hover:bg-indigo-600 hover:text-white hover:scale-105 transition-all duration-300 group"
               >
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                 Watch Demo
-              </motion.a>
-            </div>
-          </motion.div>
+              </a>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-40">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
           <motion.div
-            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-800">
               Powerful Intelligence at Your Fingertips
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -292,36 +344,49 @@ const Analytics: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {analyticsFeatures.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-gradient-to-br from-white via-slate-50 to-indigo-50 rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border border-slate-200 group relative overflow-hidden cursor-pointer"
               >
                 <div className="flex items-center mb-6">
-                  <div className="text-5xl mr-4 text-[#8112db]">
-                    <feature.icon />
-                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 via-purple-100 to-blue-100 shadow group-hover:scale-110 transition-transform duration-300 mr-6"
+                  >
+                    <feature.icon className="w-10 h-10 text-indigo-600" />
+                  </motion.div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   {feature.description}
                 </p>
                 <ul className="space-y-2">
                   {feature.benefits.map((benefit, bidx) => (
-                    <li key={bidx} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-[#8112db] rounded-full mr-3"></div>
+                    <motion.li
+                      key={bidx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: idx * 0.1 + bidx * 0.1,
+                      }}
+                      viewport={{ once: true }}
+                      className="flex items-center text-slate-700"
+                    >
+                      <div className="w-2 h-2 bg-indigo-600 rounded-full mr-3 animate-pulse"></div>
                       {benefit}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </motion.div>
@@ -331,39 +396,40 @@ const Analytics: React.FC = () => {
       </section>
 
       {/* Advanced Analytics Section */}
-      <section className="py-20 bg-gradient-to-br from-[#8112db]/5 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-indigo-50/30 to-blue-50/50">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
           <motion.div
-            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">
               Advanced Data Analysis Made Simple
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Harness the power of pivot tables and beyond with our intuitive
               analytics tools
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-[#8112db]/20 to-blue-200 rounded-xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-[#8112db]" />
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center mb-6 animate-fade-in">
+                <TrendingUp className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              <h3 className="text-2xl font-bold mb-4 text-slate-800">
                 Intelligent Data Summarization
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 Transform massive datasets into meaningful insights with
                 AI-powered summarization that highlights key patterns and trends
                 automatically.
@@ -371,19 +437,20 @@ const Analytics: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-200 to-green-200 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center mb-6 animate-fade-in">
                 <Sliders className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              <h3 className="text-2xl font-bold mb-4 text-slate-800">
                 Flexible View Customization
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 Filter, group, and organize data with drag-and-drop simplicity.
                 Create personalized views that match your analytical needs
                 perfectly.
@@ -391,19 +458,20 @@ const Analytics: React.FC = () => {
             </motion.div>
 
             <motion.div
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-200 to-[#8112db]/20 rounded-xl flex items-center justify-center mb-6">
-                <Search className="w-8 h-8 text-green-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-6 animate-fade-in">
+                <Search className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              <h3 className="text-2xl font-bold mb-4 text-slate-800">
                 Multi-Dimensional Comparisons
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 Compare metrics across multiple dimensions simultaneously to
                 uncover correlations and make data-driven strategic decisions.
               </p>
@@ -412,17 +480,68 @@ const Analytics: React.FC = () => {
         </div>
       </section>
 
+      {/* Pivot Tables Section */}
+      <section className="py-20 bg-gradient-to-br from-indigo-50/30 to-blue-50/50">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+              Powerful Pivot Tables
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Transform raw data into actionable insights with our advanced
+              pivot table functionality. Summarize, analyze, and visualize your
+              data with drag-and-drop ease.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {pivotTableFeatures.map((feature, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
+                <div
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 animate-fade-in ${
+                    idx === 0
+                      ? "bg-gradient-to-br from-indigo-100 to-purple-100"
+                      : idx === 1
+                      ? "bg-gradient-to-br from-blue-100 to-indigo-100"
+                      : "bg-gradient-to-br from-purple-100 to-pink-100"
+                  }`}
+                >
+                  <feature.icon
+                    className={`w-8 h-8 ${
+                      idx === 0
+                        ? "text-indigo-600"
+                        : idx === 1
+                        ? "text-blue-600"
+                        : "text-purple-600"
+                    }`}
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-800">
+                  {feature.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Chart Types Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-40">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
           <motion.div
-            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-800">
               Comprehensive Chart Library
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -431,30 +550,35 @@ const Analytics: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {chartTypes.map((chart, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-100"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ y: -5, scale: 1.05 }}
+                className="bg-gradient-to-br from-white via-gray-50 to-indigo-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-pointer relative overflow-hidden"
               >
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-3 text-[#8112db]">
-                    <chart.icon />
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-indigo-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="flex items-center mb-4 relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-indigo-100 via-purple-100 to-blue-100 shadow group-hover:scale-110 transition-transform duration-300 mr-4"
+                  >
+                    <chart.icon className="w-7 h-7 text-indigo-600" />
+                  </motion.div>
                   <h3 className="text-lg font-bold text-gray-800">
                     {chart.name}
                   </h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-3 leading-relaxed">
+                <p className="text-gray-600 text-sm mb-3 leading-relaxed relative z-10">
                   {chart.description}
                 </p>
-                <div className="text-xs text-[#8112db] font-medium">
-                  Use case: {chart.useCase}
+                <div className="text-xs text-indigo-600 font-medium relative z-10 bg-indigo-50 px-2 py-1 rounded-full inline-block">
+                  {chart.useCase}
                 </div>
               </motion.div>
             ))}
@@ -463,16 +587,16 @@ const Analytics: React.FC = () => {
       </section>
 
       {/* Success Stories Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-40">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
           <motion.div
-            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-800">
               Real Results, Real Impact
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -481,24 +605,25 @@ const Analytics: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {successStories.map((story, idx) => (
               <motion.div
                 key={idx}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                transition={{ duration: 0.6, delay: idx * 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-gradient-to-br from-white via-emerald-50 to-teal-50 rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border border-emerald-100 group cursor-pointer relative overflow-hidden"
               >
-                <div className="text-3xl font-bold text-[#8112db] mb-4">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-200 to-teal-200 rounded-full -translate-y-10 translate-x-10 opacity-20"></div>
+                <div className="text-3xl font-extrabold text-emerald-600 mb-4 relative z-10">
                   {story.metric}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800">
+                <h3 className="text-xl font-bold mb-4 text-gray-800 relative z-10">
                   {story.company}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed relative z-10">
                   {story.description}
                 </p>
               </motion.div>
@@ -508,40 +633,29 @@ const Analytics: React.FC = () => {
       </section>
 
       {/* Integrations Section */}
-      <section className="py-20 bg-gradient-to-r from-[#8112db] to-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-40">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-20 lg:px-40">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
               Seamless Data Integration
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Connect with your existing systems effortlessly. Our analytics
               platform integrates with hundreds of data sources.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {integrations.map((integration, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 group"
               >
-                <div className="text-2xl mb-2 text-white">
-                  <LinkIcon />
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors duration-300 animate-fade-in">
+                  <integration.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="font-semibold">{integration}</div>
-              </motion.div>
+                <div className="font-semibold text-sm">{integration.name}</div>
+              </div>
             ))}
           </div>
         </div>
@@ -549,43 +663,46 @@ const Analytics: React.FC = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
-        <div className="max-w-4xl mx-auto px-40 text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-20 lg:px-40 text-center">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6 text-gray-800"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-800"
           >
             Ready to Unlock Your Data&apos;s Potential?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 text-gray-600"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
+            className="text-xl mb-8 text-gray-600"
           >
             Join thousands of organizations making smarter decisions with
             AI-powered analytics
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
               href="/getstarted"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#8112db] to-blue-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-indigo-500/25 transition-all duration-300 group"
             >
+              <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
               Start Free Trial
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center px-8 py-4 border-2 border-[#8112db] text-[#8112db] font-semibold rounded-full hover:bg-[#8112db] hover:text-white transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 border-2 border-indigo-600 text-indigo-600 font-semibold rounded-full hover:bg-indigo-600 hover:text-white hover:scale-105 transition-all duration-300 group"
             >
+              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
               Schedule Demo
             </a>
           </motion.div>

@@ -82,7 +82,7 @@ const PowerfulFeatures: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row gap-8 items-start justify-between max-w-7xl mx-auto">
           {/* Vertical Tabs */}
-          <div className="flex lg:flex-col gap-2 w-full lg:w-2/5 space-y-1 h-[500px]">
+          <div className="flex lg:flex-col gap-2 w-full lg:w-2/5 space-y-1 h-[550px]">
             {features.map((feature, idx) => (
               <button
                 key={feature.title}
@@ -106,17 +106,10 @@ const PowerfulFeatures: React.FC = () => {
                       →
                     </span>
                   </h3>
-                  <p className="text-sm opacity-90 leading-relaxed">
+                  <p className="text-sm opacity-90 leading-relaxed mb-2">
                     {feature.description}
                   </p>
-                  <Link
-                    href={feature.href}
-                    className={`inline-block mt-2 px-0 py-2 font-semibold text-sm rounded-lg text-blue-600 transition-colors duration-300 ${
-                      activeTab === idx
-                        ? "text-blue-600 hover:blue-800"
-                        : "text-white hover:blue-600"
-                    }`}
-                  >
+                  <Link href={feature.href} className="font-bold font-sm mt-2 ">
                     Learn More
                   </Link>
                 </div>

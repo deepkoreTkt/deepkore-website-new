@@ -89,6 +89,12 @@ const features = [
     icon: Calculator,
     href: "/dataform",
   },
+  {
+    title: "Chat Communication",
+    description: "Enhance team collaboration with integrated chat.",
+    icon: MessageSquare,
+    href: "/process",
+  },
 ];
 
 const powerfulFeatures = [
@@ -110,15 +116,54 @@ const powerfulFeatures = [
 ];
 
 const problems = [
-  { title: "Missed Deadlines", icon: Clock },
-  { title: "Disorganized Workflows", icon: Shuffle },
-  { title: "Unnecessary Complexity", icon: Layers },
-  { title: "Slow Progress", icon: Snail },
-  { title: "Wasted Time", icon: Timer },
-  { title: "Lack of Collaboration", icon: Users },
-  { title: "Task Overload", icon: Inbox },
-  { title: "Poor Data Visibility", icon: EyeOff },
-  { title: "Inefficient Communication", icon: MessageSquare },
+  {
+    title: "Missed Deadlines",
+    icon: Clock,
+    description:
+      "Automated reminders ensure you never miss important deadlines.",
+  },
+  {
+    title: "Disorganized Workflows",
+    icon: Shuffle,
+    description:
+      "Streamline your processes with organized, intuitive workflows.",
+  },
+  {
+    title: "Unnecessary Complexity",
+    icon: Layers,
+    description: "Simplify complex tasks with our user-friendly interface.",
+  },
+  {
+    title: "Slow Progress",
+    icon: Snail,
+    description: "Accelerate your productivity with fast, efficient tools.",
+  },
+  {
+    title: "Wasted Time",
+    icon: Timer,
+    description: "Eliminate time-wasting activities and focus on what matters.",
+  },
+  {
+    title: "Lack of Collaboration",
+    icon: Users,
+    description:
+      "Foster better teamwork with integrated collaboration features.",
+  },
+  {
+    title: "Task Overload",
+    icon: Inbox,
+    description: "Manage overwhelming task lists with smart prioritization.",
+  },
+  {
+    title: "Poor Data Visibility",
+    icon: EyeOff,
+    description: "Gain clear insights with enhanced data visualization.",
+  },
+  {
+    title: "Inefficient Communication",
+    icon: MessageSquare,
+    description: "Improve communication with real-time messaging tools.",
+  },
 ];
 
 const stats = [
@@ -325,7 +370,7 @@ export default function Feature() {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-6xl mb-6 text-[#00A551] flex justify-center">
+                <div className="text-6xl mb-6 text-[#2791D0] flex justify-center">
                   <feature.icon />
                 </div>
                 <h3 className="text-2xl font-bold mb-2 text-gray-900">
@@ -358,7 +403,7 @@ export default function Feature() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
               Powerful Features
             </h2>
             <h3 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-8">
@@ -382,7 +427,7 @@ export default function Feature() {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, borderColor: "#00A551" }}
               >
-                <div className="text-6xl mb-6 flex justify-center text-[#00A551]">
+                <div className="text-6xl mb-6 flex justify-center text-[#2791D0]">
                   <feature.icon className="w-12 h-12" />
                 </div>
                 <h4 className="text-2xl font-bold mb-4 text-gray-800">
@@ -398,7 +443,7 @@ export default function Feature() {
       </section>
 
       {/* Wave Goodbye Section */}
-      <section className="py-20 bg-gradient-to-r from-red-50 to-orange-50">
+      <section className="py-20 bg-gradient-to-r from-[#00A551]/10 to-[#2791D0]/10">
         <div className="max-w-7xl mx-auto px-8 md:px-40 lg:px-40 text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-12 text-gray-800"
@@ -407,27 +452,35 @@ export default function Feature() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Wave goodbye to
+            Wave goodbye to these challenges
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Embrace a more efficient workflow by eliminating these common
+            productivity blockers.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {problems.map((problem, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="flex items-center space-x-3">
-                  <div className="text-2xl flex items-center">
-                    <problem.icon className="w-6 h-6 text-red-600" />
+                <div className="text-center">
+                  <div className="text-4xl mb-4 flex justify-center text-[#2791D0]">
+                    <problem.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-red-600">
+                  <h3 className="text-xl font-semibold text-[#2791D0] mb-2">
                     {problem.title}
                   </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {problem.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -471,7 +524,7 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Leading Enterprise Application Platform forDigital Transformation
+              Leading Enterprise Application Platform for Digital Transformation
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Discover features designed to simplify workflows, boost
@@ -497,7 +550,7 @@ export default function Feature() {
                   viewport={{ once: true }}
                 >
                   <div className="text-3xl flex items-center">
-                    <feature.icon className="w-6 h-6" />
+                    <feature.icon className="w-6 h-6 text-[#2791D0]" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
@@ -560,7 +613,7 @@ export default function Feature() {
                 whileHover={{ scale: 1.05, borderColor: "#00A551" }}
               >
                 <div className="text-5xl mb-6 flex justify-center">
-                  <feature.icon className="w-10 h-10" text-black />
+                  <feature.icon className="w-10 h-10 text-[#2791D0]" />
                 </div>
                 <h4 className="text-2xl font-bold mb-4 text-gray-800">
                   {feature.title}
@@ -634,7 +687,7 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <FileText className="w-12 h-12 mx-auto mb-4 text-[#00A551]" />
+                  <FileText className="w-12 h-12 mx-auto mb-4 text-[#2791D0]" />
                   <h4 className="font-bold text-gray-800">Datafrom</h4>
                 </motion.div>
 
@@ -645,7 +698,7 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <Cog className="w-12 h-12 mx-auto mb-4 text-[#00A551]" />
+                  <Cog className="w-12 h-12 mx-auto mb-4 text-[#2791D0]" />
                   <h4 className="font-bold text-gray-800">Process</h4>
                 </motion.div>
 
@@ -656,7 +709,7 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <LinkIcon className="w-12 h-12 mx-auto mb-4 text-[#00A551]" />
+                  <LinkIcon className="w-12 h-12 mx-auto mb-4 text-[#2791D0]" />
                   <h4 className="font-bold text-gray-800">Intergration</h4>
                 </motion.div>
 
@@ -667,7 +720,7 @@ export default function Feature() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <BarChart className="w-12 h-12 mx-auto mb-4 text-[#00A551]" />
+                  <BarChart className="w-12 h-12 mx-auto mb-4 text-[#2791D0]" />
                   <h4 className="font-bold text-gray-800">Analytics</h4>
                 </motion.div>
               </div>
@@ -685,7 +738,7 @@ export default function Feature() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-lg">70% Increase in Engagement</span>
-                    <BarChart className="w-8 h-8" />
+                    <BarChart className="w-8 h-8 text-white" />
                   </div>
                   <p className="text-blue-100">
                     Marketing strategies utilizing data-driven insights lead to
@@ -710,7 +763,7 @@ export default function Feature() {
                 viewport={{ once: true }}
               >
                 <div className="text-center mb-6">
-                  <DollarSign className="w-10 h-10 mb-4 text-[#00A551]" />
+                  <DollarSign className="w-10 h-10 mb-4 text-[#2791D0]" />
                   <h4 className="text-2xl font-bold text-gray-800 mb-2">
                     50% Higher ROI
                   </h4>
@@ -730,7 +783,7 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <GitBranch className="w-8 h-8 mx-auto mb-2 text-[#00A551]" />
+                  <GitBranch className="w-8 h-8 mx-auto mb-2 text-[#2791D0]" />
                   <h5 className="font-semibold text-gray-800">
                     Agile Workflow
                   </h5>
@@ -744,7 +797,7 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Mail className="w-8 h-8 mx-auto mb-2 text-[#00A551]" />
+                  <Mail className="w-8 h-8 mx-auto mb-2 text-[#2791D0]" />
                   <h5 className="font-semibold text-gray-800">Communication</h5>
                 </motion.div>
 
@@ -756,7 +809,7 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <File className="w-8 h-8 mx-auto mb-2 text-[#00A551]" />
+                  <File className="w-8 h-8 mx-auto mb-2 text-[#2791D0]" />
                   <h5 className="font-semibold text-gray-800">
                     Document Sharing
                   </h5>
@@ -770,7 +823,7 @@ export default function Feature() {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <SettingsIcon className="w-8 h-8 mx-auto mb-2 text-[#00A551]" />
+                  <SettingsIcon className="w-8 h-8 mx-auto mb-2 text-[#2791D0]" />
                   <h5 className="font-semibold text-gray-800">
                     Security Measures
                   </h5>

@@ -165,48 +165,174 @@ const NoCode: React.FC = () => {
 
             {/* Right Visual */}
             <div className="relative">
-              <div className="relative z-10">
+              {/* Background Effects */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-cyan-400/20 to-green-400/20 rounded-full blur-lg"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-400/10 to-teal-400/10 rounded-full blur-2xl"></div>
+              </div>
+
+              <div className="relative z-10 py-10">
                 {/* Floating Cards */}
-                <div className="grid grid-cols-2 gap-4 transform rotate-0 hover:rotate-0 transition-transform duration-500">
-                  <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105">
-                    <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mb-4">
-                      <Smartphone className="w-6 h-6 text-teal-600" />
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="group bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/60 relative overflow-hidden">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-cyan-50/30 to-green-50/50 opacity-0"></div>
+
+                    {/* Floating Particles */}
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-teal-400/30 rounded-full"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-cyan-400/40 rounded-full"></div>
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <Smartphone className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-800 mb-3 text-lg">
+                        Enterprise Apps
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Native iOS & Android apps with advanced features
+                      </p>
+
+                      {/* Progress Indicator */}
+                      <div className="mt-4 opacity-0">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full w-4/5"></div>
+                          </div>
+                          <span className="text-xs text-teal-600 font-medium">
+                            85%
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-bold text-slate-800 mb-2">
-                      Enterprise Apps
-                    </h3>
-                    <p className="text-sm text-slate-600">
-                      Native iOS & Android apps
-                    </p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 mt-8">
-                    <div className="w-12 h-12 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4">
-                      <Zap className="w-6 h-6 text-cyan-600" />
+
+                  <div className="group bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/60 relative overflow-hidden">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/50 via-teal-50/30 to-blue-50/50 opacity-0"></div>
+
+                    {/* Floating Particles */}
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-cyan-400/30 rounded-full"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-teal-400/40 rounded-full"></div>
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <Zap className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-800 mb-3 text-lg">
+                        Workflows
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Automate complex business processes effortlessly
+                      </p>
+
+                      {/* Progress Indicator */}
+                      <div className="mt-4 opacity-0">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full w-3/4"></div>
+                          </div>
+                          <span className="text-xs text-cyan-600 font-medium">
+                            92%
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-bold text-slate-800 mb-2">Workflows</h3>
-                    <p className="text-sm text-slate-600">
-                      Automate any process
-                    </p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 -mt-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-4">
-                      <BarChart3 className="w-6 h-6 text-green-600" />
+
+                  <div className="group bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/60 relative overflow-hidden">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 via-teal-50/30 to-cyan-50/50 opacity-0"></div>
+
+                    {/* Floating Particles */}
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-green-400/30 rounded-full"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-teal-400/40 rounded-full"></div>
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <BarChart3 className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-800 mb-3 text-lg">
+                        Dashboards
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Real-time analytics with stunning visualizations
+                      </p>
+
+                      {/* Progress Indicator */}
+                      <div className="mt-4 opacity-0">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-gradient-to-r from-green-500 to-teal-500 rounded-full w-5/6"></div>
+                          </div>
+                          <span className="text-xs text-green-600 font-medium">
+                            96%
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-bold text-slate-800 mb-2">
-                      Dashboards
-                    </h3>
-                    <p className="text-sm text-slate-600">
-                      Real-time analytics
-                    </p>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm p-6 rounded-3xl shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-300 hover:scale-105 mt-4">
-                    <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mb-4">
-                      <Link className="w-6 h-6 text-teal-600" />
+
+                  <div className="group bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/60 relative overflow-hidden">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-teal-50/30 to-cyan-50/50 opacity-0"></div>
+
+                    {/* Floating Particles */}
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-orange-400/30 rounded-full"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 bg-teal-400/40 rounded-full"></div>
+
+                    <div className="relative z-10">
+                      <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <Link className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-800 mb-3 text-lg">
+                        Integrations
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Connect everything with seamless API integrations
+                      </p>
+
+                      {/* Progress Indicator */}
+                      <div className="mt-4 opacity-0">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-gradient-to-r from-orange-500 to-teal-500 rounded-full w-4/5"></div>
+                          </div>
+                          <span className="text-xs text-orange-600 font-medium">
+                            88%
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-bold text-slate-800 mb-2">
-                      Integrations
-                    </h3>
-                    <p className="text-sm text-slate-600">Connect everything</p>
+                  </div>
+                </div>
+
+                {/* Floating Stats */}
+                <div className="mt-12 grid grid-cols-3 gap-4">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                      10x
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium">
+                      Faster
+                    </div>
+                  </div>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
+                      95%
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium">
+                      Cheaper
+                    </div>
+                  </div>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
+                    <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                      ∞
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium">
+                      Scalable
+                    </div>
                   </div>
                 </div>
               </div>

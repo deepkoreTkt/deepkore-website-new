@@ -121,6 +121,7 @@ const Healthcare: React.FC = () => {
         "Decrease patient wait times by 40% with optimized scheduling and streamlined workflows.",
       metric: "40%",
       metricLabel: "Faster Care",
+      color: "emerald",
     },
     {
       icon: DollarSign,
@@ -129,6 +130,7 @@ const Healthcare: React.FC = () => {
         "Reduce administrative costs by 30% through automation and efficient resource utilization.",
       metric: "30%",
       metricLabel: "Cost Reduction",
+      color: "blue",
     },
     {
       icon: TrendingUp,
@@ -137,6 +139,7 @@ const Healthcare: React.FC = () => {
         "Boost patient satisfaction scores by 35% with better care coordination and communication.",
       metric: "35%",
       metricLabel: "Higher Satisfaction",
+      color: "purple",
     },
     {
       icon: Shield,
@@ -145,6 +148,7 @@ const Healthcare: React.FC = () => {
         "Achieve 100% compliance with healthcare regulations and reduce risk of penalties.",
       metric: "100%",
       metricLabel: "Compliance Rate",
+      color: "teal",
     },
   ];
 
@@ -225,7 +229,7 @@ const Healthcare: React.FC = () => {
       description:
         "Specialized care management for cardiology, oncology, and other specialty practices with advanced tracking.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop",
       benefits: [
         "Specialty workflows",
         "Treatment protocols",
@@ -568,7 +572,7 @@ const Healthcare: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
           <div className="container mx-auto px-40">
             <motion.div
               className="text-center mb-16"
@@ -590,24 +594,67 @@ const Healthcare: React.FC = () => {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center overflow-hidden"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 text-center overflow-hidden border border-gray-100"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                 >
+                  {/* Top Accent Border */}
+                  <div
+                    className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
+                      benefit.color === "emerald"
+                        ? "from-emerald-500 to-emerald-600"
+                        : benefit.color === "blue"
+                        ? "from-blue-500 to-blue-600"
+                        : benefit.color === "purple"
+                        ? "from-purple-500 to-purple-600"
+                        : "from-teal-500 to-teal-600"
+                    }`}
+                  ></div>
+
                   {/* Background Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                      benefit.color === "emerald"
+                        ? "from-emerald-500/5 to-emerald-600/5"
+                        : benefit.color === "blue"
+                        ? "from-blue-500/5 to-blue-600/5"
+                        : benefit.color === "purple"
+                        ? "from-purple-500/5 to-purple-600/5"
+                        : "from-teal-500/5 to-teal-600/5"
+                    }`}
+                  ></div>
 
                   {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`relative inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 group-hover:scale-110 transition-all duration-300 ${
+                      benefit.color === "emerald"
+                        ? "bg-emerald-100 text-emerald-600 shadow-emerald-100"
+                        : benefit.color === "blue"
+                        ? "bg-blue-100 text-blue-600 shadow-blue-100"
+                        : benefit.color === "purple"
+                        ? "bg-purple-100 text-purple-600 shadow-purple-100"
+                        : "bg-teal-100 text-teal-600 shadow-teal-100"
+                    } shadow-lg`}
+                  >
                     <benefit.icon className="w-8 h-8" />
                   </div>
 
                   {/* Metric */}
                   <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                    <div
+                      className={`text-4xl font-bold mb-2 ${
+                        benefit.color === "emerald"
+                          ? "text-emerald-600"
+                          : benefit.color === "blue"
+                          ? "text-blue-600"
+                          : benefit.color === "purple"
+                          ? "text-purple-600"
+                          : "text-teal-600"
+                      }`}
+                    >
                       {benefit.metric}
                     </div>
                     <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
@@ -615,12 +662,27 @@ const Healthcare: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
                     {benefit.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {benefit.description}
                   </p>
+
+                  {/* Hover Indicator */}
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        benefit.color === "emerald"
+                          ? "bg-emerald-500"
+                          : benefit.color === "blue"
+                          ? "bg-blue-500"
+                          : benefit.color === "purple"
+                          ? "bg-purple-500"
+                          : "bg-teal-500"
+                      }`}
+                    ></div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -628,21 +690,36 @@ const Healthcare: React.FC = () => {
         </section>
 
         {/* Challenges Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.1),transparent_50%)]"></div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
             <motion.div
-              className="text-center mb-16"
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Healthcare Challenges We Solve
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 rounded-full text-blue-700 text-sm font-semibold">
+                  Critical Issues
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Healthcare Challenges
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  We Solve
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Transform your healthcare operations by addressing the key pain
-                points that affect patient care and operational efficiency
+                points that affect patient care and operational efficiency with
+                our comprehensive solutions
               </p>
             </motion.div>
 
@@ -650,37 +727,142 @@ const Healthcare: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 hover:border-blue-200 transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                   {/* Impact Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                  <div className="absolute top-6 right-6">
+                    <motion.span
+                      className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {challenge.impact}
-                    </span>
+                    </motion.span>
                   </div>
 
-                  {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
-                    <challenge.icon className="w-6 h-6" />
+                  {/* Icon with Glow */}
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-8 shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
+                    <challenge.icon className="w-8 h-8 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                     {challenge.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-8 group-hover:text-gray-700 transition-colors duration-300">
                     {challenge.description}
                   </p>
 
-                  {/* Solution Indicator */}
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Solved by Deepkore</span>
-                  </div>
+                  {/* Enhanced Solution Indicator */}
+                  <motion.div
+                    className="relative mt-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200/50 group-hover:border-green-300/70 transition-all duration-500"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-100/50 to-emerald-100/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    {/* Success Badge */}
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <motion.div
+                        className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        ✓ SOLVED
+                      </motion.div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative flex items-center justify-center space-x-3 pt-2">
+                      <motion.div
+                        className="flex items-center space-x-2"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Animated Check Icon */}
+                        <motion.div
+                          className="relative"
+                          whileHover={{ rotate: 360, scale: 1.2 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                            <CheckCircle className="w-5 h-5 text-white" />
+                          </div>
+                          {/* Glow Effect */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full blur-md opacity-50 -z-10"></div>
+                        </motion.div>
+
+                        {/* Text with Gradient */}
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
+                            Solved by
+                          </span>
+                          <span className="text-lg font-bold text-gray-800 group-hover:text-green-700 transition-colors duration-300">
+                            Deepkore
+                          </span>
+                        </div>
+                      </motion.div>
+
+                      {/* Decorative Elements */}
+                      <motion.div
+                        className="flex space-x-1"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <motion.div
+                          className="w-2 h-2 bg-green-400 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0,
+                          }}
+                        ></motion.div>
+                        <motion.div
+                          className="w-2 h-2 bg-emerald-400 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0.3,
+                          }}
+                        ></motion.div>
+                        <motion.div
+                          className="w-2 h-2 bg-green-500 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0.6,
+                          }}
+                        ></motion.div>
+                      </motion.div>
+                    </div>
+
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+                  </motion.div>
+
+                  {/* Decorative Element */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </motion.div>
               ))}
             </div>
@@ -688,21 +870,58 @@ const Healthcare: React.FC = () => {
         </section>
 
         {/* Use Cases Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 relative">
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              className="text-center mb-16"
+              className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, -20, 0],
+                x: [0, 10, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-20 right-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, 20, 0],
+                x: [0, -10, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
+            <motion.div
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Healthcare Applications
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-600 text-sm font-semibold">
+                  Real-World Applications
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Healthcare
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  Applications
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how different types of healthcare organizations leverage our
-                platform for better patient care
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Discover how different types of healthcare organizations
+                leverage our platform for enhanced patient care, streamlined
+                operations, and improved outcomes
               </p>
             </motion.div>
 
@@ -710,58 +929,95 @@ const Healthcare: React.FC = () => {
               {useCases.map((useCase, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -12, rotateY: 5 }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img
+                  {/* Image with Enhanced Effects */}
+                  <div className="relative h-56 overflow-hidden">
+                    <motion.img
                       src={useCase.image}
                       alt={useCase.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
                       onError={(e) => {
                         e.currentTarget.src =
                           "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGNEY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhlYWx0aGNhcmU8L3RleHQ+PC9zdmc+";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    {/* Floating Badge */}
+                    <motion.div
+                      className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold text-gray-800 shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Case Study
+                    </motion.div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-8">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {/* Content with Enhanced Styling */}
+                  <div className="p-8 relative">
+                    <motion.h3
+                      className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300"
+                      whileHover={{ x: 5 }}
+                    >
                       {useCase.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    </motion.h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                       {useCase.description}
                     </p>
 
-                    {/* Benefits List */}
-                    <div className="space-y-2">
+                    {/* Benefits List with Animation */}
+                    <div className="space-y-3 mb-6">
                       {useCase.benefits.map((benefit, benefitIndex) => (
-                        <div
+                        <motion.div
                           key={benefitIndex}
                           className="flex items-center space-x-3"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: benefitIndex * 0.1,
+                          }}
+                          viewport={{ once: true }}
                         >
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">
+                          <motion.div
+                            whileHover={{ scale: 1.2, rotate: 360 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          </motion.div>
+                          <span className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                             {benefit}
                           </span>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
 
-                    {/* Learn More Link */}
-                    <a href="/getstarted">
-                      <div className="mt-6 flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                        <span>Learn More</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </a>
+                    {/* Enhanced Learn More Link */}
+                    <motion.a
+                      href="/getstarted"
+                      className="inline-flex items-center space-x-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span>Learn More</span>
+                      <motion.div
+                        whileHover={{ x: 3 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowRight className="w-5 h-5" />
+                      </motion.div>
+                    </motion.a>
+
+                    {/* Decorative Corner */}
+                    <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-blue-500/10 to-transparent rounded-tl-3xl"></div>
                   </div>
                 </motion.div>
               ))}

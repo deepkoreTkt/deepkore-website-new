@@ -113,6 +113,7 @@ const Education: React.FC = () => {
         "Enhance student outcomes with data-driven insights and personalized learning approaches.",
       metric: "35%",
       metricLabel: "Performance Improvement",
+      color: "green",
     },
     {
       icon: Clock,
@@ -121,6 +122,7 @@ const Education: React.FC = () => {
         "Automate routine tasks and streamline processes to focus more on teaching and learning.",
       metric: "50%",
       metricLabel: "Time Savings",
+      color: "blue",
     },
     {
       icon: Eye,
@@ -129,6 +131,7 @@ const Education: React.FC = () => {
         "Real-time access to student data, academic progress, and institutional performance metrics.",
       metric: "100%",
       metricLabel: "Data Visibility",
+      color: "purple",
     },
     {
       icon: DollarSign,
@@ -137,8 +140,76 @@ const Education: React.FC = () => {
         "Better allocation of resources, reduced operational costs, and improved financial management.",
       metric: "30%",
       metricLabel: "Cost Optimization",
+      color: "orange",
     },
   ];
+
+  // Helper function to get hex color
+  const getColorHex = (color: string) => {
+    switch (color) {
+      case "green":
+        return "#10b981";
+      case "blue":
+        return "#2563eb";
+      case "purple":
+        return "#7c3aed";
+      case "orange":
+        return "#f59e0b";
+      default:
+        return "#10b981";
+    }
+  };
+
+  // Circular Progress Component
+  const CircularProgress = ({
+    percentage,
+    size = 80,
+    strokeWidth = 8,
+    color = "#10b981",
+  }: {
+    percentage: number;
+    size?: number;
+    strokeWidth?: number;
+    color?: string;
+  }) => {
+    const radius = (size - strokeWidth) / 2;
+    const circumference = radius * 2 * Math.PI;
+    const strokeDasharray = circumference;
+    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+    return (
+      <div className="relative inline-flex items-center justify-center">
+        <svg width={size} height={size} className="transform -rotate-90">
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="#e5e7eb"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+          />
+          <motion.circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke={color}
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            strokeDasharray={strokeDasharray}
+            initial={{ strokeDashoffset: circumference }}
+            animate={{ strokeDashoffset }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            strokeLinecap="round"
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-xl font-bold" style={{ color }}>
+            {percentage}%
+          </span>
+        </div>
+      </div>
+    );
+  };
 
   const challenges = [
     {
@@ -147,6 +218,7 @@ const Education: React.FC = () => {
       description:
         "Time-consuming paper-based processes for student records, attendance, and grade management.",
       impact: "Administrative Burden",
+      color: "orange",
     },
     {
       icon: Users,
@@ -154,6 +226,7 @@ const Education: React.FC = () => {
       description:
         "Difficulty monitoring student progress, attendance patterns, and academic performance.",
       impact: "Academic Oversight",
+      color: "blue",
     },
     {
       icon: MessageSquare,
@@ -161,6 +234,7 @@ const Education: React.FC = () => {
       description:
         "Inefficient communication channels between teachers, parents, and administrators.",
       impact: "Stakeholder Engagement",
+      color: "green",
     },
     {
       icon: Calculator,
@@ -168,6 +242,7 @@ const Education: React.FC = () => {
       description:
         "Complex fee structures, payment tracking, and financial reporting challenges.",
       impact: "Financial Management",
+      color: "purple",
     },
     {
       icon: BarChart3,
@@ -175,6 +250,7 @@ const Education: React.FC = () => {
       description:
         "Lack of comprehensive data analysis for student performance and institutional improvement.",
       impact: "Decision Making",
+      color: "red",
     },
     {
       icon: Shield,
@@ -182,6 +258,7 @@ const Education: React.FC = () => {
       description:
         "Concerns about student data privacy and compliance with educational regulations.",
       impact: "Compliance Risk",
+      color: "teal",
     },
   ];
 
@@ -204,7 +281,7 @@ const Education: React.FC = () => {
       description:
         "University-wide ERP for admissions, course management, faculty administration, and alumni relations.",
       image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&h=300&fit=crop",
       benefits: [
         "Admissions processing",
         "Course registration",
@@ -266,6 +343,32 @@ const Education: React.FC = () => {
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl"></div>
+            {/* Additional Floating Elements */}
+            <motion.div
+              className="absolute top-10 right-10 w-20 h-20 bg-green-400/20 rounded-full blur-xl"
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-10 left-10 w-16 h-16 bg-purple-400/20 rounded-full blur-xl"
+              animate={{ y: [0, 20, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute top-1/3 left-10 w-12 h-12 bg-orange-400/20 rounded-full blur-xl"
+              animate={{ x: [0, 30, 0] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            ></motion.div>
           </div>
 
           <div className="relative z-10 container mx-auto px-40">
@@ -425,6 +528,23 @@ const Education: React.FC = () => {
                         </div>
                       </div>
                     </motion.div>
+
+                    <motion.div
+                      className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-200 float-animation"
+                      style={{ animationDelay: "4s" }}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                        <div>
+                          <div className="text-sm font-semibold text-gray-800">
+                            Courses Offered
+                          </div>
+                          <div className="text-lg font-bold text-purple-600">
+                            150+
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
 
                   {/* Background Decorative Elements */}
@@ -463,8 +583,11 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -12, scale: 1.03 }}
                 >
+                  {/* Gradient Background on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-indigo-50/0 group-hover:from-blue-50/30 group-hover:to-indigo-50/30 transition-all duration-300 rounded-2xl"></div>
+
                   {/* Background Color Accent */}
                   <div
                     className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
@@ -561,8 +684,28 @@ const Education: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="container mx-auto px-40">
+        <section className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div
+              className="absolute top-10 left-10 w-20 h-20 bg-blue-200/30 rounded-full blur-xl float-animation"
+              style={{ animationDelay: "0s" }}
+            ></div>
+            <div
+              className="absolute top-1/4 right-20 w-16 h-16 bg-green-200/30 rounded-full blur-xl float-animation"
+              style={{ animationDelay: "3s" }}
+            ></div>
+            <div
+              className="absolute bottom-20 left-1/4 w-24 h-24 bg-purple-200/30 rounded-full blur-xl float-animation"
+              style={{ animationDelay: "6s" }}
+            ></div>
+            <div
+              className="absolute bottom-10 right-10 w-18 h-18 bg-orange-200/30 rounded-full blur-xl float-animation"
+              style={{ animationDelay: "9s" }}
+            ></div>
+          </div>
+
+          <div className="relative z-10 container mx-auto px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -595,16 +738,29 @@ const Education: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 ${
+                      benefit.color === "blue"
+                        ? "bg-blue-100 text-blue-600"
+                        : benefit.color === "green"
+                        ? "bg-green-100 text-green-600"
+                        : benefit.color === "purple"
+                        ? "bg-purple-100 text-purple-600"
+                        : benefit.color === "orange"
+                        ? "bg-orange-100 text-orange-600"
+                        : "bg-blue-100 text-blue-600"
+                    }`}
+                  >
                     <benefit.icon className="w-8 h-8" />
                   </div>
 
                   {/* Metric */}
-                  <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
-                      {benefit.metric}
-                    </div>
-                    <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                  <div className="relative mb-4 flex flex-col items-center">
+                    <CircularProgress
+                      percentage={parseInt(benefit.metric)}
+                      color={getColorHex(benefit.color)}
+                    />
+                    <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide mt-2">
                       {benefit.metricLabel}
                     </div>
                   </div>
@@ -644,34 +800,65 @@ const Education: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
+                  {/* Gradient Background on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-indigo-50/0 group-hover:from-blue-50/50 group-hover:to-indigo-50/50 transition-all duration-300 rounded-2xl"></div>
+
                   {/* Impact Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                        challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-800"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-800"
+                          : challenge.color === "green"
+                          ? "bg-green-100 text-green-800"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-800"
+                          : challenge.color === "red"
+                          ? "bg-red-100 text-red-800"
+                          : "bg-teal-100 text-teal-800"
+                      }`}
+                    >
                       {challenge.impact}
                     </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 ${
+                      challenge.color === "orange"
+                        ? "bg-orange-100 text-orange-600"
+                        : challenge.color === "blue"
+                        ? "bg-blue-100 text-blue-600"
+                        : challenge.color === "green"
+                        ? "bg-green-100 text-green-600"
+                        : challenge.color === "purple"
+                        ? "bg-purple-100 text-purple-600"
+                        : challenge.color === "red"
+                        ? "bg-red-100 text-red-600"
+                        : "bg-teal-100 text-teal-600"
+                    }`}
+                  >
                     <challenge.icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
                     {challenge.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {challenge.description}
                   </p>
 
                   {/* Solution Indicator */}
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold">
+                  <div className="flex items-center space-x-2 text-sm text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
                     <CheckCircle className="w-4 h-4" />
                     <span>Solved by Deepkore</span>
                   </div>
@@ -722,7 +909,11 @@ const Education: React.FC = () => {
                           "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGNEY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkVkdWNhdGlvbjwvdGV4dD48L3N2Zz4=";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-all duration-300"></div>
+                    {/* Hover Overlay Text */}
+                    <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <h4 className="text-lg font-bold">{useCase.title}</h4>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -762,7 +953,25 @@ const Education: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
+        <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden">
+          {/* Background Decorative Elements */}
+          <div className="absolute inset-0">
+            <motion.div
+              className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-10 right-10 w-24 h-24 bg-indigo-400/20 rounded-full blur-xl"
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            ></motion.div>
+          </div>
           <div className="container mx-auto px-40">
             <motion.div
               className="text-center text-white"

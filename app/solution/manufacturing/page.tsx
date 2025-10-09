@@ -33,36 +33,54 @@ const Manufacturing: React.FC = () => {
       title: "Build Without Barriers",
       description:
         "Let anyone in your team design and deploy apps—no coding required.",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600",
+      color: "blue",
     },
     {
       icon: Zap,
       title: "Speed Up Delivery",
       description:
         "From concept to launch, create and test applications in record time.",
+      bgColor: "bg-green-50",
+      iconColor: "text-green-600",
+      color: "green",
     },
     {
       icon: TrendingUp,
       title: "Grow with Ease",
       description:
         "Adapt and expand your apps effortlessly as your business evolves.",
+      bgColor: "bg-teal-50",
+      iconColor: "text-teal-600",
+      color: "teal",
     },
     {
-      icon: "�️",
+      icon: Shield,
       title: "Stay in Control",
       description:
         "Enable safe, governed development without slowing creativity.",
+      bgColor: "bg-red-50",
+      iconColor: "text-red-600",
+      color: "red",
     },
     {
-      icon: "�",
+      icon: Lightbulb,
       title: "Ignite Creativity",
       description:
         "Give teams tools that turn ideas into solutions quickly and efficiently.",
+      bgColor: "bg-yellow-50",
+      iconColor: "text-yellow-600",
+      color: "yellow",
     },
     {
-      icon: "💰",
+      icon: DollarSign,
       title: "Optimize Costs",
       description:
         "Deliver more with less by reusing components and cutting development time.",
+      bgColor: "bg-pink-50",
+      iconColor: "text-pink-600",
+      color: "pink",
     },
   ];
 
@@ -72,24 +90,36 @@ const Manufacturing: React.FC = () => {
       description:
         "Connect with ERPs, payment systems, vendors, and authentication services for seamless operations.",
       icon: Link,
+      bgColor: "bg-cyan-50",
+      iconColor: "text-cyan-600",
+      color: "cyan",
     },
     {
       title: "Organize",
       description:
         "Centralize all manufacturing data and information in a unified, accessible platform.",
       icon: BarChart3,
+      bgColor: "bg-indigo-50",
+      iconColor: "text-indigo-600",
+      color: "indigo",
     },
     {
       title: "Optimize",
       description:
         "Streamline processes to boost operational efficiency and drive productivity gains.",
       icon: Settings,
+      bgColor: "bg-emerald-50",
+      iconColor: "text-emerald-600",
+      color: "emerald",
     },
     {
       title: "Enhance",
       description:
         "Improve order fulfillment with real-time inventory visibility and complete traceability.",
       icon: TrendingUp,
+      bgColor: "bg-violet-50",
+      iconColor: "text-violet-600",
+      color: "violet",
     },
   ];
 
@@ -131,6 +161,124 @@ const Manufacturing: React.FC = () => {
         "Accumulated inefficiencies from patchwork solutions and outdated code.",
     },
   ];
+
+  const roadblocks = [
+    {
+      icon: Clock,
+      title: "Delays in bringing ideas to market",
+      description:
+        "Slow development cycles prevent rapid innovation and competitive advantage.",
+      stat: "6-12 months",
+      statLabel: "Avg. development time",
+      bgColor: "bg-red-50",
+      iconColor: "text-red-600",
+      color: "red",
+    },
+    {
+      icon: FileText,
+      title: "Manual, paper-heavy approval processes",
+      description:
+        "Tedious paperwork and manual approvals create bottlenecks and errors.",
+      stat: "40+ hours",
+      statLabel: "Weekly admin time",
+      bgColor: "bg-orange-50",
+      iconColor: "text-orange-600",
+      color: "orange",
+    },
+    {
+      icon: Link,
+      title: "Disconnected tools and siloed data",
+      description:
+        "Fragmented systems prevent seamless data flow and collaboration.",
+      stat: "15+ systems",
+      statLabel: "Avg. per company",
+      bgColor: "bg-yellow-50",
+      iconColor: "text-yellow-600",
+      color: "yellow",
+    },
+    {
+      icon: Lock,
+      title: "Inflexible ERP platforms holding you back",
+      description:
+        "Rigid off-the-shelf solutions can't adapt to your unique manufacturing needs.",
+      stat: "70%",
+      statLabel: "Features unused",
+      bgColor: "bg-amber-50",
+      iconColor: "text-amber-600",
+      color: "amber",
+    },
+    {
+      icon: Building,
+      title: "Outdated systems struggling to keep pace",
+      description:
+        "Legacy infrastructure that's expensive to maintain and difficult to scale.",
+      stat: "15+ years",
+      statLabel: "System age",
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-600",
+      color: "purple",
+    },
+    {
+      icon: BookOpen,
+      title: "Growing piles of technical debt",
+      description:
+        "Accumulated inefficiencies from patchwork solutions and outdated technologies.",
+      stat: "$2.5M",
+      statLabel: "Annual maintenance cost",
+      bgColor: "bg-pink-50",
+      iconColor: "text-pink-600",
+      color: "pink",
+    },
+  ];
+
+  // Helper functions for hexagonal design
+  const getChallengeColor = (index: number) => {
+    const colors = [
+      "from-red-100 to-red-300",
+      "from-orange-100 to-orange-300",
+      "from-yellow-100 to-yellow-300",
+      "from-green-100 to-green-300",
+      "from-blue-100 to-blue-300",
+      "from-purple-100 to-purple-300",
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getChallengeBgColor = (index: number) => {
+    const colors = [
+      "from-red-50 to-red-100",
+      "from-orange-50 to-orange-100",
+      "from-yellow-50 to-yellow-100",
+      "from-green-50 to-green-100",
+      "from-blue-50 to-blue-100",
+      "from-purple-50 to-purple-100",
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getChallengeIconColor = (index: number) => {
+    const colors = [
+      "text-red-600",
+      "text-orange-600",
+      "text-yellow-600",
+      "text-green-600",
+      "text-blue-600",
+      "text-purple-600",
+    ];
+    return colors[index % colors.length];
+  };
+
+  const getChallengeDotColor = (index: number) => {
+    const colors = [
+      "bg-red-500",
+      "bg-orange-500",
+      "bg-yellow-500",
+      "bg-green-500",
+      "bg-blue-500",
+      "bg-purple-500",
+    ];
+    return colors[index % colors.length];
+  };
 
   return (
     <>
@@ -228,7 +376,7 @@ const Manufacturing: React.FC = () => {
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-green-400/20 rounded-3xl blur-3xl transform rotate-6"></div>
-                  <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200/50">
+                  <div className="relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-100/50">
                     <img
                       src="/images/manufacturing-hero.jpg"
                       alt="Manufacturing ERP Solutions"
@@ -283,59 +431,10 @@ const Manufacturing: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {[
-                  {
-                    icon: Clock,
-                    title: "Delays in bringing ideas to market",
-                    description:
-                      "Slow development cycles prevent rapid innovation and competitive advantage.",
-                    stat: "6-12 months",
-                    statLabel: "Avg. development time",
-                  },
-                  {
-                    icon: FileText,
-                    title: "Manual, paper-heavy approval processes",
-                    description:
-                      "Tedious paperwork and manual approvals create bottlenecks and errors.",
-                    stat: "40+ hours",
-                    statLabel: "Weekly admin time",
-                  },
-                  {
-                    icon: Link,
-                    title: "Disconnected tools and siloed data",
-                    description:
-                      "Fragmented systems prevent seamless data flow and collaboration.",
-                    stat: "15+ systems",
-                    statLabel: "Avg. per company",
-                  },
-                  {
-                    icon: Lock,
-                    title: "Inflexible ERP platforms holding you back",
-                    description:
-                      "Rigid off-the-shelf solutions can't adapt to your unique manufacturing needs.",
-                    stat: "70%",
-                    statLabel: "Features unused",
-                  },
-                  {
-                    icon: Building,
-                    title: "Outdated systems struggling to keep pace",
-                    description:
-                      "Legacy infrastructure that's expensive to maintain and difficult to scale.",
-                    stat: "15+ years",
-                    statLabel: "System age",
-                  },
-                  {
-                    icon: BookOpen,
-                    title: "Growing piles of technical debt",
-                    description:
-                      "Accumulated inefficiencies from patchwork solutions and outdated technologies.",
-                    stat: "$2.5M",
-                    statLabel: "Annual maintenance cost",
-                  },
-                ].map((roadblock, index) => (
+                {roadblocks.map((roadblock, index) => (
                   <motion.div
                     key={index}
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    className={`group relative ${roadblock.bgColor} backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
                     whileHover={{ scale: 1.02, y: -4 }}
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -350,11 +449,15 @@ const Manufacturing: React.FC = () => {
 
                     <div className="relative z-10">
                       {/* Icon */}
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div
+                        className={`inline-flex items-center justify-center w-12 h-12 bg-${roadblock.color}-100 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
                         {typeof roadblock.icon === "string" ? (
                           roadblock.icon
                         ) : (
-                          <roadblock.icon className="w-6 h-6 text-gray-600" />
+                          <roadblock.icon
+                            className={`w-6 h-6 text-${roadblock.color}-600`}
+                          />
                         )}
                       </div>
 
@@ -390,7 +493,7 @@ const Manufacturing: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-full px-8 py-4 border border-blue-200/30">
+                <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-full px-8 py-4 border border-blue-100/30">
                   <span className="text-blue-600 font-semibold">
                     But there&apos;s a better way
                   </span>
@@ -436,7 +539,7 @@ const Manufacturing: React.FC = () => {
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    className={`group relative ${feature.bgColor} backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
                     whileHover={{ scale: 1.02, y: -4 }}
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -444,7 +547,7 @@ const Manufacturing: React.FC = () => {
                     viewport={{ once: true }}
                   >
                     {/* Simple background */}
-                    <div className="absolute inset-0 bg-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
 
                     {/* Floating elements */}
                     <div className="absolute -top-3 -right-3 w-12 h-12 bg-blue-100 rounded-full blur-lg group-hover:scale-125 transition-transform duration-500"></div>
@@ -459,11 +562,15 @@ const Manufacturing: React.FC = () => {
                       </div>
 
                       {/* Icon */}
-                      <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div
+                        className={`inline-flex items-center justify-center w-14 h-14 bg-${feature.color}-100 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
                         {typeof feature.icon === "string" ? (
                           feature.icon
                         ) : (
-                          <feature.icon className="w-7 h-7 text-blue-600" />
+                          <feature.icon
+                            className={`w-7 h-7 text-${feature.color}-600`}
+                          />
                         )}
                       </div>
 
@@ -522,7 +629,7 @@ const Manufacturing: React.FC = () => {
                 {capabilities.map((capability, index) => (
                   <motion.div
                     key={index}
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                     whileHover={{ scale: 1.01, x: 8 }}
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -531,23 +638,33 @@ const Manufacturing: React.FC = () => {
                   >
                     {/* Timeline connector */}
                     {index < capabilities.length - 1 && (
-                      <div className="absolute left-8 top-full w-0.5 h-6 bg-gray-200 group-hover:bg-gray-300 transition-colors duration-300"></div>
+                      <div
+                        className={`absolute left-8 top-full w-0.5 h-6 bg-${capability.color}-200 group-hover:bg-${capability.color}-300 transition-colors duration-300`}
+                      ></div>
                     )}
 
                     {/* Timeline dot */}
-                    <div className="absolute left-6 top-6 w-4 h-4 bg-blue-600 rounded-full group-hover:scale-125 transition-transform duration-300 border-2 border-white shadow-lg"></div>
+                    <div
+                      className={`absolute left-6 top-6 w-4 h-4 bg-${capability.color}-600 rounded-full group-hover:scale-125 transition-transform duration-300 border-2 border-white shadow-lg`}
+                    ></div>
 
                     {/* Simple background elements */}
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-100 rounded-full blur-xl group-hover:scale-110 transition-transform duration-500"></div>
+                    <div
+                      className={`absolute top-0 right-0 w-24 h-24 bg-${capability.color}-100 rounded-full blur-xl group-hover:scale-110 transition-transform duration-500`}
+                    ></div>
 
                     <div className="relative z-10 flex items-start space-x-6 ml-8">
                       {/* Icon */}
                       <div className="flex-shrink-0">
-                        <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div
+                          className={`inline-flex items-center justify-center w-12 h-12 ${capability.bgColor} rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                        >
                           {typeof capability.icon === "string" ? (
                             capability.icon
                           ) : (
-                            <capability.icon className="w-6 h-6 text-blue-600" />
+                            <capability.icon
+                              className={`w-6 h-6 ${capability.iconColor}`}
+                            />
                           )}
                         </div>
                       </div>
@@ -555,10 +672,14 @@ const Manufacturing: React.FC = () => {
                       <div className="flex-1 min-w-0">
                         {/* Phase indicator */}
                         <div className="flex items-center space-x-3 mb-3">
-                          <span className="text-sm font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full shadow-sm">
+                          <span
+                            className={`text-sm font-semibold ${capability.iconColor} bg-${capability.color}-100 px-3 py-1 rounded-full shadow-sm`}
+                          >
                             Phase {index + 1}
                           </span>
-                          <div className="flex-1 h-px bg-blue-200 group-hover:bg-blue-300 transition-colors duration-300"></div>
+                          <div
+                            className={`flex-1 h-px bg-${capability.color}-200 group-hover:bg-${capability.color}-300 transition-colors duration-300`}
+                          ></div>
                         </div>
 
                         <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight group-hover:text-blue-800 transition-colors duration-300">
@@ -570,12 +691,14 @@ const Manufacturing: React.FC = () => {
 
                         {/* Timeline progress */}
                         <div className="mt-4 flex items-center space-x-3">
-                          <div className="text-sm text-blue-600 font-semibold">
+                          <div
+                            className={`text-sm ${capability.iconColor} font-semibold`}
+                          >
                             Progress
                           </div>
-                          <div className="flex-1 h-2 bg-blue-200 rounded-full overflow-hidden">
+                          <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-blue-600 rounded-full transition-all duration-700 ease-out"
+                              className={`h-full bg-${capability.color}-600 rounded-full transition-all duration-700 ease-out`}
                               style={{
                                 width: "0%",
                                 animationDelay: `${index * 0.2}s`,
@@ -583,7 +706,9 @@ const Manufacturing: React.FC = () => {
                               }}
                             ></div>
                           </div>
-                          <div className="text-sm text-blue-600 font-semibold">
+                          <div
+                            className={`text-sm ${capability.iconColor} font-semibold`}
+                          >
                             {(index + 1) * 25}%
                           </div>
                         </div>
@@ -624,98 +749,158 @@ const Manufacturing: React.FC = () => {
                 </motion.p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {challenges.map((challenge, index) => (
+              {/* Hexagonal Grid Layout */}
+              <div className="relative max-w-6xl mx-auto">
+                {/* Central hexagon */}
+                <div className="flex justify-center mb-8">
                   <motion.div
-                    key={index}
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-                    whileHover={{ scale: 1.02, y: -4 }}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group relative"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    {/* Simple background */}
-                    <div className="absolute inset-0 bg-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="relative w-48 h-48">
+                      {/* Hexagon shape */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700 shadow-2xl"></div>
+                      <div className="absolute inset-2 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
 
-                    {/* Geometric decorative elements */}
-                    <div className="absolute top-4 right-4 w-10 h-10 bg-gray-200 rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-                    <div className="absolute bottom-4 left-4 w-8 h-8 bg-gray-200 rounded-full group-hover:scale-125 transition-transform duration-500 delay-100"></div>
-
-                    <div className="relative z-10">
-                      {/* Priority indicator */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div
-                          className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-bold shadow-sm ${
-                            index < 2
-                              ? "bg-red-100 text-red-800 border border-red-300"
-                              : index < 4
-                              ? "bg-yellow-100 text-yellow-800 border border-yellow-300"
-                              : "bg-green-100 text-green-800 border border-green-300"
-                          }`}
-                        >
-                          <div
-                            className={`w-2 h-2 rounded-full ${
-                              index < 2
-                                ? "bg-red-500"
-                                : index < 4
-                                ? "bg-yellow-500"
-                                : "bg-green-500"
-                            }`}
-                          ></div>
-                          <span>
-                            {index < 2
-                              ? "High Priority"
-                              : index < 4
-                              ? "Medium Priority"
-                              : "Low Priority"}
-                          </span>
+                      {/* Content */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <Settings className="w-8 h-8 text-indigo-600" />
                         </div>
-                        <div className="text-xs text-gray-600 font-mono font-bold bg-gray-100 px-2 py-1 rounded">
-                          #{String(index + 1).padStart(2, "0")}
-                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 text-center mb-2 group-hover:text-indigo-800 transition-colors duration-300">
+                          Core Issues
+                        </h3>
+                        <p className="text-sm text-gray-600 text-center leading-tight">
+                          Manufacturing bottlenecks we eliminate
+                        </p>
                       </div>
 
-                      {/* Icon */}
-                      <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        {typeof challenge.icon === "string" ? (
-                          challenge.icon
-                        ) : (
-                          <challenge.icon className="w-7 h-7 text-gray-600" />
-                        )}
+                      {/* Animated border */}
+                      <div className="absolute inset-0 rounded-lg transform rotate-45">
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-lg opacity-0 group-hover:opacity-30 blur-xl animate-pulse"></div>
                       </div>
-
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight group-hover:text-gray-800 transition-colors duration-300">
-                        {challenge.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
-                        {challenge.description}
-                      </p>
-
-                      {/* Action indicator */}
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-xs text-gray-600 font-semibold">
-                          Action Required
-                        </span>
-                        <div className="flex space-x-1">
-                          {[...Array(3)].map((_, i) => (
-                            <div
-                              key={i}
-                              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                                i < (index % 3) + 1
-                                  ? "bg-gray-600"
-                                  : "bg-gray-200"
-                              }`}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Simple corner accent */}
-                      <div className="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-l-transparent border-t-[30px] border-t-gray-200 group-hover:border-t-gray-300 transition-colors duration-300"></div>
                     </div>
                   </motion.div>
-                ))}
+                </div>
+
+                {/* Surrounding hexagons in a circular pattern */}
+                <div className="relative w-full h-96 flex items-center justify-center">
+                  {challenges.map((challenge, index) => {
+                    const angle = index * 60 - 90; // Start from top
+                    const radius = 180;
+                    const x = Math.cos((angle * Math.PI) / 180) * radius;
+                    const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+                    return (
+                      <motion.div
+                        key={index}
+                        className="absolute group cursor-pointer"
+                        style={{
+                          left: `calc(50% + ${x}px)`,
+                          top: `calc(50% + ${y}px)`,
+                          transform: "translate(-50%, -50%)",
+                        }}
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.1, z: 50 }}
+                      >
+                        <div className="relative w-32 h-32">
+                          {/* Hexagon background */}
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-br ${getChallengeColor(
+                              index
+                            )} rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500 shadow-xl`}
+                          ></div>
+                          <div className="absolute inset-1 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
+
+                          {/* Content */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
+                            <div
+                              className={`w-10 h-10 bg-gradient-to-br ${getChallengeBgColor(
+                                index
+                              )} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-md`}
+                            >
+                              {typeof challenge.icon === "string" ? (
+                                challenge.icon
+                              ) : (
+                                <challenge.icon
+                                  className={`w-5 h-5 ${getChallengeIconColor(
+                                    index
+                                  )}`}
+                                />
+                              )}
+                            </div>
+                            <h4 className="text-xs font-bold text-gray-900 text-center leading-tight mb-1 group-hover:text-gray-800 transition-colors duration-300">
+                              {challenge.title.split(" ").slice(0, 2).join(" ")}
+                            </h4>
+                            <div
+                              className={`w-2 h-2 rounded-full ${getChallengeDotColor(
+                                index
+                              )} animate-pulse`}
+                            ></div>
+                          </div>
+
+                          {/* Connecting line to center */}
+                          <div
+                            className="absolute top-1/2 left-1/2 w-px bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-300"
+                            style={{
+                              height: `${radius - 60}px`,
+                              transform: `translate(-50%, -100%) rotate(${
+                                angle + 180
+                              }deg)`,
+                              transformOrigin: "bottom center",
+                            }}
+                          ></div>
+                        </div>
+
+                        {/* Tooltip on hover */}
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
+                          {challenge.title}
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                {/* Bottom stats */}
+                <motion.div
+                  className="text-center mt-40"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-indigo-600 mb-2">
+                        85%
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Efficiency Gain
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-purple-600 mb-2">
+                        60%
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        Cost Reduction
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-pink-600 mb-2">
+                        24/7
+                      </div>
+                      <div className="text-sm text-gray-600">System Uptime</div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -727,7 +912,7 @@ const Manufacturing: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200">
+              <div className="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100">
                 <div className="text-center mb-8">
                   <motion.h2
                     className="text-3xl md:text-4xl font-bold text-black mb-4"
@@ -752,7 +937,7 @@ const Manufacturing: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <motion.div
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
+                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -813,7 +998,7 @@ const Manufacturing: React.FC = () => {
                   </motion.div>
 
                   <motion.div
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
+                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -874,7 +1059,7 @@ const Manufacturing: React.FC = () => {
                   </motion.div>
 
                   <motion.div
-                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
+                    className="group relative bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden text-center"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}

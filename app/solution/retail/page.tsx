@@ -567,21 +567,75 @@ const Retail: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+          </div>
+
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              className="text-center mb-16"
+              className="absolute top-20 left-10 w-16 h-16 bg-blue-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, -15, 0],
+                x: [0, 10, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-20 right-10 w-24 h-24 bg-indigo-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, 20, 0],
+                x: [0, -15, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute top-1/2 left-1/4 w-12 h-12 bg-purple-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, -10, 0],
+                x: [0, 5, 0],
+              }}
+              transition={{
+                duration: 7,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
+            <motion.div
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Measurable Results You Can Expect
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-700 text-sm font-semibold">
+                  Proven Results
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Measurable Results You Can
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  Expect
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Our retail clients achieve significant improvements in sales,
-                efficiency, and customer satisfaction
+                efficiency, and customer satisfaction with measurable ROI
               </p>
             </motion.div>
 
@@ -589,59 +643,148 @@ const Retail: React.FC = () => {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center overflow-hidden"
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 text-center overflow-hidden border border-white/50"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -12, scale: 1.02 }}
                 >
-                  {/* Background Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
 
-                  {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="w-8 h-8" />
+                  {/* Top Accent Border */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-3xl"></div>
+
+                  {/* Icon with Enhanced Styling */}
+                  <div className="relative inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl mb-8 shadow-2xl group-hover:shadow-blue-500/25 transition-all duration-500 group-hover:scale-110">
+                    <benefit.icon className="w-10 h-10 text-white" />
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-400 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                   </div>
 
-                  {/* Metric */}
-                  <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                  {/* Metric with Animation */}
+                  <div className="relative mb-6">
+                    <motion.div
+                      className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2 relative z-10"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
                       {benefit.metric}
-                    </div>
-                    <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    </motion.div>
+                    <div className="text-sm font-bold text-gray-600 uppercase tracking-wider relative z-10">
                       {benefit.metricLabel}
                     </div>
+
+                    {/* Progress Bar */}
+                    <div className="mt-4 w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{
+                          width: benefit.metric.includes("%")
+                            ? benefit.metric.replace("%", "") + "%"
+                            : "80%",
+                        }}
+                        transition={{ duration: 1.5, delay: index * 0.2 }}
+                        viewport={{ once: true }}
+                      ></motion.div>
+                    </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-800 transition-colors duration-300 relative z-10">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 relative z-10">
                     {benefit.description}
                   </p>
+
+                  {/* Decorative Corner */}
+                  <div className="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-blue-500/10 to-transparent rounded-tl-2xl"></div>
+
+                  {/* Hover Indicator */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Additional Stats Section */}
+            <motion.div
+              className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
+                <div className="text-3xl font-bold text-blue-600 mb-2">
+                  500+
+                </div>
+                <div className="text-sm text-gray-600 font-semibold">
+                  Retail Clients
+                </div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
+                <div className="text-3xl font-bold text-indigo-600 mb-2">
+                  $2.1B
+                </div>
+                <div className="text-sm text-gray-600 font-semibold">
+                  Revenue Generated
+                </div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
+                <div className="text-3xl font-bold text-purple-600 mb-2">
+                  98.5%
+                </div>
+                <div className="text-sm text-gray-600 font-semibold">
+                  Client Satisfaction
+                </div>
+              </div>
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
+                <div className="text-3xl font-bold text-green-600 mb-2">
+                  24/7
+                </div>
+                <div className="text-sm text-gray-600 font-semibold">
+                  Support Available
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Challenges Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.1),transparent_50%)]"></div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
             <motion.div
-              className="text-center mb-16"
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Common Retail Challenges We Solve
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 border border-blue-200 rounded-full text-blue-700 text-sm font-semibold">
+                  Critical Issues
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Retail Challenges
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  We Solve
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Transform your retail operations by addressing the key pain
-                points that hinder growth and customer satisfaction
+                points that hinder growth and customer satisfaction with our
+                comprehensive solutions
               </p>
             </motion.div>
 
@@ -649,37 +792,142 @@ const Retail: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 hover:border-blue-200 transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                   {/* Impact Badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                  <div className="absolute top-6 right-6">
+                    <motion.span
+                      className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       {challenge.impact}
-                    </span>
+                    </motion.span>
                   </div>
 
-                  {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
-                    <challenge.icon className="w-6 h-6" />
+                  {/* Icon with Glow */}
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-8 shadow-2xl group-hover:shadow-blue-500/25 transition-shadow duration-500">
+                    <challenge.icon className="w-8 h-8 text-white" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                     {challenge.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-8 group-hover:text-gray-700 transition-colors duration-300">
                     {challenge.description}
                   </p>
 
-                  {/* Solution Indicator */}
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>Solved by Deepkore</span>
-                  </div>
+                  {/* Enhanced Solution Indicator */}
+                  <motion.div
+                    className="relative mt-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-200/50 group-hover:border-green-300/70 transition-all duration-500"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    {/* Animated Background Pattern */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-100/50 to-emerald-100/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    {/* Success Badge */}
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <motion.div
+                        className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        ✓ SOLVED
+                      </motion.div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative flex items-center justify-center space-x-3 pt-2">
+                      <motion.div
+                        className="flex items-center space-x-2"
+                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Animated Check Icon */}
+                        <motion.div
+                          className="relative"
+                          whileHover={{ rotate: 360, scale: 1.2 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-lg">
+                            <CheckCircle className="w-5 h-5 text-white" />
+                          </div>
+                          {/* Glow Effect */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full blur-md opacity-50 -z-10"></div>
+                        </motion.div>
+
+                        {/* Text with Gradient */}
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
+                            Solved by
+                          </span>
+                          <span className="text-lg font-bold text-gray-800 group-hover:text-green-700 transition-colors duration-300">
+                            Deepkore
+                          </span>
+                        </div>
+                      </motion.div>
+
+                      {/* Decorative Elements */}
+                      <motion.div
+                        className="flex space-x-1"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <motion.div
+                          className="w-2 h-2 bg-green-400 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0,
+                          }}
+                        ></motion.div>
+                        <motion.div
+                          className="w-2 h-2 bg-emerald-400 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0.3,
+                          }}
+                        ></motion.div>
+                        <motion.div
+                          className="w-2 h-2 bg-green-500 rounded-full"
+                          animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.5, 1, 0.5],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: 0.6,
+                          }}
+                        ></motion.div>
+                      </motion.div>
+                    </div>
+
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-b-2xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+                  </motion.div>
+
+                  {/* Decorative Element */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </motion.div>
               ))}
             </div>

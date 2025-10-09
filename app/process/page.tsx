@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Image from "next/image";
@@ -15,6 +14,9 @@ import {
   BarChart2,
   Clock,
   FileText,
+  TrendingUp,
+  Shield,
+  Activity,
 } from "lucide-react";
 
 const Process: React.FC = () => {
@@ -89,10 +91,18 @@ const Process: React.FC = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Processes Automated" },
-    { number: "95%", label: "Efficiency Increase" },
-    { number: "24/7", label: "Process Monitoring" },
-    { number: "99.9%", label: "Uptime Guarantee" },
+    {
+      number: "500+",
+      label: "Processes Automated",
+      icon: <Activity size={32} />,
+    },
+    {
+      number: "95%",
+      label: "Efficiency Increase",
+      icon: <TrendingUp size={32} />,
+    },
+    { number: "24/7", label: "Process Monitoring", icon: <Clock size={32} /> },
+    { number: "99.9%", label: "Uptime Guarantee", icon: <Shield size={32} /> },
   ];
 
   return (
@@ -108,22 +118,12 @@ const Process: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[#2791D0]/5 to-transparent rounded-full"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block mb-6"
-            >
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
               <span className="px-6 py-2 bg-gradient-to-r from-[#00A551]/20 to-[#2791D0]/20 text-[#00A551] font-semibold rounded-full text-sm border border-[#00A551]/30">
                 ✨ No Coding Required
               </span>
-            </motion.div>
+            </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551] bg-clip-text text-transparent animate-gradient">
               Simple Automation with Process Management
@@ -140,43 +140,25 @@ const Process: React.FC = () => {
               powerful automation platform. Build enterprise-grade processes
               without coding, enabling your teams to focus on what matters most.
             </p>
-          </motion.div>
+          </div>
 
           {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="/getstarted">
-              <motion.button
-                className="group relative bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="group relative bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden">
                 <span className="relative z-10">Get Started Free</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#2791D0] to-[#00A551] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </motion.button>
+              </button>
             </a>
             <a href="/contact">
-              <motion.button
-                className="group border-2 border-[#00A551] text-[#00A551] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#00A551] hover:text-white transition-all duration-500 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="group border-2 border-[#00A551] text-[#00A551] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#00A551] hover:text-white transition-all duration-500 shadow-lg hover:shadow-xl">
                 <span className="flex items-center gap-2">
                   Book a Demo
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
+                  <span>→</span>
                 </span>
-              </motion.button>
+              </button>
             </a>
-          </motion.div>
+          </div>
 
           {/* Trust indicators */}
         </div>
@@ -191,13 +173,7 @@ const Process: React.FC = () => {
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#2791D0]/10 rounded-full blur-2xl"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-white">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Process Excellence in Numbers
             </h2>
@@ -205,49 +181,39 @@ const Process: React.FC = () => {
               Join thousands of businesses transforming their operations with
               automated processes
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                className="text-center group"
-                initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.8, delay: idx * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.1, y: -10 }}
-              >
+              <div key={idx} className="text-center group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:border-[#2791D0]/50 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-[#2791D0]/20">
-                  <motion.div
-                    className="text-5xl md:text-7xl font-bold mb-4 text-[#ffffff] group-hover:scale-110 transition-transform duration-500"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.6, delay: idx * 0.15 + 0.3 }}
-                    viewport={{ once: true }}
-                  >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center group-hover:bg-[#2791D0]/30 transition-colors duration-500">
+                      <span className="text-white group-hover:scale-110 transition-transform duration-500">
+                        {stat.icon}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="text-5xl md:text-7xl font-bold mb-4 text-[#ffffff] group-hover:scale-110 transition-transform duration-500">
                     {stat.number}
-                  </motion.div>
+                  </div>
                   <div className="text-xl text-white/90 font-medium">
                     {stat.label}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-green-50/30 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-10 left-10 w-96 h-96 bg-[#00A551]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#2791D0]/5 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800">
               Achieve Process Excellence
             </h2>
@@ -255,42 +221,56 @@ const Process: React.FC = () => {
               Our platform delivers a wide range of benefits for structured
               process evolution
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {features.map((feature, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className="group bg-white rounded-3xl shadow-xl p-8 hover:shadow-3xl transition-all duration-500 border border-gray-100 overflow-hidden relative"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: idx * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -15, scale: 1.02 }}
               >
-                {/* Background gradient */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[#00A551]/5 to-[#2791D0]/5 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+                {/* Enhanced background gradients */}
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[#00A551]/10 to-[#2791D0]/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-700"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#2791D0]/5 to-[#00A551]/5 rounded-full -ml-16 -mb-16 group-hover:scale-125 transition-transform duration-700"></div>
+
+                {/* Floating particles */}
+                <div className="absolute top-4 right-4 w-2 h-2 bg-[#00A551]/30 rounded-full"></div>
+                <div className="absolute bottom-6 left-6 w-1 h-1 bg-[#2791D0]/40 rounded-full"></div>
 
                 <div className="relative z-10">
                   <div className="flex items-center mb-6">
-                    <motion.div
-                      className="w-16 h-16 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-2xl flex items-center justify-center mr-4 shadow-lg"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <span className="text-3xl">{feature.icon}</span>
-                    </motion.div>
-                    <div>
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-2xl flex items-center justify-center mr-4 shadow-lg group-hover:shadow-2xl">
+                      <span className="text-3xl text-white">
+                        {feature.icon}
+                      </span>
+                    </div>
+                    <div className="flex-1">
                       <h3 className="text-2xl font-bold text-gray-800 group-hover:text-[#00A551] transition-colors duration-300">
                         {feature.title}
                       </h3>
+                      {/* Progress indicator */}
+                      <div className="w-full bg-gray-200 rounded-full h-1 mt-2 overflow-hidden">
+                        <div className="bg-gradient-to-r from-[#00A551] to-[#2791D0] h-1 rounded-full"></div>
+                      </div>
                     </div>
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                     {feature.description}
                   </p>
+
+                  {/* Feature benefits */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-[#00A551]/10 text-[#00A551] text-sm font-medium rounded-full">
+                      Enterprise Ready
+                    </span>
+                    <span className="px-3 py-1 bg-[#2791D0]/10 text-[#2791D0] text-sm font-medium rounded-full">
+                      No Coding
+                    </span>
+                  </div>
+
+                  {/* CTA button */}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -299,37 +279,21 @@ const Process: React.FC = () => {
       {/* How It Works Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800">
               How Process Automation Works
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Simple steps to transform your business processes
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center group">
               <div className="relative mb-8">
-                <motion.div
-                  className="w-24 h-24 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="w-24 h-24 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white">
                   <span className="text-3xl font-bold text-white">1</span>
-                </motion.div>
+                </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-[#00A551] to-[#2791D0] rounded-full"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-[#00A551] transition-colors duration-300">
@@ -338,23 +302,13 @@ const Process: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 Use our visual designer to map out your processes without coding
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center group">
               <div className="relative mb-8">
-                <motion.div
-                  className="w-24 h-24 bg-gradient-to-br from-[#2791D0] to-[#00A551] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="w-24 h-24 bg-gradient-to-br from-[#2791D0] to-[#00A551] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white">
                   <span className="text-3xl font-bold text-white">2</span>
-                </motion.div>
+                </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-[#2791D0] to-[#00A551] rounded-full"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-[#2791D0] transition-colors duration-300">
@@ -363,23 +317,13 @@ const Process: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 Set up automated workflows, approvals, and notifications
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center group">
               <div className="relative mb-8">
-                <motion.div
-                  className="w-24 h-24 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
+                <div className="w-24 h-24 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white">
                   <span className="text-3xl font-bold text-white">3</span>
-                </motion.div>
+                </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-to-r from-[#00A551] to-[#2791D0] rounded-full"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-[#00A551] transition-colors duration-300">
@@ -388,7 +332,7 @@ const Process: React.FC = () => {
               <p className="text-gray-600 leading-relaxed">
                 Monitor performance and continuously improve your processes
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Connection line */}
@@ -401,13 +345,7 @@ const Process: React.FC = () => {
       {/* Workflow Tools Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
               Powerful Tools for Process Acceleration
             </h2>
@@ -415,20 +353,15 @@ const Process: React.FC = () => {
               Clear, structured, and effortless solutions to transform your
               business processes
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 gap-12">
             {workflowTools.map((tool, idx) => (
-              <motion.div
+              <div
                 key={idx}
                 className={`bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-700 border border-gray-200/50 overflow-hidden relative group ${
                   idx % 2 === 1 ? "lg:flex-row-reverse" : ""
                 } flex flex-col lg:flex-row items-center`}
-                initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.8, delay: idx * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
               >
                 {/* Subtle background pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#00A551]/5 via-transparent to-[#2791D0]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -437,13 +370,9 @@ const Process: React.FC = () => {
                 {/* Content Section */}
                 <div className="relative z-10 p-8 lg:p-12 flex-1">
                   <div className="flex items-start mb-6">
-                    <motion.div
-                      className="w-16 h-16 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-xl flex items-center justify-center mr-6 shadow-lg"
-                      whileHover={{ rotate: 10, scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-xl flex items-center justify-center mr-6 shadow-lg">
                       <span className="text-2xl">{tool.icon}</span>
-                    </motion.div>
+                    </div>
                     <div className="flex-1">
                       <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-[#00A551] transition-colors duration-300">
                         {tool.title}
@@ -462,30 +391,16 @@ const Process: React.FC = () => {
 
                   {/* Enterprise-style CTA */}
                   <a href="/getstarted">
-                    <motion.button
-                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
+                    <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                       Learn More
-                      <motion.span
-                        className="ml-2"
-                        animate={{ x: [0, 3, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        →
-                      </motion.span>
-                    </motion.button>
+                      <span className="ml-2">→</span>
+                    </button>
                   </a>
                 </div>
 
                 {/* Image Section */}
                 <div className="relative z-10 flex-1 p-8 lg:p-12">
-                  <motion.div
-                    className="relative w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-inner border border-gray-300/50 group-hover:shadow-xl transition-shadow duration-500"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.5 }}
-                  >
+                  <div className="relative w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-inner border border-gray-300/50 group-hover:shadow-xl transition-shadow duration-500">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       {tool.image ? (
@@ -511,9 +426,9 @@ const Process: React.FC = () => {
                         Enterprise-Grade Solution
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -523,37 +438,17 @@ const Process: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Automate Your Processes?
-          </motion.h2>
-          <motion.p
-            className="text-xl mb-8 text-[#ffffff]/80"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          </h2>
+          <p className="text-xl mb-8 text-[#ffffff]/80">
             Join thousands of businesses already using Deepkore to streamline
             their operations
-          </motion.p>
+          </p>
           <a href="/getstarted">
-            <motion.button
-              className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ffffff]/90 transition-all duration-300 shadow-xl hover:shadow-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <button className="bg-[#ffffff] text-[#00A551] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#ffffff]/90 transition-all duration-300 shadow-xl hover:shadow-2xl">
               Get Started
-            </motion.button>
+            </button>
           </a>
         </div>
       </section>
