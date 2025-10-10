@@ -123,6 +123,7 @@ const Procurement: React.FC = () => {
         "Reduce procurement costs by 20-30% through better vendor negotiations, bulk purchasing, and spend analysis.",
       metric: "25%",
       metricLabel: "Cost Reduction",
+      color: "emerald",
     },
     {
       icon: Clock,
@@ -131,6 +132,7 @@ const Procurement: React.FC = () => {
         "Accelerate procurement processes by 40% with automated workflows, approvals, and streamlined vendor interactions.",
       metric: "40%",
       metricLabel: "Faster Processing",
+      color: "blue",
     },
     {
       icon: Eye,
@@ -139,6 +141,7 @@ const Procurement: React.FC = () => {
         "Gain 100% visibility into procurement activities, supplier performance, and supply chain operations.",
       metric: "100%",
       metricLabel: "Supply Chain Visibility",
+      color: "purple",
     },
     {
       icon: TrendingUp,
@@ -147,6 +150,7 @@ const Procurement: React.FC = () => {
         "Improve supplier performance by 35% through systematic evaluation, feedback, and relationship management.",
       metric: "35%",
       metricLabel: "Performance Improvement",
+      color: "teal",
     },
   ];
 
@@ -157,6 +161,7 @@ const Procurement: React.FC = () => {
       description:
         "Time-consuming manual procurement processes, paperwork, and approvals that slow down operations and increase errors.",
       impact: "Operational Inefficiency",
+      color: "red",
     },
     {
       icon: Users,
@@ -164,6 +169,7 @@ const Procurement: React.FC = () => {
       description:
         "Difficulty managing multiple vendors, tracking performance, and maintaining consistent supplier relationships.",
       impact: "Supplier Relations",
+      color: "orange",
     },
     {
       icon: Calculator,
@@ -171,6 +177,7 @@ const Procurement: React.FC = () => {
       description:
         "Lack of visibility into procurement spending, budget tracking, and cost optimization opportunities.",
       impact: "Financial Management",
+      color: "blue",
     },
     {
       icon: AlertTriangle,
@@ -178,6 +185,7 @@ const Procurement: React.FC = () => {
       description:
         "Vulnerability to supply chain disruptions, delays, and quality issues without proper monitoring and contingency planning.",
       impact: "Risk Management",
+      color: "purple",
     },
     {
       icon: BarChart3,
@@ -185,6 +193,7 @@ const Procurement: React.FC = () => {
       description:
         "Limited ability to analyze procurement performance, identify trends, and make data-driven decisions.",
       impact: "Strategic Planning",
+      color: "green",
     },
     {
       icon: Shield,
@@ -192,6 +201,7 @@ const Procurement: React.FC = () => {
       description:
         "Challenges in maintaining procurement compliance, audit trails, and regulatory requirements across the supply chain.",
       impact: "Compliance Risk",
+      color: "teal",
     },
   ];
 
@@ -571,8 +581,16 @@ const Procurement: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="container mx-auto px-40">
+        <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500 rounded-full"></div>
+            <div className="absolute top-40 right-20 w-16 h-16 bg-indigo-500 rounded-full"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-500 rounded-full"></div>
+            <div className="absolute bottom-40 right-1/3 w-24 h-24 bg-green-500 rounded-full"></div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -594,37 +612,77 @@ const Procurement: React.FC = () => {
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center overflow-hidden"
+                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 text-center overflow-hidden border border-gray-100/50"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -12, scale: 1.02 }}
                 >
-                  {/* Background Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Animated Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
 
-                  {/* Icon */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {/* Floating Particles */}
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                  <div className="absolute bottom-4 left-4 w-1 h-1 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping delay-100"></div>
+
+                  {/* Icon with Glow Effect */}
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 text-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-blue-200/50">
                     <benefit.icon className="w-8 h-8" />
+                    <div className="absolute inset-0 bg-blue-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
                   </div>
 
-                  {/* Metric */}
-                  <div className="relative mb-4">
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
+                  {/* Animated Metric */}
+                  <motion.div
+                    className="relative mb-4"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2 group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
                       {benefit.metric}
                     </div>
                     <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                       {benefit.metricLabel}
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                     {benefit.description}
                   </p>
+
+                  {/* Progress Bar Animation */}
+                  <motion.div
+                    className="mt-6 w-full bg-gray-200 rounded-full h-2 overflow-hidden"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.div
+                      className={`h-full rounded-full ${
+                        benefit.color === "emerald"
+                          ? "bg-gradient-to-r from-emerald-500 to-emerald-600"
+                          : benefit.color === "blue"
+                          ? "bg-gradient-to-r from-blue-500 to-blue-600"
+                          : benefit.color === "purple"
+                          ? "bg-gradient-to-r from-purple-500 to-purple-600"
+                          : "bg-gradient-to-r from-teal-500 to-teal-600"
+                      }`}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "100%" }}
+                      transition={{
+                        duration: 1.5,
+                        delay: index * 0.1 + 0.7,
+                        ease: "easeOut",
+                      }}
+                      viewport={{ once: true }}
+                    ></motion.div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
@@ -632,8 +690,14 @@ const Procurement: React.FC = () => {
         </section>
 
         {/* Challenges Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.1),transparent_50%)]"></div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -654,34 +718,69 @@ const Procurement: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100/50 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
+                  {/* Animated Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+                  {/* Floating Elements */}
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                  <div className="absolute bottom-4 left-4 w-1 h-1 bg-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping delay-100"></div>
+
                   {/* Impact Badge */}
                   <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-800">
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${
+                        challenge.color === "red"
+                          ? "bg-red-100 text-red-800"
+                          : challenge.color === "orange"
+                          ? "bg-orange-100 text-orange-800"
+                          : challenge.color === "blue"
+                          ? "bg-blue-100 text-blue-800"
+                          : challenge.color === "purple"
+                          ? "bg-purple-100 text-purple-800"
+                          : challenge.color === "green"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-teal-100 text-teal-800"
+                      }`}
+                    >
                       {challenge.impact}
                     </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-xl mb-6">
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg ${
+                      challenge.color === "red"
+                        ? "bg-red-100 text-red-600"
+                        : challenge.color === "orange"
+                        ? "bg-orange-100 text-orange-600"
+                        : challenge.color === "blue"
+                        ? "bg-blue-100 text-blue-600"
+                        : challenge.color === "purple"
+                        ? "bg-purple-100 text-purple-600"
+                        : challenge.color === "green"
+                        ? "bg-green-100 text-green-600"
+                        : "bg-teal-100 text-teal-600"
+                    }`}
+                  >
                     <challenge.icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
                     {challenge.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                     {challenge.description}
                   </p>
 
                   {/* Solution Indicator */}
-                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold">
+                  <div className="mt-6 flex items-center space-x-2 text-sm text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300">
                     <CheckCircle className="w-4 h-4" />
                     <span>Solved by Deepkore</span>
                   </div>
@@ -692,20 +791,56 @@ const Procurement: React.FC = () => {
         </section>
 
         {/* Use Cases Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-          <div className="container mx-auto px-40">
+        <section className="py-24 bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50 relative">
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              className="text-center mb-16"
+              className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, -20, 0],
+                x: [0, 10, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-20 right-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-xl"
+              animate={{
+                y: [0, 20, 0],
+                x: [0, -10, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </div>
+
+          <div className="container mx-auto px-40 relative z-10">
+            <motion.div
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Real-World Procurement Applications
+              <div className="inline-block mb-6">
+                <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-600 text-sm font-semibold">
+                  Real-World Applications
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Procurement
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  Applications
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how different types of organizations leverage our
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Discover how different types of organizations leverage our
                 procurement platform for efficient supply chain management and
                 cost optimization
               </p>
@@ -715,12 +850,13 @@ const Procurement: React.FC = () => {
               {useCases.map((useCase, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="group relative bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/50"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -12, rotateY: 5 }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">

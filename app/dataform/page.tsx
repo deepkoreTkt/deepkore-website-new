@@ -361,12 +361,12 @@ const DataForm: React.FC = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500/3 via-transparent to-indigo-500/3 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-40 lg:px-40">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-16 lg:mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -431,13 +431,13 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-40 lg:px-40">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-16 lg:mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -472,7 +472,7 @@ const DataForm: React.FC = () => {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {/* IT Leaders - Enterprise Style */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -642,13 +642,13 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-40 lg:px-40">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-16 lg:mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -683,7 +683,7 @@ const DataForm: React.FC = () => {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {/* Integration Cards - Enterprise Style */}
             {[
               {
@@ -817,13 +817,13 @@ const DataForm: React.FC = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-40 lg:px-40">
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12 md:mb-16 lg:mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -977,7 +977,7 @@ const DataForm: React.FC = () => {
                           bulk import via CSV for efficient enterprise data
                           handling and streamlined workflows.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 mt-10">
                           <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                             <h4 className="font-bold text-slate-900 mb-3 text-lg">
                               Multiple Data Entries
@@ -1029,7 +1029,7 @@ const DataForm: React.FC = () => {
                           dynamic forms that adapt to different user contexts
                           and enterprise requirements.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 mt-10">
                           <div className="bg-blue-50 p-6 rounded-2xl border border-blue-200">
                             <h4 className="font-bold text-blue-900 mb-3 text-lg">
                               Role-Based Access Control
@@ -1080,7 +1080,7 @@ const DataForm: React.FC = () => {
                           right time. Ensure data quality with intelligent
                           validation that adapts to your business rules.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 mt-10">
                           <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-200">
                             <h4 className="font-bold text-emerald-900 mb-3 text-lg">
                               Custom Business Rules
@@ -1131,7 +1131,7 @@ const DataForm: React.FC = () => {
                           answers. Create personalized form journeys that
                           improve completion rates and data quality.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 mt-10">
                           <div className="bg-violet-50 p-6 rounded-2xl border border-violet-200">
                             <h4 className="font-bold text-violet-900 mb-3 text-lg">
                               Conditional Navigation

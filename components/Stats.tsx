@@ -11,6 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import Image from "next/image";
+
 const Stats: React.FC = () => {
   const stats = [
     {
@@ -86,14 +87,14 @@ const Stats: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
@@ -110,59 +111,91 @@ const Stats: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-40">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+    <section className="py-8 sm:py-12 lg:py-16 bg-white">
+      <div className="container mx-auto px-10 sm:px-8 lg:px-8 xl:px-40">
+        {/* Header Section */}
+        <motion.div
+          className="text-center mb-8 sm:mb-10 lg:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
             Key Challenges in Leading Industries
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             Addressing the most common obstacles in modern enterprises
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </motion.div>
+
+        {/* Stats Grid */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {stats.map((stat, idx) => {
             const IconComponent = stat.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className={`flex flex-col items-center rounded-2xl border-2 ${stat.color} shadow-md p-6 transition-all duration-300 hover:shadow-xl bg-white`}
+                variants={itemVariants}
+                className={`flex flex-col rounded-xl sm:rounded-2xl border-2 ${stat.color} shadow-sm hover:shadow-lg p-4 sm:p-6 transition-all duration-300 bg-white hover:scale-[1.02]`}
               >
-                <div className="w-full flex justify-center mb-4">
-                  <div className="relative w-40 h-28 rounded-xl overflow-hidden bg-gray-200 flex items-center justify-center">
-                    {/* Replace src with actual image path or use a placeholder */}
+                {/* Image Container */}
+                <div className="w-full flex justify-center mb-3 sm:mb-4">
+                  <div className="relative w-full h-32 sm:h-36 lg:h-40 rounded-lg sm:rounded-xl overflow-hidden bg-gray-200 flex items-center justify-center">
                     <Image
-                      width={160}
-                      height={112}
+                      width={400}
+                      height={280}
                       src={stat.image}
                       alt={stat.label}
-                      className="object-cover w-full h-full rounded-xl"
+                      className="object-cover w-full h-full rounded-lg sm:rounded-xl"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q=="
                     />
-                    <div className="absolute top-2 left-2 w-8 h-8 rounded-lg border-2 border-white bg-white/80 flex items-center justify-center shadow-md">
-                      <IconComponent className={`w-5 h-5 ${stat.iconColor}`} />
+                    {/* Icon Badge */}
+                    <motion.div
+                      className="absolute top-2 left-2 w-6 h-6 sm:w-7 sm:h-7 rounded-md border border-white bg-white/90 flex items-center justify-center shadow-sm"
+                      variants={iconVariants}
+                    >
+                      <IconComponent
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${stat.iconColor}`}
+                      />
+                    </motion.div>
+                    {/* Number Badge */}
+                    <div className="absolute bottom-2 right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
+                      <span className="text-xs sm:text-sm font-bold text-gray-700">
+                        {stat.value}
+                      </span>
                     </div>
-                    <div className="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-white/70 shadow-md"></div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 flex items-center w-full text-black">
-                  <span className={`mr-2`}>
-                    <IconComponent
-                      className={`inline w-6 h-6 ${stat.iconColor}`}
-                    />
-                  </span>
-                  <span>{stat.label}</span>
-                </h3>
-                <p className="text-gray-700 text-base w-full line-clamp-4">
-                  {stat.description}
-                </p>
-              </div>
+
+                {/* Content */}
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 flex items-start w-full text-black">
+                    <span className={`mr-2 mt-0.5 flex-shrink-0`}>
+                      <IconComponent
+                        className={`w-5 h-5 sm:w-6 sm:h-6 ${stat.iconColor}`}
+                      />
+                    </span>
+                    <span className="leading-tight">{stat.label}</span>
+                  </h3>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed line-clamp-4 sm:line-clamp-5">
+                    {stat.description}
+                  </p>
+                </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Stats;
-

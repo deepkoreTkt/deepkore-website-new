@@ -282,7 +282,7 @@ const Templates = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-100/10 to-green-100/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-40 lg:px-40 py-40">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40 py-40">
         {/* Hero Section */}
         <motion.div
           className="text-center mb-16"
@@ -334,13 +334,13 @@ const Templates = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <a href="/getstarted">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center">
                 Browse All Templates
                 <ArrowRight className="w-5 h-5" />
               </button>
             </a>
             <a href="/getstarted">
-              <button className="px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
+              <button className="px-8 py-4 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300 w-full sm:w-auto">
                 Watch Demo
               </button>
             </a>
@@ -349,7 +349,7 @@ const Templates = () => {
 
         {/* Templates Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -439,7 +439,7 @@ const Templates = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-white/50 shadow-lg">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Ready to Build Something Amazing?
             </h3>
@@ -449,10 +449,10 @@ const Templates = () => {
               continuously.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
                 Get Started Free
               </button>
-              <button className="px-8 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300">
+              <button className="px-8 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-full hover:border-slate-400 hover:bg-slate-50 transition-all duration-300 w-full sm:w-auto">
                 Contact Sales
               </button>
             </div>

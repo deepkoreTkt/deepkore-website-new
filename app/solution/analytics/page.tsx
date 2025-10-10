@@ -512,7 +512,7 @@ const Analytics: React.FC = () => {
             ></motion.div>
           </div>
 
-          <div className="relative z-10 container mx-auto px-40">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Side Content */}
               <motion.div
@@ -683,7 +683,7 @@ const Analytics: React.FC = () => {
 
         {/* Key Features Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -708,13 +708,7 @@ const Analytics: React.FC = () => {
                   className="group relative bg-gradient-to-br from-white to-gray-50/50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100/50 overflow-hidden"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{
-                    y: -10,
-                    rotateZ: index % 2 === 0 ? 2 : -2,
-                    scale: 1.03,
-                  }}
                 >
                   {/* Asymmetrical Background Shape */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-100/30 to-purple-100/30 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700"></div>
@@ -827,12 +821,11 @@ const Analytics: React.FC = () => {
 
         {/* Comprehensive Chart Library Section */}
         <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -853,15 +846,7 @@ const Analytics: React.FC = () => {
                   className="group relative bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/20 overflow-hidden"
                   initial={{ opacity: 0, y: 30, rotateY: -15 }}
                   whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  whileHover={{
-                    y: -12,
-                    rotateY: 5,
-                    rotateX: 5,
-                    scale: 1.05,
-                    transformPerspective: 1000,
-                  }}
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Animated Background Gradient */}
@@ -951,7 +936,7 @@ const Analytics: React.FC = () => {
 
         {/* Benefits Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -1069,7 +1054,7 @@ const Analytics: React.FC = () => {
 
         {/* Challenges Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -1195,7 +1180,7 @@ const Analytics: React.FC = () => {
 
         {/* Use Cases Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -1300,7 +1285,7 @@ const Analytics: React.FC = () => {
               }}
             ></motion.div>
           </div>
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center text-white"
               initial={{ opacity: 0, y: 30 }}

@@ -371,7 +371,7 @@ const Education: React.FC = () => {
             ></motion.div>
           </div>
 
-          <div className="relative z-10 container mx-auto px-40">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Side Content */}
               <motion.div
@@ -557,7 +557,7 @@ const Education: React.FC = () => {
 
         {/* Key Features Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -705,7 +705,7 @@ const Education: React.FC = () => {
             ></div>
           </div>
 
-          <div className="relative z-10 container mx-auto px-40">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -779,7 +779,7 @@ const Education: React.FC = () => {
 
         {/* Challenges Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -870,7 +870,7 @@ const Education: React.FC = () => {
 
         {/* Use Cases Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-40">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -972,7 +972,7 @@ const Education: React.FC = () => {
               }}
             ></motion.div>
           </div>
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
             <motion.div
               className="text-center text-white"
               initial={{ opacity: 0, y: 30 }}

@@ -9,7 +9,8 @@ const ProductOverview: React.FC = () => {
   const features = [
     {
       title: "For Business Users",
-      description: "Bring your ideas to life—no coding, just creating.",
+      description:
+        "Empower your imagination with tools that do the work for you.",
       iconComponent: Users,
       bgColor: "bg-[#e3f2fd]",
     },
@@ -46,8 +47,8 @@ const ProductOverview: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-40">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -55,35 +56,38 @@ const ProductOverview: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Innovation in Every Hand
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             Discover features designed to simplify workflows, boost
             productivity, and improve team collaboration seamlessly.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-start mb-12 sm:mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={`${feature.bgColor} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}
+              className={`${feature.bgColor} rounded-2xl p-4 sm:p-6 hover:shadow-lg transition-all duration-300`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#ffffff] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <feature.iconComponent size={24} className="text-gray-900" />
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#ffffff] rounded-xl flex items-center justify-center flex-shrink-0">
+                  <feature.iconComponent
+                    size={20}
+                    className="text-gray-900 sm:w-6 sm:h-6"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

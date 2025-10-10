@@ -259,25 +259,6 @@ const Procurement = () => {
       image: "/classic04.png",
       category: "Procurement",
     },
-    {
-      title: "Compliance and Risk Management",
-      subtitle: "Regulatory Compliance and Risk Mitigation",
-      description:
-        "Ensure procurement compliance with automated risk assessments, audit trails, and regulatory reporting capabilities.",
-      icon: <Settings className="w-8 h-8" />,
-      gradient: "from-gray-500 to-slate-500",
-      bgColor: "bg-gray-50",
-      features: [
-        "Risk Assessment",
-        "Compliance Monitoring",
-        "Audit Trails",
-        "Regulatory Reporting",
-        "Policy Enforcement",
-        "Alert Systems",
-      ],
-      image: "/process.png",
-      category: "Procurement",
-    },
   ];
 
   return (
@@ -289,7 +270,7 @@ const Procurement = () => {
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-200/20 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-40 lg:px-40 py-24">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-40 py-24">
         {/* Hero Section */}
         <motion.div
           className="max-w-4xl mx-auto mb-16"
@@ -298,7 +279,7 @@ const Procurement = () => {
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className={`${inter.className} text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight text-center px-30`}
+            className={`${inter.className} text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight text-center px-4 md:px-10`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
@@ -311,7 +292,7 @@ const Procurement = () => {
           </motion.h1>
 
           <motion.p
-            className={`${inter.className} text-lg text-gray-600 mb-8 text-center mx-auto max-w-3xl`}
+            className={`${inter.className} text-base md:text-lg text-gray-600 mb-8 text-center mx-auto max-w-3xl`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
@@ -328,7 +309,7 @@ const Procurement = () => {
             transition={{ duration: 0.4, delay: 0.3 }}
           >
             <a href="/getstarted">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors flex items-center gap-2">
+              <button className="px-6 md:px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition-colors flex items-center gap-2 w-full sm:w-auto justify-center">
                 Schedule a Demo
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -338,7 +319,7 @@ const Procurement = () => {
 
         {/* Templates Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
@@ -423,7 +404,7 @@ const Procurement = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="bg-white rounded-lg p-8 border border-gray-200">
+          <div className="bg-white rounded-lg p-4 md:p-6 lg:p-8 border border-gray-200">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -434,14 +415,14 @@ const Procurement = () => {
                   discuss your specific procurement requirements.
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/getstarted">
-                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto">
                     Request Demo
                   </button>
                 </a>
                 <a href="/contact">
-                  <button className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                  <button className="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto">
                     Contact Sales
                   </button>
                 </a>

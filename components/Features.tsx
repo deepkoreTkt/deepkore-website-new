@@ -181,7 +181,7 @@ const Features: React.FC = () => {
         <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-green-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-40 sm:px-40 lg:px-8 xl:px-12 2xl:px-30">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Header */}
         <motion.div
           className="text-center mb-12 lg:mb-16"

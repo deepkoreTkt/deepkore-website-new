@@ -366,7 +366,7 @@ const CRM: React.FC = () => {
               <img
                 src="/crm.svg"
                 alt="CRM Dashboard Preview"
-                className="max-w-250 h-auto mx-auto rounded-lg shadow-2xl"
+                className="w-full h-auto mx-auto rounded-lg shadow-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
               />
             </motion.div>
 

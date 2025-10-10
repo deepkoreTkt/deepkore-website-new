@@ -280,7 +280,7 @@ const Healthcare: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="relative z-10 container mx-auto px-40">
+          <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Side Content */}
               <motion.div
@@ -315,7 +315,7 @@ const Healthcare: React.FC = () => {
                 </motion.h1>
 
                 <motion.p
-                  className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl"
+                  className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8 max-w-xl"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
@@ -448,7 +448,7 @@ const Healthcare: React.FC = () => {
 
         {/* Key Features Section */}
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -459,7 +459,7 @@ const Healthcare: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Complete Healthcare Management Suite
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 Everything you need to deliver exceptional patient care, from
                 registration to recovery
               </p>
@@ -573,7 +573,7 @@ const Healthcare: React.FC = () => {
 
         {/* Benefits Section */}
         <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -584,7 +584,7 @@ const Healthcare: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Measurable Improvements in Patient Care
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 Our healthcare clients achieve significant improvements in
                 patient outcomes and operational efficiency
               </p>
@@ -697,7 +697,7 @@ const Healthcare: React.FC = () => {
             <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.1),transparent_50%)]"></div>
           </div>
 
-          <div className="container mx-auto px-40 relative z-10">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 relative z-10">
             <motion.div
               className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
@@ -710,13 +710,13 @@ const Healthcare: React.FC = () => {
                   Critical Issues
                 </span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Healthcare Challenges
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                   We Solve
                 </span>
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Transform your healthcare operations by addressing the key pain
                 points that affect patient care and operational efficiency with
                 our comprehensive solutions
@@ -899,7 +899,7 @@ const Healthcare: React.FC = () => {
             ></motion.div>
           </div>
 
-          <div className="container mx-auto px-40 relative z-10">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 relative z-10">
             <motion.div
               className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
@@ -912,13 +912,13 @@ const Healthcare: React.FC = () => {
                   Real-World Applications
                 </span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Healthcare
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                   Applications
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Discover how different types of healthcare organizations
                 leverage our platform for enhanced patient care, streamlined
                 operations, and improved outcomes
@@ -1027,7 +1027,7 @@ const Healthcare: React.FC = () => {
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
-          <div className="container mx-auto px-40">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
             <motion.div
               className="text-center text-white"
               initial={{ opacity: 0, y: 30 }}
@@ -1038,7 +1038,7 @@ const Healthcare: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Ready to Transform Healthcare Delivery?
               </h2>
-              <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
                 Join thousands of healthcare providers using Deepkore to improve
                 patient care, reduce costs, and ensure compliance across their
                 organizations.

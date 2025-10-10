@@ -383,7 +383,7 @@ const ITServiceDesk: React.FC = () => {
               <img
                 src="/itbg.svg"
                 alt="IT Service Desk Preview"
-                className="max-w-250 h-auto mx-auto rounded-lg shadow-2xl"
+                className="w-full h-auto mx-auto rounded-lg shadow-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
               />
             </motion.div>
 

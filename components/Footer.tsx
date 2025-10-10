@@ -438,7 +438,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="container mx-auto px-40 lg:px-40 py-8">
+          <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <motion.div
                 className="text-gray-600 text-sm"

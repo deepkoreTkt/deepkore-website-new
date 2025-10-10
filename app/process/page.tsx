@@ -110,7 +110,7 @@ const Process: React.FC = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-16 md:pt-24 lg:pt-32 pb-12 md:pb-16 lg:pb-20 overflow-hidden">
         {/* Background with animated elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#00A551]/5 via-[#2791D0]/5 to-[#2791D0]/5"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#00A551]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -118,7 +118,7 @@ const Process: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-[#2791D0]/5 to-transparent rounded-full"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <div className="inline-block mb-6">
               <span className="px-6 py-2 bg-gradient-to-r from-[#00A551]/20 to-[#2791D0]/20 text-[#00A551] font-semibold rounded-full text-sm border border-[#00A551]/30">
                 ✨ No Coding Required
@@ -143,7 +143,7 @@ const Process: React.FC = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center">
             <a href="/getstarted">
               <button className="group relative bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden">
                 <span className="relative z-10">Get Started Free</span>
@@ -165,7 +165,7 @@ const Process: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#00A551] via-[#2791D0] to-[#00A551]"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-black/10"></div>
@@ -173,7 +173,7 @@ const Process: React.FC = () => {
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#2791D0]/10 rounded-full blur-2xl"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-white">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Process Excellence in Numbers
             </h2>
@@ -183,7 +183,7 @@ const Process: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:border-[#2791D0]/50 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-[#2791D0]/20">
@@ -208,12 +208,12 @@ const Process: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-green-50/30 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-green-50/30 relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute top-10 left-10 w-96 h-96 bg-[#00A551]/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#2791D0]/5 rounded-full blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800">
               Achieve Process Excellence
             </h2>
@@ -223,7 +223,7 @@ const Process: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             {features.map((feature, idx) => (
               <div
                 key={idx}
@@ -277,9 +277,9 @@ const Process: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800">
               How Process Automation Works
             </h2>
@@ -288,7 +288,7 @@ const Process: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             <div className="text-center group">
               <div className="relative mb-8">
                 <div className="w-24 h-24 bg-gradient-to-br from-[#00A551] to-[#2791D0] rounded-full flex items-center justify-center mx-auto shadow-2xl border-4 border-white">
@@ -343,9 +343,9 @@ const Process: React.FC = () => {
       </section>
 
       {/* Workflow Tools Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
               Powerful Tools for Process Acceleration
             </h2>
@@ -355,7 +355,7 @@ const Process: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-12">
+          <div className="grid grid-cols-1 gap-8 md:gap-10 lg:gap-12">
             {workflowTools.map((tool, idx) => (
               <div
                 key={idx}
@@ -436,7 +436,7 @@ const Process: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-r from-[#00A551] to-[#2791D0] text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Automate Your Processes?

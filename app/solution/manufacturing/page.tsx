@@ -749,158 +749,212 @@ const Manufacturing: React.FC = () => {
                 </motion.p>
               </div>
 
-              {/* Hexagonal Grid Layout */}
+              {/* Responsive Layout: Grid on mobile, Hexagonal on desktop */}
               <div className="relative max-w-6xl mx-auto">
-                {/* Central hexagon */}
-                <div className="flex justify-center mb-8">
+                {/* Mobile: Simple Grid Layout */}
+                <div className="block md:hidden">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {challenges.map((challenge, index) => (
+                      <motion.div
+                        key={index}
+                        className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -4 }}
+                      >
+                        <div className="flex items-start space-x-4">
+                          <div
+                            className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${getChallengeBgColor(
+                              index
+                            )} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                          >
+                            {typeof challenge.icon === "string" ? (
+                              challenge.icon
+                            ) : (
+                              <challenge.icon
+                                className={`w-6 h-6 ${getChallengeIconColor(
+                                  index
+                                )}`}
+                              />
+                            )}
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-gray-800 transition-colors">
+                              {challenge.title}
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                              {challenge.description}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop: Hexagonal Grid Layout */}
+                <div className="hidden md:block">
+                  {/* Central hexagon */}
+                  <div className="flex justify-center mb-8">
+                    <motion.div
+                      className="group relative"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="relative w-48 h-48">
+                        {/* Hexagon shape */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700 shadow-2xl"></div>
+                        <div className="absolute inset-2 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+
+                        {/* Content */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <Settings className="w-8 h-8 text-indigo-600" />
+                          </div>
+                          <h3 className="text-lg font-bold text-gray-900 text-center mb-2 group-hover:text-indigo-800 transition-colors duration-300">
+                            Core Issues
+                          </h3>
+                          <p className="text-sm text-gray-600 text-center leading-tight">
+                            Manufacturing bottlenecks we eliminate
+                          </p>
+                        </div>
+
+                        {/* Animated border */}
+                        <div className="absolute inset-0 rounded-lg transform rotate-45">
+                          <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-lg opacity-0 group-hover:opacity-30 blur-xl animate-pulse"></div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Surrounding hexagons in a circular pattern */}
+                  <div className="relative w-full h-96 flex items-center justify-center">
+                    {challenges.map((challenge, index) => {
+                      const angle = index * 60 - 90; // Start from top
+                      const radius = 180;
+                      const x = Math.cos((angle * Math.PI) / 180) * radius;
+                      const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+                      return (
+                        <motion.div
+                          key={index}
+                          className="absolute group cursor-pointer"
+                          style={{
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(50% + ${y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.6,
+                            delay: index * 0.1 + 0.5,
+                          }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.1, z: 50 }}
+                        >
+                          <div className="relative w-32 h-32">
+                            {/* Hexagon background */}
+                            <div
+                              className={`absolute inset-0 bg-gradient-to-br ${getChallengeColor(
+                                index
+                              )} rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500 shadow-xl`}
+                            ></div>
+                            <div className="absolute inset-1 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
+
+                            {/* Content */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
+                              <div
+                                className={`w-10 h-10 bg-gradient-to-br ${getChallengeBgColor(
+                                  index
+                                )} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-md`}
+                              >
+                                {typeof challenge.icon === "string" ? (
+                                  challenge.icon
+                                ) : (
+                                  <challenge.icon
+                                    className={`w-5 h-5 ${getChallengeIconColor(
+                                      index
+                                    )}`}
+                                  />
+                                )}
+                              </div>
+                              <h4 className="text-xs font-bold text-gray-900 text-center leading-tight mb-1 group-hover:text-gray-800 transition-colors duration-300">
+                                {challenge.title
+                                  .split(" ")
+                                  .slice(0, 2)
+                                  .join(" ")}
+                              </h4>
+                              <div
+                                className={`w-2 h-2 rounded-full ${getChallengeDotColor(
+                                  index
+                                )} animate-pulse`}
+                              ></div>
+                            </div>
+
+                            {/* Connecting line to center */}
+                            <div
+                              className="absolute top-1/2 left-1/2 w-px bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-300"
+                              style={{
+                                height: `${radius - 60}px`,
+                                transform: `translate(-50%, -100%) rotate(${
+                                  angle + 180
+                                }deg)`,
+                                transformOrigin: "bottom center",
+                              }}
+                            ></div>
+                          </div>
+
+                          {/* Tooltip on hover */}
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
+                            {challenge.title}
+                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom stats */}
                   <motion.div
-                    className="group relative"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="text-center mt-40"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
                     viewport={{ once: true }}
                   >
-                    <div className="relative w-48 h-48">
-                      {/* Hexagon shape */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700 shadow-2xl"></div>
-                      <div className="absolute inset-2 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
-
-                      {/* Content */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                          <Settings className="w-8 h-8 text-indigo-600" />
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-indigo-600 mb-2">
+                          85%
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 text-center mb-2 group-hover:text-indigo-800 transition-colors duration-300">
-                          Core Issues
-                        </h3>
-                        <p className="text-sm text-gray-600 text-center leading-tight">
-                          Manufacturing bottlenecks we eliminate
-                        </p>
+                        <div className="text-sm text-gray-600">
+                          Efficiency Gain
+                        </div>
                       </div>
-
-                      {/* Animated border */}
-                      <div className="absolute inset-0 rounded-lg transform rotate-45">
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-lg opacity-0 group-hover:opacity-30 blur-xl animate-pulse"></div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-purple-600 mb-2">
+                          60%
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          Cost Reduction
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-bold text-pink-600 mb-2">
+                          24/7
+                        </div>
+                        <div className="text-sm text-gray-600">
+                          System Uptime
+                        </div>
                       </div>
                     </div>
                   </motion.div>
                 </div>
-
-                {/* Surrounding hexagons in a circular pattern */}
-                <div className="relative w-full h-96 flex items-center justify-center">
-                  {challenges.map((challenge, index) => {
-                    const angle = index * 60 - 90; // Start from top
-                    const radius = 180;
-                    const x = Math.cos((angle * Math.PI) / 180) * radius;
-                    const y = Math.sin((angle * Math.PI) / 180) * radius;
-
-                    return (
-                      <motion.div
-                        key={index}
-                        className="absolute group cursor-pointer"
-                        style={{
-                          left: `calc(50% + ${x}px)`,
-                          top: `calc(50% + ${y}px)`,
-                          transform: "translate(-50%, -50%)",
-                        }}
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.1, z: 50 }}
-                      >
-                        <div className="relative w-32 h-32">
-                          {/* Hexagon background */}
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-br ${getChallengeColor(
-                              index
-                            )} rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500 shadow-xl`}
-                          ></div>
-                          <div className="absolute inset-1 bg-white rounded-lg transform rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-
-                          {/* Content */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
-                            <div
-                              className={`w-10 h-10 bg-gradient-to-br ${getChallengeBgColor(
-                                index
-                              )} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300 shadow-md`}
-                            >
-                              {typeof challenge.icon === "string" ? (
-                                challenge.icon
-                              ) : (
-                                <challenge.icon
-                                  className={`w-5 h-5 ${getChallengeIconColor(
-                                    index
-                                  )}`}
-                                />
-                              )}
-                            </div>
-                            <h4 className="text-xs font-bold text-gray-900 text-center leading-tight mb-1 group-hover:text-gray-800 transition-colors duration-300">
-                              {challenge.title.split(" ").slice(0, 2).join(" ")}
-                            </h4>
-                            <div
-                              className={`w-2 h-2 rounded-full ${getChallengeDotColor(
-                                index
-                              )} animate-pulse`}
-                            ></div>
-                          </div>
-
-                          {/* Connecting line to center */}
-                          <div
-                            className="absolute top-1/2 left-1/2 w-px bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-300"
-                            style={{
-                              height: `${radius - 60}px`,
-                              transform: `translate(-50%, -100%) rotate(${
-                                angle + 180
-                              }deg)`,
-                              transformOrigin: "bottom center",
-                            }}
-                          ></div>
-                        </div>
-
-                        {/* Tooltip on hover */}
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
-                          {challenge.title}
-                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-                {/* Bottom stats */}
-                <motion.div
-                  className="text-center mt-40"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-indigo-600 mb-2">
-                        85%
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Efficiency Gain
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">
-                        60%
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Cost Reduction
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-pink-600 mb-2">
-                        24/7
-                      </div>
-                      <div className="text-sm text-gray-600">System Uptime</div>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
 
