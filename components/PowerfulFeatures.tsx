@@ -60,7 +60,7 @@ const PowerfulFeatures: React.FC = () => {
 
   return (
     <section className="py-16 bg-gradient-to-r from-[#248aff] to-[#00d24b] min-h-[800px]">
-      <div className="container mx-auto px-8 md:px-40 lg:px-40">
+      <div className="container mx-auto px-40 md:px-40 lg:px-40">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -76,7 +76,8 @@ const PowerfulFeatures: React.FC = () => {
             </div>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
-            All Your Tasks, Organized Effortlessly
+            Transform Complex Workflows into Intelligent Applications -
+            Effortlessly.
           </h2>
         </motion.div>
 

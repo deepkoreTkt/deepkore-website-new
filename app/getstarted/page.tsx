@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import getEnvConfig from "@/components/getenv";
 import axios from "axios";
+import { Rocket, Target, Star, Users, Zap } from "lucide-react";
 
 // Company logos data
 const companyLogos = [
@@ -800,8 +801,9 @@ const Demo: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 mb-8">
+              <Rocket className="w-5 h-5 mr-2 text-white" />
               <span className="text-white font-semibold">
-                🚀 Start Building Today
+                Start Building Today
               </span>
             </div>
 
@@ -824,7 +826,7 @@ const Demo: React.FC = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span>🎯</span>
+                  <Target className="w-5 h-5" />
                   Start Free Trial
                 </motion.button>
               </a>
@@ -841,17 +843,17 @@ const Demo: React.FC = () => {
 
             <div className="flex items-center justify-center gap-8 text-white">
               <div className="flex items-center gap-2">
-                <span className="text-2xl">⭐</span>
+                <Star className="w-6 h-6" />
                 <span className="font-semibold">4.9 Rating</span>
               </div>
               <div className="w-px h-6 bg-white/30" />
               <div className="flex items-center gap-2">
-                <span className="text-2xl">👥</span>
+                <Users className="w-6 h-6" />
                 <span className="font-semibold">300k+ Users</span>
               </div>
               <div className="w-px h-6 bg-white/30" />
               <div className="flex items-center gap-2">
-                <span className="text-2xl">⚡</span>
+                <Zap className="w-6 h-6" />
                 <span className="font-semibold">24/7 Support</span>
               </div>
             </div>
