@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import {
   Building2,
   Users,
@@ -363,9 +364,11 @@ const CRM: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <img
+              <Image
                 src="/crm.svg"
                 alt="CRM Dashboard Preview"
+                width={800}
+                height={600}
                 className="w-full h-auto mx-auto rounded-lg shadow-2xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
               />
             </motion.div>

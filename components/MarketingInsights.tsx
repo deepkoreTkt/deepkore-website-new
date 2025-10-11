@@ -114,7 +114,7 @@ const MarketingInsights: React.FC = () => {
                 >
                   {/* Step Number with Glow */}
                   <div className="absolute -top-6  z-20">
-                    <motion.div className="w-14 h-14 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center border-4 border-white/20 shadow-2xl backdrop-blur-sm">
+                    <motion.div className="w-14 h-14 bg-cyan-500 rounded-full flex items-center justify-center border-4 border-white/20 shadow-2xl backdrop-blur-sm">
                       <span className="text-white font-bold text-lg">
                         {insight.step}
                       </span>

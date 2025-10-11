@@ -24,9 +24,6 @@ import {
   CheckCircle,
   FolderOpen,
   Table,
-  Clipboard,
-  Rocket,
-  Target,
   DollarSign,
 } from "lucide-react";
 

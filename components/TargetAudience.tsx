@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { Rocket, Users, Link, Bot } from "lucide-react";
 
 const stats = [
   {
-    percent: "🚀",
+    icon: Rocket,
     label: "Accelerate Application Development",
     description: "Launch apps in days, not months",
     details:
@@ -15,7 +16,7 @@ const stats = [
     bg: "bg-white",
   },
   {
-    percent: "👥",
+    icon: Users,
     label: "Empowered Teams",
     description: "Let business users build without coding",
     details:
@@ -25,7 +26,7 @@ const stats = [
     bg: "bg-white",
   },
   {
-    percent: "🔗",
+    icon: Link,
     label: "Seamless Integration",
     description: "Connect effortlessly across systems",
     details:
@@ -35,7 +36,7 @@ const stats = [
     bg: "bg-white",
   },
   {
-    percent: "🤖",
+    icon: Bot,
     label: "AI Intelligence Built into Every Workflow",
     description: "Smart automation and intelligent workflows",
     details:
@@ -154,10 +155,10 @@ const TargetAudience: React.FC = () => {
                   style={{ background: "#ffffffff" }}
                 >
                   <div>
-                    <div
-                      className={`text-5xl font-bold mb-2 bg-gradient-to-r ${stats[currentSlide].gradient} bg-clip-text text-transparent`}
-                    >
-                      {stats[currentSlide].percent}%
+                    <div className={`text-5xl mb-2 flex items-center`}>
+                      {React.createElement(stats[currentSlide].icon, {
+                        className: `w-8 h-8 text-blue-600`,
+                      })}
                     </div>
                     <div className="text-lg font-bold text-gray-900 mb-2">
                       {stats[currentSlide].label}

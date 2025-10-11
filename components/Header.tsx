@@ -51,6 +51,16 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [mobileExpandedSections, setMobileExpandedSections] = useState<{
+    [key: string]: boolean;
+  }>({});
+
+  const toggleMobileSection = (section: string) => {
+    setMobileExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   const navItems: MenuItem[] = [
     { href: "/pricing", label: "Pricing", featured: [] },
@@ -153,8 +163,6 @@ const Header: React.FC = () => {
             icon: ArrowRight,
             featured: [],
           },
-          // { href: "/security", label: "Security", icon: "🔒" },
-          // { href: "/encryption", label: "Data encryption", icon: "🔐" },
         ],
       },
       {
@@ -184,7 +192,6 @@ const Header: React.FC = () => {
             icon: FileText,
             featured: [],
           },
-
           {
             href: "/templates",
             label: "Explore all templates",
@@ -331,6 +338,80 @@ const Header: React.FC = () => {
     ],
   };
 
+  // Render mobile dropdown section
+  const renderMobileSection = (
+    sectionKey: string,
+    title: string,
+    sections: MenuSection[]
+  ) => (
+    <div className="border-b border-gray-100 pb-2 mb-2">
+      <button
+        onClick={() => toggleMobileSection(sectionKey)}
+        className="flex items-center justify-between w-full px-3 py-2 text-sm font-semibold text-gray-700 tracking-wide"
+      >
+        <span>{title}</span>
+        <motion.svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          animate={{
+            rotate: mobileExpandedSections[sectionKey] ? 180 : 0,
+          }}
+          transition={{ duration: 0.2 }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </motion.svg>
+      </button>
+      <AnimatePresence>
+        {mobileExpandedSections[sectionKey] && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 py-2 space-y-1">
+              {sections.map((section: MenuSection, sectionIdx: number) => (
+                <div key={section.title} className="mb-3">
+                  {section.title && (
+                    <span className="block px-3 py-1 text-xs font-medium text-gray-500 uppercase tracking-wide">
+                      {section.title}
+                    </span>
+                  )}
+                  {section.items.map((item: MenuItem, itemIdx: number) => (
+                    <motion.a
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-3 px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: itemIdx * 0.04 + sectionIdx * 0.1,
+                      }}
+                    >
+                      {item.icon && (
+                        <item.icon className="w-4 h-4 text-blue-600" />
+                      )}
+                      <span>{item.label}</span>
+                    </motion.a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+
   return (
     <>
       {/* Backdrop */}
@@ -406,8 +487,6 @@ const Header: React.FC = () => {
                 </motion.button>
               </div>
 
-              {/* Solutions Dropdown */}
-
               {/* Product Button */}
               <div className="relative">
                 <motion.button
@@ -447,6 +526,8 @@ const Header: React.FC = () => {
                   </motion.svg>
                 </motion.button>
               </div>
+
+              {/* Solutions Button */}
               <div className="relative">
                 <motion.button
                   className={`flex items-center justify-center space-x-2 px-3 py-1.5 text-black hover:text-gray-900 font-medium text-sm transition-all duration-200 rounded-md hover:bg-gray-50/80 hover:shadow-sm ${
@@ -808,7 +889,7 @@ const Header: React.FC = () => {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
-                className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-gray-200/50 shadow-lg mx-4"
+                className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-gray-200/50 shadow-lg mx-4 max-h-[80vh] overflow-y-auto"
                 initial={{ opacity: 0, y: -10, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -816,94 +897,33 @@ const Header: React.FC = () => {
               >
                 <nav className="p-4">
                   <div className="space-y-1 mb-4">
-                    {/* User Guide Mobile */}
-                    <motion.div className="border-b border-gray-100 pb-2 mb-2">
-                      {menuSections.platform.map(
-                        (section: MenuSection, sectionIdx: number) => (
-                          <div key={section.title} className="mb-2">
-                            <span className="block px-3 py-2 text-sm font-semibold text-gray-700 tracking-wide">
-                              {section.title}
-                            </span>
-                            {section.items.map(
-                              (item: MenuItem, itemIdx: number) => (
-                                <motion.a
-                                  key={item.href}
-                                  href={item.href}
-                                  className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors duration-200"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  initial={{ opacity: 0, x: -10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{
-                                    delay: itemIdx * 0.04 + sectionIdx * 0.1,
-                                  }}
-                                >
-                                  {item.label}
-                                </motion.a>
-                              )
-                            )}
-                          </div>
-                        )
-                      )}
-                    </motion.div>
+                    {/* Platform Mobile Section */}
+                    {renderMobileSection(
+                      "platform",
+                      "Platform",
+                      menuSections.platform
+                    )}
 
-                    {/* Product Dropdown Mobile */}
-                    <motion.div className="border-b border-gray-100 pb-2 mb-2">
-                      <span className="block px-3 py-2 text-sm font-semibold text-gray-700 tracking-wide">
-                        Product
-                      </span>
-                      {menuSections.products[0].items.map(
-                        (item: MenuItem, idx: number) => (
-                          <motion.a
-                            key={item.href}
-                            href={item.href}
-                            className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors duration-200"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.05 }}
-                          >
-                            {item.label}
-                          </motion.a>
-                        )
-                      )}
-                    </motion.div>
+                    {/* Product Mobile Section */}
+                    {renderMobileSection(
+                      "product",
+                      "Product",
+                      menuSections.products
+                    )}
 
-                    {/* Solutions Dropdown Mobile */}
-                    <motion.div className="border-b border-gray-100 pb-2 mb-2">
-                      <span className="block px-3 py-2 text-sm font-semibold text-gray-700 tracking-wide">
-                        Solutions
-                      </span>
-                      {menuSections.solutions[0].items.map(
-                        (item: MenuItem, idx: number) => (
-                          <motion.a
-                            key={item.href}
-                            href={item.href}
-                            className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors duration-200"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.05 }}
-                          >
-                            {item.label}
-                          </motion.a>
-                        )
-                      )}
-                    </motion.div>
+                    {/* Solutions Mobile Section */}
+                    {renderMobileSection(
+                      "solutions",
+                      "Solutions",
+                      menuSections.solutions
+                    )}
 
-                    {/* Other Nav Items */}
-                    <motion.a
-                      href="/blog"
-                      className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-all duration-200"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Blog
-                    </motion.a>
-
+                    {/* Simple Nav Items */}
                     {navItems.map((item, index) => (
                       <motion.a
                         key={item.href}
                         href={item.href}
-                        className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-all duration-200"
+                        className="flex items-center px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors duration-200 border-b border-gray-100"
                         onClick={() => setIsMobileMenuOpen(false)}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -915,8 +935,8 @@ const Header: React.FC = () => {
                   </div>
 
                   <motion.a
-                    href="/contact"
-                    className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-[#8112db] hover:bg-[#8112db]/90 rounded-full transition-colors duration-200"
+                    href="/getstarted"
+                    className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-[#248aff] hover:bg-[#248aff]/90 rounded-full transition-colors duration-200 mt-4"
                     onClick={() => setIsMobileMenuOpen(false)}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}

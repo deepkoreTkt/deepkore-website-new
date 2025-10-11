@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FloatingElements from "@/components/FloatingElements";
-import Image from "next/image";
 import { motion, useScroll, useSpring } from "framer-motion";
 import {
   Bot,
@@ -24,7 +22,6 @@ import {
   LineChart,
   ScatterChart,
   AreaChart,
-  Link as LinkIcon,
   Database,
   Cloud,
   Zap,
@@ -259,11 +256,6 @@ const pivotTableFeatures = [
 
 const Analytics: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
       <Header />

@@ -131,9 +131,7 @@ const PrivacyPolicy: React.FC = () => {
               Your privacy is important to us. Learn how we collect, use, and
               protect your personal information.
             </p>
-            <div className="mt-8 text-gray-500">
-              Last updated: September 12, 2025
-            </div>
+            <div className="mt-8 text-gray-500">Last updated: 11-10-2025</div>
           </motion.div>
         </div>
       </section>
@@ -301,21 +299,11 @@ const PrivacyPolicy: React.FC = () => {
               questions or concerns.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-6 text-left">
                 <div>
                   <div className="text-2xl mb-2">📧</div>
                   <h4 className="font-bold mb-1">Email</h4>
                   <p className="text-white/90">contact@deepkore.com</p>
-                </div>
-                <div>
-                  <div className="text-2xl mb-2">📍</div>
-                  <h4 className="font-bold mb-1">Address</h4>
-                  <p className="text-white/90">[Your Company Address]</p>
-                </div>
-                <div>
-                  <div className="text-2xl mb-2">📞</div>
-                  <h4 className="font-bold mb-1">Phone</h4>
-                  <p className="text-white/90">[Your Phone Number]</p>
                 </div>
               </div>
             </div>
@@ -329,4 +317,3 @@ const PrivacyPolicy: React.FC = () => {
 };
 
 export default PrivacyPolicy;
-
