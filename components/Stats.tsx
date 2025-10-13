@@ -22,8 +22,7 @@ const Stats: React.FC = () => {
       icon: AlertTriangle,
       color: "border-red-300 bg-red-50",
       iconColor: "text-red-500",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=280&fit=crop",
+      image: "/images/stats-01.jpg",
     },
     {
       value: "02",
@@ -33,8 +32,7 @@ const Stats: React.FC = () => {
       icon: Lock,
       color: "border-orange-300 bg-orange-50",
       iconColor: "text-orange-500",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=280&fit=crop",
+      image: "/images/stats-02.jpg",
     },
     {
       value: "03",
@@ -44,8 +42,7 @@ const Stats: React.FC = () => {
       icon: Users,
       color: "border-blue-300 bg-blue-50",
       iconColor: "text-blue-500",
-      image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=280&fit=crop",
+      image: "/images/stats-03.jpg",
     },
     {
       value: "04",
@@ -55,8 +52,7 @@ const Stats: React.FC = () => {
       icon: BarChart3,
       color: "border-green-300 bg-green-50",
       iconColor: "text-green-600",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=280&fit=crop",
+      image: "/images/stats-04.jpg",
     },
     {
       value: "05",
@@ -66,8 +62,7 @@ const Stats: React.FC = () => {
       icon: Link,
       color: "border-teal-300 bg-teal-50",
       iconColor: "text-teal-500",
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=280&fit=crop",
+      image: "/images/stats-05.jpg",
     },
     {
       value: "06",
@@ -77,8 +72,7 @@ const Stats: React.FC = () => {
       icon: TrendingUp,
       color: "border-purple-300 bg-purple-50",
       iconColor: "text-purple-500",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=280&fit=crop",
+      image: "/images/stats-06.jpg",
     },
   ];
 
@@ -145,7 +139,6 @@ const Stats: React.FC = () => {
                 variants={itemVariants}
                 className={`flex flex-col rounded-xl sm:rounded-2xl border-2 ${stat.color} shadow-sm hover:shadow-lg p-4 sm:p-6 transition-all duration-300 bg-white hover:scale-[1.02]`}
               >
-                {/* Image Container */}
                 <div className="w-full flex justify-center mb-3 sm:mb-4">
                   <div className="relative w-full h-32 sm:h-36 lg:h-40 rounded-lg sm:rounded-xl overflow-hidden bg-gray-200 flex items-center justify-center">
                     <Image

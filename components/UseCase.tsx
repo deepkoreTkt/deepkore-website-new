@@ -19,8 +19,7 @@ const UseCase: React.FC = () => {
         "Patient Records",
         "Prescription Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-01.jpg",
       category: "Healthcare",
       link: "/blog",
     },
@@ -34,8 +33,7 @@ const UseCase: React.FC = () => {
         "Payment Integration",
         "Order Tracking",
       ],
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-02.jpg",
       category: "E-commerce",
       link: "/blog",
     },
@@ -49,8 +47,7 @@ const UseCase: React.FC = () => {
         "Feedback Collection",
         "Analytics Dashboard",
       ],
-      image:
-        "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-03.jpg",
       category: "HR",
       link: "/blog",
     },
@@ -64,8 +61,7 @@ const UseCase: React.FC = () => {
         "Inventory Optimization",
         "Real-time Tracking",
       ],
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-04.jpg",
       category: "Logistics",
       link: "/blog",
     },
@@ -79,8 +75,7 @@ const UseCase: React.FC = () => {
         "Payment Processing",
         "Security Features",
       ],
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-05.jpg",
       category: "Banking",
       link: "/blog",
     },
@@ -94,8 +89,7 @@ const UseCase: React.FC = () => {
         "Customer Portal",
         "Risk Assessment",
       ],
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-06.jpg",
       category: "Insurance",
       link: "/blog",
     },
@@ -109,8 +103,7 @@ const UseCase: React.FC = () => {
         "Workflow Optimization",
         "AI Integration",
       ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-07.jpg",
       category: "Automation",
       link: "/blog",
     },
@@ -124,8 +117,7 @@ const UseCase: React.FC = () => {
         "Knowledge Base",
         "Self-Service Tools",
       ],
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-08.jpg",
       category: "Customer Service",
       link: "/blog",
     },
@@ -139,8 +131,7 @@ const UseCase: React.FC = () => {
         "Interactive Content",
         "Assessment Tools",
       ],
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-09.jpg",
       category: "Education",
       link: "/blog",
     },
@@ -154,8 +145,7 @@ const UseCase: React.FC = () => {
         "Lifecycle Management",
         "Performance Analytics",
       ],
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-10.jpg",
       category: "Operations",
       link: "/blog",
     },
@@ -169,8 +159,7 @@ const UseCase: React.FC = () => {
         "Public Information",
         "Citizen Portal",
       ],
-      image:
-        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-11.jpg",
       category: "Government",
       link: "/blog",
     },
@@ -184,8 +173,7 @@ const UseCase: React.FC = () => {
         "Resource Management",
         "Efficiency Analytics",
       ],
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
+      image: "/images/usecase-12.jpg",
       category: "Manufacturing",
       link: "/blog",
     },

@@ -19,8 +19,7 @@ const Solution: React.FC = () => {
         "Finished Product Master",
         "Customer Relationship Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-01.jpg",
       link: "/solution/sales",
     },
     {
@@ -35,8 +34,7 @@ const Solution: React.FC = () => {
         "HR Reports",
         "Performance Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-02.jpg",
       link: "/solution/hr",
     },
     {
@@ -50,8 +48,7 @@ const Solution: React.FC = () => {
         "Maintenance Order",
         "Maintenance Reports",
       ],
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-03.jpg",
       link: "/solution/assetmanagement",
     },
     {
@@ -65,8 +62,7 @@ const Solution: React.FC = () => {
         "Pivot Table",
         "Predictive Analytics",
       ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-04.jpg",
       link: "/solution/analytics",
     },
     {
@@ -80,8 +76,7 @@ const Solution: React.FC = () => {
         "Purchase Order",
         "Procurement Reports",
       ],
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-05.jpg",
       link: "/solution/procurement",
     },
     {
@@ -95,8 +90,7 @@ const Solution: React.FC = () => {
         "Quality Control",
         "Inventory Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-06.jpg",
       link: "/solution/manufacturing",
     },
     {
@@ -109,8 +103,7 @@ const Solution: React.FC = () => {
         "Customer Onboarding",
         "Risk Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-07.jpg",
       link: "/solution/banking",
     },
     {
@@ -123,8 +116,7 @@ const Solution: React.FC = () => {
         "Medical Records",
         "Appointment Scheduling",
       ],
-      image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-08.jpg",
       link: "/solution/healthcare",
     },
     {
@@ -137,8 +129,7 @@ const Solution: React.FC = () => {
         "Customer Analytics",
         "Loyalty Programs",
       ],
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-09.jpg",
       link: "/solution/retail",
     },
     {
@@ -151,8 +142,7 @@ const Solution: React.FC = () => {
         "Assessment Tools",
         "Progress Tracking",
       ],
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-10.jpg",
       link: "/solution/education",
     },
     {
@@ -165,8 +155,7 @@ const Solution: React.FC = () => {
         "Permit Processing",
         "Public Records",
       ],
-      image:
-        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-11.jpg",
       link: "/solution/government",
     },
     {
@@ -179,8 +168,7 @@ const Solution: React.FC = () => {
         "Shipment Tracking",
         "Warehouse Management",
       ],
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop&crop=center",
+      image: "/images/solution-12.jpg",
       link: "/solution/transportation",
     },
   ];

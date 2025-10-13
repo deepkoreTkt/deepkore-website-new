@@ -26,8 +26,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Team Deepkore",
     date: "25 Sep 2025",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-01.jpg",
     alt: "AI-powered low-code development platform interface",
     link: "/blog/blog1",
   },
@@ -39,8 +38,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 MIN READ",
     author: "Team Deepkore",
     date: "20 Sep 2025",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-02.jpg",
     alt: "Microservices architecture diagram and cloud infrastructure",
     link: "#",
   },
@@ -52,8 +50,7 @@ const blogPosts: BlogPost[] = [
     readTime: "3 MIN READ",
     author: "Manish Narayanaswami",
     date: "8 Mar 2024",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-03.jpg",
     alt: "Business professionals discussing buy vs build software decisions",
     link: "#",
   },
@@ -65,8 +62,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Team Deepkore",
     date: "12 Sep 2025",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-04.jpg",
     alt: "Cybersecurity and data protection visualization",
     link: "#",
   },
@@ -78,8 +74,7 @@ const blogPosts: BlogPost[] = [
     readTime: "3 MIN READ",
     author: "Mohan Madhurakavi",
     date: "5 Feb 2024",
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-05.jpg",
     alt: "Digital transformation with circuit boards and technological innovation",
     link: "#",
   },
@@ -91,8 +86,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Dinesh Varadhrajan",
     date: "18 Apr 2024",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-06.jpg",
     alt: "IT infrastructure and data center with servers and network equipment",
     link: "#",
   },
@@ -104,8 +98,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Dinesh Varadhrajan",
     date: "7 Jun 2024",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-07.jpg",
     alt: "Cybersecurity and data protection with digital locks and security systems",
     link: "#",
   },
@@ -118,8 +111,7 @@ const blogPosts: BlogPost[] = [
     readTime: "2 MIN READ",
     author: "Vinitha Ramani",
     date: "23 Jul 2024",
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-08.jpg",
     alt: "Modern office workspace with computer and productivity tools",
     link: "#",
   },
@@ -132,8 +124,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Team Deepkore",
     date: "14 Aug 2024",
-    image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-09.jpg",
     alt: "Digital evolution and technological advancement with futuristic interfaces",
     link: "#",
   },
@@ -145,8 +136,7 @@ const blogPosts: BlogPost[] = [
     readTime: "2 MIN READ",
     author: "Dinesh Varadhrajan",
     date: "9 Sep 2024",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-10.jpg",
     alt: "Code refactoring and technical debt management with development tools",
     link: "#",
   },
@@ -157,8 +147,7 @@ const blogPosts: BlogPost[] = [
     readTime: "7 MIN READ",
     author: "Vinitha Ramani",
     date: "21 Oct 2024",
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-11.jpg",
     alt: "Agile development sprint with team collaboration and planning",
     link: "#",
   },
@@ -170,8 +159,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Team Deepkore",
     date: "3 Nov 2024",
-    image:
-      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-12.jpg",
     alt: "Future technology with holographic interfaces and innovative development",
     link: "#",
   },
@@ -182,8 +170,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Team Deepkore",
     date: "17 Dec 2024",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-13.jpg",
     alt: "Process automation and workflow optimization with connected systems",
     link: "#",
   },
@@ -195,8 +182,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Deepkore Team",
     date: "5 Jan 2025",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-14.jpg",
     alt: "UX/UI design and user experience analysis with digital interfaces",
     link: "#",
   },
@@ -208,8 +194,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 MIN READ",
     author: "Deepkore Team",
     date: "19 Feb 2025",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-15.jpg",
     alt: "Software debugging and programming with code analysis on computer screen",
     link: "#",
   },
@@ -221,8 +206,7 @@ const blogPosts: BlogPost[] = [
     readTime: "3 MIN READ",
     author: "Daniel Reis",
     date: "8 Mar 2025",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-16.jpg",
     alt: "Problem-solving and troubleshooting concepts in professional development",
     link: "#",
   },
@@ -234,8 +218,7 @@ const blogPosts: BlogPost[] = [
     readTime: "7 MIN READ",
     author: "Otávio Souza",
     date: "22 Apr 2025",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-17.jpg",
     alt: "Cloud computing and cloud-native platform architecture",
     link: "#",
   },
@@ -247,8 +230,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Deepkore Team",
     date: "14 May 2025",
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-18.jpg",
     alt: "Cloud infrastructure partnership and AWS marketplace integration",
     link: "#",
   },
@@ -260,8 +242,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Deepkore Team",
     date: "6 Jun 2025",
-    image:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-19.jpg",
     alt: "Digital communication and API integration for modern business",
     link: "#",
   },
@@ -273,8 +254,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Killian Hekhuis",
     date: "28 Jun 2025",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-20.jpg",
     alt: "API development and REST method integration with low-code platforms",
     link: "#",
   },
@@ -286,8 +266,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 MIN READ",
     author: "Deepkore Team",
     date: "12 Jul 2025",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-21.jpg",
     alt: "Mobile app development with stories pattern and social media features",
     link: "#",
   },
@@ -299,8 +278,7 @@ const blogPosts: BlogPost[] = [
     readTime: "5 MIN READ",
     author: "Deepkore Team",
     date: "3 Aug 2025",
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-22.jpg",
     alt: "Low-code application development examples and use cases",
     link: "#",
   },
@@ -312,8 +290,7 @@ const blogPosts: BlogPost[] = [
     readTime: "4 MIN READ",
     author: "Deepkore Team",
     date: "17 Aug 2025",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-23.jpg",
     alt: "Mobile app performance optimization and scaling architecture",
     link: "#",
   },
@@ -325,8 +302,7 @@ const blogPosts: BlogPost[] = [
     readTime: "6 MIN READ",
     author: "Deepkore Team",
     date: "9 Sep 2025",
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+    image: "/images/blog-24.jpg",
     alt: "Technical debt management and software quality improvement",
     link: "#",
   },

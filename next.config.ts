@@ -27,47 +27,20 @@ const nextConfig: NextConfig = {
 
   // Image optimization settings
   images: {
+    domains: [
+      "images.unsplash.com",
+      "images.pexels.com",
+      "cdn.pixabay.com",
+      "images.freeimages.com",
+      "www.publicdomainpictures.net",
+      "framerusercontent.com",
+      "picsum.photos",
+      "dam.freshworks.com",
+      "flagcdn.com",
+    ],
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.pixabay.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.freeimages.com",
-      },
-      {
-        protocol: "https",
-        hostname: "www.publicdomainpictures.net",
-      },
-      {
-        protocol: "https",
-        hostname: "framerusercontent.com",
-      },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "dam.freshworks.com",
-      },
-      {
-        protocol: "https",
-        hostname: "flagcdn.com",
-      },
-    ],
   },
 
   // Output optimizations
