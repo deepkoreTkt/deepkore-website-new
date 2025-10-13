@@ -6,11 +6,13 @@ import ScrollToTop from "../components/ScrollToTop";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -21,6 +23,9 @@ export const metadata: Metadata = {
   keywords:
     "Deepkore lets you transform ideas into powerful Enterprise applications that adapt to your business needs.",
   authors: [{ name: "Your Name" }],
+  icons: {
+    icon: "/logo-icon.svg",
+  },
   openGraph: {
     title: "Deepkore - Building the Future of AI Driven Business",
     description:
@@ -62,7 +67,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo-icon.svg" type="image/svg+xml" />
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          href="/logo-icon.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+
+        {/* Resource hints for performance */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

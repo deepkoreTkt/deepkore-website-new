@@ -1,5 +1,30 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "https://deepkore.com/:splat",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.deepkore.com"
+        }
+      ]
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "https://deepkore.com/:splat",
+      "permanent": true,
+      "has": [
+        {
+          "type": "header",
+          "key": "x-forwarded-proto",
+          "value": "http"
+        }
+      ]
+    }
+  ]
 }

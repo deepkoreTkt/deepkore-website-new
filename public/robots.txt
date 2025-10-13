@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.deepkore.com/sitemap.xml
+Sitemap: https://deepkore.com/sitemap.xml

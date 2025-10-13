@@ -157,7 +157,7 @@ const PrivacyPolicy: React.FC = () => {
               At Deepkore Technologies, your privacy is important to us. This
               Privacy Policy explains how we collect, use, disclose, and
               safeguard your information when you visit our website
-              www.deepkore.com, use our services, or engage with us. Please read
+              deepkore.com, use our services, or engage with us. Please read
               this policy carefully to understand our views and practices
               regarding your personal data and how we will treat it.
             </p>
