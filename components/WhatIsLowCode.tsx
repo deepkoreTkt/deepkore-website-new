@@ -78,7 +78,7 @@ const WhatIsLowCode: React.FC = () => {
   return (
     <div className="what-is-low-code relative min-h-screen">
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+      <div className="fixed top-0 left-0 max-w-5xl  h-1 bg-gray-200 z-50">
         <div
           className="h-full bg-gradient-to-r from-[#00A551] to-[#2791D0] transition-all duration-300 ease-out"
           style={{ width: `${scrollProgress}%` }}
@@ -87,17 +87,17 @@ const WhatIsLowCode: React.FC = () => {
 
       {/* Hero Section - Full Width */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat text-white py-40 overflow-hidden"
+        className="relative bg-cover bg-center bg-no-repeat text-white py-20 md:py-40 overflow-hidden"
         style={{ backgroundImage: "url('/bg1122.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>;
-        <div className="relative container mx-auto px-6">
+        <div className="relative container mx-auto px-4 md:px-6">
           <div className="max-w-5xl mx-auto text-center">
             <div className="animate-fade-in-up">
-              <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white  to-white bg-clip-text text-transparent animate-gradient-x">
+              <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white  to-white bg-clip-text text-transparent animate-gradient-x">
                 What is low-code?
               </h1>
-              <p className="text-xl md:text-2xl leading-relaxed mb-12 opacity-95 max-w-4xl mx-auto font-light tracking-wide">
+              <p className="text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 md:mb-12 opacity-95 max-w-4xl mx-auto font-light tracking-wide">
                 Low-code is an approach to visual software development that
                 <span className="font-medium text-[#ffffff]">
                   {" "}
@@ -107,23 +107,23 @@ const WhatIsLowCode: React.FC = () => {
                 into reality faster than ever.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-300">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center animate-fade-in-up delay-300">
               <a
                 href="/getstarted"
-                className="group inline-block bg-gradient-to-r from-[#ffffff] to-[#ffffff]/90 text-[#00A551] px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
+                className="group inline-block bg-gradient-to-r from-[#ffffff] to-[#ffffff]/90 text-[#00A551] px-6 md:px-10 py-3 md:py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(197,255,40,0.3)] shadow-lg backdrop-blur-sm"
               >
                 <span className="flex items-center gap-2">
                   FREE 14-DAY TRIAL
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
               <a
                 href="/getstarted"
-                className="group inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 border border-white/20"
+                className="group inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 md:px-10 py-3 md:py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 border border-white/20"
               >
                 <span className="flex items-center gap-2">
                   GET A DEMO
-                  <Globe className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <Globe className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
             </div>
@@ -251,15 +251,15 @@ const WhatIsLowCode: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 py-16 bg-gray-50 min-h-screen">
-          <div className="container mx-auto px-6 max-w-4xl">
+        <main className="flex-1 py-8 md:py-16 bg-gray-50 min-h-screen">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <div className="space-y-16">
               {/* What is low-code */}
               <div
                 id="what-is-low-code"
-                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover:shadow-2xl hover:border-[#00A551]/40 transition-all duration-500 group"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20 hover:shadow-2xl hover:border-[#00A551]/40 transition-all duration-500 group"
               >
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent mb-6 group-hover:scale-105 transform transition-transform duration-500">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#00A551] to-[#2791D0] bg-clip-text text-transparent mb-4 md:mb-6 group-hover:scale-105 transform transition-transform duration-500">
                   What is low-code?
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -288,9 +288,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* What is low-code app development */}
               <div
                 id="what-is-low-code-app-development"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6">
                   What is low-code app development?
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -311,9 +311,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* Low-code Platform Features */}
               <div
                 id="low-code-platform-features"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8">
                   Low-code Platform Features
                 </h2>
 
@@ -399,9 +399,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* 7 benefits */}
               <div
                 id="7-benefits-of-low-code-platform"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover-lift"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20 hover-lift"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8 text-center">
                   7 benefits of low-code platform
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -472,9 +472,9 @@ const WhatIsLowCode: React.FC = () => {
               {/* Low-code vs others */}
               <div
                 id="how-is-low-code-different-from-no-code-and-high-code"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8">
                   How is low-code different from no-code and high-code?
                 </h2>
 
@@ -548,17 +548,17 @@ const WhatIsLowCode: React.FC = () => {
               {/* Industry solutions */}
               <div
                 id="low-code-industry-solutions"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6">
                   Low-code industry solutions
                 </h2>
-                <p className="text-gray-700 mb-8">
+                <p className="text-gray-700 mb-6 md:mb-8">
                   Low-code platforms offer an array of industry-specific
                   solutions, providing endless possibilities for businesses to
                   create enterprise applications across various sectors.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
                   {[
                     "Banking",
                     "Credit Unions",
@@ -591,19 +591,19 @@ const WhatIsLowCode: React.FC = () => {
               {/* What can you build */}
               <div
                 id="what-can-you-build-with-a-low-code-development-platform"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover-lift"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20 hover-lift"
               >
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
                   What can you build with a low-code development platform?
                 </h2>
-                <p className="text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
+                <p className="text-gray-700 mb-8 md:mb-10 text-center max-w-3xl mx-auto leading-relaxed">
                   With a low-code development platform, you can build a wide
                   range of applications, from simple to complex. These platforms
                   offer the tools and resources to create web applications,
                   automate workflows, integrate with third-party systems, and
                   implement AI/ML functionalities.
                 </p>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {[
                     {
                       name: "Web Applications",
@@ -678,7 +678,7 @@ const WhatIsLowCode: React.FC = () => {
               {/* Use cases */}
               <div
                 id="low-code-use-cases"
-                className="bg-white rounded-2xl shadow-xl p-8 border border-[#00A551]/20 relative overflow-hidden"
+                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20 relative overflow-hidden"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
@@ -711,7 +711,7 @@ const WhatIsLowCode: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     {[
                       {
                         title: "Customer engagement applications",
@@ -770,7 +770,7 @@ const WhatIsLowCode: React.FC = () => {
                     ].map((useCase, index) => (
                       <div
                         key={index}
-                        className="group relative bg-gradient-to-br border border-white/50 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 backdrop-blur-sm overflow-hidden"
+                        className="group relative bg-gradient-to-br border border-white/50 rounded-2xl p-6 md:p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 backdrop-blur-sm overflow-hidden"
                         style={{
                           background: `linear-gradient(135deg, ${useCase.bgGradient
                             .split(" ")[0]
@@ -849,7 +849,7 @@ const WhatIsLowCode: React.FC = () => {
               {/* Industry forecasts */}
               <div
                 id="low-code-industry-forecasts"
-                className="relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 rounded-2xl p-8 text-gray-900 overflow-hidden"
+                className="relative bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 rounded-2xl p-6 md:p-8 text-gray-900 overflow-hidden"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
@@ -905,7 +905,7 @@ const WhatIsLowCode: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {[
                       {
                         forecast:
@@ -964,7 +964,7 @@ const WhatIsLowCode: React.FC = () => {
                     ].map((item, index) => (
                       <motion.div
                         key={index}
-                        className="group relative bg-gradient-to-br border border-white/60 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 backdrop-blur-sm overflow-hidden"
+                        className="group relative bg-gradient-to-br border border-white/60 rounded-2xl p-6 md:p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 backdrop-blur-sm overflow-hidden"
                         style={{
                           background: `linear-gradient(135deg, ${item.bgGradient
                             .split(" ")[0]
@@ -1060,7 +1060,7 @@ const WhatIsLowCode: React.FC = () => {
               {/* FAQ */}
               <div
                 id="low-code-faq"
-                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-[#00A551]/20 hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
+                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-[#00A551]/20 hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5">

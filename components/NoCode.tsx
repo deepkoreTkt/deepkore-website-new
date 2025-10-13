@@ -92,8 +92,8 @@ const NoCode: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative container mx-auto px-40 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative container mx-auto px-6 md:px-40 py-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 bg-teal-100/80 backdrop-blur-sm px-4 py-2 rounded-full border border-teal-200/50">
@@ -103,13 +103,13 @@ const NoCode: React.FC = () => {
                 </span>
               </div>
 
-              <h1 className="text-6xl lg:text-7xl font-semibold bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent leading-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-r from-[#248aff] to-[#00d24b] bg-clip-text text-transparent leading-tight">
                 Build Without
                 <br />
                 <span className="text-slate-800">Limits</span>
               </h1>
 
-              <p className="text-xl text-slate-600 leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
                 Transform your ideas into powerful applications in minutes, not
                 months. Our no-code platform empowers everyone to innovate,
                 create, and scale without writing a single line of code.
@@ -117,11 +117,11 @@ const NoCode: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/getstarted">
-                  <button className="group bg-[#248aff] hover:from-blue-700 hover:to-green-700 text-white px-8 py-4 rounded-2xl font-bold text-lg   hover:shadow-2xl shadow-lg">
+                  <button className="group bg-[#248aff] hover:from-blue-700 hover:to-green-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg   hover:shadow-2xl shadow-lg">
                     <span className="flex items-center gap-3">
                       Start Building Free
                       <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -135,17 +135,17 @@ const NoCode: React.FC = () => {
                   </button>
                 </a>
                 <a href="/getstarted">
-                  <button className="group bg-white/80 backdrop-blur-sm hover:bg-white text-slate-800 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-slate-200/50 shadow-lg">
+                  <button className="group bg-white/80 backdrop-blur-sm hover:bg-white text-slate-800 px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 border border-slate-200/50 shadow-lg">
                     <span className="flex items-center gap-3">
                       Watch Demo
-                      <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                      <Play className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
                     </span>
                   </button>
                 </a>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8">
+              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-teal-600">10x</div>
                   <div className="text-sm text-slate-600">
@@ -174,7 +174,7 @@ const NoCode: React.FC = () => {
 
               <div className="relative z-10 py-10">
                 {/* Floating Cards */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                   <div className="group bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/60 relative overflow-hidden">
                     {/* Animated Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 via-cyan-50/30 to-green-50/50 opacity-0"></div>
@@ -309,7 +309,7 @@ const NoCode: React.FC = () => {
                 </div>
 
                 {/* Floating Stats */}
-                <div className="mt-12 grid grid-cols-3 gap-4">
+                <div className="mt-8 md:mt-12 grid grid-cols-3 gap-2 md:gap-4">
                   <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center shadow-lg border border-white/50">
                     <div className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                       10x
@@ -347,13 +347,13 @@ const NoCode: React.FC = () => {
         {activeTab === "overview" && (
           <div className="space-y-20">
             {/* What is No-Code - Full Width */}
-            <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-              <div className="container mx-auto px-40">
+            <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-12 md:py-20">
+              <div className="container mx-auto px-6 md:px-40">
                 <div className="max-w-4xl mx-auto text-center">
-                  <h2 className="text-5xl font-black mb-8 bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 bg-clip-text text-transparent">
+                  <h2 className="text-3xl md:text-5xl font-black mb-6 md:mb-8 bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 bg-clip-text text-transparent">
                     What is No-Code?
                   </h2>
-                  <p className="text-xl leading-relaxed text-slate-300 mb-12">
+                  <p className="text-lg md:text-xl leading-relaxed text-slate-300 mb-8 md:mb-12">
                     No-code is a revolutionary approach to software development
                     that empowers anyone—regardless of technical background—to
                     create powerful applications without writing a single line
@@ -373,22 +373,22 @@ const NoCode: React.FC = () => {
             </section>
 
             {/* Development Section - Split */}
-            <section className="container mx-auto px-40">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6">
-                  <h2 className="text-4xl font-black text-slate-800">
+            <section className="container mx-auto px-6 md:px-40">
+              <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                <div className="space-y-4 md:space-y-6">
+                  <h2 className="text-3xl md:text-4xl font-black text-slate-800">
                     No-Code Development:
                     <span className="block bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                       The Future is Here
                     </span>
                   </h2>
-                  <p className="text-lg text-slate-600 leading-relaxed">
+                  <p className="text-base md:text-lg text-slate-600 leading-relaxed">
                     No-code development represents a paradigm shift in how
                     software is created. Instead of complex programming
                     languages and endless lines of code, users leverage visual
                     development environments.
                   </p>
-                  <p className="text-lg text-slate-600 leading-relaxed">
+                  <p className="text-base md:text-lg text-slate-600 leading-relaxed">
                     Our platform eliminates traditional barriers to entry,
                     enabling business users, citizen developers, and IT
                     professionals to collaborate seamlessly.
@@ -434,22 +434,22 @@ const NoCode: React.FC = () => {
             </section>
 
             {/* Technologies Section - Cards Grid */}
-            <section className="bg-slate-50 py-20">
-              <div className="container mx-auto px-40">
-                <div className="text-center mb-16">
-                  <h2 className="text-4xl font-black text-slate-800 mb-6">
+            <section className="bg-slate-50 py-12 md:py-20">
+              <div className="container mx-auto px-6 md:px-40">
+                <div className="text-center mb-12 md:mb-16">
+                  <h2 className="text-3xl md:text-4xl font-black text-slate-800 mb-4 md:mb-6">
                     No-Code Technologies:
                     <span className="block bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                       Innovation Without Limits
                     </span>
                   </h2>
-                  <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                  <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
                     No-code technologies are sophisticated yet user-friendly
                     tools that transform complex development tasks into
                     intuitive visual experiences.
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                   {[
                     {
                       icon: Palette,
@@ -478,7 +478,7 @@ const NoCode: React.FC = () => {
                   ].map((tech, index) => (
                     <div
                       key={index}
-                      className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
+                      className="group bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100"
                     >
                       <div
                         className={`w-16 h-16 bg-gradient-to-r ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -505,16 +505,16 @@ const NoCode: React.FC = () => {
 
         {/* Features Section */}
         {activeTab === "features" && (
-          <section className="container mx-auto px-40 py-20">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-black text-slate-800 mb-6">
+          <section className="container mx-auto px-6 md:px-40 py-12 md:py-20">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 md:mb-6">
                 Deepkore No-Code
                 <span className="block bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 bg-clip-text text-transparent">
                   Platform Features
                 </span>
               </h2>
             </div>
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               {[
                 {
                   title: "Visual Application Designer",
@@ -555,7 +555,7 @@ const NoCode: React.FC = () => {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className={`bg-gradient-to-br ${feature.color} rounded-3xl p-8 text-white transform hover:scale-105 transition-all duration-300 shadow-xl`}
+                  className={`bg-gradient-to-br ${feature.color} rounded-3xl p-6 md:p-8 text-white transform hover:scale-105 transition-all duration-300 shadow-xl`}
                 >
                   <div className="flex items-start gap-6">
                     <div className="text-4xl mb-4">
@@ -582,17 +582,17 @@ const NoCode: React.FC = () => {
 
         {/* Benefits Section */}
         {activeTab === "benefits" && (
-          <section className="bg-gradient-to-br from-teal-50 via-cyan-50 to-orange-50 py-20">
+          <section className="bg-gradient-to-br from-teal-50 via-cyan-50 to-orange-50 py-12 md:py-20">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black text-slate-800 mb-6">
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 md:mb-6">
                   Why Choose
                   <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                     No-Code Development?
                   </span>
                 </h2>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
                     title: "Democratize Innovation",
@@ -639,7 +639,7 @@ const NoCode: React.FC = () => {
                 ].map((benefit, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 group"
+                    className="bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-100 group"
                   >
                     <div className="text-center mb-6">
                       <div className="text-5xl mb-4 group-hover:animate-bounce">
@@ -671,19 +671,19 @@ const NoCode: React.FC = () => {
 
         {/* Comparison Section */}
         {activeTab === "comparison" && (
-          <section className="py-20">
+          <section className="py-12 md:py-20">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black text-slate-800 mb-6">
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 md:mb-6">
                   No-Code vs Low-Code:
                   <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                     Understanding the Difference
                   </span>
                 </h2>
               </div>
-              <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl p-8 text-white">
-                  <div className="text-center mb-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl p-6 md:p-8 text-white">
+                  <div className="text-center mb-6 md:mb-8">
                     <Target className="w-16 h-16 text-white mx-auto mb-4" />
                     <h3 className="text-3xl font-bold mb-4">
                       No-Code: True Accessibility
@@ -711,8 +711,8 @@ const NoCode: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200">
-                  <div className="text-center mb-8">
+                <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-200">
+                  <div className="text-center mb-6 md:mb-8">
                     <Settings className="w-16 h-16 text-teal-600 mx-auto mb-4" />
                     <h3 className="text-3xl font-bold mb-4 text-slate-800">
                       Low-Code: Professional Flexibility
@@ -745,22 +745,22 @@ const NoCode: React.FC = () => {
 
         {/* Applications Section */}
         {activeTab === "applications" && (
-          <section className="bg-slate-900 text-white py-20">
+          <section className="bg-slate-900 text-white py-12 md:py-20">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black mb-6">
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-6">
                   What Can You Build with
                   <span className="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
                     No-Code?
                   </span>
                 </h2>
-                <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
                   From simple forms to complex enterprise applications, no-code
                   platforms enable you to build virtually any digital solution
                   your business needs.
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
                     name: "Customer Portals",
@@ -810,7 +810,7 @@ const NoCode: React.FC = () => {
                 ].map((app, index) => (
                   <div
                     key={index}
-                    className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105 border border-slate-700/50 group"
+                    className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-6 md:p-8 hover:bg-slate-800/70 transition-all duration-300 transform hover:scale-105 border border-slate-700/50 group"
                   >
                     <div className="text-center">
                       <div className="text-5xl mb-6 group-hover:animate-bounce">
@@ -872,18 +872,18 @@ const NoCode: React.FC = () => {
 
         {/* Success Stories */}
         {activeTab === "success" && (
-          <section className="bg-gradient-to-r from-teal-600 via-cyan-600 to-orange-500 py-20">
+          <section className="bg-gradient-to-r from-teal-600 via-cyan-600 to-orange-500 py-12 md:py-20">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black text-white mb-6">
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6">
                   Real Success Stories
                 </h2>
-                <p className="text-xl text-white/90 max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
                   See how organizations are transforming their business with
                   Deepkore&apos;s no-code platform
                 </p>
               </div>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {[
                   {
                     company: "Global Retail Chain",
@@ -920,7 +920,7 @@ const NoCode: React.FC = () => {
                 ].map((story, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
+                    className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <div
@@ -953,10 +953,10 @@ const NoCode: React.FC = () => {
 
         {/* FAQ Section */}
         {activeTab === "faq" && (
-          <section className="py-20">
+          <section className="py-12 md:py-20">
             <div className="container mx-auto px-6 max-w-4xl">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black text-slate-800 mb-6">
+              <div className="text-center mb-12 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-4 md:mb-6">
                   No-Code
                   <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
                     FAQ
@@ -997,7 +997,7 @@ const NoCode: React.FC = () => {
                   >
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="w-full text-left p-8 bg-gradient-to-r from-slate-50 to-teal-50 hover:from-teal-50 hover:to-cyan-50 transition-all duration-300 flex justify-between items-center group"
+                      className="w-full text-left p-6 md:p-8 bg-gradient-to-r from-slate-50 to-teal-50 hover:from-teal-50 hover:to-cyan-50 transition-all duration-300 flex justify-between items-center group"
                     >
                       <h3 className="text-xl font-bold text-slate-800 pr-4 group-hover:text-teal-600 transition-colors">
                         {faq.question}
@@ -1037,15 +1037,15 @@ const NoCode: React.FC = () => {
         )}
 
         {/* Final CTA */}
-        <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+        <section className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-12 md:py-20">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-5xl font-black mb-6">
+            <h2 className="text-3xl md:text-5xl font-black mb-4 md:mb-6">
               Ready to Start Building with
               <span className="block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
                 No-Code?
               </span>
             </h2>
-            <p className="text-xl mb-12 text-slate-300 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-8 md:mb-12 text-slate-300 max-w-3xl mx-auto">
               Join thousands of organizations already transforming their
               business with Deepkore&apos;s no-code platform.
             </p>

@@ -27,7 +27,7 @@ const blogPosts: BlogPost[] = [
     author: "Team Deepkore",
     date: "25 Sep 2025",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
     alt: "AI-powered low-code development platform interface",
     link: "/blog/blog1",
   },
@@ -79,7 +79,7 @@ const blogPosts: BlogPost[] = [
     author: "Mohan Madhurakavi",
     date: "5 Feb 2024",
     image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
     alt: "Digital transformation with circuit boards and technological innovation",
     link: "#",
   },
@@ -119,7 +119,7 @@ const blogPosts: BlogPost[] = [
     author: "Vinitha Ramani",
     date: "23 Jul 2024",
     image:
-      "https://images.unsplash.com/photo-1486312338219-ce68e2c6e4b5?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&w=548&h=285&fit=crop",
     alt: "Modern office workspace with computer and productivity tools",
     link: "#",
   },
