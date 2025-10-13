@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import axios from "axios";
 import getEnvConfig from "./getenv";
 
@@ -147,15 +148,18 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="mb-6">
-                <div className="flex items-center mb-3">
-                  <Image
-                    src="/darklogo.png"
-                    alt="Deepkore Logo"
-                    width={210}
-                    height={140}
-                    className="relative"
-                  />
-                </div>
+                <Link href="/" className="flex items-center">
+                  <div className="flex items-center mb-3">
+                    <Image
+                      src="/darklogo.png"
+                      alt="Deepkore Logo"
+                      width={210}
+                      height={140}
+                      className="relative"
+                    />
+                  </div>
+                </Link>
+
                 <p className="text-gray-600 text-lg font-bold leading-relaxed max-w-md">
                   Building the Future of AI Driven Business
                 </p>
@@ -457,19 +461,19 @@ const Footer: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 viewport={{ once: true }}
               >
-                <a
+                <Link
                   href="/termsandservices"
                   className="hover:text-blue-400 transition-colors duration-300"
                 >
                   Terms of Service
-                </a>
+                </Link>
                 <span className="text-gray-400">•</span>
-                <a
+                <Link
                   href="/privacypolicy"
                   className="hover:text-green-400 transition-colors duration-300"
                 >
                   Privacy Policy
-                </a>
+                </Link>
                 <span className="text-gray-400">•</span>
                 {/* <a
                   href="#"

@@ -285,28 +285,16 @@ const Features: React.FC = () => {
                 <div>
                   <motion.h3
                     className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 lg:mb-4 bg-gradient-to-r ${features[activeFeature].gradient} bg-clip-text text-transparent`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                   >
                     {features[activeFeature].title}
                   </motion.h3>
 
-                  <motion.h4
-                    className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-4 lg:mb-6 font-medium"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                  >
+                  <motion.h4 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-4 lg:mb-6 font-medium">
                     {features[activeFeature].subtitle}
                   </motion.h4>
 
-                  <motion.p
-                    className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6 lg:mb-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                  >
+                  <motion.p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6 lg:mb-8">
                     {features[activeFeature].description}
                   </motion.p>
 
@@ -321,9 +309,6 @@ const Features: React.FC = () => {
                       <motion.div
                         key={index}
                         className="flex items-center space-x-3 text-gray-700"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                       >
                         <div className="w-2 h-2 bg-[#248aff] rounded-full flex-shrink-0"></div>
                         <span className="text-sm lg:text-base font-medium">

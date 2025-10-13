@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import getEnvConfig from "@/components/getenv";
 import axios from "axios";
-import { Rocket, Target, Star, Users, Zap } from "lucide-react";
+import { Rocket, Target, Star, Users, Zap, User, Sparkles } from "lucide-react";
 
 // Company logos data
 const companyLogos = [
@@ -330,25 +330,25 @@ const Demo: React.FC = () => {
               >
                 {[
                   {
-                    icon: "👤",
+                    icon: User,
                     title: "Personal Demo",
                     desc: "1:1 session tailored to your needs",
                     color: "from-[#00A551] to-[#00A551]/80",
                   },
                   {
-                    icon: "⚡",
+                    icon: Zap,
                     title: "Live Showcase",
                     desc: "Real-time automation demos",
                     color: "from-[#2791D0] to-[#2791D0]/80",
                   },
                   {
-                    icon: "🚀",
+                    icon: Rocket,
                     title: "Latest Features",
                     desc: "Cutting-edge development tools",
                     color: "from-[#b28fff] to-[#b28fff]/80",
                   },
                   {
-                    icon: "✨",
+                    icon: Sparkles,
                     title: "Apps Come Alive",
                     desc: "Watch apps build in real-time",
                     color: "from-[#00A551] to-[#2791D0]",
@@ -365,9 +365,7 @@ const Demo: React.FC = () => {
                       <div
                         className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                       >
-                        <span className="text-xl md:text-2xl">
-                          {feature.icon}
-                        </span>
+                        <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
                       <h3 className="text-base md:text-lg font-bold text-slate-800 mb-2 group-hover:text-[#00A551] transition-colors duration-300">
                         {feature.title}

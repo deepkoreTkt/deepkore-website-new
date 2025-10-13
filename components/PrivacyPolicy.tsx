@@ -2,6 +2,16 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  BarChart3,
+  Settings,
+  Shield,
+  User,
+  Baby,
+  FileText,
+  Mail,
+  Lock,
+} from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -26,7 +36,7 @@ const PrivacyPolicy: React.FC = () => {
   const privacySections = [
     {
       title: "Information We Collect",
-      icon: "📊",
+      icon: <BarChart3 className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           subtitle: "Personal Data",
@@ -44,7 +54,7 @@ const PrivacyPolicy: React.FC = () => {
     },
     {
       title: "How We Use Your Information",
-      icon: "⚙️",
+      icon: <Settings className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           subtitle: "To Provide and Improve Services",
@@ -66,7 +76,7 @@ const PrivacyPolicy: React.FC = () => {
     },
     {
       title: "How We Share Your Information",
-      icon: "�",
+      icon: <Shield className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           subtitle: "Service Providers",
@@ -84,7 +94,7 @@ const PrivacyPolicy: React.FC = () => {
     },
     {
       title: "Data Security & Retention",
-      icon: "🔒",
+      icon: <Lock className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           subtitle: "Data Security",
@@ -98,7 +108,7 @@ const PrivacyPolicy: React.FC = () => {
     },
     {
       title: "Your Rights",
-      icon: "👤",
+      icon: <User className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "Depending on your location and applicable laws, you may have certain rights regarding your personal data, including: The right to access and request copies of your personal data. The right to request correction of any inaccuracies in your personal data. The right to request deletion of your personal data. The right to withdraw your consent at any time where we rely on your consent to process your personal data.",
@@ -152,7 +162,9 @@ const PrivacyPolicy: React.FC = () => {
               regarding your personal data and how we will treat it.
             </p>
             <div className="bg-gradient-to-r from-[#00A551]/5 to-[#2791D0]/5 rounded-2xl p-8 border border-[#00A551]/20">
-              <div className="text-6xl mb-4">🔒</div>
+              <div className="flex justify-center mb-4">
+                <Lock className="w-16 h-16 text-[#00A551]" />
+              </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800">
                 Your Consent
               </h3>
@@ -230,19 +242,19 @@ const PrivacyPolicy: React.FC = () => {
                 title: "Third-Party Links",
                 description:
                   "Our website may contain links to third-party websites. We are not responsible for their privacy practices or content.",
-                icon: "�",
+                icon: <Shield className="w-10 h-10 text-white" />,
               },
               {
                 title: "Children's Privacy",
                 description:
                   "Our services are not intended for children under 13. We do not knowingly collect their information.",
-                icon: "👶",
+                icon: <Baby className="w-10 h-10 text-white" />,
               },
               {
                 title: "Data Protection",
                 description:
                   "We implement comprehensive security measures to protect your personal information.",
-                icon: "�️",
+                icon: <Shield className="w-10 h-10 text-white" />,
               },
             ].map((item, idx) => (
               <motion.div
@@ -253,7 +265,7 @@ const PrivacyPolicy: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-white/90 leading-relaxed">
                   {item.description}
@@ -272,7 +284,9 @@ const PrivacyPolicy: React.FC = () => {
             {...fadeInUp}
           >
             <div className="text-center mb-8">
-              <div className="text-5xl mb-4">📝</div>
+              <div className="flex justify-center mb-4">
+                <FileText className="w-12 h-12 text-[#00A551]" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 Changes to This Privacy Policy
               </h3>
@@ -301,8 +315,10 @@ const PrivacyPolicy: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6 text-left">
                 <div>
-                  <div className="text-2xl mb-2">📧</div>
-                  <h4 className="font-bold mb-1">Email</h4>
+                  <div className="flex items-center mb-2">
+                    <Mail className="w-6 h-6 text-white mr-2" />
+                    <h4 className="font-bold">Email</h4>
+                  </div>
                   <p className="text-white/90">contact@deepkore.com</p>
                 </div>
               </div>

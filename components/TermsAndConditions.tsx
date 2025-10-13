@@ -2,6 +2,24 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  CheckSquare,
+  RefreshCw,
+  Settings,
+  User,
+  Shield,
+  CreditCard,
+  Copyright,
+  Link,
+  LogOut,
+  AlertTriangle,
+  Scale,
+  Building2,
+  ScrollText,
+  Zap,
+  FileText,
+  Mail,
+} from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -26,7 +44,7 @@ const TermsAndConditions: React.FC = () => {
   const termsSections = [
     {
       title: "Acceptance of Terms",
-      icon: "📋",
+      icon: <CheckSquare className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "By using our platform and Services, you agree to these Terms and any additional terms that may apply. You must be at least 18 years old to use our Services. If you are using our Services on behalf of an organization, you are agreeing to these Terms on behalf of that organization.",
@@ -35,7 +53,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Changes to Terms",
-      icon: "�",
+      icon: <RefreshCw className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "We reserve the right to update or modify these Terms at any time. Any changes will be effective immediately upon posting the revised version on our website. Your continued use of the Services after such changes constitutes your acceptance of the new Terms. Please review these Terms periodically for updates.",
@@ -44,7 +62,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Services Overview",
-      icon: "⚙️",
+      icon: <Settings className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "Our platform enables users to create, manage, and deploy applications using low-code/no-code tools. The specific services we offer may include:",
@@ -69,7 +87,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "User Accounts",
-      icon: "👤",
+      icon: <User className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "To access certain features of our Services, you may be required to create an account. You agree to:",
@@ -86,7 +104,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "User Responsibilities",
-      icon: "🛡️",
+      icon: <Shield className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "By using our Services, you agree that you will not:",
@@ -103,7 +121,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Fees and Payment",
-      icon: "💳",
+      icon: <CreditCard className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "Some of our Services may be provided on a paid basis. By selecting a paid plan or subscription, you agree to pay the fees associated with that plan. All fees are non-refundable unless otherwise specified in writing. We reserve the right to change our pricing at any time with reasonable notice.",
@@ -112,7 +130,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Intellectual Property",
-      icon: "©️",
+      icon: <Copyright className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           subtitle: "Ownership",
@@ -126,7 +144,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Third-Party Services",
-      icon: "🔗",
+      icon: <Link className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "Our platform may integrate with or allow you to use third-party services. These third-party services are not controlled by us, and their use is subject to their own terms and privacy policies. We are not responsible for the content, accuracy, or reliability of any third-party services.",
@@ -135,7 +153,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Termination of Services",
-      icon: "🚪",
+      icon: <LogOut className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "We reserve the right to suspend or terminate your access to the Services at any time, without notice, for any reason, including, but not limited to, violation of these Terms. Upon termination, your right to use the Services will immediately cease, and you must stop using the platform and any related services.",
@@ -148,7 +166,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Disclaimer of Warranties",
-      icon: "⚠️",
+      icon: <AlertTriangle className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: 'The Services are provided "as is" and "as available" without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.',
@@ -161,7 +179,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Limitation of Liability",
-      icon: "⚖️",
+      icon: <Scale className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "To the fullest extent permitted by law, Deepkore Technologies and its affiliates, officers, directors, employees, and agents will not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the Services, even if we have been advised of the possibility of such damages.",
@@ -174,7 +192,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Indemnification",
-      icon: "🛡️",
+      icon: <Shield className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "You agree to indemnify, defend, and hold harmless Deepkore Technologies, its affiliates, and their respective officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorney's fees, arising out of or in connection with:",
@@ -187,7 +205,7 @@ const TermsAndConditions: React.FC = () => {
     },
     {
       title: "Governing Law",
-      icon: "🏛️",
+      icon: <Building2 className="w-12 h-12 text-[#00A551]" />,
       content: [
         {
           text: "These Terms will be governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of law principles. Any legal action or proceeding arising under these Terms will be brought exclusively in the courts located in [Jurisdiction], and you hereby consent to the jurisdiction of such courts.",
@@ -236,7 +254,9 @@ const TermsAndConditions: React.FC = () => {
               Services.
             </p>
             <div className="bg-gradient-to-r from-[#00A551]/5 to-[#2791D0]/5 rounded-2xl p-8 border border-[#00A551]/20">
-              <div className="text-6xl mb-4">📜</div>
+              <div className="flex justify-center mb-4">
+                <ScrollText className="w-16 h-16 text-[#00A551]" />
+              </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-800">
                 Legal Agreement
               </h3>
@@ -315,19 +335,19 @@ const TermsAndConditions: React.FC = () => {
                 title: "Governing Law",
                 description:
                   "These terms are governed by applicable laws. Any disputes will be resolved in the appropriate jurisdiction.",
-                icon: "🏛️",
+                icon: <Building2 className="w-10 h-10 text-white" />,
               },
               {
                 title: "Indemnification",
                 description:
                   "You agree to indemnify and hold harmless Deepkore Technologies from claims arising from your use of services.",
-                icon: "�️",
+                icon: <Shield className="w-10 h-10 text-white" />,
               },
               {
                 title: "Service Availability",
                 description:
                   "Services are provided as-is without warranties. We strive for continuous availability but cannot guarantee it.",
-                icon: "⚡",
+                icon: <Zap className="w-10 h-10 text-white" />,
               },
             ].map((item, idx) => (
               <motion.div
@@ -338,7 +358,7 @@ const TermsAndConditions: React.FC = () => {
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-white/90 leading-relaxed">
                   {item.description}
@@ -357,7 +377,9 @@ const TermsAndConditions: React.FC = () => {
             {...fadeInUp}
           >
             <div className="text-center mb-8">
-              <div className="text-5xl mb-4">📝</div>
+              <div className="flex justify-center mb-4">
+                <FileText className="w-12 h-12 text-[#00A551]" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 Changes to These Terms
               </h3>
@@ -385,8 +407,10 @@ const TermsAndConditions: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6 text-left">
                 <div>
-                  <div className="text-2xl mb-2">📧</div>
-                  <h4 className="font-bold mb-1">Email</h4>
+                  <div className="flex items-center mb-2">
+                    <Mail className="w-6 h-6 text-white mr-2" />
+                    <h4 className="font-bold">Email</h4>
+                  </div>
                   <p className="text-white/90">contact@deepkore.com</p>
                 </div>
               </div>
