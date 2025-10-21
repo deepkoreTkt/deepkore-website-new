@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollToTop from "../components/ScrollToTop";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +18,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://deepkore.com"),
-  title: "Deepkore -  Building the Future of AI Driven Businessm",
+  title: "Deepkore -  Building the Future of AI Driven Business",
   description:
     "Transform your business and boost productivity with Deepkore. Effortlessly build Enterprise apps that keep pace with your business's rapid growth—all without writing a single line of code.",
   keywords:
     "Deepkore lets you transform ideas into powerful Enterprise applications that adapt to your business needs.",
-  authors: [{ name: "Your Name" }],
+  authors: [{ name: "Deepkore" }],
   icons: {
     icon: "/logo-icon.svg",
   },
@@ -96,6 +97,18 @@ export default function RootLayout({
       >
         {children}
         <ScrollToTop />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-T8BM3VT823"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-T8BM3VT823');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

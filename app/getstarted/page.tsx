@@ -50,7 +50,7 @@ const Demo: React.FC = () => {
 
   const [selectedCountry, setSelectedCountry] = useState({
     code: "+91",
-    flag: "https://flagcdn.com/w40/in.png",
+    flag: "/images/flags/in.png",
     name: "India",
   });
 
@@ -63,6 +63,8 @@ const Demo: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState(false);
 
   const [emailCheck, setEmailCheck] = useState(false);
+
+  const [checkboxError, setCheckboxError] = useState(false);
 
   // Email validation function
   function validateEmail(email: string) {
@@ -105,48 +107,48 @@ const Demo: React.FC = () => {
   const countries = [
     {
       code: "+1",
-      flag: "https://flagcdn.com/w40/us.png",
+      flag: "/images/flags/us.png",
       name: "United States",
     },
-    { code: "+1", flag: "https://flagcdn.com/w40/ca.png", name: "Canada" },
+    { code: "+1", flag: "/images/flags/ca.png", name: "Canada" },
     {
       code: "+44",
-      flag: "https://flagcdn.com/w40/gb.png",
+      flag: "/images/flags/gb.png",
       name: "United Kingdom",
     },
-    { code: "+91", flag: "https://flagcdn.com/w40/in.png", name: "India" },
-    { code: "+61", flag: "https://flagcdn.com/w40/au.png", name: "Australia" },
-    { code: "+49", flag: "https://flagcdn.com/w40/de.png", name: "Germany" },
-    { code: "+33", flag: "https://flagcdn.com/w40/fr.png", name: "France" },
-    { code: "+81", flag: "https://flagcdn.com/w40/jp.png", name: "Japan" },
-    { code: "+86", flag: "https://flagcdn.com/w40/cn.png", name: "China" },
-    { code: "+55", flag: "https://flagcdn.com/w40/br.png", name: "Brazil" },
+    { code: "+91", flag: "/images/flags/in.png", name: "India" },
+    { code: "+61", flag: "/images/flags/au.png", name: "Australia" },
+    { code: "+49", flag: "/images/flags/de.png", name: "Germany" },
+    { code: "+33", flag: "/images/flags/fr.png", name: "France" },
+    { code: "+81", flag: "/images/flags/jp.png", name: "Japan" },
+    { code: "+86", flag: "/images/flags/cn.png", name: "China" },
+    { code: "+55", flag: "/images/flags/br.png", name: "Brazil" },
     {
       code: "+27",
-      flag: "https://flagcdn.com/w40/za.png",
+      flag: "/images/flags/za.png",
       name: "South Africa",
     },
-    { code: "+971", flag: "https://flagcdn.com/w40/ae.png", name: "UAE" },
-    { code: "+65", flag: "https://flagcdn.com/w40/sg.png", name: "Singapore" },
+    { code: "+971", flag: "/images/flags/ae.png", name: "UAE" },
+    { code: "+65", flag: "/images/flags/sg.png", name: "Singapore" },
     {
       code: "+82",
-      flag: "https://flagcdn.com/w40/kr.png",
+      flag: "/images/flags/kr.png",
       name: "South Korea",
     },
     {
       code: "+31",
-      flag: "https://flagcdn.com/w40/nl.png",
+      flag: "/images/flags/nl.png",
       name: "Netherlands",
     },
-    { code: "+46", flag: "https://flagcdn.com/w40/se.png", name: "Sweden" },
-    { code: "+47", flag: "https://flagcdn.com/w40/no.png", name: "Norway" },
-    { code: "+45", flag: "https://flagcdn.com/w40/dk.png", name: "Denmark" },
+    { code: "+46", flag: "/images/flags/se.png", name: "Sweden" },
+    { code: "+47", flag: "/images/flags/no.png", name: "Norway" },
+    { code: "+45", flag: "/images/flags/dk.png", name: "Denmark" },
     {
       code: "+41",
-      flag: "https://flagcdn.com/w40/ch.png",
+      flag: "/images/flags/ch.png",
       name: "Switzerland",
     },
-    { code: "+43", flag: "https://flagcdn.com/w40/at.png", name: "Austria" },
+    { code: "+43", flag: "/images/flags/at.png", name: "Austria" },
   ];
 
   const handleChange = (
@@ -185,6 +187,9 @@ const Demo: React.FC = () => {
 
   const checkHandler = () => {
     setIsChecked(!isChecked);
+    if (!isChecked) {
+      setCheckboxError(false);
+    }
   };
 
   const signup = () => {
@@ -217,9 +222,10 @@ const Demo: React.FC = () => {
             message: "",
           });
           setIsChecked(false);
+          setCheckboxError(false);
           setSelectedCountry({
             code: "+91",
-            flag: "https://flagcdn.com/w40/in.png",
+            flag: "/images/flags/in.png",
             name: "India",
           });
 
@@ -252,6 +258,7 @@ const Demo: React.FC = () => {
 
     // Validate terms and conditions checkbox
     if (!isChecked) {
+      setCheckboxError(true);
       return;
     }
 
@@ -625,7 +632,7 @@ const Demo: React.FC = () => {
                         </Link>
                       </label>
                     </div>
-                    {!isChecked && (
+                    {!isChecked && checkboxError && (
                       <p className="text-sm text-red-600">
                         Please accept our terms and conditions
                       </p>
