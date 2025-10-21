@@ -580,6 +580,7 @@ const FAQ: React.FC = () => {
                 icon: "📚",
                 action: "View Docs",
                 actionType: "link",
+                href: "/getstarted",
               },
               {
                 title: "Community Forum",
@@ -588,6 +589,7 @@ const FAQ: React.FC = () => {
                 icon: "👥",
                 action: "Join Community",
                 actionType: "link",
+                href: "/contact",
               },
             ].map((item, idx) => (
               <motion.div
@@ -599,11 +601,13 @@ const FAQ: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#ffffff]">
+                  {item.title}
+                </h3>
                 <p className="text-white/90 leading-relaxed mb-6">
                   {item.description}
                 </p>
-                <div className="text-[#00A551] font-semibold">
+                <div className="text-[#ffffff] font-semibold">
                   {item.actionType === "email" ? (
                     <a
                       href={`mailto:${item.action}`}
@@ -629,4 +633,3 @@ const FAQ: React.FC = () => {
 };
 
 export default FAQ;
-

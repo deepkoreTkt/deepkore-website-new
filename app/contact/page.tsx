@@ -610,14 +610,14 @@ const Contact: React.FC = () => {
                         By supplying my contact information, I accept the
                         Deepkore{" "}
                         <a
-                          href="/terms"
+                          href="/termsandservices"
                           className="text-[#00A551] hover:text-[#2791D0] font-medium transition-colors"
                         >
                           Terms of Service
                         </a>{" "}
                         and{" "}
                         <a
-                          href="/privacy"
+                          href="/privacypolicy"
                           className="text-[#00A551] hover:text-[#2791D0] font-medium transition-colors"
                         >
                           Privacy Policy
