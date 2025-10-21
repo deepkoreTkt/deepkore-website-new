@@ -22,40 +22,95 @@ const Contact: React.FC = () => {
 
   const [selectedCountry, setSelectedCountry] = useState({
     code: "+91",
-    flag: "https://flagcdn.com/w40/in.png",
+    flag: "/images/flags/in.png",
     name: "India",
   });
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
 
   const countries = [
     {
       code: "+1",
-      flag: "https://flagcdn.com/w40/us.png",
+      flag: "/images/flags/us.png",
       name: "United States",
     },
-    { code: "+91", flag: "https://flagcdn.com/w40/in.png", name: "India" },
+    { code: "+1", flag: "/images/flags/ca.png", name: "Canada" },
     {
       code: "+44",
-      flag: "https://flagcdn.com/w40/gb.png",
+      flag: "/images/flags/gb.png",
       name: "United Kingdom",
     },
-    { code: "+61", flag: "https://flagcdn.com/w40/au.png", name: "Australia" },
-    { code: "+49", flag: "https://flagcdn.com/w40/de.png", name: "Germany" },
-    { code: "+33", flag: "https://flagcdn.com/w40/fr.png", name: "France" },
+    { code: "+91", flag: "/images/flags/in.png", name: "India" },
+    { code: "+61", flag: "/images/flags/au.png", name: "Australia" },
+    { code: "+49", flag: "/images/flags/de.png", name: "Germany" },
+    { code: "+33", flag: "/images/flags/fr.png", name: "France" },
+    { code: "+81", flag: "/images/flags/jp.png", name: "Japan" },
+    { code: "+86", flag: "/images/flags/cn.png", name: "China" },
+    { code: "+55", flag: "/images/flags/br.png", name: "Brazil" },
     {
-      code: "+31",
-      flag: "https://flagcdn.com/w40/nl.png",
-      name: "Netherlands",
+      code: "+27",
+      flag: "/images/flags/za.png",
+      name: "South Africa",
     },
-    { code: "+81", flag: "https://flagcdn.com/w40/jp.png", name: "Japan" },
-    { code: "+86", flag: "https://flagcdn.com/w40/cn.png", name: "China" },
+    { code: "+971", flag: "/images/flags/ae.png", name: "UAE" },
+    { code: "+65", flag: "/images/flags/sg.png", name: "Singapore" },
     {
       code: "+82",
-      flag: "https://flagcdn.com/w40/kr.png",
+      flag: "/images/flags/kr.png",
       name: "South Korea",
     },
+    {
+      code: "+31",
+      flag: "/images/flags/nl.png",
+      name: "Netherlands",
+    },
+    { code: "+46", flag: "/images/flags/se.png", name: "Sweden" },
+    { code: "+47", flag: "/images/flags/no.png", name: "Norway" },
+    { code: "+45", flag: "/images/flags/dk.png", name: "Denmark" },
+    {
+      code: "+41",
+      flag: "/images/flags/ch.png",
+      name: "Switzerland",
+    },
+    { code: "+43", flag: "/images/flags/at.png", name: "Austria" },
+    { code: "+39", flag: "/images/flags/it.png", name: "Italy" },
+    { code: "+34", flag: "/images/flags/es.png", name: "Spain" },
+    { code: "+52", flag: "/images/flags/mx.png", name: "Mexico" },
+    { code: "+54", flag: "/images/flags/ar.png", name: "Argentina" },
+    { code: "+56", flag: "/images/flags/cl.png", name: "Chile" },
+    { code: "+57", flag: "/images/flags/co.png", name: "Colombia" },
+    { code: "+351", flag: "/images/flags/pt.png", name: "Portugal" },
+    { code: "+32", flag: "/images/flags/be.png", name: "Belgium" },
+    { code: "+358", flag: "/images/flags/fi.png", name: "Finland" },
+    { code: "+353", flag: "/images/flags/ie.png", name: "Ireland" },
+    { code: "+64", flag: "/images/flags/nz.png", name: "New Zealand" },
+    { code: "+60", flag: "/images/flags/my.png", name: "Malaysia" },
+    { code: "+66", flag: "/images/flags/th.png", name: "Thailand" },
+    { code: "+62", flag: "/images/flags/id.png", name: "Indonesia" },
+    { code: "+63", flag: "/images/flags/ph.png", name: "Philippines" },
+    { code: "+84", flag: "/images/flags/vn.png", name: "Vietnam" },
+    { code: "+90", flag: "/images/flags/tr.png", name: "Turkey" },
+    { code: "+7", flag: "/images/flags/ru.png", name: "Russia" },
+    { code: "+48", flag: "/images/flags/pl.png", name: "Poland" },
+    { code: "+420", flag: "/images/flags/cz.png", name: "Czech Republic" },
+    { code: "+36", flag: "/images/flags/hu.png", name: "Hungary" },
+    { code: "+40", flag: "/images/flags/ro.png", name: "Romania" },
+    { code: "+30", flag: "/images/flags/gr.png", name: "Greece" },
+    { code: "+972", flag: "/images/flags/il.png", name: "Israel" },
+    { code: "+966", flag: "/images/flags/sa.png", name: "Saudi Arabia" },
+    { code: "+974", flag: "/images/flags/qa.png", name: "Qatar" },
+    { code: "+965", flag: "/images/flags/kw.png", name: "Kuwait" },
+    { code: "+968", flag: "/images/flags/om.png", name: "Oman" },
+    { code: "+973", flag: "/images/flags/bh.png", name: "Bahrain" },
+    { code: "+962", flag: "/images/flags/jo.png", name: "Jordan" },
+    { code: "+961", flag: "/images/flags/lb.png", name: "Lebanon" },
+    { code: "+20", flag: "/images/flags/eg.png", name: "Egypt" },
+    { code: "+212", flag: "/images/flags/ma.png", name: "Morocco" },
+    { code: "+234", flag: "/images/flags/ng.png", name: "Nigeria" },
+    { code: "+254", flag: "/images/flags/ke.png", name: "Kenya" },
+    { code: "+233", flag: "/images/flags/gh.png", name: "Ghana" },
   ];
 
   const handleInputChange = (
@@ -99,7 +154,7 @@ const Contact: React.FC = () => {
       });
 
       console.log("Contact form submitted successfully:", response.data);
-      alert("Thank you for contacting us! We'll get back to you soon.");
+      setSuccessMessage(true);
 
       // Reset form after successful submission
       setFormData({
@@ -113,6 +168,9 @@ const Contact: React.FC = () => {
         message: "",
       });
       setAcceptTerms(false);
+      setTimeout(() => {
+        setSuccessMessage(false);
+      }, 5000);
     } catch (error) {
       console.error("Error submitting contact form:", error);
       alert("There was an error submitting your message. Please try again.");
@@ -509,16 +567,11 @@ const Contact: React.FC = () => {
                         className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800"
                       >
                         <option value="">Select your country</option>
-                        <option value="United States">United States</option>
-                        <option value="India">India</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="Japan">Japan</option>
-                        <option value="China">China</option>
-                        <option value="South Korea">South Korea</option>
+                        {countries.map((country, index) => (
+                          <option key={index} value={country.name}>
+                            {country.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
@@ -596,6 +649,41 @@ const Contact: React.FC = () => {
                       </svg>
                     </motion.button>
                   </form>
+
+                  {/* Success Message */}
+                  {successMessage && (
+                    <motion.div
+                      className="mt-6 p-4 bg-green-50/80 backdrop-blur-sm border border-green-200/50 rounded-xl"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                    >
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-green-800">
+                            Message sent successfully!
+                          </p>
+                          <p className="text-sm text-green-700">
+                            We&apos;ll get back to you soon.
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </div>
             </motion.div>
