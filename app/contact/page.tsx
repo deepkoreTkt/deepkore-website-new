@@ -29,6 +29,27 @@ const Contact: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
+  const [emailError, setEmailError] = useState<string | null>(null);
+
+  function validateEmail(email: string) {
+    const restrictedDomains = [
+      "gmail.com",
+      "ymail.com",
+      "outlook.com",
+      "live.com",
+      "hotmail.com",
+      "yahoo.com",
+      "yahoo.co.in",
+    ];
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return false;
+    }
+
+    const domain = email.split("@")[1];
+    return !restrictedDomains.includes(domain);
+  }
 
   const countries = [
     {
@@ -123,6 +144,9 @@ const Contact: React.FC = () => {
       ...prev,
       [name]: value,
     }));
+    if (name === "businessEmail") {
+      setEmailError(null);
+    }
   };
 
   const handleCountrySelect = (country: (typeof countries)[0]) => {
@@ -138,6 +162,11 @@ const Contact: React.FC = () => {
     e.preventDefault();
     if (!acceptTerms) {
       alert("Please accept the terms and privacy policy to continue.");
+      return;
+    }
+
+    if (!validateEmail(formData.businessEmail)) {
+      setEmailError("Please enter a valid business email address.");
       return;
     }
 
@@ -168,6 +197,7 @@ const Contact: React.FC = () => {
         message: "",
       });
       setAcceptTerms(false);
+      setEmailError(null);
       setTimeout(() => {
         setSuccessMessage(false);
       }, 5000);
@@ -421,6 +451,11 @@ const Contact: React.FC = () => {
                           className="w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200/50 rounded-xl focus:ring-2 focus:ring-[#00A551]/50 focus:border-[#00A551] transition-all duration-300 text-slate-800 placeholder-slate-400"
                           placeholder="Enter your business email"
                         />
+                        {emailError && (
+                          <p className="text-red-500 text-sm mt-1">
+                            {emailError}
+                          </p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <label
