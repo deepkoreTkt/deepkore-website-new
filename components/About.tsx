@@ -145,8 +145,7 @@ const About: React.FC = () => {
       role: "Co-Founder at Deepkore",
       image: "/images/kris.jpeg",
       bio: "25+ years' experience in transformative IT strategies, ERP implementation, and digital business growth, client focus, and risk mitigation. Proven track record in driving high-profile transformations across Oil & Gas, Engineering, Manufacturing, and FMCG sectors, delivering innovative digital initiatives and surpassing expectations.",
-      linkedin:
-        "https://www.linkedin.com/in/kris-sr-technology-and-business-transformation-leadership-expert/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbzhLeDSkS1qzRXgSWPXVAQ%3D%3D",
+      linkedin: " https://www.linkedin.com/in/krisgopalakrishnan/",
     },
   ];
 
